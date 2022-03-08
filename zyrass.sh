@@ -2,7 +2,7 @@
 
 # CONFIGURATION
 PS3="
-  Quelle est vôtre choix : "
+  Quel est votre choix : "
 
 
 check_os()                       # Description : Connaître l'OS et le numéro de version du Mac utilisé
@@ -174,8 +174,8 @@ fct_show_logo()               # Description : Affiche le logo
     dyma)
       dyma_logo
       echo -e "\E[37;40m          ⇨  Logo Dyma\E[0m\E[91;40m - Script non officiel                                                            \E[0m"
-      echo -e "\E[37;40m          ⇨  Script développé par - \E[33m\033[1m\E[3mZyrass\E[0m\033[0m\E[0m\E[37;40m Utilisateur acharné sur leur plateforme \E[36m\E[3m\E[4mhttps://dyma.fr\E[0m\E[0m\E[0m\E[37;40m.\E[30;40m     \E[0m"
-      echo -e "\E[37;40m          ⇨  J'ai 500+ heures passé chez eux.                                                           \E[0m"
+      echo -e "\E[37;40m          ⇨  Script mis au point par \E[33m\033[1m\E[3mZyrass\033[0m\E[37;40m utilisateur assidu sur \E[36m\E[3m\E[4mhttps://dyma.fr\E[0m\E[37;40m                      \E[0m"
+      echo -e "\E[37;40m          ⇨  J'ai passé plus de \E[92;40m520 heures\E[37;40m sur cette plate-forme.                                       \E[0m"
       echo -e "\E[95;40m                                                                                                        \E[0m"
       space
       read -p "  ... Appuyer sur une touche pour accéder à la présentation du script ..."
@@ -764,8 +764,8 @@ fct_check_version()           # Description : Vérifier la version d'un programm
     fi
   else
     if [ $PROGRAMME_NAME = "android" ]; then
-      version_android=$(echo android-studio-2021.1.1.22-linux.tar.gz | cut -d "-" -f 3)
-      echo -e "\E[32m$version_android\E[0m"
+      # version_android=$(echo android-studio-2021.1.1.22-linux.tar.gz | cut -d "-" -f 3)
+      echo -e "\E[32mInstallé\E[0m"
     else
       echo -e "\E[37mPas installé.\E[0m"
     fi
@@ -793,50 +793,49 @@ fct_message_presentation()    # Description : Affiche la présentation du script
   fi
 
   space
-  echo -e "     \E[91mSi, ci-dessous vous avez une erreur vous pourrez installé lsb-core\E[0m"
+  echo -e "     \E[91mSi, ci-dessous vous avez une erreur vous pourrez installer lsb-core\E[0m"
   echo -e "     \E[91mSous linux : \E[36mapt-get install lsb-core -y\E[0m\E[0m"
   space
 
   if [ $(uname -a | cut -d " " -f 1) = "Darwin" ]; then
-    echo -e "     \E[96m ⇨ Vous êtes sous $(uname -a | cut -d " " -f 1) soit un Mac avec la version $(uname -a | cut -d " " -f 3).\E[0m"
+    echo -e "     \E[96m ⇨ Vous exécutez $(uname -a | cut -d " " -f 1) sur un Mac avec comme version: $(uname -a | cut -d " " -f 3).\E[0m"
   elif [ $(uname -a | cut -d " " -f 1) = "Linux" ]; then
-    echo -e "     \E[96m ⇨ Vous êtes sous $(uname -a | head -n 2 | cut -d " " -f 15) avec comme distribution $(uname -a | cut -d " " -f 4 | cut -d "-" -f 2) $(lsb_release -a | grep -Ei "Description" | cut -d " " -f 2 | head -n 2).\E[0m"
+    echo -e "     \E[96m ⇨ Vous exécutez $(uname -a | head -n 2 | cut -d " " -f 15) avec une distribution $(uname -a | cut -d " " -f 4 | cut -d "-" -f 2) $(lsb_release -a | grep -Ei "Description" | cut -d " " -f 2 | head -n 2).\E[0m"
   fi
-  echo -e "\t\033[1m\033[3mCe script sera mis à jour lorsque ce sera nécessaire.\033[0m\033[0m"
+  echo -e "\t\033[1m\033[3mCe script sera actualisé chaque fois que nécessaire.\033[0m\033[0m"
   
   space
-  read -p "   Appuyer sur une touche pour continuer..."
+  read -p "    Pressez une touche pour poursuivre..."
   clear
 
   space
   echo -e "     \E[37mBonjour,\E[0m \033[1m\E[32m$USER\E[0m\E[0m"
   echo -e "     \E[37mCe script est avant tout un projet personnel,\E[0m"
   echo -e "     \E[37mje compte le proposer à \E[36mErwan\E[0m \E[37met\E[0m \E[36mQuentin\E[0m\E[37m, deux développeurs chevronné afin de voir\E[0m"
-  echo -e "     \E[37msi ils seraient intéressé pour le diffuser à leur communauté (\E[33mDyma\E[0m).\E[0m"
+  echo -e "     \E[37ms'ils seraient intéressés pour le diffuser à leur communauté (\E[33mDyma\E[0m).\E[0m"
   space
-  echo -e "     \E[37mJe m'appel\E[0m \E[32mAlain Guillon\E[0m\E[37\033[2m, développeur dit \"\033[1m\E[96mJunior\033[0m\E[0m\" \E[37mavec tout de même quelques bases très solide.\033[0m\E[0m"
+  echo -e "     \E[37mJe m'appelle\E[0m \E[32mAlain Guillon\E[0m\E[37\033[2m, développeur dit \"\033[1m\E[96mJunior\033[0m\E[0m\" \E[37mavec tout de même quelques bases très solide.\033[0m\E[0m"
   echo -e "     \E[37mVia ce script, je ne cherche aucunement à monnayer celui-ci.\E[0m"
-  echo -e "     \E[37mSi je peux apporter un complément ou bien faciliter l'installation de tel ou tel programme\E[0m"
-  echo -e "     \E[37maux communs des mortels, je ne dis pas nom.\E[0m\n"
-
-  echo -e "     \E[37mJe vais par la suite voir pour diffuser celui-ci sur la plateforme \E[95mLinkedin\E[0m\E[0m"
-  echo -e "     \E[37mafin de permettre à un nombre conséquent d'étudiant sur Linux ou Mac de ne plus avoir la crainte\E[0m"
-  echo -e "     \E[37md'installer ou de supprimer un quelconque programme.\E[0m"
+  echo -e "     \E[37mSi je peux apporter un complément ou bien faciliter l'installation de tel ou tel programme sur Linux ou Mac.\E[0m"
+  space 
+  echo -e "     \E[37mJe vais par la suite voir pour diffuser celui-ci sur la plateforme \E[95mLinkedin\E[0m\E[37m avec leurs accords \E[0m"
+  echo -e "     \E[37mafin de permettre à un nombre conséquent d'étudiants de ne plus avoir à craindre \E[0m"
+  echo -e "     \E[37md'installer ou de supprimer un quelconque programme sur ces OS.\E[0m"
   space
   echo -e "     \E[33mJe vous propose via ce script ceci :\E[0m"
-  echo -e "         \E[33m1. Vous y trouverez des programmes que j'utilise.\E[0m"
-  echo -e "             \E[37m- (Uniquement des programmes disponible avec \E[36msnap\E[0m \E[37mou\E[0m \E[36mapt\E[0m\E[37m)\E[0m" 
-  echo -e "         \E[33m2. Des tâches automatisés pour installer, désinstaller des programmes ou technologie :P\E[0m"
+  echo -e "         \E[33m1. vous y trouverez des programmes que j'utilise.\E[0m"
+  echo -e "             \E[37m- (Uniquement des programmes disponibles avec \E[36msnap\E[0m \E[37mou\E[0m \E[36mapt\E[0m\E[37m)\E[0m" 
+  echo -e "         \E[33m2. Des tâches automatisées pour installer, désinstaller des programmes ou technologie :P\E[0m"
   space
   echo -e " \E[37m ---------------------------------------------------------------------------------------------------------------------- \E["
   space
 
-  echo -e "\t\E[34m👉 Si vous le souhaitez, je peux vous parrainez sur la plateforme de Dyma.fr ❗ \E[91mAucune obligation\E[0m\E[0m"
+  echo -e "\t\E[34m👉 Si vous le souhaitez, je peux vous parrainer sur la plateforme de Dyma.fr ❗ \E[91mAucune obligation\E[0m\E[0m"
   echo -e "\t👉 \E[34mVous serez libre de tester leur plateforme pendant 7 jours gratuitement.\E[0m"
   echo -e "\t👉 \E[34mSi ça vous intéresse, \E[33mil vous suffira de maintenir CTRL\E[0m \E[34met de\E[0m \E[33mcliquer sur le lien ci-dessous\E[0m \E[37m:\E[0m"
   echo -e "\t👉 \033[3m\E[92mhttps://dyma.fr/r/5d52bd274e7aec730eb90fde\033[0m\E[0m"
   space
-  read -p "   Appuyer sur une touche pour continuer..."
+  read -p "   Appuyer sur une touche pour continuer ..."
   clear
 }
 
@@ -848,11 +847,11 @@ fct_show_version()            # Description : Affiche la version d'un programme 
 
   if [ $PROGRAMME_NAME = "android" ]; then
     echo -e " \E[36m+ ---------------------------------------------------------------------------------------- +\E[0m"
-    echo -e " \E[36m|\E[0m  \E[33mStatut actuel de la technologie $PROGRAMME_NAME :\E[0m \E[32m$(fct_check_version $PROGRAMME_NAME)\E[0m"
+    echo -e " \E[36m|\E[0m  \E[33mStatut actuel du programme $PROGRAMME_NAME :\E[0m \E[32m$(fct_check_version $PROGRAMME_NAME)\E[0m"
     echo -e " \E[36m+ ---------------------------------------------------------------------------------------- +\E[0m"
   else
     echo -e " \E[36m+ ---------------------------------------------------------------------------------------- +\E[0m"
-    echo -e " \E[36m|\E[0m  \E[33mStatut actuel de la technologie $PROGRAMME_NAME :\E[0m \E[32m$(fct_which_name $PROGRAMME_NAME)\E[0m"
+    echo -e " \E[36m|\E[0m  \E[33mStatut actuel du programme $PROGRAMME_NAME :\E[0m \E[32m$(fct_which_name $PROGRAMME_NAME)\E[0m"
     echo -e " \E[36m+ ---------------------------------------------------------------------------------------- +\E[0m"
   fi
   space
@@ -902,7 +901,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
   PROGRAMME_NAME=$1
 
   # Choix des actions à effectuer
-  select option in "Installation de $PROGRAMME_NAME" "Désinstallation de $PROGRAMME_NAME" "Allez à la page des applications" "Allez à la page d'accueil"
+  select option in "Installation de $PROGRAMME_NAME" "Désinstallation de $PROGRAMME_NAME" "allez à la page des applications" "allez à la page d'accueil"
   do
     case $option in
       
@@ -1021,7 +1020,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 RESULT=$(fct_which_name $PROGRAMME_NAME)
               fi
 
-              echo "Veuillez patientez, l'installation de $PROGRAMME_NAME va démarrer dans une seconde... (1s)"
+              echo "Veuillez patienter, l'installation de $PROGRAMME_NAME va démarrer dans une seconde... (1s)"
               loading
               sleep 1
 
@@ -1147,9 +1146,9 @@ fct_info_programme()          # Description : Afficher les informations du progr
         # Désinstallation de la technologie
         space
         echo -e " \E[36m+ --------------------------------------------------------------------------- +\E[0m"
-        echo -e " \E[36m|\E[0m \E[33mDésinstallation de $PROGRAMME_NAME\E[0m"
+        echo -e " \E[36m|\E[0m \E[33mDésinstallations de $PROGRAMME_NAME\E[0m"
         echo -e " \E[36m+ --------------------------------------------------------------------------- +\E[0m"
-        echo -e " \E[36m|\E[0m  \E[37mPour désinstaller $PROGRAMME_NAME, nous aurions dû saisir les commandes suivantes :\E[0m"
+        echo -e " \E[36m|\E[0m  \E[37mPour désinstaller $PROGRAMME_NAME, il aurait fallu taper les commandes suivantes :\E[0m"
 
         echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo apt-get update -y\E[0m"
         if [ $PROGRAMME_NAME = "curl" ]; then
@@ -1181,16 +1180,17 @@ fct_info_programme()          # Description : Afficher les informations du progr
         elif [  $PROGRAMME_NAME = "code" -o $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "blender" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" ]; then
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo snap remove $PROGRAMME_NAME\E[0m"
 
-        elif [ $PROGRAMME_NAME = "firefox" ]; thenelif [ $PROGRAMME_NAME = "angular" ]; then
-                sudo npm remove -g @angular/cli
-                fct_back_to "home"
-
-              elif [ $PROGRAMME_NAME = "typescript" ]; then
-                sudo npm remove -g typescript -y
-                fct_back_to "home"
+        elif [ $PROGRAMME_NAME = "firefox" ]; then
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt-get remove firefox\E[0m"
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo snap remove firefox\E[0m"
 
+        elif [ $PROGRAMME_NAME = "android" ]; then
+          echo -e " \E[96m| \E[0m ⇨ \E[95mrm -rf android-studio-2021.1.1.22-linux.tar.gz\E[0m"
+          echo -e " \E[96m| \E[0m ⇨ \E[95mrm -rf ~/android-studio\E[0m"
+          echo -e " \E[96m| \E[0m ⇨ \E[95msed '/# Alias Android-Studio/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
+          echo -e " \E[96m| \E[0m ⇨ \E[95msed '/alias studio=\"~\/android-studio\/bin\/studio.sh\"/d' ~/.bashrc_tmp > ~/.bashrc\E[0m"
+          echo -e " \E[96m| \E[0m ⇨ \E[95msource ~/.bashrc\E[0m"
+          
         elif [ $PROGRAMME_NAME = "kylin-video" ]; then
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt remove kylin-video -y\E[0m"
         
@@ -1214,7 +1214,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 RESULT=$(fct_which_name $PROGRAMME_NAME)
               fi
               
-              echo "Veuillez patientez, la désinstallation de $PROGRAMME_NAME va démarrer dans une seconde... (1s)"
+              echo "Veuillez patienter, la désinstallation de $PROGRAMME_NAME va démarrer dans une seconde... (1s)"
               loading
               sleep 1
 
@@ -1284,24 +1284,20 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 sudo apt remove $PROGRAMME_NAME -y
 
               elif [ $PROGRAMME_NAME = "android" ]; then
-                
                 rm -rf android-studio-2021.1.1.22-linux.tar.gz
                 rm -rf ~/android-studio
-                
                 sed '/# Alias Android-Studio/d' ~/.bashrc > ~/.bashrc_tmp
                 sed '/alias studio="~\/android-studio\/bin\/studio.sh"/d' ~/.bashrc_tmp > ~/.bashrc
                 source ~/.bashrc
-                source zyrass.sh
-
                 fct_back_to "app"
 
               fi
 
               echo -e "\E[32m+ ------------------------------------------------------------------------------------------------ +\E[0m"
-              echo -e "\E[33m\t\t✅ $PROGRAMME_NAME a bien été désinstallé avec succès!\E[0m"
+              echo -e "\E[33m\t\t✅ $PROGRAMME_NAME a bien été désinstallé de votre ordinateur avec succès!\E[0m"
               echo -e "\E[32m+ ------------------------------------------------------------------------------------------------ +\E[0m"
               space
-              read -p "Appuyer sur une touche pour continuer..."
+              read -p "Pressez une touche pour continuer..."
               clear
               fct_show_home_menu
               break 
@@ -1322,13 +1318,13 @@ fct_info_programme()          # Description : Afficher les informations du progr
         break
       ;;
 
-      "Allez à la page des applications")
+      "allez à la page des applications")
         clear
         fct_show_app_menu
         break
       ;;
 
-      "Allez à la page d'accueil")
+      "allez à la page d'accueil")
         clear
         fct_show_home_menu
         break
@@ -1351,9 +1347,9 @@ fct_show_home_menu()          # Description : Affichage du menu principal
     |  \E[36mCHOIX POSSIBLE\E[0m   |  \E[34mDESCRIPTION\E[0m                          |  \E[34mVERSION ACTUEL\E[0m     
     + ----------------- + ------------------------------------- + ------------------------------ +
     | \E[95m01\E[0m. \E[36mcURL\E[0m          |  \E[34mINDISPENSABLE\E[0m                        | $(fct_check_version curl)
-    | \E[95m02\E[0m. \E[36mNode\E[0m          |  \E[34mRuntime JavaScript\E[0m                   | $(fct_check_version node)
+    | \E[95m02\E[0m. \E[36mNode\E[91m*\E[0m\E[0m         |  \E[34mRuntime JavaScript\E[0m                   | $(fct_check_version node)
     | \E[95m03\E[0m. \E[36mGit\E[0m           |  \E[34mGérer ces projets sans crainte\E[0m       | $(fct_check_version git)
-    | \E[95m04\E[0m. \E[36mDocker\E[0m        |  \E[34mCréer des images de ces projets\E[0m      | $(fct_check_version docker)
+    | \E[95m04\E[0m. \E[36mDocker\E[91m*\E[0m\E[0m       |  \E[34mCréer des images de ces projets\E[0m      | $(fct_check_version docker)
     | \E[95m05\E[0m. \E[36mPHP\E[0m           |  \E[34mReprésente +50% des sites web\E[0m        | $(fct_check_version php)
     | \E[95m06\E[0m. \E[36mMySQL\E[0m         |  \E[34mBase de données\E[0m                      | $(fct_check_version mysql)
     | \E[95m07\E[0m. \E[36mComposer\E[0m      |  \E[34mUtile pour PHP, Symfony, Laravel\E[0m     | $(fct_check_version composer)
@@ -1362,15 +1358,14 @@ fct_show_home_menu()          # Description : Affichage du menu principal
     | \E[95m10\E[0m. \E[36mReact\E[91m*\E[0m\E[0m        |  \E[34mFramework Javascript (moyen)\E[0m         | $(fct_check_version react)
     | \E[95m11\E[0m. \E[36mAngular\E[0m       |  \E[34mFramework Javascript (dur)\E[0m           | $(fct_check_version angular)
     | \E[95m12\E[0m. \E[36mTypeScript\E[0m    |  \E[34mTyper son code JavaScript\E[0m            | $(fct_check_version typescript)
-    | \E[95m13\E[0m. \E[36mPython\E[91m*\E[0m\E[0m       |  \E[34mLangage surpuissant et simple\E[0m        | $(fct_check_version python)
+    | \E[95m13\E[0m. \E[36mPython\E[91m*\E[0m       |  \E[34mLangage surpuissant et simple\E[0m        | $(fct_check_version python)
     | \E[95m14\E[0m. \E[36mFlutter\E[0m       |  \E[34mConcevoir des apps mobile\E[0m            | $(fct_check_version flutter)
     + ----------------- + ------------------------------------- + ------------------------------ +
-    | \E[33m15\E[0m. \E[37mApplications\E[0m  |  \E[37m\E[3mDes programmes utiles à installer très vite... ou à désinstaller\E[0m
+    | \E[33m15\E[0m. \E[37mApplications\E[0m  |  \E[37m\E[3mdes programmes utiles à installer très vite... ou à désinstaller\E[0m
     | \E[33m16\E[0m. \E[37mQuitter\E[0m
     + ----------------- + ------------------------------------- + ------------------------------ +"
-    echo -e "  \E[33m  A tout moment, vous pouvez taper sur\E[0m \E[34mCTRL + C\E[0m \E[33mpour stopper l'exécution du script.\E[0m"
-    echo -e "  \E[91m  *: Toutes les applications ou programme précédé d'un astérix ne sont pas totalement finalisé.\E[0m"
-
+  echo -e "\E[95m     ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
+  echo -e "\E[91m     ❌ *: Toutes les applications ou programme précédé d'un Astérix ne sont pas totalement finalisées.\E[0m"
   space
 
   select option in cURL Node Git Docker PHP MySQL Composer Symfony Vue React Angular TypeScript Python Flutter Applications Quitter
@@ -1526,7 +1521,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         clear
         fct_show_logo "angular"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mangular\E[0m\E[0m :\E[0m"
+        echo -e " \E[34mDescription d'\E[36m\E[1mangular\E[0m\E[0m :\E[0m"
         echo -e "   ⇨ \E[37mAngular est un framework côté client, open source, basé sur TypeScript,\E[0m"
         echo -e "   ⇨ \E[37met co-dirigé par l'équipe du projet « Angular » à Google et par une communauté de particuliers et de sociétés.\E[0m"
         echo -e "   ⇨ \E[37mAngular est une réécriture complète d'AngularJS, cadriciel construit par la même équipe.\E[0m"
@@ -1582,7 +1577,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
       Quitter)
         space
         echo -e "\E[37m  ⇨  Vous pouvez saisir dans votre terminal la commande\E[0m \E[36mclear\E[0m \E[37mpour nettoyer celui-ci.\E[0m" 
-        echo -e "\E[37m  ⇨  Je vous remercie chaleureusement d'avoir essayer ce script.\E[0m" 
+        echo -e "\E[37m  ⇨  Je vous remercie chaleureusement d'avoir essayé ce script.\E[0m" 
         echo -e "\E[37m  ⇨  Amicalement\E[0m \E[36mZyrass\E[0m" 
         space
         exit
@@ -1601,34 +1596,34 @@ fct_show_app_menu() {
     |  \E[36mCHOIX POSSIBLE\E[0m      |  \E[34mDESCRIPTION\E[0m                               | \E[34mVERSION ACTUEL\E[0m     
     + -------------------- + ------------------------------------------ + ---------------------------------- +
     | \E[95m01\E[0m. \E[36mVS.Code\E[0m          |  \E[34mLe plus utilisé aujourd'hui\E[0m               | \E[32m$(fct_which_name code)\E[0m
-    | \E[95m02\E[0m. \E[36mMySQL Workbench\E[0m  |  \E[34mGérer une base de données open source\E[0m     | \E[32m$(fct_which_name mysql-workbench-community)\E[0m
+    | \E[95m02\E[0m. \E[36mMySQL Workbench\E[0m  |  \E[34mManipule une base de données open source\E[0m  | \E[32m$(fct_which_name mysql-workbench-community)\E[0m
     | \E[95m03\E[0m. \E[36mChromium\E[0m         |  \E[34mNavigateur web\E[0m                            | \E[32m$(fct_which_name chromium)\E[0m
     | \E[95m04\E[0m. \E[36mFirefox\E[0m          |  \E[34mNavigateur web\E[0m                            | \E[32m$(fct_which_name firefox)\E[0m
     | \E[95m05\E[0m. \E[36mBrave\E[0m            |  \E[34mNavigateur web\E[0m                            | \E[32m$(fct_which_name brave)\E[0m
     | \E[95m06\E[0m. \E[36mOpera\E[0m            |  \E[34mNavigateur web\E[0m                            | \E[32m$(fct_which_name opera)\E[0m
-    | \E[95m07\E[0m. \E[36mPostman\E[0m          |  \E[34mGérer ces API en toute tranquilité\E[0m        | \E[32m$(fct_which_name postman)\E[0m
-    | \E[95m08\E[0m. \E[36mFigma\E[0m            |  \E[34mConcevez vos mockup avec classe\E[0m           | \E[32m$(fct_which_name figma-linux)\E[0m
-    | \E[95m09\E[0m. \E[36mKrita\E[0m            |  \E[34mLe photoshop libre\E[0m                        | \E[32m$(fct_which_name krita)\E[0m
-    | \E[95m10\E[0m. \E[36mDiscord\E[0m          |  \E[34mTchaté avec vos amis et collègues\E[0m         | \E[32m$(fct_which_name discord)\E[0m
-    | \E[95m11\E[0m. \E[36mSpotify\E[0m          |  \E[34mEcouter votre musique préféré\E[0m             | \E[32m$(fct_which_name spotify)\E[0m
+    | \E[95m07\E[0m. \E[36mPostman\E[0m          |  \E[34mGérer ces API en toute tranquillité\E[0m       | \E[32m$(fct_which_name postman)\E[0m
+    | \E[95m08\E[0m. \E[36mFigma\E[0m            |  \E[34mConcevez vos mockups avec classe\E[0m          | \E[32m$(fct_which_name figma-linux)\E[0m
+    | \E[95m09\E[0m. \E[36mKrita\E[0m            |  \E[34mLe Photoshop open source\E[0m                  | \E[32m$(fct_which_name krita)\E[0m
+    | \E[95m10\E[0m. \E[36mDiscord\E[0m          |  \E[34mTchaté avec vos amis et collègue\E[0m          | \E[32m$(fct_which_name discord)\E[0m
+    | \E[95m11\E[0m. \E[36mSpotify\E[0m          |  \E[34mÉcouter votre musique préféré\E[0m             | \E[32m$(fct_which_name spotify)\E[0m
     | \E[95m12\E[0m. \E[36mThunderbird\E[0m      |  \E[34mGérer ces mail avec classe\E[0m                | \E[32m$(fct_which_name thunderbird)\E[0m
-    | \E[95m13\E[0m. \E[36mKylin-Video\E[0m      |  \E[34mUn lecteur Vidéo sympatique\E[0m               | \E[32m$(fct_which_name kylin-video)\E[0m
-    | \E[95m14\E[0m. \E[36mOBS-Studio\E[0m       |  \E[34mCréér ces propres vidéos\E[0m                  | \E[32m$(fct_which_name obs-studio)\E[0m
+    | \E[95m13\E[0m. \E[36mKylin-Video\E[0m      |  \E[34mUn lecteur vidéo sympatiques\E[0m              | \E[32m$(fct_which_name kylin-video)\E[0m
+    | \E[95m14\E[0m. \E[36mOBS-Studio\E[0m       |  \E[34mCréér ses propres vidéos\E[0m                  | \E[32m$(fct_which_name obs-studio)\E[0m
     | \E[95m15\E[0m. \E[36mBlender\E[0m          |  \E[34mModéliser des objets en 3D\E[0m                | \E[32m$(fct_which_name blender)\E[0m
     | \E[95m16\E[0m. \E[36mVLC\E[0m              |  \E[34mLecteur Vidéo\E[0m                             | \E[32m$(fct_which_name vlc)\E[0m
     | \E[95m17\E[0m. \E[36mOkular\E[0m           |  \E[34mLecteur PDF et bien plus encore\E[0m           | \E[32m$(fct_which_name okular)\E[0m
     | \E[95m18\E[0m. \E[36mGIMP\E[0m             |  \E[34mLogiciel de dessin\E[0m                        | \E[32m$(fct_which_name gimp)\E[0m
-    | \E[95m19\E[0m. \E[36mAndroid-Studio\E[91m*\E[0m\E[0m  |  \E[34mEditeur d'application mobile\E[0m              | \E[32m$(fct_check_version android)\E[0m
+    | \E[95m19\E[0m. \E[36mAndroid-Studio\E[91m*\E[0m\E[0m  |  \E[34mÉditeur d'application mobile\E[0m              | \E[32m$(fct_check_version android)\E[0m
     + -------------------- + ------------------------------------------ + ---------------------------------- +
     | \E[33m20\E[0m. Retour
     | \E[33m21\E[0m. Quitter
     + -------------------- + ------------------------------------------ + ---------------------------------- +"
-  echo -e "\E[95m       ❗ A tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
-  echo -e "\E[91m       ❌ *: Toutes les applications ou programme précédé d'un astérix ne sont pas totalement finalisé.\E[0m"
+  echo -e "\E[95m       ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
+  echo -e "\E[91m       ❌ *: Toutes les applications ou programme précédé d'un Astérix ne sont pas totalement finalisées.\E[0m"
   space
 
   PS3="
-  Quelle est vôtre choix : "
+  Quel est votre choix : "
 
   select option in VS.Code MySQL-Workbench Chromium Firefox Brave Opera Postman Figma-Linux Krita Discord Spotify Thunderbird Kylin-Video OBS-Studio Blender VLC Okular GIMP Android Menu_Principal Quitter
   do
@@ -1703,7 +1698,7 @@ fct_show_app_menu() {
         clear
         fct_show_logo "opera"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mopera\E[0m\E[0m :\E[0m"
+        echo -e " \E[34mDescription d'\E[36m\E[1mopera\E[0m\E[0m :\E[0m"
         echo -e "   ⇨ \E[37mOpera est un navigateur web gratuit développé par la société norvégienne Opera Software depuis 1995.\E[0m"
         echo -e "   ⇨ \E[37mLe navigateur est disponible sur PC et mobiles.\E[0m"
         echo -e "   ⇨ \E[37mOpera totalise environ 1,9 % de parts de marché des navigateurs web, et environ 2,3 % sur les mobiles en mars 2021.\E[0m"
@@ -1805,7 +1800,7 @@ fct_show_app_menu() {
         clear
         fct_show_logo "obs-studio"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mobs-studio\E[0m\E[0m :\E[0m"
+        echo -e " \E[34mDescription d'\E[36m\E[1mobs-studio\E[0m\E[0m :\E[0m"
         echo -e "   ⇨ \E[37mOBS Studio, abrégé en OBS, est un logiciel libre et open source de capture d'écran\E[0m"
         echo -e "   ⇨ \E[37met de streaming pour Microsoft Windows, MacOS et Linux.\E[0m"
         echo -e "   ⇨ \E[37mIl remplace Open Broadcaster Software et devient ainsi multiplateforme.\E[0m"
@@ -1845,7 +1840,7 @@ fct_show_app_menu() {
         clear
         fct_show_logo "okular"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mokular\E[0m\E[0m :\E[0m"
+        echo -e " \E[34mDescription d'\E[36m\E[1mokular\E[0m\E[0m :\E[0m"
         echo -e "   ⇨ \E[37mOkular est la visionneuse de documents de KDE4.\E[0m"
         echo -e "   ⇨ \E[37mIl est basé sur KPDF et remplace KPDF, KGhostView, KFax, KFaxview, KDVI dans KDE4.\E[0m"
         echo -e "   ⇨ \E[37mCette fonctionnalité peut être facilement incorporée à d’autres applications.\E[0m"
@@ -1873,7 +1868,7 @@ fct_show_app_menu() {
         clear
         fct_show_logo "android"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mandroid\E[0m\E[0m :\E[0m"
+        echo -e " \E[34mDescription d'\E[36m\E[1mandroid\E[0m\E[0m :\E[0m"
         echo -e "   ⇨ \E[37mAndroid est un système d'exploitation mobile fondé sur le noyau Linux\E[0m"
         echo -e "   ⇨ \E[37met développé par des informaticiens sponsorisés par Google.\E[0m"
         space
@@ -1890,7 +1885,7 @@ fct_show_app_menu() {
         echo -e "\E[37m  ⇨  Vous pouvez saisir dans votre terminal la commande\E[0m \E[36mclear\E[0m \E[37mpour nettoyer celui-ci.\E[0m" 
         echo -e "\E[37m  ⇨  Ou bien, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[37mpour stopper l'exécution du script à tout moment.\E[0m" 
         space
-        echo -e "\E[37m  ⇨  Je vous remercie d'avoir essayer ce script.\E[0m" 
+        echo -e "\E[37m  ⇨  Je vous remercie d'avoir essayé ce script.\E[0m" 
         echo -e "\E[37m  ⇨  Amicalement\E[0m \E[36mZyrass\E[0m" 
         space
         exit
@@ -1900,6 +1895,14 @@ fct_show_app_menu() {
 }
 
 # PROGRAMME
+
+space
+echo -e "\t\E[36mPour une meilleure expérience,\E[0m"
+echo -e "\t\E[36mveuillez lancer le script en mode pleine écran.\E[0m"
+space
+read -p "Veuillez appuyer sur Entrée pour continuer."
+clear
+
 fct_show_logo dyma
 fct_message_presentation
 fct_show_home_menu

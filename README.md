@@ -8,16 +8,15 @@ Tout ce que j'ai fais c'est grâce à 90% des cours suivie sur Dyma.FR.
 ## A venir
 
   1. Mise en place d'un début de fonctionnement pour installer Android-Studio (le tout totalement automatisé)
-     - Téléchargement de l'archive
-     - Vérification si le dossier Archive existe
-       - Si oui, on supprimera tout ce qu'il y a dedans
-       - Sinon on créera le répertoire
-     - Extraction de l'archive ~/Android/
-       - Ajout probablement des droits pour ce répertoire
-     - Création d'un alias Android dans le fichier bashrc
-     - Ajout d'un message pour se créer un raccourcie
+     - [X] - Téléchargement de l'archive
+     - [] - Vérification si le dossier Archive existe
+       - [] - Si oui, on supprimera tout ce qu'il y a dedans
+       - [] - Sinon on créera le répertoire
+     - [X] - Extraction de l'archive ~/Android/
+     - [X] - Création d'un alias Android dans le fichier bashrc
+     - [] - Ajout d'un message pour se créer un raccourcie
      - Check la version d'android
-     - Suppression de l'archive téléchargé
+     - [X] - Suppression de l'archive téléchargé
   
 ## Changelog
 
@@ -26,6 +25,8 @@ Tout ce que j'ai fais c'est grâce à 90% des cours suivie sur Dyma.FR.
     - [X] - Ajout du logo Ubuntu
     - [X] - Modification de la présentation avec ajout du logo selon le système d'exploitation.
     - [X] - Modification des textes de la présentation et ajout de quelques couleurs supplémentaire.
+    - [X] - Début d'une correction orthographique
+    - [X] - Ajout d'un message demandant de passer en pleine écran pour une meilleure expérience.
 
   - **07/03/2022**
     - [X] - Suppression de trois appels de fonction pour créer un espace après l'exécution du chargement.
