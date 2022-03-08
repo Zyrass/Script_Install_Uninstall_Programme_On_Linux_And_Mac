@@ -27,6 +27,7 @@ Tout ce que j'ai fais c'est grâce à 90% des cours suivie sur Dyma.FR.
     - [X] - Modification des textes de la présentation et ajout de quelques couleurs supplémentaire.
     - [X] - Début d'une correction orthographique
     - [X] - Ajout d'un message demandant de passer en pleine écran pour une meilleure expérience.
+    - [X] - Ajout du programme Spectacle
 
   - **07/03/2022**
     - [X] - Suppression de trois appels de fonction pour créer un espace après l'exécution du chargement.

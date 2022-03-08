@@ -664,6 +664,19 @@ fct_show_logo()               # Description : Affiche le logo
       space
     ;;
 
+    spectacle)
+      echo -e "\033[1m\E[36m
+         _______  _______  _______  _______ _________ _______  _______  _        _______ 
+        (  ____ \(  ____ )(  ____ \(  ____ \\\\__   __/(  ___  )(  ____ \( \      (  ____ \\
+        | (    \/| (    )|| (    \/| (    \/   ) (   | (   ) || (    \/| (      | (    \/
+        | (_____ | (____)|| (__    | |         | |   | (___) || |      | |      | (__    
+        (_____  )|  _____)|  __)   | |         | |   |  ___  || |      | |      |  __)   
+              ) || (      | (      | |         | |   | (   ) || |      | |      | (      
+        /\____) || )      | (____/\| (____/\   | |   | )   ( || (____/\| (____/\| (____/\\
+        \_______)|/       (_______/(_______/   )_(   |/     \|(_______/(_______/(_______/\033[0m\E[0m by \E[95mZyrass\E[0m"
+      space
+    ;;
+
   esac
 }
 
@@ -988,7 +1001,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
         elif [ $PROGRAMME_NAME = "code" -o $PROGRAMME_NAME = "blender"  ]; then
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo snap install  $PROGRAMME_NAME --classic\E[0m"
 
-        elif [  $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "firefox" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" ]; then
+        elif [  $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "firefox" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" -o $PROGRAMME_NAME = "spectacle" ]; then
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo snap install $PROGRAMME_NAME\E[0m"
 
         elif [ $PROGRAMME_NAME = "kylin-video" ]; then
@@ -1106,7 +1119,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
               elif [ $PROGRAMME_NAME = "code" -o $PROGRAMME_NAME = "blender"  ]; then
                 sudo snap install  $PROGRAMME_NAME --classic
                 fct_back_to "app"
-              elif [  $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "firefox" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" ]; then
+              elif [  $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "firefox" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" -o $PROGRAMME_NAME = "spectacle" ]; then
                 sudo snap install $PROGRAMME_NAME
                 fct_back_to "app"
               elif [ $PROGRAMME_NAME = "kylin-video" ]; then
@@ -1177,7 +1190,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo npm uninstall -g typescript -y\E[0m"
 
         # APPLICATIONS
-        elif [  $PROGRAMME_NAME = "code" -o $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "blender" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" ]; then
+        elif [  $PROGRAMME_NAME = "code" -o $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "blender" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" -o $PROGRAMME_NAME = "spectacle" ]; then
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo snap remove $PROGRAMME_NAME\E[0m"
 
         elif [ $PROGRAMME_NAME = "firefox" ]; then
@@ -1273,7 +1286,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
               #   sudo apt-get remove python3.10
 
               # APPLICATIONS
-              elif [  $PROGRAMME_NAME = "code" -o $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "blender" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" ]; then
+              elif [  $PROGRAMME_NAME = "code" -o $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "blender" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" -o $PROGRAMME_NAME = "spectacle" ]; then
                 sudo snap remove $PROGRAMME_NAME
 
               elif [ $PROGRAMME_NAME = "firefox" ]; then
@@ -1614,9 +1627,10 @@ fct_show_app_menu() {
     | \E[95m17\E[0m. \E[36mOkular\E[0m           |  \E[34mLecteur PDF et bien plus encore\E[0m           | \E[32m$(fct_which_name okular)\E[0m
     | \E[95m18\E[0m. \E[36mGIMP\E[0m             |  \E[34mLogiciel de dessin\E[0m                        | \E[32m$(fct_which_name gimp)\E[0m
     | \E[95m19\E[0m. \E[36mAndroid-Studio\E[91m*\E[0m\E[0m  |  \E[34mÉditeur d'application mobile\E[0m              | \E[32m$(fct_check_version android)\E[0m
+    | \E[95m20\E[0m. \E[36mSpectacle\E[0m        |  \E[34mPermet de capturer son écran facilement\E[0m   | \E[32m$(fct_which_name spectacle)\E[0m
     + -------------------- + ------------------------------------------ + ---------------------------------- +
-    | \E[33m20\E[0m. Retour
-    | \E[33m21\E[0m. Quitter
+    | \E[33m21\E[0m. Retour
+    | \E[33m22\E[0m. Quitter
     + -------------------- + ------------------------------------------ + ---------------------------------- +"
   echo -e "\E[95m       ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
   echo -e "\E[91m       ❌ *: Toutes les applications ou programme précédé d'un Astérix ne sont pas totalement finalisées.\E[0m"
@@ -1625,7 +1639,7 @@ fct_show_app_menu() {
   PS3="
   Quel est votre choix : "
 
-  select option in VS.Code MySQL-Workbench Chromium Firefox Brave Opera Postman Figma-Linux Krita Discord Spotify Thunderbird Kylin-Video OBS-Studio Blender VLC Okular GIMP Android Menu_Principal Quitter
+  select option in VS.Code MySQL-Workbench Chromium Firefox Brave Opera Postman Figma-Linux Krita Discord Spotify Thunderbird Kylin-Video OBS-Studio Blender VLC Okular GIMP Android Spectacle Menu_Principal Quitter
   do
     case $option in
       VS.Code)
@@ -1876,6 +1890,23 @@ fct_show_app_menu() {
         fct_show_version "android"
         fct_info_programme "android"
         ;;
+
+      Spectacle)
+        clear
+        fct_show_logo "spectacle"
+  
+        echo -e " \E[34mDescription de \E[36m\E[1mspectacle\E[0m\E[0m :\E[0m"
+        echo -e "   ⇨ \E[37mSpectacle est une application simple permettant la réalisation de captures d'écran.\E[0m"
+        echo -e "   ⇨ \E[37mL'application permet la capture d'images du bureau complet, d'un unique moniteur,\E[0m"
+        echo -e "   ⇨ \E[37mde la fenêtre se trouvant sous le pointeur,ou du région rectangulaire de l'écran.\E[0m"
+        echo -e "   ⇨ \E[37mLes images peuvent être imprimées, envoyées vers d'autres applications pour y être manipulées\E[0m"
+        echo -e "   ⇨ \E[37mou rapidement enregistrées telles-quelles.\E[0m"
+        space         
+             
+        fct_show_version "spectacle"
+        fct_info_programme "spectacle"
+        ;;
+
       Menu_Principal)
         clear
         fct_show_home_menu
