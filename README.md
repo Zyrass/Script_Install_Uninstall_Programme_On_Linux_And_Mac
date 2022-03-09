@@ -8,17 +8,24 @@ Tout ce que j'ai fais c'est grâce à 90% des cours suivie sur Dyma.FR.
 ## A venir
 
   1. Mise en place d'un début de fonctionnement pour installer Android-Studio (le tout totalement automatisé)
-     - [X] - Téléchargement de l'archive
-     - [] - Vérification si le dossier Archive existe
-       - [] - Si oui, on supprimera tout ce qu'il y a dedans
-       - [] - Sinon on créera le répertoire
-     - [X] - Extraction de l'archive ~/Android/
-     - [X] - Création d'un alias Android dans le fichier bashrc
-     - [] - Ajout d'un message pour se créer un raccourcie
-     - Check la version d'android
-     - [X] - Suppression de l'archive téléchargé
-  
+    - [X] - Téléchargement de l'archive
+    - [] - Vérification si le dossier Archive existe
+      - [] - Si oui, on supprimera tout ce qu'il y a dedans
+      - [] - Sinon on créera le répertoire
+    - [X] - Extraction de l'archive ~/Android/
+    - [X] - Création d'un alias Android dans le fichier bashrc
+    - [] - Ajout d'un message pour se créer un raccourcie
+    - Check la version d'android
+    - [X] - Suppression de l'archive téléchargé
+  2. Ajout d'un 3ème menu pour justement ajouter des fonctionnalité supplémentaire pour linux
+    - [] - Création du menu (Linux !?)  
+      - [] - 01 - Ajout de la couleur dans les manuels (terminal)
+        - [] - Ajout dans le .bashrc des configuration spécifique pour la couleur
+      - [] - 02 - Ajout de la commande tree
 ## Changelog
+
+  - **09/03/2022**
+    - [X] - Ajout des prochains ajouts à venir dans le fichier README.md 
 
   - **08/03/2022**
     - [X] - Ajout du logo Apple
