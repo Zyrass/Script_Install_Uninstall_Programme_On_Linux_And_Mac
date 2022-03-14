@@ -4,7 +4,6 @@
 PS3="
   Quel est votre choix : "
 
-
 check_os()                       # Description : Connaître l'OS et le numéro de version du Mac utilisé
 {
   version_macOS=$(uname -a | cut -d " " -f 3)
@@ -746,8 +745,14 @@ fct_check_version()           # Description : Vérifier la version d'un programm
       version_composer=$(composer -V | head -n 1 | cut -d " " -f 3)
       echo -e "\E[33m$version_composer\E[0m"
     elif [ $PROGRAMME_NAME = "symfony" ]; then
-      version_symfony=$(symfony -V | grep -Ei version | cut -d " " -f 4 | cut -d "v" -f 2)
-      echo -e "\E[33m$version_symfony\E[0m"
+
+      if [ -d ./test_install/symfony/test_install_symfony ]; then
+        version_symfony=$(grep -Ei https://github.com/symfony/cache/tree/v ./test_install/symfony/test_install_symfony/composer.lock | head -n 1 | cut -d "\"" -f 4 | cut -d "v" -f 2)
+        version_symfony_cli=$(symfony -V | grep -Ei version | cut -d " " -f 4 | cut -d "v" -f 2)
+        echo -e "\E[36mSymfony CLI:\E[0m \E[33m$version_symfony_cli\E[0m \E[36mSymfony:\E[0m \E[33m$version_symfony\E[0m"
+      else
+        echo -e "\E[95mRelancé le programme pour voir les versions\E[0m"
+      fi
     # elif [ $PROGRAMME_NAME = "vue" ]; then
     #   version_vue="à éditer"
     #   echo -e "\E[33m$PROGRAMME_NAME $version_vue\E[0m"
@@ -847,6 +852,18 @@ fct_message_presentation()    # Description : Affiche la présentation du script
   echo -e "\t👉 \E[34mVous serez libre de tester leur plateforme pendant 7 jours gratuitement.\E[0m"
   echo -e "\t👉 \E[34mSi ça vous intéresse, \E[33mil vous suffira de maintenir CTRL\E[0m \E[34met de\E[0m \E[33mcliquer sur le lien ci-dessous\E[0m \E[37m:\E[0m"
   echo -e "\t👉 \033[3m\E[92mhttps://dyma.fr/r/5d52bd274e7aec730eb90fde\033[0m\E[0m"
+  space
+  echo -e " \E[37m ---------------------------------------------------------------------------------------------------------------------- \E["
+  space
+
+  echo -e "\E[95m\tUn répertoire va être créer pour tester les installations de Symfony, React ou Vue3. \E[0m"
+  if [ ! -d ./test_install ]; then
+    mkdir ./test_install
+    echo -e "\E[32m\t📁 Répertoire \"test_installation\" créé avec succès!\E[0m"
+    cd ./test_install
+  else
+    echo -e "\E[91m\t❌ 📁 Répertoire \"test_install\" déjà existant.\E[0m"
+  fi
   space
   read -p "   Appuyer sur une touche pour continuer ..."
   clear
@@ -967,12 +984,12 @@ fct_info_programme()          # Description : Afficher les informations du progr
         elif [ $PROGRAMME_NAME = "symfony" ]; then
           echo -e " \E[96m| \E[0m ⇨ \E[95mecho 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | sudo tee /etc/apt/sources.list.d/symfony-cli.list\E[0m"
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt update\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt install symfony-cli\E[0m"
-          echo -e " \E[91m| \E[0m ⇨ \E[91m\E[1m /!\ Possibilité d'avoir une erreur alors pour évité ceci on installera la dépendance ci-dessous. /!\ \E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt-get install php8.*-xml\E[0m"
-          echo -e " \E[97m| \E[0m ⇨ \E[91m\E[1m /!\ Faîtes la commande ci-dessous pour voir si tout est OK. (Encadré vert) /!\ \E[0m"
+          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt install symfony-cli -y\E[0m"
+          echo -e " \E[96m| \E[0m ⇨ \E[91m\E[1m /!\ Possibilité d'avoir une erreur alors pour évité ceci on installera la dépendance ci-dessous. /!\ \E[0m"
+          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt-get install php8.1.*-xml -y\E[0m"
+          echo -e " \E[96m| \E[0m ⇨ \E[91m\E[1m /!\ Faîtes la commande ci-dessous pour voir si tout est OK. (Encadré vert) /!\ \E[0m"
           echo -e " \E[96m| \E[0m ⇨ \E[95msymfony check:requirements\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt install libnss3-tools\E[0m"
+          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt install libnss3-tools -y\E[0m"
           echo -e " \E[96m| \E[0m ⇨ \E[95msymfony server:ca:install\E[0m"
 
         # elif [ $PROGRAMME_NAME = "phpmyadmin" ]; then
@@ -1090,13 +1107,31 @@ fct_info_programme()          # Description : Afficher les informations du progr
               elif [ $PROGRAMME_NAME = "symfony" ]; then
                 echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | sudo tee /etc/apt/sources.list.d/symfony-cli.list
                 sudo apt update
-                sudo apt install symfony-cli
-                sudo apt-get install php8.*-xml
+                sudo apt install symfony-cli -y
+                sudo apt-get install php8.1.*-xml -y
                 symfony check:requirements
 
-                sudo apt install libnss3-tools # Pour activé https sur Symfony
+                sudo apt install libnss3-tools -y # Pour activé https sur Symfony
                 symfony server:ca:install
 
+                cd ./test_install
+
+                if [ ! -d ./symfony ]; then
+                  
+                  mkdir ./symfony
+                  echo -e "\E[32m\t📁 Répertoire \"symfony\" créé avec succès!\E[0m"
+                  cd ./symfony
+
+                  space
+                  
+                  symfony new test_install_symfony
+                  echo -e "\E[32m\t✅ Création de l'application Symfony avec succès\E[0m"
+                  cd ./test_install_symfony
+
+                else
+                  echo -e "\E[91m\t❌ 📁 Sous-répertoire \"symfony\" déjà existant.\E[0m"
+                fi
+              
                 fct_back_to "home"
               
               
@@ -1277,7 +1312,24 @@ fct_info_programme()          # Description : Afficher les informations du progr
 
               elif [ $PROGRAMME_NAME = "symfony" ]; then
                 sudo apt remove $PROGRAMME_NAME-cli -y
-                sudo apt remove php8.*-xml
+                sudo apt remove php8.1.*-xml -y
+                sudo apt remove libnss3-tools -y
+
+
+                if [ -d ./test_install ]; then                  
+                  cd ./test_install
+                  if [ -d ./symfony ]; then                    
+                    rm -rf ./symfony
+                    echo -e "\E[32m\t✅  📁 Répertoire \"symfony\" supprimé avec succès!\E[0m"
+                    cd ..
+                    space
+                  else
+                    echo -e "\E[91m\t❌ 📁 Sous-répertoire \"symfony\" inexistant, rien à supprimer.\E[0m"
+                  fi
+                else
+                  echo -e "\E[91m\t❌ 📁 Répertoire \"test_install\" inexistant, rien à supprimer.\E[0m"
+                fi
+
                 fct_back_to "home"
 
               elif [ $PROGRAMME_NAME = "angular" ]; then
@@ -1363,9 +1415,9 @@ fct_show_home_menu()          # Description : Affichage du menu principal
   fct_show_logo "accueil"
 
   echo -e "
-    + ----------------- + ------------------------------------- + ------------------------------ +
+    + ----------------- + ------------------------------------- + -------------------------------------------------- +
     |  \E[36mCHOIX POSSIBLE\E[0m   |  \E[34mDESCRIPTION\E[0m                          |  \E[34mVERSION ACTUEL\E[0m     
-    + ----------------- + ------------------------------------- + ------------------------------ +
+    + ----------------- + ------------------------------------- + -------------------------------------------------- +
     | \E[95m01\E[0m. \E[36mcURL\E[0m          |  \E[34mINDISPENSABLE\E[0m                        | $(fct_check_version curl)
     | \E[95m02\E[0m. \E[36mNode\E[91m*\E[0m\E[0m         |  \E[34mRuntime JavaScript\E[0m                   | $(fct_check_version node)
     | \E[95m03\E[0m. \E[36mGit\E[0m           |  \E[34mGérer ces projets sans crainte\E[0m       | $(fct_check_version git)
@@ -1380,10 +1432,10 @@ fct_show_home_menu()          # Description : Affichage du menu principal
     | \E[95m12\E[0m. \E[36mTypeScript\E[0m    |  \E[34mTyper son code JavaScript\E[0m            | $(fct_check_version typescript)
     | \E[95m13\E[0m. \E[36mPython\E[91m*\E[0m       |  \E[34mLangage surpuissant et simple\E[0m        | $(fct_check_version python)
     | \E[95m14\E[0m. \E[36mFlutter\E[0m       |  \E[34mConcevoir des apps mobile\E[0m            | $(fct_check_version flutter)
-    + ----------------- + ------------------------------------- + ------------------------------ +
+    + ----------------- + ------------------------------------- + -------------------------------------------------- +
     | \E[33m15\E[0m. \E[37mApplications\E[0m  |  \E[37m\E[3mdes programmes utiles à installer très vite... ou à désinstaller\E[0m
     | \E[33m16\E[0m. \E[37mQuitter\E[0m
-    + ----------------- + ------------------------------------- + ------------------------------ +"
+    + ----------------- + ------------------------------------- + -------------------------------------------------- +"
   echo -e "\E[95m     ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
   echo -e "\E[91m     ❌ *: Toutes les applications ou programme précédé d'un Astérix ne sont pas totalement finalisées.\E[0m"
   space

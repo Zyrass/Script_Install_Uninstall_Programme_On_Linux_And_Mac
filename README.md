@@ -43,6 +43,8 @@ L'utilisation est très simple.
 
   - **14/03/2022**
     - [X] - Ajout du **Certificate Authority** pour Symfony.
+    - [X] - Création d'un répertoire pour faire des tests pour Symfony, React et Vue3.
+      - [X] - Symfony OK pour afficher la version de Symfony et de Symfony CLI.
 
   - **09/03/2022**
     - [X] - Ajout des prochains ajouts à venir dans le fichier README.md 
