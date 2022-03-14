@@ -972,6 +972,8 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt-get install php8.*-xml\E[0m"
           echo -e " \E[97m| \E[0m ⇨ \E[91m\E[1m /!\ Faîtes la commande ci-dessous pour voir si tout est OK. (Encadré vert) /!\ \E[0m"
           echo -e " \E[96m| \E[0m ⇨ \E[95msymfony check:requirements\E[0m"
+          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt install libnss3-tools\E[0m"
+          echo -e " \E[96m| \E[0m ⇨ \E[95msymfony server:ca:install\E[0m"
 
         # elif [ $PROGRAMME_NAME = "phpmyadmin" ]; then
         #   echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME, nous aurions dû saisir :\E[0m"
@@ -1091,6 +1093,10 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 sudo apt install symfony-cli
                 sudo apt-get install php8.*-xml
                 symfony check:requirements
+
+                sudo apt install libnss3-tools # Pour activé https sur Symfony
+                symfony server:ca:install
+
                 fct_back_to "home"
               
               
@@ -1182,6 +1188,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
         elif [ $PROGRAMME_NAME = "symfony" ]; then
           echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo apt remove $PROGRAMME_NAME-cli -y\E[0m"
           echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo apt remove php8.*-xml\E[0m"
+          echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo apt remove libnss3-tools\E[0m"
 
         elif [ $PROGRAMME_NAME = "angular" ]; then
           echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo npm uninstall -g @angular/cli\E[0m"

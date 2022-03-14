@@ -5,7 +5,24 @@ quelconque distribution linux.
 
 Tout ce que j'ai fais c'est grâce à 90% des cours suivie sur Dyma.FR.
 
-## A venir
+## 0 - Sommaire
+
+1. Comment utiliser le script !?
+2. A venir
+3. Changelog
+4. Exemple du rendu actuel
+
+## I - Comment utiliser le script !?
+
+L'utilisation est très simple.
+
+1. Vous devez récupérer le dépôt distant disponible à cette adresse : (LIEN ICI)[https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac]
+2. Dans un second temps, rendez-vous dans le répertoire fraichement récupérer.
+3. Ouvrer un terminal à cette endroit.
+4. Saisissez la commande suivante : ***`./zyrass.sh`***
+5. Suivez les étapes qui vous sont affiché à l'écran.
+
+## II - A venir
 
   1. Mise en place d'un début de fonctionnement pour installer Android-Studio (le tout totalement automatisé)
     - [X] - Téléchargement de l'archive
@@ -22,7 +39,10 @@ Tout ce que j'ai fais c'est grâce à 90% des cours suivie sur Dyma.FR.
       - [] - 01 - Ajout de la couleur dans les manuels (terminal)
         - [] - Ajout dans le .bashrc des configuration spécifique pour la couleur
       - [] - 02 - Ajout de la commande tree
-## Changelog
+## III - Changelog
+
+  - **14/03/2022**
+    - [X] - Ajout du **Certificate Authority** pour Symfony.
 
   - **09/03/2022**
     - [X] - Ajout des prochains ajouts à venir dans le fichier README.md 
@@ -72,7 +92,7 @@ Tout ce que j'ai fais c'est grâce à 90% des cours suivie sur Dyma.FR.
 
 ---
 
-## Exemple du rendu actuel
+## IV - Exemple du rendu actuel
 
 > Quelques petites modifications peuvent avoir lieu. (Couleur, texte etc..)<br>
 > En revanche on s'approche énormément du rendu final (60% ~)
