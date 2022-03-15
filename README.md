@@ -4,12 +4,16 @@ Ici il est question de créer un script shell pour une réinstallation de plusie
 
 Tout ce que j'ai faits c'est grâce à 90% des cours suivis sur **https://dyma.fr**.
 
+---
+
 ## 0 - Sommaire
 
 1. Comment utiliser le script !?
 2. À venir
 3. Changelog
 4. Exemple du rendu actuel
+
+---
 
 ## I - Comment utiliser le script ! ?
 
@@ -20,6 +24,8 @@ L'utilisation est très simple.
 3. Ouvrer un terminal à cet endroit.
 4. Saisissez la commande suivante : **_`./zyrass.sh`_**
 5. Suivez les étapes qui vous sont affichées à l'écran.
+
+---
 
 ## II - À venir
 
@@ -37,6 +43,8 @@ L'utilisation est très simple.
   - [ ] Ajout de la couleur dans les manuels (terminaux)
   - [ ] Ajout dans le .bashrc des configurations spécifiques pour la couleur
 - [ ] Ajout de la commande tree
+
+---
 
 ## III - Changelog
 
