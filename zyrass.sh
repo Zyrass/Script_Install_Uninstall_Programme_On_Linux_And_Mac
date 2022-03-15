@@ -814,7 +814,7 @@ fct_message_presentation()    # Description : Affiche la présentation du script
 
   space
   echo -e "     \E[91mSi, ci-dessous vous avez une erreur vous pourrez installer lsb-core\E[0m"
-  echo -e "     \E[91mSous linux : \E[36mapt-get install lsb-core -y\E[0m\E[0m"
+  echo -e "     \E[91mSous linux : \E[36mapt-get install lsb-core -y\E[0m"
   space
 
   if [ $(uname -a | cut -d " " -f 1) = "Darwin" ]; then
@@ -822,46 +822,48 @@ fct_message_presentation()    # Description : Affiche la présentation du script
   elif [ $(uname -a | cut -d " " -f 1) = "Linux" ]; then
     echo -e "     \E[96m ⇨ Vous exécutez $(uname -a | head -n 2 | cut -d " " -f 15) avec une distribution $(uname -a | cut -d " " -f 4 | cut -d "-" -f 2) $(lsb_release -a | grep -Ei "Description" | cut -d " " -f 2 | head -n 2).\E[0m"
   fi
-  echo -e "\t\033[1m\033[3mCe script sera actualisé chaque fois que nécessaire.\033[0m\033[0m"
+  echo -e "\t\033[1m\033[3mCe script sera actualisé chaque fois que nécessaire.\033[0m"
   
   space
   read -p "    Pressez une touche pour poursuivre..."
   clear
 
   space
-  echo -e "     \E[37mBonjour,\E[0m \033[1m\E[32m$USER\E[0m\E[0m"
+  echo -e "     \E[37mBonjour, \033[1m\E[32m$USER\E[0m"
   echo -e "     \E[37mCe script est avant tout un projet personnel,\E[0m"
-  echo -e "     \E[37mje compte le proposer à \E[36mErwan\E[0m \E[37met\E[0m \E[36mQuentin\E[0m\E[37m, deux développeurs chevronné afin de voir\E[0m"
-  echo -e "     \E[37ms'ils seraient intéressés pour le diffuser à leur communauté (\E[33mDyma\E[0m).\E[0m"
+  echo -e "     \E[37mje compte le proposer à \E[36mErwan \E[37met \E[36mQuentin\E[37m, deux développeurs chevronné afin de voir\E[0m"
+  echo -e "     \E[37ms'ils seraient intéressés pour le diffuser à leur communauté (\E[33mDyma\E[37m).\E[0m"
   space
-  echo -e "     \E[37mJe m'appelle\E[0m \E[32mAlain Guillon\E[0m\E[37\033[2m, développeur dit \"\033[1m\E[96mJunior\033[0m\E[0m\" \E[37mavec tout de même quelques bases très solide.\033[0m\E[0m"
+  echo -e "     \E[37mJe m'appelle \E[32mAlain Guillon\E[37m, développeur dit \"\033[1m\E[96mJunior\033[0m\" \E[37mavec tout de même quelques bases très solide.\E[0m"
   echo -e "     \E[37mVia ce script, je ne cherche aucunement à monnayer celui-ci.\E[0m"
-  echo -e "     \E[37mSi je peux apporter un complément ou bien faciliter l'installation de tel ou tel programme sur Linux ou Mac.\E[0m"
+  echo -e "     \E[37mSi je peux apporter un complément ou bien faciliter l'installation de tel ou tel programme sur Linux ou Mac\E[0m"
+  echo -e "     \E[37mj'en serais pleinement satisfait.\E[0m"
   space 
-  echo -e "     \E[37mJe vais par la suite voir pour diffuser celui-ci sur la plateforme \E[95mLinkedin\E[0m\E[37m avec leurs accords \E[0m"
+  echo -e "     \E[37mJe vais par la suite voir pour diffuser celui-ci sur la plateforme \E[95m\033[1mLinkedin\033[0m\E[37m avec leurs accords \E[0m"
   echo -e "     \E[37mafin de permettre à un nombre conséquent d'étudiants de ne plus avoir à craindre \E[0m"
-  echo -e "     \E[37md'installer ou de supprimer un quelconque programme sur ces OS.\E[0m"
+  echo -e "     \E[37md'installer ou de supprimer un quelconque programme sur l'un de ces OS.\E[0m"
   space
   echo -e "     \E[33mJe vous propose via ce script ceci :\E[0m"
   echo -e "         \E[33m1. vous y trouverez des programmes que j'utilise.\E[0m"
-  echo -e "             \E[37m- (Uniquement des programmes disponibles avec \E[36msnap\E[0m \E[37mou\E[0m \E[36mapt\E[0m\E[37m)\E[0m" 
+  echo -e "             \E[37m- (Uniquement des programmes disponibles avec \E[36msnap \E[37mou \E[36mapt\E[37m)\E[0m" 
   echo -e "         \E[33m2. Des tâches automatisées pour installer, désinstaller des programmes ou technologie :P\E[0m"
   
   space
   echo -e " \E[37m ---------------------------------------------------------------------------------------------------------------------- \E["
   space
 
-  echo -e "\t\E[34m👉 Si vous le souhaitez, je peux vous parrainer sur la plateforme de Dyma.fr ❗ \E[91mAucune obligation\E[0m\E[0m"
+  echo -e "\t\E[34m👉 Si vous le souhaitez, je peux vous parrainer sur la plateforme de Dyma.fr ❗ \E[91mAucune obligation\E[0m"
   echo -e "\t👉 \E[34mVous serez libre de tester leur plateforme pendant 7 jours gratuitement.\E[0m"
-  echo -e "\t👉 \E[34mSi ça vous intéresse, \E[33mil vous suffira de maintenir CTRL\E[0m \E[34met de\E[0m \E[33mcliquer sur le lien ci-dessous\E[0m \E[37m:\E[0m"
+  echo -e "\t👉 \E[34mSi ça vous intéresse, \E[33mil vous suffira de maintenir CTRL \E[34met de \E[33mcliquer sur le lien ci-dessous \E[37m:\E[0m"
   echo -e "\t👉 \033[3m\E[92mhttps://dyma.fr/r/5d52bd274e7aec730eb90fde\033[0m\E[0m"
   
   space
   echo -e " \E[37m ---------------------------------------------------------------------------------------------------------------------- \E["
   space
 
+  echo -e "\E[95m\tVérification de l'existence du répertoire \"test_install\" existant ou non: \E[0m"
   if [ ! -d ./test_install ]; then
-    echo -e "\E[95m\tCréation d'un répertoire \"test_install\" afin de tester les installations de Symfony, React ou Vue3. \E[0m"
+    echo -e "\E[95m\tDémarrage de la création du répertoire \"test_install\" afin de tester les installations de Symfony, React ou Vue3. \E[0m"
     mkdir ./test_install
     echo -e "\E[32m\t📁 Répertoire \"test_installation\" créé avec succès!\E[0m"
       cd ./test_install
@@ -1212,26 +1214,30 @@ fct_info_programme()          # Description : Afficher les informations du progr
         # Désinstallation de la technologie
         space
         echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
-        echo -e " \E[36m|\E[0m \E[33mDésinstallations de $PROGRAMME_NAME\E[0m"
+        if [ $PROGRAMME_NAME = "python3" ]; then
+          echo -e " \E[36m|  \E[33mDésinstallations de $PROGRAMME_NAME.10\E[0m"
+        else
+          echo -e " \E[36m|  \E[33mDésinstallations de $PROGRAMME_NAME\E[0m"
+        fi
         echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
-        echo -e " \E[36m|\E[0m  \E[37mPour désinstaller $PROGRAMME_NAME, il aurait fallu taper les commandes suivantes :\E[0m"
+        echo -e " \E[36m|  \E[37mPour désinstaller $PROGRAMME_NAME, il aurait fallu taper les commandes suivantes :\E[0m"
 
-        echo -e " \E[96m|   \E[37m⇨\E[0m \E[95msudo apt-get update -y\E[0m"
+        echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get update -y\E[0m"
         if [ $PROGRAMME_NAME = "curl" ]; then
-          echo -e " \E[96m|   \E[37m⇨\E[0m \E[95msudo apt-get remove $PROGRAMME_NAME -y\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove $PROGRAMME_NAME -y\E[0m"
         elif [ $PROGRAMME_NAME = "git" ]; then
-          echo -e " \E[96m|   \E[37m⇨\E[0m \E[95msudo apt-get remove $PROGRAMME_NAME -y\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove $PROGRAMME_NAME -y\E[0m"
         elif [ $PROGRAMME_NAME = "docker" ]; then
           echo "à éditer..."
         elif [ $PROGRAMME_NAME = "node" ]; then
-          echo "à éditer..."
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove -y nodejs\E[0m"
         elif [ $PROGRAMME_NAME = "php" ]; then
-          echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo apt-get purge '$PROGRAMME_NAME*' -y\E[0m"
-          echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo add-apt-repository --remove ppa:ondrej/php\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get purge '$PROGRAMME_NAME*' -y\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo add-apt-repository --remove ppa:ondrej/php\E[0m"
         elif [ $PROGRAMME_NAME = "mysql" ]; then
-          echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo apt-get remove $PROGRAMME_NAME -y\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove $PROGRAMME_NAME -y\E[0m"
         elif [ $PROGRAMME_NAME = "composer" ]; then
-          echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo rm -rf /usr/bin/composer\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo rm -rf /usr/bin/composer\E[0m"
         elif [ $PROGRAMME_NAME = "symfony" ]; then
           echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt remove $PROGRAMME_NAME-cli -y\E[0m"
           echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt remove php8.*-xml\E[0m"
@@ -1240,41 +1246,46 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[96m|   \E[37m⇨ \E[95mrm -rf ./symfony\E[0m"
           echo -e " \E[96m|   \E[37m⇨ \E[95mcd ..\E[0m"
         elif [ $PROGRAMME_NAME = "python3" ]; then
-          echo -e " \E[36m|\E[0m \E[37m Suppression uniquement de $PROGRAMME_NAME.10\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[95msudo remove-apt-repository ppa:deadsnakes/ppa -y\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[95msudo apt-get remove python3.10 -y\E[0m"
+          echo -e " \E[36m|   \E[37m Suppression uniquement de $PROGRAMME_NAME.10\E[0m"
+          echo -e " \E[36m|   \E[37m⇨ \E[95msudo ppa-purge ppa:deadsnakes/ppa -y\E[0m"
+          echo -e " \E[36m|   \E[37m⇨ \E[95msudo apt-get remove python3.10 -y\E[0m"
 
         elif [ $PROGRAMME_NAME = "angular" ]; then
-          echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo npm uninstall -g @angular/cli\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo npm uninstall -g @angular/cli\E[0m"
 
         elif [ $PROGRAMME_NAME = "typescript" ]; then
           echo -e " \E[96m|   \E[37m⇨ \E[95msudo npm uninstall -g typescript -y\E[0m"
 
         # APPLICATIONS
         elif [  $PROGRAMME_NAME = "code" -o $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "blender" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" -o $PROGRAMME_NAME = "spectacle" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo snap remove $PROGRAMME_NAME\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo snap remove $PROGRAMME_NAME\E[0m"
 
         elif [ $PROGRAMME_NAME = "firefox" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt-get remove firefox\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo snap remove firefox\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove firefox\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo snap remove firefox\E[0m"
 
         elif [ $PROGRAMME_NAME = "android" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95mrm -rf android-studio-2021.1.1.22-linux.tar.gz\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95mrm -rf ~/android-studio\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msed '/# Alias Android-Studio/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msed '/alias studio=\"~\/android-studio\/bin\/studio.sh\"/d' ~/.bashrc_tmp > ~/.bashrc\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msource ~/.bashrc\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95mrm -rf android-studio-2021.1.1.22-linux.tar.gz\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95mrm -rf ~/android-studio\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msed '/# Alias Android-Studio/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msed '/alias studio=\"~\/android-studio\/bin\/studio.sh\"/d' ~/.bashrc_tmp > ~/.bashrc\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msource ~/.bashrc\E[0m"
           
         elif [ $PROGRAMME_NAME = "kylin-video" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt remove kylin-video -y\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt remove kylin-video -y\E[0m"
         
         fi
-        echo -e " \E[96m|   \E[37m ⇨ \E[95msudo apt-get autoclean -y\E[0m"
-        echo -e " \E[96m|   \E[37m ⇨ \E[95msudo apt-get autoremove -y\E[0m"
+        echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get autoclean -y\E[0m"
+        echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get autoremove -y\E[0m"
         echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
         space
 
-        echo -e " \E[34mSouhaitez-vous que je désinstalle \"\E[0m\E[36m$PROGRAMME_NAME\E[0m\E[34m\" via les commandes ci-dessus pour vous !?\E[0m"
+        if [ $PROGRAMME_NAME = "python3" ]; then
+          echo -e " \E[34mSouhaitez-vous que je désinstalle \"\E[36m$PROGRAMME_NAME.10\E[34m\" via les commandes ci-dessus pour vous !?\E[0m"
+        else
+          echo -e " \E[34mSouhaitez-vous que je désinstalle \"\E[36m$PROGRAMME_NAME\E[34m\" via les commandes ci-dessus pour vous !?\E[0m"
+        fi
+
         select option in "Oui" "Non et retourner à la page d'accueil" "Non et allez à la page des applications"
         do
           case $option in
@@ -1359,7 +1370,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 fct_back_to "home"
 
               elif [ $PROGRAMME_NAME = "python3" ]; then
-                sudo remove-apt-repository ppa:deadsnakes/ppa -y
+                sudo ppa-purge ppa:deadsnakes/ppa -y
                 sudo apt-get remove python3.10
 
               # APPLICATIONS
@@ -1384,7 +1395,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
               fi
 
               echo -e " \E[32m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
-              echo -e " \E[33m\t\t✅ $PROGRAMME_NAME a bien été désinstallé de votre ordinateur avec succès!\E[0m"
+              echo -e " \E[33m\t\t✅ $PROGRAMME_NAME a bien été désinstallé de votre système avec succès!\E[0m"
               echo -e " \E[32m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
               space
               read -p "Pressez une touche pour continuer..."

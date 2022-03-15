@@ -45,6 +45,7 @@ L'utilisation est très simple.
     - [X] - Modification des messages informatifs pour la suppression de Symfony.
     - [X] - Mise en couleur du logo Symfony (fond noir, texte vert)
     - [X] - Ajout du fonctionnement pour une installation de Python 3.10
+    - [X] - Refactorisation du message de présentation
 
   - **14/03/2022**
     - [X] - Ajout du **Certificate Authority** pour Symfony.
