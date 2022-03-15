@@ -1,4 +1,4 @@
-# Script Shell part Zyrass
+# Script Shell par Zyrass
 
 Ici il est question de créer un script shell pour une réinstallation de plusieurs programmes pour une quelconque distribution Linux.
 
