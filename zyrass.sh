@@ -1,4 +1,15 @@
-#!/usr/bin/bash
+ZSH=$(which zsh)
+if [ $? -eq 0 ]; then
+  #!/usr/bin/zsh
+  echo ""
+fi
+
+BASH=$(which bash)
+if [ $? -eq 0 ]; then
+  #!/usr/bin/bash
+  echo ""
+fi
+
 
 # CONFIGURATION
 PS3="
@@ -1447,6 +1458,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
   fct_show_logo "accueil"
 
   echo -e "
+                                                                                              \033[1m\033[2mVersion du programme : 0.9.0\033[0m
     + ---------------- + ---------------------------------------------------------- + ------------------------------------- +
     |  \E[36mCHOIX POSSIBLE\E[0m  |  \E[34mDESCRIPTION\E[0m                                               |  \E[34mVERSION ACTUEL\E[0m     
     + ---------------- + ---------------------------------------------------------- + ------------------------------------- +
@@ -1463,12 +1475,13 @@ fct_show_home_menu()          # Description : Affichage du menu principal
     | \E[95m11\E[0m. \E[36mAngular      \E[0m|  \E[34mFramework Javascript (Accès très dur)\E[0m                     |  $(fct_check_version angular)
     | \E[95m12\E[0m. \E[36mTypeScript   \E[0m|  \E[34mTyper son code JavaScript.\E[0m                                |  $(fct_check_version typescript)
     | \E[95m13\E[0m. \E[36mPython\E[91m*      \E[0m|  \E[34mLangage surpuissant et simple d'accès.\E[0m                    |  $(fct_check_version python3)
-    | \E[95m14\E[0m. \E[36mFlutter      \E[0m|  \E[34mConcevoir des apps mobile \E[0m                                |  $(fct_check_version flutter)
+    | \E[95m14\E[0m. \E[36mFlutter\E[92m*     \E[0m|  \E[34mConcevoir des apps mobile \E[0m                                |  $(fct_check_version flutter)
     + ---------------- + ---------------------------------------------------------- + ------------------------------------- +
     | \E[33m15\E[0m. \E[37mApplications \E[0m|  \E[37m\E[3mdes programmes utiles à installer très vite... ou à désinstaller si vous ne les appréciez pas.\E[0m
     | \E[33m16\E[0m. \E[37mQuitter\E[0m
     + ---------------- + ---------------------------------------------------------- + ------------------------------------- +"
   echo -e "\E[92m     🚧 *: [BETA]  Docker, Fonctionne mais il supprimait cURL, NodeJS, Flutter et snapd!. A TESTER ENCORE \E[0m"
+  echo -e "\E[92m     🚧 *: [BETA]  Flutter fonctionnne mais au premier lancement un bug existe sur l'affichage de la version. \E[0m"
   echo -e "\E[91m     🚧 *: [ALPHA] Python3, La suppression ne se fait pas (la 3.10).\E[0m"
   echo -e "\E[37m     🚧 *: React, à faire.\E[0m"
   echo -e "\E[37m     🚧 *: Vue3, à faire.\E[0m"
@@ -1699,6 +1712,7 @@ fct_show_app_menu() {
 
   # TABLEAU DES PROGRAMMES
   echo -e "
+                                                                                              \033[1m\033[2mVersion du programme : 0.9.0\033[0m
     + -------------------- + ------------------------------------------ + ---------------------------------- +
     |  \E[36mCHOIX POSSIBLE\E[0m      |  \E[34mDESCRIPTION\E[0m                               | \E[34mVERSION ACTUEL\E[0m     
     + -------------------- + ------------------------------------------ + ---------------------------------- +

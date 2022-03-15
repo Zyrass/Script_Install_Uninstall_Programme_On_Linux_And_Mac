@@ -50,6 +50,9 @@ L'utilisation est très simple.
 
 - **15/03/2022**
 
+  - [x] Ajout d'un message concernant un bug sur l'affichage de la version de flutter au premier lancement.
+  - [x] Ajout du numéro de version au dessus des tableaux.
+  - [x] Ajout de la detection de bash ou de ZSH
   - [x] Correction orthographique du fichier README.MD.
   - [x] Ajout des textes manquant pour la suppression de Docker.
   - [ ] Ajout et début d'une correction [**BETA**] pour la supression de Docker.
