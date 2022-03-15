@@ -41,6 +41,11 @@ L'utilisation est très simple.
       - [] - 02 - Ajout de la commande tree
 ## III - Changelog
 
+  - **15/03/2022**
+    - [X] - Modification des messages informatifs pour la suppression de Symfony.
+    - [X] - Mise en couleur du logo Symfony (fond noir, texte vert)
+    - [X] - Ajout du fonctionnement pour une installation de Python 3.10
+
   - **14/03/2022**
     - [X] - Ajout du **Certificate Authority** pour Symfony.
     - [X] - Création d'un répertoire pour faire des tests pour Symfony, React et Vue3.

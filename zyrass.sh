@@ -313,15 +313,17 @@ fct_show_logo()               # Description : Affiche le logo
     ;;
 
     symfony)
-      echo -e "\033[1m\E[36m
-         _______           _______  _______  _______  _                
-        (  ____ \|\     /|(       )(  ____ \(  ___  )( (    /||\     /|
-        | (    \/( \   / )| () () || (    \/| (   ) ||  \  ( |( \   / )
-        | (_____  \ (_) / | || || || (__    | |   | ||   \ | | \ (_) / 
-        (_____  )  \   /  | |(_)| ||  __)   | |   | || (\ \) |  \   /  
-              ) |   ) (   | |   | || (      | |   | || | \   |   ) (   
-        /\____) |   | |   | )   ( || )      | (___) || )  \  |   | |   
-        \_______)   \_/   |/     \||/       (_______)|/    )_)   \_/\033[0m\E[0m by \E[95mZyrass\E[0m"
+      echo -e "\033[1m\E[92;40m
+                                                                               
+         _______           _______  _______  _______  _                        
+        (  ____ \|\     /|(       )(  ____ \(  ___  )( (    /||\     /|        
+        | (    \/( \   / )| () () || (    \/| (   ) ||  \  ( |( \   / )        
+        | (_____  \ (_) / | || || || (__    | |   | ||   \ | | \ (_) /         
+        (_____  )  \   /  | |(_)| ||  __)   | |   | || (\ \) |  \   /          
+              ) |   ) (   | |   | || (      | |   | || | \   |   ) (           
+        /\____) |   | |   | )   ( || )      | (___) || )  \  |   | |           
+        \_______)   \_/   |/     \||/       (_______)|/    )_)   \_/           
+                                                                               \033[0m\E[0m by \E[95mZyrass\E[0m"
       space
     ;;
 
@@ -765,10 +767,10 @@ fct_check_version()           # Description : Vérifier la version d'un programm
     elif [ $PROGRAMME_NAME = "typescript" ]; then
       version_typescript=$(tsc -v | cut -d " " -f 2)
       echo -e "\E[33m$version_typescript\E[0m"
-    # elif [ $PROGRAMME_NAME = "python" ]; then
-    #   version_python38=$(python3 -V | cut -d " " -f 2)
-    #   version_python310=$(python3.10 -V | cut -d " " -f 2)
-    #   echo -e "\E[36mPython 3.8 :\E[0m \E[33m$version_python38\E[0m \E[36mPython 3.10:\E[0m \E[33m$version_python310\E[0m"
+    elif [ $PROGRAMME_NAME = "python3" ]; then
+      version_python38=$(python3 -V | cut -d " " -f 2)
+      version_python310=$(python3.10 -V | cut -d " " -f 2)
+      echo -e "\E[36mPython3: \E[33m$version_python38 \E[36mPython3.10: \E[33m$version_python310\E[0m"
     elif [ $PROGRAMME_NAME = "flutter" ]; then
       version_dart=$(dart --version | cut -d " " -f 4)
       version_flutter=$(flutter --version | head -n 1 | cut -d " " -f 2)
@@ -844,6 +846,7 @@ fct_message_presentation()    # Description : Affiche la présentation du script
   echo -e "         \E[33m1. vous y trouverez des programmes que j'utilise.\E[0m"
   echo -e "             \E[37m- (Uniquement des programmes disponibles avec \E[36msnap\E[0m \E[37mou\E[0m \E[36mapt\E[0m\E[37m)\E[0m" 
   echo -e "         \E[33m2. Des tâches automatisées pour installer, désinstaller des programmes ou technologie :P\E[0m"
+  
   space
   echo -e " \E[37m ---------------------------------------------------------------------------------------------------------------------- \E["
   space
@@ -852,18 +855,20 @@ fct_message_presentation()    # Description : Affiche la présentation du script
   echo -e "\t👉 \E[34mVous serez libre de tester leur plateforme pendant 7 jours gratuitement.\E[0m"
   echo -e "\t👉 \E[34mSi ça vous intéresse, \E[33mil vous suffira de maintenir CTRL\E[0m \E[34met de\E[0m \E[33mcliquer sur le lien ci-dessous\E[0m \E[37m:\E[0m"
   echo -e "\t👉 \033[3m\E[92mhttps://dyma.fr/r/5d52bd274e7aec730eb90fde\033[0m\E[0m"
+  
   space
   echo -e " \E[37m ---------------------------------------------------------------------------------------------------------------------- \E["
   space
 
-  echo -e "\E[95m\tUn répertoire va être créer pour tester les installations de Symfony, React ou Vue3. \E[0m"
   if [ ! -d ./test_install ]; then
+    echo -e "\E[95m\tCréation d'un répertoire \"test_install\" afin de tester les installations de Symfony, React ou Vue3. \E[0m"
     mkdir ./test_install
     echo -e "\E[32m\t📁 Répertoire \"test_installation\" créé avec succès!\E[0m"
-    cd ./test_install
+      cd ./test_install
   else
-    echo -e "\E[91m\t❌ 📁 Répertoire \"test_install\" déjà existant.\E[0m"
+    echo -e "\E[91m\t❌ 📁 Le répertoire \"test_install\" existe déjà aucune création n'est nécessaire.\E[0m"
   fi
+  
   space
   read -p "   Appuyer sur une touche pour continuer ..."
   clear
@@ -939,9 +944,9 @@ fct_info_programme()          # Description : Afficher les informations du progr
         
         # Installation de la technologie
         space
-        echo -e " \E[36m+ -------------------------------------------------------------------------------------------------------- +"
+        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
         echo -e " \E[36m|   \E[33mInstallation de $PROGRAMME_NAME\E[0m"
-        echo -e " \E[36m+ -------------------------------------------------------------------------------------------------------- +\E[0m"
+        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
         if [ $PROGRAMME_NAME = "curl" ]; then
           echo -e " \E[96m| /!\ Il est normalement installé par défaut, mais au cas où /!\ \E[0m"
           echo -e " \E[96m|\E[0m \E[37m Pour installer $PROGRAMME_NAME + npm, nous aurions dû saisir :\E[0m"
@@ -950,9 +955,13 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[96m|\E[0m \E[37m Pour installer $PROGRAMME_NAME + npm, nous aurions dû saisir :\E[0m"
         elif [ $PROGRAMME_NAME = "symfony" ]; then
           echo -e " \E[96m|\E[0m \E[37m Deux prérequis indispensable qui doit être installé sur votre ordinateur: \E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95mphp8\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95mcomposer\E[0m"
-          echo -e " \E[96m|\E[0m \E[37m Enfin, pour installer $PROGRAMME_NAME nous aurions dû saisir :\E[0m"
+          echo -e " \E[96m| \E[0m   ⇨ \E[95mphp8\E[0m"
+          echo -e " \E[96m| \E[0m   ⇨ \E[95mcomposer\E[0m"
+          echo -e " \E[96m|\E[0m \E[37m Enfin, pour installer $PROGRAMME_NAME CLI nous aurions dû saisir :\E[0m"
+        elif [ $PROGRAMME_NAME = "python3" ]; then
+          echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME.10, nous aurions dû saisir :\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[95msudo add-apt-repository ppa:deadsnakes/ppa -y\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[95msudo apt-get install python3.10 -y\E[0m"
         elif [ $PROGRAMME_NAME = "flutter" ]; then
           echo -e " \E[96m|\E[0m \E[37m Pour installer $PROGRAMME_NAME + dart, nous aurions dû saisir :\E[0m"
         else
@@ -982,15 +991,24 @@ fct_info_programme()          # Description : Afficher les informations du progr
         elif [ $PROGRAMME_NAME = "composer" ]; then
           echo -e " \E[96m| \E[0m ⇨ \E[95mPlusieurs étapes sont nécessaire...\E[0m"
         elif [ $PROGRAMME_NAME = "symfony" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95mecho 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | sudo tee /etc/apt/sources.list.d/symfony-cli.list\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt update\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt install symfony-cli -y\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[91m\E[1m /!\ Possibilité d'avoir une erreur alors pour évité ceci on installera la dépendance ci-dessous. /!\ \E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt-get install php8.1.*-xml -y\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[91m\E[1m /!\ Faîtes la commande ci-dessous pour voir si tout est OK. (Encadré vert) /!\ \E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msymfony check:requirements\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt install libnss3-tools -y\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msymfony server:ca:install\E[0m"
+          echo -e " \E[96m| \E[0m   ⇨ \E[95mecho 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | sudo tee /etc/apt/sources.list.d/symfony-cli.list\E[0m"
+          echo -e " \E[96m| \E[0m   ⇨ \E[95msudo apt update\E[0m"
+          echo -e " \E[96m| \E[0m   ⇨ \E[95msudo apt install symfony-cli -y\E[0m"
+          echo -e " \E[96m| \E[0m \E[93m\E[1m /!\ \Possibilité d'avoir une erreur alors pour évité ceci on installera la dépendance ci-dessous. \E[0m"
+          echo -e " \E[96m| \E[0m   ⇨ \E[95msudo apt-get install php8.1.*-xml -y\E[0m"
+          echo -e " \E[96m| \E[0m \E[93m\E[1m /!\ \Faîtes la commande ci-dessous pour voir si tout est OK. (Encadré vert) \E[0m"
+          echo -e " \E[96m| \E[0m   ⇨ \E[95msymfony check:requirements\E[0m"
+          echo -e " \E[96m| \E[0m \E[93m\E[1m /!\ \Utilisation du protocole \"HTTPS\" en local.\E[0m"
+          echo -e " \E[96m| \E[0m   ⇨ \E[95msudo apt install libnss3-tools -y\E[0m"
+          echo -e " \E[96m| \E[0m   ⇨ \E[95msymfony server:ca:install\E[0m"
+          echo -e " \E[96m| \E[0m \E[37mAfin de connaître la version de symfony utilisée, je vais installer un projet de test à cette emplacement :\E[0m"
+          echo -e " \E[96m| \E[0m \E[92m./test_install/symfony/test_install_symfony\E[37m. Voici les commandes qu'on aurait dû saisir :\E[0m"
+          echo -e " \E[96m| \E[0m   ⇨ \E[95mcd ./test_install\E[0m"
+          echo -e " \E[96m| \E[0m   ⇨ \E[95mmkdir ./symfony \E[37m// Un test d'existance est effectué au préalable.\E[0m"
+          echo -e " \E[96m| \E[0m   ⇨ \E[95mcd ./symfony\E[0m"
+          echo -e " \E[96m| \E[0m   ⇨ \E[95msymfony new test_install_symfony\E[0m"
+          echo -e " \E[96m| \E[0m   ⇨ \E[95mcd ./test_install_symfony\E[0m"
+
 
         # elif [ $PROGRAMME_NAME = "phpmyadmin" ]; then
         #   echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME, nous aurions dû saisir :\E[0m"
@@ -1007,12 +1025,6 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo npm install -g @angular/cli\E[0m"
         elif [ $PROGRAMME_NAME = "typescript" ]; then
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo npm install -g typescript -y\E[0m"
-
-
-        # elif [ $PROGRAMME_NAME = "python" ]; then
-        #   echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME, nous aurions dû saisir :\E[0m"
-        #   echo -e " \E[36m| \E[0m ⇨ \E[95msudo add-apt-repository ppa:deadsnakes/ppa -y\E[0m"
-        #   echo -e " \E[36m| \E[0m ⇨ \E[95msudo apt-get install python3.10 -y\E[0m"
         elif [ $PROGRAMME_NAME = "flutter" ]; then
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo snap install flutter --classic\E[0m"
 
@@ -1028,7 +1040,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
 
         fi
 
-        echo -e " \E[36m+ --------------------------------------------------------------------------------------------------- +\E[0m"
+        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
         space
 
         if [ $PROGRAMME_NAME = "docker"  ]; then
@@ -1134,6 +1146,9 @@ fct_info_programme()          # Description : Afficher les informations du progr
               
                 fct_back_to "home"
               
+              elif [ $PROGRAMME_NAME = "python3" ]; then
+                sudo add-apt-repository ppa:deadsnakes/ppa -y
+                sudo apt-get install python3.10
               
               # A FAIRE
               # elif [ $PROGRAMME_NAME = "vue" ]; then
@@ -1149,9 +1164,6 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 sudo npm install -g typescript -y
                 fct_back_to "home"
 
-              # elif [ $PROGRAMME_NAME = "python" ]; then
-              #   sudo add-apt-repository ppa:deadsnakes/ppa -y
-              #   sudo apt-get install python3.10
               elif [ $PROGRAMME_NAME = "flutter" ]; then
                 sudo snap install flutter --classic
                 fct_back_to "home"
@@ -1199,16 +1211,16 @@ fct_info_programme()          # Description : Afficher les informations du progr
       "Désinstallation de $PROGRAMME_NAME")   
         # Désinstallation de la technologie
         space
-        echo -e " \E[36m+ --------------------------------------------------------------------------- +\E[0m"
+        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
         echo -e " \E[36m|\E[0m \E[33mDésinstallations de $PROGRAMME_NAME\E[0m"
-        echo -e " \E[36m+ --------------------------------------------------------------------------- +\E[0m"
+        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
         echo -e " \E[36m|\E[0m  \E[37mPour désinstaller $PROGRAMME_NAME, il aurait fallu taper les commandes suivantes :\E[0m"
 
-        echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo apt-get update -y\E[0m"
+        echo -e " \E[96m|   \E[37m⇨\E[0m \E[95msudo apt-get update -y\E[0m"
         if [ $PROGRAMME_NAME = "curl" ]; then
-          echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo apt-get remove $PROGRAMME_NAME -y\E[0m"
+          echo -e " \E[96m|   \E[37m⇨\E[0m \E[95msudo apt-get remove $PROGRAMME_NAME -y\E[0m"
         elif [ $PROGRAMME_NAME = "git" ]; then
-          echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo apt-get remove $PROGRAMME_NAME -y\E[0m"
+          echo -e " \E[96m|   \E[37m⇨\E[0m \E[95msudo apt-get remove $PROGRAMME_NAME -y\E[0m"
         elif [ $PROGRAMME_NAME = "docker" ]; then
           echo "à éditer..."
         elif [ $PROGRAMME_NAME = "node" ]; then
@@ -1221,15 +1233,22 @@ fct_info_programme()          # Description : Afficher les informations du progr
         elif [ $PROGRAMME_NAME = "composer" ]; then
           echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo rm -rf /usr/bin/composer\E[0m"
         elif [ $PROGRAMME_NAME = "symfony" ]; then
-          echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo apt remove $PROGRAMME_NAME-cli -y\E[0m"
-          echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo apt remove php8.*-xml\E[0m"
-          echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo apt remove libnss3-tools\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt remove $PROGRAMME_NAME-cli -y\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt remove php8.*-xml\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt remove libnss3-tools\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95mcd ./test_install\E[0m"         
+          echo -e " \E[96m|   \E[37m⇨ \E[95mrm -rf ./symfony\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95mcd ..\E[0m"
+        elif [ $PROGRAMME_NAME = "python3" ]; then
+          echo -e " \E[36m|\E[0m \E[37m Suppression uniquement de $PROGRAMME_NAME.10\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[95msudo remove-apt-repository ppa:deadsnakes/ppa -y\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[95msudo apt-get remove python3.10 -y\E[0m"
 
         elif [ $PROGRAMME_NAME = "angular" ]; then
           echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo npm uninstall -g @angular/cli\E[0m"
 
         elif [ $PROGRAMME_NAME = "typescript" ]; then
-          echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo npm uninstall -g typescript -y\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo npm uninstall -g typescript -y\E[0m"
 
         # APPLICATIONS
         elif [  $PROGRAMME_NAME = "code" -o $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "blender" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" -o $PROGRAMME_NAME = "spectacle" ]; then
@@ -1250,9 +1269,9 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt remove kylin-video -y\E[0m"
         
         fi
-        echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo apt-get autoclean -y\E[0m"
-        echo -e " \E[96m|\E[0m  \E[37m⇨\E[0m \E[95msudo apt-get autoremove -y\E[0m"
-        echo -e " \E[36m+ --------------------------------------------------------------------------- +\E[0m"
+        echo -e " \E[96m|   \E[37m ⇨ \E[95msudo apt-get autoclean -y\E[0m"
+        echo -e " \E[96m|   \E[37m ⇨ \E[95msudo apt-get autoremove -y\E[0m"
+        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
         space
 
         echo -e " \E[34mSouhaitez-vous que je désinstalle \"\E[0m\E[36m$PROGRAMME_NAME\E[0m\E[34m\" via les commandes ci-dessus pour vous !?\E[0m"
@@ -1315,7 +1334,6 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 sudo apt remove php8.1.*-xml -y
                 sudo apt remove libnss3-tools -y
 
-
                 if [ -d ./test_install ]; then                  
                   cd ./test_install
                   if [ -d ./symfony ]; then                    
@@ -1340,9 +1358,9 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 sudo npm remove -g typescript -y
                 fct_back_to "home"
 
-              # elif [ $PROGRAMME_NAME = "python" ]; then
-              #   sudo add-apt-repository ppa:deadsnakes/ppa -y
-              #   sudo apt-get remove python3.10
+              elif [ $PROGRAMME_NAME = "python3" ]; then
+                sudo remove-apt-repository ppa:deadsnakes/ppa -y
+                sudo apt-get remove python3.10
 
               # APPLICATIONS
               elif [  $PROGRAMME_NAME = "code" -o $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "blender" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" -o $PROGRAMME_NAME = "spectacle" ]; then
@@ -1365,9 +1383,9 @@ fct_info_programme()          # Description : Afficher les informations du progr
 
               fi
 
-              echo -e "\E[32m+ ------------------------------------------------------------------------------------------------ +\E[0m"
-              echo -e "\E[33m\t\t✅ $PROGRAMME_NAME a bien été désinstallé de votre ordinateur avec succès!\E[0m"
-              echo -e "\E[32m+ ------------------------------------------------------------------------------------------------ +\E[0m"
+              echo -e " \E[32m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
+              echo -e " \E[33m\t\t✅ $PROGRAMME_NAME a bien été désinstallé de votre ordinateur avec succès!\E[0m"
+              echo -e " \E[32m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
               space
               read -p "Pressez une touche pour continuer..."
               clear
@@ -1415,32 +1433,33 @@ fct_show_home_menu()          # Description : Affichage du menu principal
   fct_show_logo "accueil"
 
   echo -e "
-    + ----------------- + ------------------------------------- + -------------------------------------------------- +
-    |  \E[36mCHOIX POSSIBLE\E[0m   |  \E[34mDESCRIPTION\E[0m                          |  \E[34mVERSION ACTUEL\E[0m     
-    + ----------------- + ------------------------------------- + -------------------------------------------------- +
-    | \E[95m01\E[0m. \E[36mcURL\E[0m          |  \E[34mINDISPENSABLE\E[0m                        | $(fct_check_version curl)
-    | \E[95m02\E[0m. \E[36mNode\E[91m*\E[0m\E[0m         |  \E[34mRuntime JavaScript\E[0m                   | $(fct_check_version node)
-    | \E[95m03\E[0m. \E[36mGit\E[0m           |  \E[34mGérer ces projets sans crainte\E[0m       | $(fct_check_version git)
-    | \E[95m04\E[0m. \E[36mDocker\E[91m*\E[0m\E[0m       |  \E[34mCréer des images de ces projets\E[0m      | $(fct_check_version docker)
-    | \E[95m05\E[0m. \E[36mPHP\E[0m           |  \E[34mReprésente +50% des sites web\E[0m        | $(fct_check_version php)
-    | \E[95m06\E[0m. \E[36mMySQL\E[0m         |  \E[34mBase de données\E[0m                      | $(fct_check_version mysql)
-    | \E[95m07\E[0m. \E[36mComposer\E[0m      |  \E[34mUtile pour PHP, Symfony, Laravel\E[0m     | $(fct_check_version composer)
-    | \E[95m08\E[0m. \E[36mSymfony\E[0m       |  \E[34mFramework PHP Français\E[0m               | $(fct_check_version symfony)
-    | \E[95m09\E[0m. \E[36mVue\E[91m*\E[0m\E[0m          |  \E[34mFramework Javascript (facile)\E[0m        | $(fct_check_version vue)
-    | \E[95m10\E[0m. \E[36mReact\E[91m*\E[0m\E[0m        |  \E[34mFramework Javascript (moyen)\E[0m         | $(fct_check_version react)
-    | \E[95m11\E[0m. \E[36mAngular\E[0m       |  \E[34mFramework Javascript (dur)\E[0m           | $(fct_check_version angular)
-    | \E[95m12\E[0m. \E[36mTypeScript\E[0m    |  \E[34mTyper son code JavaScript\E[0m            | $(fct_check_version typescript)
-    | \E[95m13\E[0m. \E[36mPython\E[91m*\E[0m       |  \E[34mLangage surpuissant et simple\E[0m        | $(fct_check_version python)
-    | \E[95m14\E[0m. \E[36mFlutter\E[0m       |  \E[34mConcevoir des apps mobile\E[0m            | $(fct_check_version flutter)
-    + ----------------- + ------------------------------------- + -------------------------------------------------- +
-    | \E[33m15\E[0m. \E[37mApplications\E[0m  |  \E[37m\E[3mdes programmes utiles à installer très vite... ou à désinstaller\E[0m
+    + ---------------- + ---------------------------------------------------------- + ------------------------------------- +
+    |  \E[36mCHOIX POSSIBLE\E[0m  |  \E[34mDESCRIPTION\E[0m                                               |  \E[34mVERSION ACTUEL\E[0m     
+    + ---------------- + ---------------------------------------------------------- + ------------------------------------- +
+    | \E[95m01\E[0m. \E[36mcURL\E[0m         |  \E[34mINDISPENSABLE pour un système unix\E[0m                        |  $(fct_check_version curl)
+    | \E[95m02\E[0m. \E[36mNode\E[91m*\E[0m\E[0m        |  \E[34mRuntime JavaScript. Backend côté Javascript\E[0m               |  $(fct_check_version node)
+    | \E[95m03\E[0m. \E[36mGit\E[0m          |  \E[34mGérer ces projets sans crainte d'une erreur majeur.\E[0m       |  $(fct_check_version git)
+    | \E[95m04\E[0m. \E[36mDocker\E[91m*\E[0m\E[0m      |  \E[34mCréer des images de ces projets.\E[0m                          |  $(fct_check_version docker)
+    | \E[95m05\E[0m. \E[36mPHP\E[0m          |  \E[34mReprésente plus de 50% des sites web dans le monde\E[0m        |  $(fct_check_version php)
+    | \E[95m06\E[0m. \E[36mMySQL\E[0m        |  \E[34mPermet de créer et de gérer des bases de données.\E[0m         |  $(fct_check_version mysql)
+    | \E[95m07\E[0m. \E[36mComposer\E[0m     |  \E[34mGestionnaire de dépendances pour PHP, Symfony, Laravel\E[0m    |  $(fct_check_version composer)
+    | \E[95m08\E[0m. \E[36mSymfony\E[0m      |  \E[34mFramework PHP Français très réputé.\E[0m                       |  $(fct_check_version symfony)
+    | \E[95m09\E[0m. \E[36mVue\E[91m*\E[0m\E[0m         |  \E[34mFramework Javascript (Très facile d'accès)\E[0m                |  $(fct_check_version vue)
+    | \E[95m10\E[0m. \E[36mReact\E[91m*\E[0m\E[0m       |  \E[34mFramework Javascript (Acces assez moyen)\E[0m                  |  $(fct_check_version react)
+    | \E[95m11\E[0m. \E[36mAngular\E[0m      |  \E[34mFramework Javascript (Accès très dur)\E[0m                     |  $(fct_check_version angular)
+    | \E[95m12\E[0m. \E[36mTypeScript\E[0m   |  \E[34mTyper son code JavaScript.\E[0m                                |  $(fct_check_version typescript)
+    | \E[95m13\E[0m. \E[36mPython\E[91m*\E[0m      |  \E[34mLangage surpuissant et simple d'accès.\E[0m                    |  $(fct_check_version python3)
+    | \E[95m14\E[0m. \E[36mFlutter\E[0m      |  \E[34mConcevoir des apps mobile \E[0m                                |  $(fct_check_version flutter)
+    + ---------------- + ---------------------------------------------------------- + ------------------------------------- +
+    | \E[33m15\E[0m. \E[37mApplications\E[0m |  \E[37m\E[3mdes programmes utiles à installer très vite... ou à désinstaller si vous ne les appréciez pas.\E[0m
     | \E[33m16\E[0m. \E[37mQuitter\E[0m
-    + ----------------- + ------------------------------------- + -------------------------------------------------- +"
-  echo -e "\E[95m     ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
+    + ---------------- + ---------------------------------------------------------- + ------------------------------------- +"
+  echo -e "\E[96m     👊 *: Python3, Symfony, Node et Docker sont fonctionnels. Seul des messages peuvent être erroné ou absent.\E[0m"
   echo -e "\E[91m     ❌ *: Toutes les applications ou programme précédé d'un Astérix ne sont pas totalement finalisées.\E[0m"
+  echo -e "\E[95m     ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
   space
 
-  select option in cURL Node Git Docker PHP MySQL Composer Symfony Vue React Angular TypeScript Python Flutter Applications Quitter
+  select option in cURL Node Git Docker PHP MySQL Composer Symfony Vue React Angular TypeScript Python3 Flutter Applications Quitter
   do
     case $option in
       cURL)
@@ -1615,17 +1634,17 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         fct_show_version "typescript"
         fct_info_programme "typescript"
       ;;   
-      Python)
+      Python3)
         clear
         fct_show_logo "python"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mpython\E[0m\E[0m :\E[0m"
+        echo -e " \E[34mDescription de \E[36m\E[1mpython3\E[0m\E[0m :\E[0m"
         echo -e "   ⇨ \E[37mPython est un langage de programmation interprété, multi-paradigme et multiplateformes.\E[0m"
         echo -e "   ⇨ \E[37mIl favorise la programmation impérative structurée, fonctionnelle et orientée objet.\E[0m"
         space
 
-        fct_show_version "python"
-        fct_info_programme "python"
+        fct_show_version "python3"
+        fct_info_programme "python3"
       ;;
       Flutter)
         clear
