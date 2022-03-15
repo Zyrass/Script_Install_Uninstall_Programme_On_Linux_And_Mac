@@ -822,7 +822,7 @@ fct_message_presentation()    # Description : Affiche la présentation du script
   elif [ $(uname -a | cut -d " " -f 1) = "Linux" ]; then
     echo -e "     \E[96m ⇨ Vous exécutez $(uname -a | head -n 2 | cut -d " " -f 15) avec une distribution $(uname -a | cut -d " " -f 4 | cut -d "-" -f 2) $(lsb_release -a | grep -Ei "Description" | cut -d " " -f 2 | head -n 2).\E[0m"
   fi
-  echo -e "\t\033[1m\033[3mCe script sera actualisé chaque fois que nécessaire.\033[0m"
+  echo -e "\t\033[1m\033[3mSachez que ce script sera actualisé chaque fois que nécessaire.\033[0m"
   
   space
   read -p "    Pressez une touche pour poursuivre..."
@@ -965,7 +965,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[36m| \E[0m   ⇨ \E[95msudo add-apt-repository ppa:deadsnakes/ppa -y\E[0m"
           echo -e " \E[36m| \E[0m   ⇨ \E[95msudo apt-get install python3.10 -y\E[0m"
         elif [ $PROGRAMME_NAME = "flutter" ]; then
-          echo -e " \E[96m|\E[0m \E[37m Pour installer $PROGRAMME_NAME + dart, nous aurions dû saisir :\E[0m"
+          echo -e " \E[96m|\E[0m \E[37m Pour installer $PROGRAMME_NAME et dart, nous aurions dû saisir :\E[0m"
         else
           echo -e " \E[96m|\E[0m \E[37m Pour installer $PROGRAMME_NAME, nous aurions dû saisir :\E[0m"
         fi
@@ -1228,7 +1228,10 @@ fct_info_programme()          # Description : Afficher les informations du progr
         elif [ $PROGRAMME_NAME = "git" ]; then
           echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove $PROGRAMME_NAME -y\E[0m"
         elif [ $PROGRAMME_NAME = "docker" ]; then
-          echo "à éditer..."
+          echo -e " \E[96m|   \E[37m⇨ \E[95msystemctl stop $PROGRAMME_NAME \E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove docker docker-engine docker.io containerd\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get update\E[0m"
+          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove docker-ce docker-ce-cli containerd.io\E[0m"
         elif [ $PROGRAMME_NAME = "node" ]; then
           echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove -y nodejs\E[0m"
         elif [ $PROGRAMME_NAME = "php" ]; then
@@ -1313,18 +1316,18 @@ fct_info_programme()          # Description : Afficher les informations du progr
 
               elif [ $PROGRAMME_NAME = "docker" ]; then
                 systemctl stop docker
-                sudo apt-get remove docker docker-engine docker.io containerd runc
+                sudo apt-get remove docker docker-engine docker.io containerd # runc
                 sudo apt-get update
-                sudo apt-get remove \
-                    apt-transport-https \
-                    ca-certificates \
-                    curl \
-                    gnupg-agent \
-                    software-properties-common
+                # sudo apt-get remove \
+                    # apt-transport-https \
+                    # ca-certificates \
+                    # curl \
+                    # gnupg-agent \
+                    # software-properties-common
 
-                curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key remove -
+                # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key remove -
 
-                sudo add-apt-repository     "deb [arch=amd64] https://download.docker.com/linux/ubuntu     $(lsb_release -cs)     stable"
+                # sudo add-apt-repository     "deb [arch=amd64] https://download.docker.com/linux/ubuntu     $(lsb_release -cs)     stable"
                 sudo apt-get remove docker-ce docker-ce-cli containerd.io
               
               elif [ $PROGRAMME_NAME = "node" ]; then
@@ -1447,26 +1450,28 @@ fct_show_home_menu()          # Description : Affichage du menu principal
     + ---------------- + ---------------------------------------------------------- + ------------------------------------- +
     |  \E[36mCHOIX POSSIBLE\E[0m  |  \E[34mDESCRIPTION\E[0m                                               |  \E[34mVERSION ACTUEL\E[0m     
     + ---------------- + ---------------------------------------------------------- + ------------------------------------- +
-    | \E[95m01\E[0m. \E[36mcURL\E[0m         |  \E[34mINDISPENSABLE pour un système unix\E[0m                        |  $(fct_check_version curl)
-    | \E[95m02\E[0m. \E[36mNode\E[91m*\E[0m\E[0m        |  \E[34mRuntime JavaScript. Backend côté Javascript\E[0m               |  $(fct_check_version node)
-    | \E[95m03\E[0m. \E[36mGit\E[0m          |  \E[34mGérer ces projets sans crainte d'une erreur majeur.\E[0m       |  $(fct_check_version git)
-    | \E[95m04\E[0m. \E[36mDocker\E[91m*\E[0m\E[0m      |  \E[34mCréer des images de ces projets.\E[0m                          |  $(fct_check_version docker)
-    | \E[95m05\E[0m. \E[36mPHP\E[0m          |  \E[34mReprésente plus de 50% des sites web dans le monde\E[0m        |  $(fct_check_version php)
-    | \E[95m06\E[0m. \E[36mMySQL\E[0m        |  \E[34mPermet de créer et de gérer des bases de données.\E[0m         |  $(fct_check_version mysql)
-    | \E[95m07\E[0m. \E[36mComposer\E[0m     |  \E[34mGestionnaire de dépendances pour PHP, Symfony, Laravel\E[0m    |  $(fct_check_version composer)
-    | \E[95m08\E[0m. \E[36mSymfony\E[0m      |  \E[34mFramework PHP Français très réputé.\E[0m                       |  $(fct_check_version symfony)
-    | \E[95m09\E[0m. \E[36mVue\E[91m*\E[0m\E[0m         |  \E[34mFramework Javascript (Très facile d'accès)\E[0m                |  $(fct_check_version vue)
-    | \E[95m10\E[0m. \E[36mReact\E[91m*\E[0m\E[0m       |  \E[34mFramework Javascript (Acces assez moyen)\E[0m                  |  $(fct_check_version react)
-    | \E[95m11\E[0m. \E[36mAngular\E[0m      |  \E[34mFramework Javascript (Accès très dur)\E[0m                     |  $(fct_check_version angular)
-    | \E[95m12\E[0m. \E[36mTypeScript\E[0m   |  \E[34mTyper son code JavaScript.\E[0m                                |  $(fct_check_version typescript)
-    | \E[95m13\E[0m. \E[36mPython\E[91m*\E[0m      |  \E[34mLangage surpuissant et simple d'accès.\E[0m                    |  $(fct_check_version python3)
-    | \E[95m14\E[0m. \E[36mFlutter\E[0m      |  \E[34mConcevoir des apps mobile \E[0m                                |  $(fct_check_version flutter)
+    | \E[95m01\E[0m. \E[36mcURL         \E[0m|  \E[34mINDISPENSABLE pour un système unix\E[0m                        |  $(fct_check_version curl)
+    | \E[95m02\E[0m. \E[36mNode         \E[0m|  \E[34mRuntime JavaScript. Backend côté Javascript\E[0m               |  $(fct_check_version node)
+    | \E[95m03\E[0m. \E[36mGit          \E[0m|  \E[34mGérer ces projets sans crainte d'une erreur majeur.\E[0m       |  $(fct_check_version git)
+    | \E[95m04\E[0m. \E[36mDocker\E[92m*      \E[0m|  \E[34mCréer des images de ces projets.\E[0m                          |  $(fct_check_version docker)
+    | \E[95m05\E[0m. \E[36mPHP          \E[0m|  \E[34mReprésente plus de 50% des sites web dans le monde\E[0m        |  $(fct_check_version php)
+    | \E[95m06\E[0m. \E[36mMySQL        \E[0m|  \E[34mPermet de créer et de gérer des bases de données.\E[0m         |  $(fct_check_version mysql)
+    | \E[95m07\E[0m. \E[36mComposer     \E[0m|  \E[34mGestionnaire de dépendances pour PHP, Symfony, Laravel\E[0m    |  $(fct_check_version composer)
+    | \E[95m08\E[0m. \E[36mSymfony      \E[0m|  \E[34mFramework PHP Français très réputé.\E[0m                       |  $(fct_check_version symfony)
+    | \E[95m09\E[0m. \E[36mVue\E[37m*         \E[0m|  \E[34mFramework Javascript (Très facile d'accès)\E[0m                |  $(fct_check_version vue)
+    | \E[95m10\E[0m. \E[36mReact\E[37m*       \E[0m|  \E[34mFramework Javascript (Acces assez moyen)\E[0m                  |  $(fct_check_version react)
+    | \E[95m11\E[0m. \E[36mAngular      \E[0m|  \E[34mFramework Javascript (Accès très dur)\E[0m                     |  $(fct_check_version angular)
+    | \E[95m12\E[0m. \E[36mTypeScript   \E[0m|  \E[34mTyper son code JavaScript.\E[0m                                |  $(fct_check_version typescript)
+    | \E[95m13\E[0m. \E[36mPython\E[91m*      \E[0m|  \E[34mLangage surpuissant et simple d'accès.\E[0m                    |  $(fct_check_version python3)
+    | \E[95m14\E[0m. \E[36mFlutter      \E[0m|  \E[34mConcevoir des apps mobile \E[0m                                |  $(fct_check_version flutter)
     + ---------------- + ---------------------------------------------------------- + ------------------------------------- +
-    | \E[33m15\E[0m. \E[37mApplications\E[0m |  \E[37m\E[3mdes programmes utiles à installer très vite... ou à désinstaller si vous ne les appréciez pas.\E[0m
+    | \E[33m15\E[0m. \E[37mApplications \E[0m|  \E[37m\E[3mdes programmes utiles à installer très vite... ou à désinstaller si vous ne les appréciez pas.\E[0m
     | \E[33m16\E[0m. \E[37mQuitter\E[0m
     + ---------------- + ---------------------------------------------------------- + ------------------------------------- +"
-  echo -e "\E[96m     👊 *: Python3, Symfony, Node et Docker sont fonctionnels. Seul des messages peuvent être erroné ou absent.\E[0m"
-  echo -e "\E[91m     ❌ *: Toutes les applications ou programme précédé d'un Astérix ne sont pas totalement finalisées.\E[0m"
+  echo -e "\E[92m     🚧 *: [BETA]  Docker, Fonctionne mais il supprimait cURL, NodeJS, Flutter et snapd!. A TESTER ENCORE \E[0m"
+  echo -e "\E[91m     🚧 *: [ALPHA] Python3, La suppression ne se fait pas (la 3.10).\E[0m"
+  echo -e "\E[37m     🚧 *: React, à faire.\E[0m"
+  echo -e "\E[37m     🚧 *: Vue3, à faire.\E[0m"
   echo -e "\E[95m     ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
   space
 
@@ -2017,10 +2022,10 @@ fct_show_app_menu() {
 # PROGRAMME
 
 space
-echo -e "\t\E[36mPour une meilleure expérience,\E[0m"
-echo -e "\t\E[36mveuillez lancer le script en mode pleine écran.\E[0m"
+echo -e "\t\E[36mPour une meilleure expérience utilisateur,\E[0m"
+echo -e "\t\E[36mveuillez lancer le script en mode plein écran.\E[0m"
 space
-read -p "Veuillez appuyer sur Entrée pour continuer."
+read -p "     Veuillez appuyer sur n'importe qu'elle touche pour continuer."
 clear
 
 fct_show_logo dyma
