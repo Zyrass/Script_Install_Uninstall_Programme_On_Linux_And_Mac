@@ -708,7 +708,12 @@ fct_which_name()              # Description : Vérifier que le programme est ins
   if [ $? -eq 0 ]; then
     echo -e "\E[32mInstallé\E[0m"
   else
-    echo -e "\E[37mPas installé.\E[0m"
+    if [ -d ./test_install/vue/test_install_vue3 ]; then
+      # version_vue=$(grep -Ei "\"vue\":" ./test_install/vue/test_install_vue3/package.json | cut -d "^" -f 2 | cut -d "\"" -f 1)
+      echo -e "\E[32mInstallé\E[0m"
+    else
+      echo -e "\E[37mPas installé.\E[0m"
+    fi
   fi
 }
 
@@ -762,19 +767,18 @@ fct_check_version()           # Description : Vérifier la version d'un programm
       if [ -d ./test_install/symfony/test_install_symfony ]; then
         version_symfony=$(grep -Ei https://github.com/symfony/cache/tree/v ./test_install/symfony/test_install_symfony/composer.lock | head -n 1 | cut -d "\"" -f 4 | cut -d "v" -f 2)
         version_symfony_cli=$(symfony -V | grep -Ei version | cut -d " " -f 4 | cut -d "v" -f 2)
-        echo -e "\E[36mSymfony CLI:\E[0m \E[33m$version_symfony_cli\E[0m \E[36mSymfony:\E[0m \E[33m$version_symfony\E[0m"
+        echo -e "\E[36mSymfony CLI: \E[33m$version_symfony_cli \E[36mSymfony: \E[33m$version_symfony\E[0m"
       else
-        echo -e "\E[95mRelancé le programme pour voir les versions\E[0m"
-      fi
-    # elif [ $PROGRAMME_NAME = "vue" ]; then
-    #   version_vue="à éditer"
-    #   echo -e "\E[33m$PROGRAMME_NAME $version_vue\E[0m"
+        echo -e "\E[95mRelancer le programme pour voir les versions\E[0m"
+      fi    
+
     # elif [ $PROGRAMME_NAME = "react" ]; then
     #   version_react=$(create-react-app -v | head -n 1 | cut -d " " -f 2)
       # echo -e "\E[33m$PROGRAMME_NAME $version_react\E[0m"
     elif [ $PROGRAMME_NAME = "angular" ]; then
       version_angular=$(ng --version | grep -Ei cli: | cut -d " " -f 3)
       echo -e "\E[33m$version_angular\E[0m"
+
     elif [ $PROGRAMME_NAME = "typescript" ]; then
       version_typescript=$(tsc -v | cut -d " " -f 2)
       echo -e "\E[33m$version_typescript\E[0m"
@@ -797,6 +801,15 @@ fct_check_version()           # Description : Vérifier la version d'un programm
     if [ $PROGRAMME_NAME = "android" ]; then
       # version_android=$(echo android-studio-2021.1.1.22-linux.tar.gz | cut -d "-" -f 3)
       echo -e "\E[32mInstallé\E[0m"
+    elif [ $PROGRAMME_NAME = "vue" ]; then
+      if [ -d ./test_install/vue/test_install_vue3 ]; then
+        version_vue=$(grep -Ei "\"vue\"" ./test_install/vue/test_install_vue3/package.json | cut -d "^" -f 2 | cut -d "\"" -f 1)
+        echo -e "\E[33m$version_vue\E[0m"
+      else
+        # echo -e "\E[95mRelancer le programme pour voir la version de vue\E[0m"
+        echo -e "\E[37mPas installé.\E[0m"
+      fi
+
     else
       echo -e "\E[37mPas installé.\E[0m"
     fi
@@ -975,6 +988,9 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME.10, nous aurions dû saisir :\E[0m"
           echo -e " \E[36m| \E[0m   ⇨ \E[95msudo add-apt-repository ppa:deadsnakes/ppa -y\E[0m"
           echo -e " \E[36m| \E[0m   ⇨ \E[95msudo apt-get install python3.10 -y\E[0m"
+        elif [ $PROGRAMME_NAME = "vue" ]; then
+          echo -e " \E[96m| /!\ Anciènnement nous aurions dû saisir: \E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[95mnpm install vue -g\E[0m"
         elif [ $PROGRAMME_NAME = "flutter" ]; then
           echo -e " \E[96m|\E[0m \E[37m Pour installer $PROGRAMME_NAME et dart, nous aurions dû saisir :\E[0m"
         else
@@ -1030,12 +1046,31 @@ fct_info_programme()          # Description : Afficher les informations du progr
         #   echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME, nous aurions dû saisir :\E[0m"
         # elif [ $PROGRAMME_NAME = "laravel" ]; then
         #   echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME, nous aurions dû saisir :\E[0m"
-        # elif [ $PROGRAMME_NAME = "vue" ]; then
-        #   echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME, nous aurions dû saisir :\E[0m"
         # elif [ $PROGRAMME_NAME = "react" ]; then
         #   echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME, nous aurions dû saisir :\E[0m"
         elif [ $PROGRAMME_NAME = "angular" ]; then
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo npm install -g @angular/cli\E[0m"
+        elif [ $PROGRAMME_NAME = "vue" ]; then
+          echo -e " \E[96m| /!\ Pour nos test je vais créer un sous-répertoire \"vue3\" du répertoire \"test_install\".\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[95mcd ./test_install\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[95mmkdir vue3\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[95mcd ./vue3\E[0m"
+          echo -e " \E[96m| /!\ Aujourd'hui nous devons saisir une commmande qui va nous permettre de créer un nouveau projet directement via cette commande: \E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[95mnpm init vue@latest\E[0m"
+          echo -e " \E[96m| /!\ Plusieurs questions seront proposées en voici la liste: \E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[33m1: Le nom de l'application\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[33m2: Utilisation de TypeScript\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[33m3: Utilisation du JSX\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[33m4: Utilisation du Routing\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[33m5: Utilisation de Pinia\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[33m6: Utilisation de Vitest\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[33m7: Utilisation de Cypress\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[33m8: Utilisation d'ESLint\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[33m9: Utilisation de Prettier\E[0m"
+          echo -e " \E[96m| /!\ Déplacement dans le projet \E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[95m7: cd test_install_vue3\E[0m"
+          echo -e " \E[96m| /!\ Installation des dépendances \E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[95mnpm install\E[0m"
         elif [ $PROGRAMME_NAME = "typescript" ]; then
           echo -e " \E[96m| \E[0m ⇨ \E[95msudo npm install -g typescript -y\E[0m"
         elif [ $PROGRAMME_NAME = "flutter" ]; then
@@ -1164,7 +1199,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 sudo apt-get install python3.10
               
               # A FAIRE
-              # elif [ $PROGRAMME_NAME = "vue" ]; then
+              
               # elif [ $PROGRAMME_NAME = "react" ]; then
 
 
@@ -1172,6 +1207,24 @@ fct_info_programme()          # Description : Afficher les informations du progr
               elif [ $PROGRAMME_NAME = "angular" ]; then
                 sudo npm install -g @angular/cli
                 fct_back_to "home"
+              elif [ $PROGRAMME_NAME = "vue" ]; then
+                
+                cd ./test_install
+                if [ ! -d ./vue ]; then
+                  mkdir ./vue
+                  echo -e "\E[32m\t📁 Répertoire \"vue\" créé avec succès!\E[0m"
+                  cd ./vue
+                  space
+                  npm init vue@latest
+                  echo -e "\E[32m\t✅ Installation du projet Vue3 terminé.\E[0m"
+                  cd ./test_install_vue3
+                  npm install
+                  echo -e "\E[32m\t✅ Les dépendances de vue3 ont été installées.\E[0m"
+                else
+                  echo -e "\E[91m\t❌ 📁 Sous-répertoire \"vue\" déjà existant.\E[0m"
+                fi
+                fct_back_to "home"
+                
 
               elif [ $PROGRAMME_NAME = "typescript" ]; then
                 sudo npm install -g typescript -y
@@ -1263,10 +1316,12 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[36m|   \E[37m Suppression uniquement de $PROGRAMME_NAME.10\E[0m"
           echo -e " \E[36m|   \E[37m⇨ \E[95msudo ppa-purge ppa:deadsnakes/ppa -y\E[0m"
           echo -e " \E[36m|   \E[37m⇨ \E[95msudo apt-get remove python3.10 -y\E[0m"
-
         elif [ $PROGRAMME_NAME = "angular" ]; then
           echo -e " \E[96m|   \E[37m⇨ \E[95msudo npm uninstall -g @angular/cli\E[0m"
-
+        
+        elif [ $PROGRAMME_NAME = "vue" ]; then
+          echo "A EDITER"
+        
         elif [ $PROGRAMME_NAME = "typescript" ]; then
           echo -e " \E[96m|   \E[37m⇨ \E[95msudo npm uninstall -g typescript -y\E[0m"
 
@@ -1378,7 +1433,9 @@ fct_info_programme()          # Description : Afficher les informations du progr
               elif [ $PROGRAMME_NAME = "angular" ]; then
                 sudo npm remove -g @angular/cli
                 fct_back_to "home"
-
+              elif [ $PROGRAMME_NAME = "vue" ]; then
+                echo "A EDITER"
+              
               elif [ $PROGRAMME_NAME = "typescript" ]; then
                 sudo npm remove -g typescript -y
                 fct_back_to "home"
@@ -1470,7 +1527,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
     | \E[95m06\E[0m. \E[36mMySQL        \E[0m|  \E[34mPermet de créer et de gérer des bases de données.\E[0m         |  $(fct_check_version mysql)
     | \E[95m07\E[0m. \E[36mComposer     \E[0m|  \E[34mGestionnaire de dépendances pour PHP, Symfony, Laravel\E[0m    |  $(fct_check_version composer)
     | \E[95m08\E[0m. \E[36mSymfony      \E[0m|  \E[34mFramework PHP Français très réputé.\E[0m                       |  $(fct_check_version symfony)
-    | \E[95m09\E[0m. \E[36mVue\E[37m*         \E[0m|  \E[34mFramework Javascript (Très facile d'accès)\E[0m                |  $(fct_check_version vue)
+    | \E[95m09\E[0m. \E[36mVue\E[92m*         \E[0m|  \E[34mFramework Javascript (Très facile d'accès)\E[0m                |  $(fct_check_version vue)
     | \E[95m10\E[0m. \E[36mReact\E[37m*       \E[0m|  \E[34mFramework Javascript (Acces assez moyen)\E[0m                  |  $(fct_check_version react)
     | \E[95m11\E[0m. \E[36mAngular      \E[0m|  \E[34mFramework Javascript (Accès très dur)\E[0m                     |  $(fct_check_version angular)
     | \E[95m12\E[0m. \E[36mTypeScript   \E[0m|  \E[34mTyper son code JavaScript.\E[0m                                |  $(fct_check_version typescript)
@@ -1483,6 +1540,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
   echo -e "\E[92m     🚧 *: [BETA]  Docker, Fonctionne mais il supprimait cURL, NodeJS, Flutter et snapd!. A TESTER ENCORE \E[0m"
   echo -e "\E[92m     🚧 *: [BETA]  Flutter fonctionnne mais au premier lancement un bug existe sur l'affichage de la version. \E[0m"
   echo -e "\E[91m     🚧 *: [ALPHA] Python3, La suppression ne se fait pas (la 3.10).\E[0m"
+  echo -e "\E[92m     🚧 *: [BETA]  Vue3, La suppression n'a pas été réalisé. La version s'affiche avec un bug sur Symfony.\E[0m"
   echo -e "\E[37m     🚧 *: React, à faire.\E[0m"
   echo -e "\E[37m     🚧 *: Vue3, à faire.\E[0m"
   echo -e "\E[95m     ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"

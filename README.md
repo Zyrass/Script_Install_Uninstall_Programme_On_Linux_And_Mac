@@ -39,14 +39,14 @@ L'utilisation est très simple.
 
 2. Mise en place d'une nouvelle branche.
 
-- [ ] Branche features
+- [x] Branche features
 
-1. Mise en place de la logique pour concevoir une application Vue3
+3. Mise en place de la logique pour concevoir une application Vue3
 
-- [ ] Explication sur l'ancienne syntaxe qui est dépréciée aujourd'hui.
-- [ ] Création du répertoire lors de l'installation d'un nouveau projet Vue3
+- [X] Explication sur l'ancienne syntaxe qui est dépréciée aujourd'hui.
+- [X] Création du répertoire lors de l'installation d'un nouveau projet Vue3
 - [ ] Mise en place de la partie suppression.
-- [ ] Permettre d'afficher la version utilisée.
+- [x] Permettre d'afficher la version utilisée.
 - [ ] Afficher les commandes utilisées pour l'installation et la suppression.
 - [ ] Tester les commandes en installant et en supprimant le tout.
 
@@ -63,6 +63,7 @@ L'utilisation est très simple.
 
 - **15/03/2022**
 
+  - [X] Ajout du fonctionnement partiel pour Vue3.
   - [x] Ajout d'un message concernant un bug sur l'affichage de la version de flutter au premier lancement.
   - [x] Ajout du numéro de version au dessus des tableaux.
   - [x] Ajout de la detection de bash ou de ZSH
