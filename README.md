@@ -37,7 +37,20 @@ L'utilisation est très simple.
 - [x] Check la version d'android
 - [x] Suppression de l'archive téléchargé
 
-2. Ajout d'un 3ème menu pour justement ajouter des fonctionnalités supplémentaires pour Linux.
+2. Mise en place d'une nouvelle branche.
+
+- [ ] Branche features
+
+1. Mise en place de la logique pour concevoir une application Vue3
+
+- [ ] Explication sur l'ancienne syntaxe qui est dépréciée aujourd'hui.
+- [ ] Création du répertoire lors de l'installation d'un nouveau projet Vue3
+- [ ] Mise en place de la partie suppression.
+- [ ] Permettre d'afficher la version utilisée.
+- [ ] Afficher les commandes utilisées pour l'installation et la suppression.
+- [ ] Tester les commandes en installant et en supprimant le tout.
+
+4. Ajout d'un 3ème menu pour justement ajouter des fonctionnalités supplémentaires pour Linux.
 
 - [ ] Création du menu (Linux !?)
   - [ ] Ajout de la couleur dans les manuels (terminaux)
