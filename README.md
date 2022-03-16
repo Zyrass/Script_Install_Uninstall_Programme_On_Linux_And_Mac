@@ -10,8 +10,8 @@ Tout ce que j'ai faits c'est grâce à 90% des cours suivis sur **https://dyma.f
 
 1. Comment utiliser le script !?
 2. À venir
-3. Changelog
-4. Exemple du rendu actuel
+3. Exemple du rendu actuel
+4. Changelog
 
 ---
 
@@ -19,63 +19,133 @@ Tout ce que j'ai faits c'est grâce à 90% des cours suivis sur **https://dyma.f
 
 L'utilisation est très simple.
 
-1. Vous devez récupérer le dépôt distant disponible à cette adresse : [LIEN ICI](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac)
+1. Vous devez récupérer le dépôt distant disponible sur cette même page.
 2. Dans un second temps, rendez-vous dans le répertoire fraichement récupérer.
 3. Ouvrer un terminal à cet endroit.
 4. Saisissez la commande suivante : **_`./zyrass.sh`_**
+   1. **Si à cet instant vous n'avez pas les droits, utilisez cette commande :**
+      1. **_`chmod +x zyrass.sh`_**
 5. Suivez les étapes qui vous sont affichées à l'écran.
 
 ---
 
 ## II - À venir
 
-1. Mise en place d'un début de fonctionnement pour installer Android-Studio (le tout totalement automatisé)
-
-- [x] Téléchargement de l'archive
-- [x] Extraction de l'archive ~/Android/
-- [x] Création d'un alias Android dans le fichier bashrc
-- [x] Check la version d'android
-- [x] Suppression de l'archive téléchargé
-
-2. Mise en place d'une nouvelle branche.
-
-- [x] Branche features
-
-3. Mise en place de la logique pour concevoir une application Vue3
-
-- [X] Explication sur l'ancienne syntaxe qui est dépréciée aujourd'hui.
-- [X] Création du répertoire lors de l'installation d'un nouveau projet Vue3
-- [X] Mise en place de la partie suppression.
-- [x] Permettre d'afficher la version utilisée.
-- [X] Afficher les commandes utilisées pour l'installation et la suppression.
-- [X] Tester les commandes en installant et en supprimant le tout.
-
-4. Ajout d'un 3ème menu pour justement ajouter des fonctionnalités supplémentaires pour Linux.
+1. Ajout d'un 3ème menu pour justement ajouter des fonctionnalités supplémentaires pour Linux.
 
 - [ ] Création du menu (Linux !?)
   - [ ] Ajout de la couleur dans les manuels (terminaux)
   - [ ] Ajout dans le .bashrc des configurations spécifiques pour la couleur
 - [ ] Ajout de la commande tree
 
+2. Ajout probablement de quelques technologies ou programmes supplémentaire.
+
+- [ ] Laravel
+- [ ] Nginx
+- [ ] C# pour Linux (V5.0 qui ne bug pas)
+- [ ] Unity Hub
+- [ ] Atom ! ?
+- [ ] Sublime Text ! ?
+- [ ] Google Chrome qui ne dipose pas d'APT ou de SNAP.
+
 ---
 
-## III - Changelog
+## III - Exemple du rendu actuel
+
+> Quelques petites modifications peuvent avoir lieu. (Couleur, texte etc..)<br>
+> En revanche on s'approche énormément du rendu final (90% ~)
+
+### Démarrage
+
+![Démarrage](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/1.png?raw=true)
+
+### GNU/Linus détecté
+
+![GNU/Linus détecté](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/2.png?raw=true)
+
+### Menu Principal
+
+![Home Menu](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/3.png?raw=true)
+
+### Exemple avec le programme Vue
+
+![Exemple Vue](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/4.png?raw=true)
+
+### Installation de Vue
+
+![Installation de Vue](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/5.png?raw=true)
+
+### Installation en cours
+
+![Installation en cours](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/6.png?raw=true)
+
+### Installation terminée
+
+![Installation terminée](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/7.png?raw=true)
+
+### Version affiché au niveau du menu principal
+
+![Version affiché au niveau du menu principal](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/8.png?raw=true)
+
+### Retour sur Vue avec le status installé
+
+![Retour sur Vue avec le status installé](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/9.png?raw=true)
+
+### Suppression de Vue
+
+![Suppression de Vue](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/10.png?raw=true)
+
+### Suppression terminée
+
+![Suppression terminée](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/11.png?raw=true)
+
+### Version plus du tout affiché au niveau du menu principal
+
+![Version plus du tout affiché au niveau du menu principal](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/12.png?raw=true)
+
+### Menu des applications
+
+![Menu des applications](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/13.png?raw=true)
+
+### Quitter le programme
+
+![Quitter](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/14.png?raw=true)
+
+## IV - Changelog
 
 - **16/03/2022**
 
-  - [X] Mise en place de la suppression de Vue. (Simulation d'une supression fonctionnelle)
-  - [X] Supression du message: **🚧 *: Vue3, à faire.**
-  - [X] Ajout d'un message informatif sur l'utilisation de Bash plutôt que de ZSH.
+  - [x] Reprise du README.md
+  - [x] Branche features créé
+  - [x] Téléchargement de l'archive
+  - [x] Extraction de l'archive ~/Android/
+  - [x] Création d'un alias Android dans le fichier bashrc
+  - [x] Check la version d'android
+  - [x] Suppression de l'archive téléchargé
+  - [x] Explication sur l'ancienne syntaxe qui est dépréciée aujourd'hui.
+  - [x] Création du répertoire lors de l'installation d'un nouveau projet Vue3
+  - [x] Mise en place de la partie suppression.
+  - [x] Permettre d'afficher la version utilisée.
+  - [x] Afficher les commandes utilisées pour l'installation et la suppression.
+  - [x] Tester les commandes en installant et en supprimant le tout.
+  - [x] Ajout de React
+  - [x] Ajout d'Android Studio 100% fonctionnel
+  - [x] Modification de toutes les captures d'écrans
+  - [x] Mise en place de la suppression de Vue.
+  - [x] Supression du message: **🚧 \*: Vue3, à faire.**
+  - [x] Ajout d'un message informatif sur l'utilisation de Bash plutôt que de ZSH.
+  - [x] Correction Bug installation Symfony et Vue3
+  - [x] Test effectuer avec succès pour la suppression de Docker
 
 - **15/03/2022**
 
-  - [X] Ajout du fonctionnement partiel pour Vue3.
+  - [x] Ajout du fonctionnement partiel pour Vue3.
   - [x] Ajout d'un message concernant un bug sur l'affichage de la version de flutter au premier lancement.
   - [x] Ajout du numéro de version au dessus des tableaux.
   - [x] Ajout de la detection de bash ou de ZSH
   - [x] Correction orthographique du fichier README.MD.
   - [x] Ajout des textes manquant pour la suppression de Docker.
-  - [X] Ajout et début d'une correction [**BETA**] pour la supression de Docker.
+  - [x] Ajout et début d'une correction [**BETA**] pour la supression de Docker.
   - [x] Modification des messages informatifs pour la suppression de Symfony.
   - [x] Mise en couleur du logo Symfony (fond noir, texte vert)
   - [x] Ajout du fonctionnement pour une installation de Python 3.10
@@ -106,11 +176,11 @@ L'utilisation est très simple.
   - [x] Suppression de trois appels de fonction pour créer un espace après l'exécution du chargement.
   - [x] Ajout d'un .gitignore
   - [x] Ajout du fichier **_android-studio-2021.1.1.22-linux.tar.gz_** télécharger
-  - [ ] Ajout d'Android-Studio dans les application (19)
+  - [x] Ajout d'Android-Studio dans les application (19)
     - [x] Partie installation.
     - [x] Partie Désinstallation.
-    - [ ] Afficher si Android est bien installé.
-    - [ ] Afficher les lignes de code à utilisé lors de l'installation et la suppression.
+    - [x] Afficher si Android est bien installé.
+    - [x] Afficher les lignes de code à utilisé lors de l'installation et la suppression.
 
 - **01/03/2022**
 
@@ -138,22 +208,3 @@ L'utilisation est très simple.
   - [x] Ajout du gras sur le logo de Dyma.
   - [x] Suppression de l'image **accueil.png** pour la ré-upload avec la bonne image du logo Dyma.
   - [x] Ajout des descriptions pour tous les programmes
-
----
-
-## IV - Exemple du rendu actuel
-
-> Quelques petites modifications peuvent avoir lieu. (Couleur, texte etc..)<br>
-> En revanche on s'approche énormément du rendu final (60% ~)
-
-![Accueil](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/accueil.png?raw=true)
-
-![Présentation](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/presentation.png?raw=true)
-
-![Menu Accueil](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/menu_accueil.png?raw=true)
-
-![Exemple](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/exemple.png?raw=true)
-
-![Choix 15](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/choix-15.png?raw=true)
-
-![Quitter](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/quitter.png?raw=true)

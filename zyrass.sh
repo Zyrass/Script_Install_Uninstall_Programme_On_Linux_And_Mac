@@ -1,70 +1,65 @@
 ZSH=$(which zsh)
-if [ $? -eq 0 ]; then
+if [ "$?" -eq 0 ]; then
   #!/usr/bin/zsh
   echo ""
-fi
-
-BASH=$(which bash)
-if [ $? -eq 0 ]; then
+else
   #!/usr/bin/bash
   echo ""
 fi
-
 
 # CONFIGURATION
 PS3="
   Quel est votre choix : "
 
-check_os()                       # Description : Connaître l'OS et le numéro de version du Mac utilisé
+check_os()                    # Description : Connaître l'OS et le numéro de version du Mac utilisé
 {
   version_macOS=$(uname -a | cut -d " " -f 3)
-  os=$(uname -a | cut -d " " -f 1)
 }
 
 loading()                     # Description : Loading animation
 {
   space
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t                       (\E[36m0%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t                       (\E[36m0%\E[0m)\r'
   sleep 0.01
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m#\E[0m                      (\E[36m5%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m#\E[0m                      (\E[36m5%\E[0m)\r'
   sleep 0.02
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m##\E[0m                     (\E[36m10%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m##\E[0m                     (\E[36m10%\E[0m)\r'
   sleep 0.03
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m###\E[0m                    (\E[36m15%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m###\E[0m                    (\E[36m15%\E[0m)\r'
   sleep 0.04
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m####\E[0m                   (\E[36m20%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m####\E[0m                   (\E[36m20%\E[0m)\r'
   sleep 0.05
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m#####\E[0m                  (\E[36m25%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m#####\E[0m                  (\E[36m25%\E[0m)\r'
   sleep 0.06
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m######\E[0m                 (\E[36m30%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m######\E[0m                 (\E[36m30%\E[0m)\r'
   sleep 0.07
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m#######\E[0m                (\E[36m95%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m#######\E[0m                (\E[36m95%\E[0m)\r'
   sleep 0.08
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m########\E[0m               (\E[36m40%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m########\E[0m               (\E[36m40%\E[0m)\r'
   sleep 0.09
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m#########\E[0m              (\E[36m45%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m#########\E[0m              (\E[36m45%\E[0m)\r'
   sleep 0.10
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m##########\E[0m             (\E[36m50%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m##########\E[0m             (\E[36m50%\E[0m)\r'
   sleep 0.11
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m###########\E[0m            (\E[36m55%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m###########\E[0m            (\E[36m55%\E[0m)\r'
   sleep 0.12
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m############\E[0m           (\E[36m60%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m############\E[0m           (\E[36m60%\E[0m)\r'
   sleep 0.13
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m#############\E[0m          (\E[36m65%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m#############\E[0m          (\E[36m65%\E[0m)\r'
   sleep 0.14
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m##############\E[0m         (\E[36m70%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m##############\E[0m         (\E[36m70%\E[0m)\r'
   sleep 0.15
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m###############\E[0m        (\E[36m75%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m###############\E[0m        (\E[36m75%\E[0m)\r'
   sleep 0.16
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m################\E[0m       (\E[36m80%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m################\E[0m       (\E[36m80%\E[0m)\r'
   sleep 0.17
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m#################\E[0m      (\E[36m85%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m#################\E[0m      (\E[36m85%\E[0m)\r'
   sleep 0.18
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m##################\E[0m     (\E[36m90%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m##################\E[0m     (\E[36m90%\E[0m)\r'
   sleep 0.19
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m###################\E[0m    (\E[36m95%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m###################\E[0m    (\E[36m95%\E[0m)\r'
   sleep 0.20
-  echo -ne ' ⇨ \E[37mChargement\E[0m :\t\E[32m####################\E[0m   (\E[36m100%\E[0m)\r'
+  echo -ne ' 👉 \E[37mChargement\E[0m :\t\E[32m####################\E[0m   (\E[36m100%\E[0m)\r'
   space
 }
 
@@ -183,9 +178,9 @@ fct_show_logo()               # Description : Affiche le logo
 
     dyma)
       dyma_logo
-      echo -e "\E[37;40m          ⇨  Logo Dyma\E[0m\E[91;40m - Script non officiel                                                            \E[0m"
-      echo -e "\E[37;40m          ⇨  Script mis au point par \E[33m\033[1m\E[3mZyrass\033[0m\E[37;40m utilisateur assidu sur \E[36m\E[3m\E[4mhttps://dyma.fr\E[0m\E[37;40m                      \E[0m"
-      echo -e "\E[37;40m          ⇨  J'ai passé plus de \E[92;40m520 heures\E[37;40m sur cette plate-forme.                                       \E[0m"
+      echo -e "\E[37;40m          👉  Logo Dyma\E[0m\E[91;40m - Script non officiel                                                           \E[0m"
+      echo -e "\E[37;40m          👉  Script mis au point par \E[33m\033[1m\E[3mZyrass\033[0m\E[37;40m utilisateur assidu sur \E[36m\033[3mhttps://dyma.fr\E[37;40m                     \E[0m"
+      echo -e "\E[37;40m          👉  J'ai passé plus de \E[92;40m520 heures\E[37;40m sur cette plate-forme.                                      \E[0m"
       echo -e "\E[95;40m                                                                                                        \E[0m"
       space
       read -p "  ... Appuyer sur une touche pour accéder à la présentation du script ..."
@@ -468,7 +463,7 @@ fct_show_logo()               # Description : Affiche le logo
       space
     ;;
 
-    figma)
+    figma-linux)
       echo -e "\033[1m\E[36m       
          _______ _________ _______  _______  _______ 
         (  ____ \\\\__   __/(  ____ \(       )(  ___  )
@@ -697,19 +692,20 @@ fct_which_name()              # Description : Vérifier que le programme est ins
 {
   PROGRAMME_NAME=$1
 
-  if [ $PROGRAMME_NAME = "angular" ]; then
+  if [ "$PROGRAMME_NAME" = "angular" ]; then
     RESULT=$(which ng)
-  elif [ $PROGRAMME_NAME = "typescript" ]; then
+  elif [ "$PROGRAMME_NAME" = "typescript" ]; then
     RESULT=$(which tsc)
   else
-    RESULT=$(which $PROGRAMME_NAME)
+    RESULT=$(which "$PROGRAMME_NAME")
   fi
 
   if [ $? -eq 0 ]; then
     echo -e "\E[32mInstallé\E[0m"
   else
     if [ -d ./test_install/vue/test_install_vue3 ]; then
-      # version_vue=$(grep -Ei "\"vue\":" ./test_install/vue/test_install_vue3/package.json | cut -d "^" -f 2 | cut -d "\"" -f 1)
+      echo -e "\E[32mInstallé\E[0m"
+    elif [ -d ./test_install/react/test_install_react ]; then
       echo -e "\E[32mInstallé\E[0m"
     else
       echo -e "\E[37mPas installé.\E[0m"
@@ -724,45 +720,41 @@ fct_check_version()           # Description : Vérifier la version d'un programm
   # version_linux=$(lsb_release -a | grep -Ei "Description" | cut -d " " -f 2 | head -n 2)
 
   PROGRAMME_NAME=$1
-  RESULT=$(which $PROGRAMME_NAME)
-  if [ $PROGRAMME_NAME = "angular" ]; then
+  RESULT=$(which "$PROGRAMME_NAME")
+  if [ "$PROGRAMME_NAME" = "angular" ]; then
     RESULT=$(which ng)
-  elif [ $PROGRAMME_NAME = "typescript" ]; then
+  elif [ "$PROGRAMME_NAME" = "typescript" ]; then
     RESULT=$(which tsc)
   else
-    RESULT=$(which $PROGRAMME_NAME)
+    RESULT=$(which "$PROGRAMME_NAME")
   fi
 
-  if [ $? -eq 0 ]; then
-    if [ $PROGRAMME_NAME = "curl" ]; then
+  if [ "$?" -eq 0 ]; then
+    
+    # TECHNOLOGIES
+    if [ "$PROGRAMME_NAME" = "curl" ]; then
       version_curl=$(curl --version | head -n 1 | cut -d " " -f 2 | cut -d " " -f 1)
       echo -e "\E[33m$version_curl\E[0m"
-    elif [ $PROGRAMME_NAME = "git" ]; then
+    elif [ "$PROGRAMME_NAME" = "git" ]; then
       version_git=$(git --version | awk '{print $3}')
       echo -e "\E[33m$version_git\E[0m"
-    elif [ $PROGRAMME_NAME = "node" ]; then
+    elif [ "$PROGRAMME_NAME" = "node" ]; then
       version_node=$(node -v | cut -d "v" -f 2)
       version_npm=$(npm -v)
       echo -e "\E[36mNode:\E[0m \E[33m$version_node\E[0m \E[36mNPM:\E[0m \E[33m$version_npm\E[0m"
-    elif [ $PROGRAMME_NAME = "docker" ]; then
+    elif [ "$PROGRAMME_NAME" = "docker" ]; then
       version_docker=$(docker -v | cut -d "," -f 1 | cut -d " " -f 3)
       echo -e "\E[33m$version_docker\E[0m"
-    elif [ $PROGRAMME_NAME = "php" ]; then
+    elif [ "$PROGRAMME_NAME" = "php" ]; then
       version_php=$(php -v | head -n 1 | cut -d " " -f 2)
       echo -e "\E[33m$version_php\E[0m"
-    elif [ $PROGRAMME_NAME = "mysql" ]; then
+    elif [ "$PROGRAMME_NAME" = "mysql" ]; then
       version_mysql=$(mysql -V | cut -d "u" -f 1 | cut -d " " -f 4)
       echo -e "\E[33m$version_mysql\E[0m"
-    # elif [ $PROGRAMME_NAME = "nginx" ]; then
-    #   version_nginx=$(nginx -v | head -n 1 | cut -d " " -f 3)
-    #   echo -e "\E[33m$PROGRAMME_NAME $version_nginx\E[0m"
-    # elif [ $PROGRAMME_NAME = "phpmyadmin" ]; then
-    #   version_phpmyadmin=$(phpmyadmin -v | head -n 1 | cut -d " " -f 3)
-    #   echo -e "\E[33m$PROGRAMME_NAME $version_phpmyadmin\E[0m"
-    elif [ $PROGRAMME_NAME = "composer" ]; then
+    elif [ "$PROGRAMME_NAME" = "composer" ]; then
       version_composer=$(composer -V | head -n 1 | cut -d " " -f 3)
       echo -e "\E[33m$version_composer\E[0m"
-    elif [ $PROGRAMME_NAME = "symfony" ]; then
+    elif [ "$PROGRAMME_NAME" = "symfony" ]; then
 
       if [ -d ./test_install/symfony/test_install_symfony ]; then
         version_symfony=$(grep -Ei https://github.com/symfony/cache/tree/v ./test_install/symfony/test_install_symfony/composer.lock | head -n 1 | cut -d "\"" -f 4 | cut -d "v" -f 2)
@@ -772,49 +764,54 @@ fct_check_version()           # Description : Vérifier la version d'un programm
         echo -e "\E[95mRelancer le programme pour voir les versions\E[0m"
       fi    
 
-    # elif [ $PROGRAMME_NAME = "react" ]; then
-    #   version_react=$(create-react-app -v | head -n 1 | cut -d " " -f 2)
-      # echo -e "\E[33m$PROGRAMME_NAME $version_react\E[0m"
-    elif [ $PROGRAMME_NAME = "angular" ]; then
+
+
+    elif [ "$PROGRAMME_NAME" = "angular" ]; then
       version_angular=$(ng --version | grep -Ei cli: | cut -d " " -f 3)
       echo -e "\E[33m$version_angular\E[0m"
-
-    elif [ $PROGRAMME_NAME = "typescript" ]; then
+    
+    elif [ "$PROGRAMME_NAME" = "typescript" ]; then
       version_typescript=$(tsc -v | cut -d " " -f 2)
       echo -e "\E[33m$version_typescript\E[0m"
-    elif [ $PROGRAMME_NAME = "python3" ]; then
+    elif [ "$PROGRAMME_NAME" = "python3" ]; then
       version_python38=$(python3 -V | cut -d " " -f 2)
       version_python310=$(python3.10 -V | cut -d " " -f 2)
       echo -e "\E[36mPython3: \E[33m$version_python38 \E[36mPython3.10: \E[33m$version_python310\E[0m"
-    elif [ $PROGRAMME_NAME = "flutter" ]; then
+    elif [ "$PROGRAMME_NAME" = "flutter" ]; then
       version_dart=$(dart --version | cut -d " " -f 4)
       version_flutter=$(flutter --version | head -n 1 | cut -d " " -f 2)
-      echo -e "\E[36mFlutter:\E[0m \E[33m$version_flutter\E[0m \E[36mDart:\E[0m \E[33m$version_dart\E[0m"
-
-    # APP
-    elif [ $PROGRAMME_NAME = "code" ]; then
-      version_code=$(code --version | head -n 1 | cut -d " " -f 3)
-      echo -e "\E[33m$version_code\E[0m"
-
-    fi
-  else
-    if [ $PROGRAMME_NAME = "android" ]; then
-      # version_android=$(echo android-studio-2021.1.1.22-linux.tar.gz | cut -d "-" -f 3)
+      echo -e "\E[36mFlutter: \E[33m$version_flutter \E[36mDart: \E[33m$version_dart\E[0m"
+    
+    # APPLICATIONS
+    elif [ "$PROGRAMME_NAME" = "code" -o "$PROGRAMME_NAME" = "mysql-workbench-community" -o "$PROGRAMME_NAME" = "chromium" -o "$PROGRAMME_NAME" = "firefox" -o "$PROGRAMME_NAME" = "brave" -o "$PROGRAMME_NAME" = "opera" -o "$PROGRAMME_NAME" = "figma-linux"  -o "$PROGRAMME_NAME" = "krita" -o "$PROGRAMME_NAME" = "postman" -o "$PROGRAMME_NAME" = "discord" -o "$PROGRAMME_NAME" = "spotify" -o "$PROGRAMME_NAME" = "thunderbird" -o "$PROGRAMME_NAME" = "obs-studio" -o "$PROGRAMME_NAME" = "kylin-video" -o "$PROGRAMME_NAME" = "vlc" -o "$PROGRAMME_NAME" = "blender" -o "$PROGRAMME_NAME" = "okular" -o "$PROGRAMME_NAME" = "gimp" -o "$PROGRAMME_NAME" = "spectacle" ]; then
       echo -e "\E[32mInstallé\E[0m"
-    elif [ $PROGRAMME_NAME = "vue" ]; then
-      if [ -d ./test_install/vue/test_install_vue3 ]; then
+    fi
+
+  else
+    if [ "$PROGRAMME_NAME" = "vue" ]; then
+      if [ ! -d ./test_install/vue/test_install_vue3 ]; then
+        echo -e "\E[37mPas installé\E[0m"
+      else
         version_vue=$(grep -Ei "\"vue\"" ./test_install/vue/test_install_vue3/package.json | cut -d "^" -f 2 | cut -d "\"" -f 1)
         echo -e "\E[33m$version_vue\E[0m"
-      else
-        # echo -e "\E[95mRelancer le programme pour voir la version de vue\E[0m"
-        echo -e "\E[37mPas installé.\E[0m"
       fi
-
-    else
-      echo -e "\E[37mPas installé.\E[0m"
+    elif [ "$PROGRAMME_NAME" = "react" ]; then
+      if [ ! -d ./test_install/react/test_install_react ]; then
+        echo -e "\E[37mPas installé\E[0m"
+      else
+        version_react="$(grep -Ei "\"react\"" ./test_install/react/test_install_react/package.json | cut -d "^" -f 2 | cut -d "\"" -f 1)"
+        echo -e "\E[33m$version_react\E[0m"
+      fi
+    elif [ "$PROGRAMME_NAME" = "android" ]; then
+      if [ ! -d ~/android-studio ]; then
+        echo -e "\E[37mPas installé\E[0m"
+      else
+        echo -e "\E[32mInstallé\E[0m"  
+      fi
+    else    
+      echo -e "\E[37mPas installé\E[0m"
     fi
   fi
-
 
 }
 
@@ -827,7 +824,7 @@ fct_message_presentation()    # Description : Affiche la présentation du script
 {
 
   check_os
-  if [ $? -eq 0 ]; then
+  if [ "$?" -eq 0 ]; then
     
     if [ $version_macOS = "Darwin" ]; then
       apple_logo
@@ -837,14 +834,14 @@ fct_message_presentation()    # Description : Affiche la présentation du script
   fi
 
   space
-  echo -e "     \E[91mSi, ci-dessous vous avez une erreur vous pourrez installer lsb-core\E[0m"
-  echo -e "     \E[91mSous linux : \E[36mapt-get install lsb-core -y\E[0m"
+  echo -e "     \E[91mSi, ci-dessous vous avez une erreur, vous pourrez installer \E[95mlsb-core\E[0m"
+  echo -e "     \E[91mSous Linux saisissez: \E[36msudo apt-get install lsb-core -y\E[0m"
   space
 
-  if [ $(uname -a | cut -d " " -f 1) = "Darwin" ]; then
-    echo -e "     \E[96m ⇨ Vous exécutez $(uname -a | cut -d " " -f 1) sur un Mac avec comme version: $(uname -a | cut -d " " -f 3).\E[0m"
-  elif [ $(uname -a | cut -d " " -f 1) = "Linux" ]; then
-    echo -e "     \E[96m ⇨ Vous exécutez $(uname -a | head -n 2 | cut -d " " -f 15) avec une distribution $(uname -a | cut -d " " -f 4 | cut -d "-" -f 2) $(lsb_release -a | grep -Ei "Description" | cut -d " " -f 2 | head -n 2).\E[0m"
+  if [ "$(uname -a | cut -d " " -f 1)" = "Darwin" ]; then
+    echo -e "     \E[96m 👉 Vous exécutez $(uname -a | cut -d " " -f 1) sur un Mac avec comme version: $(uname -a | cut -d " " -f 3).\E[0m"
+  elif [ "$(uname -a | cut -d " " -f 1)" = "Linux" ]; then
+    echo -e "     \E[96m 👉 Vous exécutez $(uname -a | head -n 2 | cut -d " " -f 15) avec une distribution $(uname -a | cut -d " " -f 4 | cut -d "-" -f 2) $(lsb_release -a | grep -Ei "Description" | cut -d " " -f 2 | head -n 2).\E[0m"
   fi
   echo -e "\t\033[1m\033[3mSachez que ce script sera actualisé chaque fois que nécessaire.\033[0m"
   
@@ -860,12 +857,13 @@ fct_message_presentation()    # Description : Affiche la présentation du script
   space
   echo -e "     \E[37mJe m'appelle \E[32mAlain Guillon\E[37m, développeur dit \"\033[1m\E[96mJunior\033[0m\" \E[37mavec tout de même quelques bases très solide.\E[0m"
   echo -e "     \E[37mVia ce script, je ne cherche aucunement à monnayer celui-ci.\E[0m"
-  echo -e "     \E[37mSi je peux apporter un complément ou bien faciliter l'installation de tel ou tel programme sur Linux ou Mac\E[0m"
+  echo -e "     \E[37mSi je peux apporter un complément ou bien faciliter l'installation de tel ou tel programme sur Linux,\E[0m"
   echo -e "     \E[37mj'en serais pleinement satisfait.\E[0m"
+  echo -e "     \E[37m(\033[3m\E[36mSur Mac, ça ne fonctionne pas pour le moment\033[0m\E[37m)\E[0m"
   space 
-  echo -e "     \E[37mJe vais par la suite voir pour diffuser celui-ci sur la plateforme \E[95m\033[1mLinkedin\033[0m\E[37m avec leurs accords \E[0m"
+  echo -e "     \E[37mSuite à l'accords d'\E[96mErwan\E[37m, je vais diffuser celui-ci sur la plateforme \E[95m\033[1mLinkedin\033[0m\E[0m"
   echo -e "     \E[37mafin de permettre à un nombre conséquent d'étudiants de ne plus avoir à craindre \E[0m"
-  echo -e "     \E[37md'installer ou de supprimer un quelconque programme sur l'un de ces OS.\E[0m"
+  echo -e "     \E[37md'installer ou de supprimer un quelconque programme sur Linux.\E[0m"
   space
   echo -e "     \E[33mJe vous propose via ce script ceci :\E[0m"
   echo -e "         \E[33m1. vous y trouverez des programmes que j'utilise.\E[0m"
@@ -889,8 +887,8 @@ fct_message_presentation()    # Description : Affiche la présentation du script
   if [ ! -d ./test_install ]; then
     echo -e "\E[95m\tDémarrage de la création du répertoire \"test_install\" afin de tester les installations de Symfony, React ou Vue3. \E[0m"
     mkdir ./test_install
-    echo -e "\E[32m\t📁 Répertoire \"test_installation\" créé avec succès!\E[0m"
-      cd ./test_install
+    echo -e "\E[32m\t📁 Répertoire \"test_install\" créé avec succès!\E[0m"
+      cd ./test_install || return
   else
     echo -e "\E[91m\t❌ 📁 Le répertoire \"test_install\" existe déjà aucune création n'est nécessaire.\E[0m"
   fi
@@ -902,34 +900,34 @@ fct_message_presentation()    # Description : Affiche la présentation du script
 
 fct_show_version()            # Description : Affiche la version d'un programme quelconque
                               # Arg 1       : Nom de la technologie ou programme
-                              # Arg 2       : Version de la technologie ou programme
 {
   PROGRAMME_NAME=$1
+  if [ "$PROGRAMME_NAME" = "curl" -o "$PROGRAMME_NAME" = "node" -o "$PROGRAMME_NAME" = "git" -o  "$PROGRAMME_NAME" = "docker" -o "$PROGRAMME_NAME" = "php" -o "$PROGRAMME_NAME" = "mysql" -o "$PROGRAMME_NAME" = "composer" -o "$PROGRAMME_NAME" = "symfony" -o "$PROGRAMME_NAME" = "vue" -o "$PROGRAMME_NAME" = "react" -o "$PROGRAMME_NAME" = "angular" -o "$PROGRAMME_NAME" = "typescript" -o "$PROGRAMME_NAME" = "python3" -o "$PROGRAMME_NAME" = "flutter" ]; then
 
-  if [ $PROGRAMME_NAME = "android" ]; then
-    echo -e " \E[36m+ ---------------------------------------------------------------------------------------- +\E[0m"
-    echo -e " \E[36m|\E[0m  \E[33mStatut actuel du programme $PROGRAMME_NAME :\E[0m \E[32m$(fct_check_version $PROGRAMME_NAME)\E[0m"
-    echo -e " \E[36m+ ---------------------------------------------------------------------------------------- +\E[0m"
+  # -o "$PROGRAMME_NAME" = "mysql-workbench-community" -o "$PROGRAMME_NAME" = "chromium" -o "$PROGRAMME_NAME" = "firefox" -o "$PROGRAMME_NAME" = "brave" -o "$PROGRAMME_NAME" = "opera" -o "$PROGRAMME_NAME" = "figma-linux"  -o "$PROGRAMME_NAME" = "krita" -o "$PROGRAMME_NAME" = "postman" -o "$PROGRAMME_NAME" = "discord" -o "$PROGRAMME_NAME" = "spotify" -o "$PROGRAMME_NAME" = "thunderbird" -o "$PROGRAMME_NAME" = "obs-studio" -o "$PROGRAMME_NAME" = "vlc" -o "$PROGRAMME_NAME" = "okular" -o "$PROGRAMME_NAME" = "gimp" -o "$PROGRAMME_NAME" = "spectacle"
+    echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
+    echo -e " \E[36m|  \E[33mStatut actuel du programme "$PROGRAMME_NAME" : \E[32m$(fct_which_name "$PROGRAMME_NAME")\E[0m"
+    echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
   else
-    echo -e " \E[36m+ ---------------------------------------------------------------------------------------- +\E[0m"
-    echo -e " \E[36m|\E[0m  \E[33mStatut actuel du programme $PROGRAMME_NAME :\E[0m \E[32m$(fct_which_name $PROGRAMME_NAME)\E[0m"
-    echo -e " \E[36m+ ---------------------------------------------------------------------------------------- +\E[0m"
+    echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
+    echo -e " \E[36m|  \E[33mStatut actuel du programme "$PROGRAMME_NAME" : \E[32m$(fct_check_version "$PROGRAMME_NAME")\E[0m"
+    echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
   fi
   space
 }
 
-fct_install()                 # Description : Permet d'afficher le message si l'installation à réussi ou bien si elle existe.
+fct_install()                 # Description : Permet d'afficher le message si l'installation à réussi ou bien si elle a déjà été installé.
                               # Arg 1       : "success" ou "error"
 {
   case $i in
     "success")
       echo -e "\E[92m+ ------------------------------------------------------------------------------------------------ +\E[0m"
-      echo -e "\E[92m\t\t✅ $PROGRAMME_NAME a bien été installé avec succès!\E[0m"
+      echo -e "\E[92m\t\t✅ "$PROGRAMME_NAME" a bien été installé avec succès!\E[0m"
       echo -e "\E[92m+ ------------------------------------------------------------------------------------------------ +\E[0m"
     ;;
     "error")
       echo -e "\E[91m+ ------------------------------------------------------------------------------------------------ +\E[0m"
-      echo -e "\E[91m\t\t❌ Désolé, $PROGRAMME_NAME a déjà été installé sur cette ordinateur!\E[0m"
+      echo -e "\E[91m\t\t❌ Désolé, "$PROGRAMME_NAME" a déjà été installé sur cette ordinateur!\E[0m"
       echo -e "\E[91m+ ------------------------------------------------------------------------------------------------ +\E[0m"
     ;;
   esac
@@ -962,141 +960,161 @@ fct_info_programme()          # Description : Afficher les informations du progr
   PROGRAMME_NAME=$1
 
   # Choix des actions à effectuer
-  select option in "Installation de $PROGRAMME_NAME" "Désinstallation de $PROGRAMME_NAME" "allez à la page des applications" "allez à la page d'accueil"
+  select option in "Installation de "$PROGRAMME_NAME"" "Désinstallation de "$PROGRAMME_NAME"" "allez à la page des applications" "allez à la page d'accueil"
   do
     case $option in
       
-      "Installation de $PROGRAMME_NAME") 
+      "Installation de "$PROGRAMME_NAME"") 
         
         # Installation de la technologie
         space
-        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
-        echo -e " \E[36m|   \E[33mInstallation de $PROGRAMME_NAME\E[0m"
-        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
-        if [ $PROGRAMME_NAME = "curl" ]; then
+        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
+        echo -e " \E[36m|   \E[33mInstallation de "$PROGRAMME_NAME"\E[0m"
+        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
+        
+        if [ "$PROGRAMME_NAME" = "curl" ]; then
           echo -e " \E[96m| /!\ Il est normalement installé par défaut, mais au cas où /!\ \E[0m"
-          echo -e " \E[96m|\E[0m \E[37m Pour installer $PROGRAMME_NAME + npm, nous aurions dû saisir :\E[0m"
-        elif [ $PROGRAMME_NAME = "node" ]; then
-          echo -e " \E[96m|\E[0m \E[37m /!\ Il faut toujours installer une version PAIRE /!\ \E[0m"
-          echo -e " \E[96m|\E[0m \E[37m Pour installer $PROGRAMME_NAME + npm, nous aurions dû saisir :\E[0m"
-        elif [ $PROGRAMME_NAME = "symfony" ]; then
-          echo -e " \E[96m|\E[0m \E[37m Deux prérequis indispensable qui doit être installé sur votre ordinateur: \E[0m"
-          echo -e " \E[96m| \E[0m   ⇨ \E[95mphp8\E[0m"
-          echo -e " \E[96m| \E[0m   ⇨ \E[95mcomposer\E[0m"
-          echo -e " \E[96m|\E[0m \E[37m Enfin, pour installer $PROGRAMME_NAME CLI nous aurions dû saisir :\E[0m"
-        elif [ $PROGRAMME_NAME = "python3" ]; then
-          echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME.10, nous aurions dû saisir :\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[95msudo add-apt-repository ppa:deadsnakes/ppa -y\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[95msudo apt-get install python3.10 -y\E[0m"
-        elif [ $PROGRAMME_NAME = "vue" ]; then
-          echo -e " \E[96m| /!\ Anciènnement nous aurions dû saisir: \E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[95mnpm install vue -g\E[0m"
-        elif [ $PROGRAMME_NAME = "flutter" ]; then
-          echo -e " \E[96m|\E[0m \E[37m Pour installer $PROGRAMME_NAME et dart, nous aurions dû saisir :\E[0m"
+          echo -e " \E[96m|\E[0m \E[37m Pour installer "$PROGRAMME_NAME" + npm, nous aurions dû saisir :\E[0m"
+        elif [ "$PROGRAMME_NAME" = "node" ]; then
+          echo -e " \E[36m|\E[0m \E[37m /!\ Il faut toujours installer une version PAIRE /!\ \E[0m"
+          echo -e " \E[36m|\E[0m \E[37m Pour installer "$PROGRAMME_NAME" + npm, nous aurions dû saisir :\E[0m"
+        elif [ "$PROGRAMME_NAME" = "symfony" ]; then
+          echo -e " \E[36m|\E[0m \E[37m Deux prérequis indispensable qui doit être installé sur votre ordinateur: \E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mphp8\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mcomposer\E[0m"
+          echo -e " \E[36m|\E[0m \E[37m Enfin, pour installer "$PROGRAMME_NAME" CLI nous aurions dû saisir :\E[0m"
+        elif [ "$PROGRAMME_NAME" = "python3" ]; then
+          echo -e " \E[36m|\E[0m \E[37m Pour installer "$PROGRAMME_NAME".10, nous aurions dû saisir :\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95msudo add-apt-repository ppa:deadsnakes/ppa -y\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95msudo apt-get install python3.10 -y\E[0m"
+        elif [ "$PROGRAMME_NAME" = "vue" ]; then
+          echo -e " \E[36m| /!\ Anciènnement nous aurions dû saisir: \E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[37mnpm install vue -g\E[0m"
+        elif [ "$PROGRAMME_NAME" = "react" ]; then
+          echo -e " \E[36m| /!\ Anciènnement nous aurions dû saisir: \E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[37mnpm install -g create-react-app\E[0m"
+        elif [ "$PROGRAMME_NAME" = "flutter" ]; then
+          echo -e " \E[96m|\E[0m \E[37m Pour installer "$PROGRAMME_NAME" et dart, nous aurions dû saisir :\E[0m"
         else
-          echo -e " \E[96m|\E[0m \E[37m Pour installer $PROGRAMME_NAME, nous aurions dû saisir :\E[0m"
+          echo -e " \E[36m|\E[0m \E[37m Pour installer "$PROGRAMME_NAME", nous aurions dû saisir :\E[0m"
         fi
         
         # ACCUEIL
-        if [ $PROGRAMME_NAME = "curl" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt-get update\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt-get install $PROGRAMME_NAME\E[0m"
-        elif [ $PROGRAMME_NAME = "node" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95mcurl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt-get install -y nodejs\E[0m"
-        elif [ $PROGRAMME_NAME = "git" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt-get update\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt-get install $PROGRAMME_NAME\E[0m"
-        elif [ $PROGRAMME_NAME = "docker" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95mPlusieurs étapes sont nécessaire...\E[0m"
-        elif [ $PROGRAMME_NAME = "php" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo add-apt-repository ppa:ondrej/php -y\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt install php8.1 -y\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt install php8.1-mbstring -y\E[0m"
+        if [ "$PROGRAMME_NAME" = "curl" ]; then
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt-get update\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt-get install "$PROGRAMME_NAME"\E[0m"
+        elif [ "$PROGRAMME_NAME" = "node" ]; then
+          echo -e " \E[96m| \E[0m    👉 \E[95mcurl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt-get install -y nodejs\E[0m"
+        elif [ "$PROGRAMME_NAME" = "git" ]; then
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt-get update\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt-get install "$PROGRAMME_NAME"\E[0m"
+        elif [ "$PROGRAMME_NAME" = "docker" ]; then
+          echo -e " \E[96m| \E[0m    👉 \E[95mPlusieurs étapes sont nécessaire...\E[0m"
+        elif [ "$PROGRAMME_NAME" = "php" ]; then
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo add-apt-repository ppa:ondrej/php -y\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt install php8.1 -y\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt install php8.1-mbstring -y\E[0m"
           
-        elif [ $PROGRAMME_NAME = "mysql" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt-get install mysql-server\E[0m"
-          echo -e " \E[96m| \E[0m ⇨ \E[91m\E[1m /!\ Veuillez vous rendre sur Dyma pour configurer mysql. /!\ \E[0m"
-        elif [ $PROGRAMME_NAME = "composer" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95mPlusieurs étapes sont nécessaire...\E[0m"
-        elif [ $PROGRAMME_NAME = "symfony" ]; then
-          echo -e " \E[96m| \E[0m   ⇨ \E[95mecho 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | sudo tee /etc/apt/sources.list.d/symfony-cli.list\E[0m"
-          echo -e " \E[96m| \E[0m   ⇨ \E[95msudo apt update\E[0m"
-          echo -e " \E[96m| \E[0m   ⇨ \E[95msudo apt install symfony-cli -y\E[0m"
+        elif [ "$PROGRAMME_NAME" = "mysql" ]; then
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt-get install mysql-server\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[91m\E[1m /!\ Veuillez vous rendre sur Dyma pour configurer mysql. /!\ \E[0m"
+        elif [ "$PROGRAMME_NAME" = "composer" ]; then
+          echo -e " \E[96m| \E[0m    👉 \E[95mPlusieurs étapes sont nécessaire...\E[0m"
+        elif [ "$PROGRAMME_NAME" = "symfony" ]; then
+          echo -e " \E[96m| \E[0m    👉 \E[95mecho 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | sudo tee /etc/apt/sources.list.d/symfony-cli.list\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt update\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt install symfony-cli -y\E[0m"
           echo -e " \E[96m| \E[0m \E[93m\E[1m /!\ \Possibilité d'avoir une erreur alors pour évité ceci on installera la dépendance ci-dessous. \E[0m"
-          echo -e " \E[96m| \E[0m   ⇨ \E[95msudo apt-get install php8.1.*-xml -y\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt-get install php8.1.*-xml -y\E[0m"
           echo -e " \E[96m| \E[0m \E[93m\E[1m /!\ \Faîtes la commande ci-dessous pour voir si tout est OK. (Encadré vert) \E[0m"
-          echo -e " \E[96m| \E[0m   ⇨ \E[95msymfony check:requirements\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95msymfony check:requirements\E[0m"
           echo -e " \E[96m| \E[0m \E[93m\E[1m /!\ \Utilisation du protocole \"HTTPS\" en local.\E[0m"
-          echo -e " \E[96m| \E[0m   ⇨ \E[95msudo apt install libnss3-tools -y\E[0m"
-          echo -e " \E[96m| \E[0m   ⇨ \E[95msymfony server:ca:install\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt install libnss3-tools -y\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95msymfony server:ca:install\E[0m"
           echo -e " \E[96m| \E[0m \E[37mAfin de connaître la version de symfony utilisée, je vais installer un projet de test à cette emplacement :\E[0m"
           echo -e " \E[96m| \E[0m \E[92m./test_install/symfony/test_install_symfony\E[37m. Voici les commandes qu'on aurait dû saisir :\E[0m"
-          echo -e " \E[96m| \E[0m   ⇨ \E[95mcd ./test_install\E[0m"
-          echo -e " \E[96m| \E[0m   ⇨ \E[95mmkdir ./symfony \E[37m// Un test d'existance est effectué au préalable.\E[0m"
-          echo -e " \E[96m| \E[0m   ⇨ \E[95mcd ./symfony\E[0m"
-          echo -e " \E[96m| \E[0m   ⇨ \E[95msymfony new test_install_symfony\E[0m"
-          echo -e " \E[96m| \E[0m   ⇨ \E[95mcd ./test_install_symfony\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mcd ./test_install\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mmkdir ./symfony \E[37m// Un test d'existance est effectué au préalable.\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mcd ./symfony\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95msymfony new test_install_symfony\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mcd ./test_install_symfony\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mcd ../../\E[0m"
 
 
-        # elif [ $PROGRAMME_NAME = "phpmyadmin" ]; then
-        #   echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME, nous aurions dû saisir :\E[0m"
-        # elif [ $PROGRAMME_NAME = "nginx" ]; then
-        #     echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME, nous aurions dû saisir :\E[0m"
-        #   echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME, nous aurions dû saisir :\E[0m"
-        # elif [ $PROGRAMME_NAME = "laravel" ]; then
-        #   echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME, nous aurions dû saisir :\E[0m"
-        # elif [ $PROGRAMME_NAME = "react" ]; then
-        #   echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAMME_NAME, nous aurions dû saisir :\E[0m"
-        elif [ $PROGRAMME_NAME = "angular" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo npm install -g @angular/cli\E[0m"
-        elif [ $PROGRAMME_NAME = "vue" ]; then
-          echo -e " \E[96m| /!\ Pour nos test je vais créer un sous-répertoire \"vue3\" du répertoire \"test_install\".\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[95mcd ./test_install\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[95mmkdir vue3\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[95mcd ./vue3\E[0m"
-          echo -e " \E[96m| /!\ Aujourd'hui nous devons saisir une commmande qui va nous permettre de créer un nouveau projet directement via cette commande: \E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[95mnpm init vue@latest\E[0m"
-          echo -e " \E[96m| /!\ Plusieurs questions seront proposées en voici la liste: \E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[33m1: Le nom de l'application\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[33m2: Utilisation de TypeScript\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[33m3: Utilisation du JSX\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[33m4: Utilisation du Routing\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[33m5: Utilisation de Pinia\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[33m6: Utilisation de Vitest\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[33m7: Utilisation de Cypress\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[33m8: Utilisation d'ESLint\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[33m9: Utilisation de Prettier\E[0m"
-          echo -e " \E[96m| /!\ Déplacement dans le projet \E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[95m7: cd test_install_vue3\E[0m"
-          echo -e " \E[96m| /!\ Installation des dépendances \E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[95mnpm install\E[0m"
-        elif [ $PROGRAMME_NAME = "typescript" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo npm install -g typescript -y\E[0m"
-        elif [ $PROGRAMME_NAME = "flutter" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo snap install flutter --classic\E[0m"
+        
+        elif [ "$PROGRAMME_NAME" = "angular" ]; then
+          echo -e " \E[96m| \E[0m 👉 \E[95msudo npm install -g @angular/cli\E[0m"
+        elif [ "$PROGRAMME_NAME" = "vue" ]; then
+          echo -e " \E[36m| /!\ Pour nos test je vais créer un sous-répertoire \"vue3\" de son parent \"test_install\".\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mcd ./test_install\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mmkdir vue3\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mcd ./vue3\E[0m"
+          echo -e " \E[36m| /!\ Les étapes qui suivent sont à réaliser par vous-même, là où vous le souhaitez.\E[0m"
+          echo -e " \E[36m| /!\ Aujourd'hui nous devons saisir une commmande qui permet de créer un nouveau projet directement. La voici: \E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mnpm init vue@latest\E[0m"
+          echo -e " \E[36m| /!\ Plusieurs questions seront proposées en voici la liste: \E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[33m1: Le nom de l'application... 👉 \E[92m\033[1mtest_install_vue3\033[0m\E[91m est obligatoirement pour le bon déroulement du script.\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[33m2: Utilisation de TypeScript\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[33m3: Utilisation du JSX\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[33m4: Utilisation du Routing\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[33m5: Utilisation de Pinia\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[33m6: Utilisation de Vitest\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[33m7: Utilisation de Cypress\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[33m8: Utilisation d'ESLint\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[33m9: Utilisation de Prettier\E[0m"
+          echo -e " \E[36m| /!\ Déplacement dans le projet \E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95m7: cd test_install_vue3\E[0m"
+          echo -e " \E[36m| /!\ Installation des dépendances \E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mnpm install\E[0m"
+        elif [ "$PROGRAMME_NAME" = "react" ]; then
+          echo -e " \E[36m| /!\ Pour nos test je vais créer un sous-répertoire \"react\" de son parent \"test_install\".\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mcd ./test_install\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mmkdir react\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mcd ./react\E[0m"
+          echo -e " \E[36m| /!\ Les étapes qui suivent sont à réaliser par vous-même, là où vous le souhaitez.\E[0m"
+          echo -e " \E[36m| /!\ Aujourd'hui nous devons saisir une commmande qui permet de créer un nouveau projet directement. La voici: \E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mnpx create-react-app nom_de_votre_app\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[33mLe nom de l'application... \E[92m\033[1mtest_install_react\033[0m\E[91m est obligatoirement pour le bon déroulement du script.\E[0m"
+          echo -e " \E[36m| /!\ Déplacement dans le projet \E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95m7: cd test_install_react\E[0m"
+        elif [ "$PROGRAMME_NAME" = "typescript" ]; then
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo npm install -g typescript -y\E[0m"
+        elif [ "$PROGRAMME_NAME" = "flutter" ]; then
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo snap install flutter --classic\E[0m"
 
         # APPLICATIONS
-        elif [ $PROGRAMME_NAME = "code" -o $PROGRAMME_NAME = "blender"  ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo snap install  $PROGRAMME_NAME --classic\E[0m"
+        elif [ "$PROGRAMME_NAME" = "code" -o "$PROGRAMME_NAME" = "blender"  ]; then
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo snap install  "$PROGRAMME_NAME" --classic\E[0m"
 
-        elif [  $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "firefox" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" -o $PROGRAMME_NAME = "spectacle" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo snap install $PROGRAMME_NAME\E[0m"
+        elif [  "$PROGRAMME_NAME" = "mysql-workbench-community" -o "$PROGRAMME_NAME" = "chromium" -o "$PROGRAMME_NAME" = "firefox" -o "$PROGRAMME_NAME" = "brave" -o "$PROGRAMME_NAME" = "opera" -o "$PROGRAMME_NAME" = "figma-linux"  -o "$PROGRAMME_NAME" = "krita" -o "$PROGRAMME_NAME" = "postman" -o "$PROGRAMME_NAME" = "discord" -o "$PROGRAMME_NAME" = "spotify" -o "$PROGRAMME_NAME" = "thunderbird" -o "$PROGRAMME_NAME" = "obs-studio" -o "$PROGRAMME_NAME" = "vlc" -o "$PROGRAMME_NAME" = "okular" -o "$PROGRAMME_NAME" = "gimp" -o "$PROGRAMME_NAME" = "spectacle" ]; then
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo snap install "$PROGRAMME_NAME"\E[0m"
 
-        elif [ $PROGRAMME_NAME = "kylin-video" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo apt kylin-video -y\E[0m"
+        elif [ "$PROGRAMME_NAME" = "android" ]; then
+          echo -e " \E[96m|   \E[37m  👉 \E[95mwget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.1.1.22/android-studio-2021.1.1.22-linux.tar.gz\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95mtar -xvf android-studio-2021.1.1.22-linux.tar.gz\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95mchmod u+x android-studio-2021.1.1.22-linux.tar.gz\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95mrm -rf android-studio-2021.1.1.22-linux.tar.gz\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo mv android-studio ~/android-studio\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo chown -R $USER:$USER ~/android-studio\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95mecho \"# Alias Android-Studio\" | tee -a ~/.bashrc\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95mecho 'alias studio=\"~/android-studio/bin/studio.sh\"' | tee -a ~/.bashrc\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msource ~/.bashrc\E[0m"
+
+        elif [ "$PROGRAMME_NAME" = "kylin-video" ]; then
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt kylin-video -y\E[0m"
 
         fi
 
-        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
+        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
         space
 
-        if [ $PROGRAMME_NAME = "docker"  ]; then
-          echo -e " \E[34mMe faîtes-vous confiance pour que j'installe pour vous \"\E[36m$PROGRAMME_NAME\E[0m\E[34m\" sans vous montrer les commandes !?\E[0m\E[0m"
-        elif [ $PROGRAMME_NAME = "composer" ]; then
-          echo -e " \E[34mMe faîtes-vous confiance pour que j'installe pour vous \"\E[36m$PROGRAMME_NAME\E[0m\E[34m\" sans vous montrer les commandes !?\E[0m\E[0m"
+        if [ "$PROGRAMME_NAME" = "docker"  ]; then
+          echo -e " \E[34mMe faîtes-vous confiance pour que j'installe pour vous \"\E[36m"$PROGRAMME_NAME"\E[0m\E[34m\" sans vous montrer les commandes !?\E[0m\E[0m"
+        elif [ "$PROGRAMME_NAME" = "composer" ]; then
+          echo -e " \E[34mMe faîtes-vous confiance pour que j'installe pour vous \"\E[36m"$PROGRAMME_NAME"\E[0m\E[34m\" sans vous montrer les commandes !?\E[0m\E[0m"
         else
-          echo -e " \E[34mSeriez-vous intéressé pour que j'installe pour vous \"\E[36m$PROGRAMME_NAME\E[0m\E[34m\" via les commandes ci-dessus !?\E[0m\E[0m"  
+          echo -e " \E[34mSeriez-vous intéressé pour que j'installe pour vous \"\E[36m"$PROGRAMME_NAME"\E[0m\E[34m\" via les commandes ci-dessus !?\E[0m\E[0m"  
         fi
 
         select option in "Oui" "Non et retourner à la page d'accueil" "Non et allez à la page des applications"
@@ -1104,31 +1122,31 @@ fct_info_programme()          # Description : Afficher les informations du progr
           case $option in
             "Oui")
 
-              if [ $PROGRAMME_NAME = "mysql-version" ]; then
+              if [ "$PROGRAMME_NAME" = "mysql-version" ]; then
                 RESULT=$(fct_which_name mysql)
-              elif [ $PROGRAMME_NAME = "typescript" ]; then
+              elif [ "$PROGRAMME_NAME" = "typescript" ]; then
                 RESULT=$(fct_which_name tsc)
               else
-                RESULT=$(fct_which_name $PROGRAMME_NAME)
+                RESULT=$(fct_which_name "$PROGRAMME_NAME")
               fi
 
-              echo "Veuillez patienter, l'installation de $PROGRAMME_NAME va démarrer dans une seconde... (1s)"
+              echo "Veuillez patienter, l'installation de "$PROGRAMME_NAME" va démarrer dans une seconde... (1s)"
               loading
               sleep 1
 
-              if [ $PROGRAMME_NAME = "curl" ]; then
+              if [ "$PROGRAMME_NAME" = "curl" ]; then
                 sudo apt-get update -y
-                sudo apt-get install $PROGRAMME_NAME -y
-                fct_back_to "home"           
-              elif [ $PROGRAMME_NAME = "node" ]; then
+                sudo apt-get install "$PROGRAMME_NAME" -y
+                      
+              elif [ "$PROGRAMME_NAME" = "node" ]; then
                 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
                 sudo apt-get install -y nodejs
-                fct_back_to "home"             
-              elif [ $PROGRAMME_NAME = "git" ]; then
+                         
+              elif [ "$PROGRAMME_NAME" = "git" ]; then
                 sudo apt-get update
-                sudo apt-get install $PROGRAMME_NAME
-                fct_back_to "home"
-              elif [ $PROGRAMME_NAME = "docker" ]; then
+                sudo apt-get install "$PROGRAMME_NAME"
+
+              elif [ "$PROGRAMME_NAME" = "docker" ]; then
                 sudo apt-get remove docker docker-engine docker.io containerd runc
                 sudo apt-get update
                 sudo apt-get install \
@@ -1145,26 +1163,23 @@ fct_info_programme()          # Description : Afficher les informations du progr
 
                 sudo docker run hello-world
                 systemctl start docker
-                fct_back_to "home"
               
-              elif [ $PROGRAMME_NAME = "php" ]; then
+              elif [ "$PROGRAMME_NAME" = "php" ]; then
                 sudo add-apt-repository ppa:ondrej/php -y
                 sudo apt install php8.1 -y
-                sudo apt install php8.1-mbstring 
-                fct_back_to "home"
+                sudo apt install php8.1-mbstring
 
-              elif [ $PROGRAMME_NAME = "mysql" ]; then
+              elif [ "$PROGRAMME_NAME" = "mysql" ]; then
                 sudo apt-get install mysql-server -y
-                fct_back_to "home"             
-              elif [ $PROGRAMME_NAME = "composer" ]; then
+
+              elif [ "$PROGRAMME_NAME" = "composer" ]; then
                 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
                 php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
                 php composer-setup.php
                 php -r "unlink('composer-setup.php');"
                 sudo mv composer.phar /usr/bin/composer
-                fct_back_to "home"
 
-              elif [ $PROGRAMME_NAME = "symfony" ]; then
+              elif [ "$PROGRAMME_NAME" = "symfony" ]; then
                 echo 'deb [trusted=yes] https://repo.symfony.com/apt/ /' | sudo tee /etc/apt/sources.list.d/symfony-cli.list
                 sudo apt update
                 sudo apt install symfony-cli -y
@@ -1191,28 +1206,21 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 else
                   echo -e "\E[91m\t❌ 📁 Sous-répertoire \"symfony\" déjà existant.\E[0m"
                 fi
+                cd ../../../
               
-                fct_back_to "home"
-              
-              elif [ $PROGRAMME_NAME = "python3" ]; then
+              elif [ "$PROGRAMME_NAME" = "python3" ]; then
                 sudo add-apt-repository ppa:deadsnakes/ppa -y
                 sudo apt-get install python3.10
               
-              # A FAIRE
-              
-              # elif [ $PROGRAMME_NAME = "react" ]; then
-
-
-              # A TESTER
-              elif [ $PROGRAMME_NAME = "angular" ]; then
+              elif [ "$PROGRAMME_NAME" = "angular" ]; then
                 sudo npm install -g @angular/cli
-                fct_back_to "home"
-              elif [ $PROGRAMME_NAME = "vue" ]; then
+
+              elif [ "$PROGRAMME_NAME" = "vue" ]; then
                 
                 cd ./test_install
                 if [ ! -d ./vue ]; then
                   mkdir ./vue
-                  echo -e "\E[32m\t📁 Répertoire \"vue\" créé avec succès!\E[0m"
+                  echo -e "\E[32m\t📁 Sous-répertoire \"vue\" créé avec succès!\E[0m"
                   cd ./vue
                   space
                   npm init vue@latest
@@ -1223,40 +1231,58 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 else
                   echo -e "\E[91m\t❌ 📁 Sous-répertoire \"vue\" déjà existant.\E[0m"
                 fi
-                fct_back_to "home"
+                cd ../../../
+
+              elif [ "$PROGRAMME_NAME" = "react" ]; then
+                
+                cd ./test_install
+                if [ ! -d ./react ]; then
+                  mkdir ./react
+                  echo -e "\E[32m\t📁 Sous-répertoire \"react\" créé avec succès!\E[0m"
+                  cd ./react
+                  space
+                  npx create-react-app test_install_react
+                  echo -e "\E[32m\t✅ Installation du projet React terminé.\E[0m"
+                  cd ./test_install_react
+                else
+                  echo -e "\E[91m\t❌ 📁 Sous-répertoire \"react\" déjà existant.\E[0m"
+                fi
+                cd ../../../
+                
+              elif [ "$PROGRAMME_NAME" = "typescript" ]; then
+                sudo npm install -g typescript -y
+
+              elif [ "$PROGRAMME_NAME" = "flutter" ]; then
+                sudo snap install flutter --classic
                 
 
-              elif [ $PROGRAMME_NAME = "typescript" ]; then
-                sudo npm install -g typescript -y
-                fct_back_to "home"
-
-              elif [ $PROGRAMME_NAME = "flutter" ]; then
-                sudo snap install flutter --classic
-                fct_back_to "home"
-
               # APPLICATIONS
-              elif [ $PROGRAMME_NAME = "code" -o $PROGRAMME_NAME = "blender"  ]; then
-                sudo snap install  $PROGRAMME_NAME --classic
-                fct_back_to "app"
-              elif [  $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "firefox" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" -o $PROGRAMME_NAME = "spectacle" ]; then
-                sudo snap install $PROGRAMME_NAME
-                fct_back_to "app"
-              elif [ $PROGRAMME_NAME = "kylin-video" ]; then
+              elif [ "$PROGRAMME_NAME" = "code" -o "$PROGRAMME_NAME" = "blender"  ]; then
+                sudo snap install  "$PROGRAMME_NAME" --classic
+                
+              elif [  "$PROGRAMME_NAME" = "mysql-workbench-community" -o "$PROGRAMME_NAME" = "chromium" -o "$PROGRAMME_NAME" = "firefox" -o "$PROGRAMME_NAME" = "brave" -o "$PROGRAMME_NAME" = "opera" -o "$PROGRAMME_NAME" = "figma-linux"  -o "$PROGRAMME_NAME" = "krita" -o "$PROGRAMME_NAME" = "postman" -o "$PROGRAMME_NAME" = "discord" -o "$PROGRAMME_NAME" = "spotify" -o "$PROGRAMME_NAME" = "thunderbird" -o "$PROGRAMME_NAME" = "obs-studio" -o "$PROGRAMME_NAME" = "vlc" -o "$PROGRAMME_NAME" = "okular" -o "$PROGRAMME_NAME" = "gimp" -o "$PROGRAMME_NAME" = "spectacle" ]; then
+                sudo snap install "$PROGRAMME_NAME"
+
+              elif [ "$PROGRAMME_NAME" = "kylin-video" ]; then
                 sudo apt install kylin-video -y
-                fct_back_to "app"
-              elif [ $PROGRAMME_NAME = "android" ]; then
+                
+              elif [ "$PROGRAMME_NAME" = "android" ]; then
                 wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.1.1.22/android-studio-2021.1.1.22-linux.tar.gz
                 tar -xvf android-studio-2021.1.1.22-linux.tar.gz
                 chmod u+x android-studio-2021.1.1.22-linux.tar.gz
+                rm -rf android-studio-2021.1.1.22-linux.tar.gz
                 sudo mv android-studio ~/android-studio
                 sudo chown -R $USER:$USER ~/android-studio
                 echo "# Alias Android-Studio" | tee -a ~/.bashrc
                 echo 'alias studio="~/android-studio/bin/studio.sh"' | tee -a ~/.bashrc
                 source ~/.bashrc
-                
-                fct_back_to "app"
               fi
-              break 
+
+              if [ "$PROGRAMME_NAME" = "code" -o "$PROGRAMME_NAME" = "mysql-workbench-community" -o "$PROGRAMME_NAME" = "chromium" -o "$PROGRAMME_NAME" = "firefox" -o "$PROGRAMME_NAME" = "brave" -o "$PROGRAMME_NAME" = "opera" -o "$PROGRAMME_NAME" = "figma-linux"  -o "$PROGRAMME_NAME" = "krita" -o "$PROGRAMME_NAME" = "discord" -o "$PROGRAMME_NAME" = "spotify" -o "$PROGRAMME_NAME" = "thunderbird" -o "$PROGRAMME_NAME" = "kylin-video" -o "$PROGRAMME_NAME" = "obs-studio" -o "$PROGRAMME_NAME" = "blender" -o "$PROGRAMME_NAME" = "vlc" -o "$PROGRAMME_NAME" = "okular" -o "$PROGRAMME_NAME" = "gimp" -o "$PROGRAMME_NAME" = "android" -o "$PROGRAMME_NAME" = "spectacle" ]; then
+                fct_back_to "app"
+              else
+                fct_back_to "home"
+              fi 
             ;;
             "Non et retourner à la page d'accueil")
               clear
@@ -1274,93 +1300,99 @@ fct_info_programme()          # Description : Afficher les informations du progr
         break
       ;;
 
-      "Désinstallation de $PROGRAMME_NAME")   
+      "Désinstallation de "$PROGRAMME_NAME"")   
         # Désinstallation de la technologie
         space
-        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
-        if [ $PROGRAMME_NAME = "python3" ]; then
-          echo -e " \E[36m|  \E[33mDésinstallations de $PROGRAMME_NAME.10\E[0m"
+        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
+        if [ "$PROGRAMME_NAME" = "python3" ]; then
+          echo -e " \E[36m|  \E[33mDésinstallations de "$PROGRAMME_NAME".10\E[0m"
         else
-          echo -e " \E[36m|  \E[33mDésinstallations de $PROGRAMME_NAME\E[0m"
+          echo -e " \E[36m|  \E[33mDésinstallations de "$PROGRAMME_NAME"\E[0m"
         fi
-        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
-        echo -e " \E[36m|  \E[37mPour désinstaller $PROGRAMME_NAME, il aurait fallu taper les commandes suivantes :\E[0m"
+        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
+        echo -e " \E[36m|  \E[37mPour désinstaller "$PROGRAMME_NAME", il aurait fallu taper les commandes suivantes :\E[0m"
 
-        echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get update -y\E[0m"
-        if [ $PROGRAMME_NAME = "curl" ]; then
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove $PROGRAMME_NAME -y\E[0m"
-        elif [ $PROGRAMME_NAME = "git" ]; then
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove $PROGRAMME_NAME -y\E[0m"
-        elif [ $PROGRAMME_NAME = "docker" ]; then
-          echo -e " \E[96m|   \E[37m⇨ \E[95msystemctl stop $PROGRAMME_NAME \E[0m"
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove docker docker-engine docker.io containerd\E[0m"
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get update\E[0m"
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove docker-ce docker-ce-cli containerd.io\E[0m"
-        elif [ $PROGRAMME_NAME = "node" ]; then
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove -y nodejs\E[0m"
-        elif [ $PROGRAMME_NAME = "php" ]; then
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get purge '$PROGRAMME_NAME*' -y\E[0m"
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo add-apt-repository --remove ppa:ondrej/php\E[0m"
-        elif [ $PROGRAMME_NAME = "mysql" ]; then
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove $PROGRAMME_NAME -y\E[0m"
-        elif [ $PROGRAMME_NAME = "composer" ]; then
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo rm -rf /usr/bin/composer\E[0m"
-        elif [ $PROGRAMME_NAME = "symfony" ]; then
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt remove $PROGRAMME_NAME-cli -y\E[0m"
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt remove php8.*-xml\E[0m"
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt remove libnss3-tools\E[0m"
-          echo -e " \E[96m|   \E[37m⇨ \E[95mcd ./test_install\E[0m"         
-          echo -e " \E[96m|   \E[37m⇨ \E[95mrm -rf ./symfony\E[0m"
-          echo -e " \E[96m|   \E[37m⇨ \E[95mcd ..\E[0m"
-        elif [ $PROGRAMME_NAME = "python3" ]; then
-          echo -e " \E[36m|   \E[37m Suppression uniquement de $PROGRAMME_NAME.10\E[0m"
-          echo -e " \E[36m|   \E[37m⇨ \E[95msudo ppa-purge ppa:deadsnakes/ppa -y\E[0m"
-          echo -e " \E[36m|   \E[37m⇨ \E[95msudo apt-get remove python3.10 -y\E[0m"
-        elif [ $PROGRAMME_NAME = "angular" ]; then
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo npm uninstall -g @angular/cli\E[0m"
+        echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get update -y\E[0m"
+        if [ "$PROGRAMME_NAME" = "curl" ]; then
+          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get remove "$PROGRAMME_NAME" -y\E[0m"
+        elif [ "$PROGRAMME_NAME" = "git" ]; then
+          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get remove "$PROGRAMME_NAME" -y\E[0m"
+        elif [ "$PROGRAMME_NAME" = "docker" ]; then
+          echo -e " \E[96m|   \E[37m👉 \E[95msystemctl stop "$PROGRAMME_NAME" \E[0m"
+          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get remove docker docker-engine docker.io containerd\E[0m"
+          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get update\E[0m"
+          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get remove docker-ce docker-ce-cli containerd.io\E[0m"
+        elif [ "$PROGRAMME_NAME" = "node" ]; then
+          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get remove -y nodejs\E[0m"
+        elif [ "$PROGRAMME_NAME" = "php" ]; then
+          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get purge '"$PROGRAMME_NAME"*' -y\E[0m"
+          echo -e " \E[96m|   \E[37m👉 \E[95msudo add-apt-repository --remove ppa:ondrej/php\E[0m"
+        elif [ "$PROGRAMME_NAME" = "mysql" ]; then
+          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get remove "$PROGRAMME_NAME" -y\E[0m"
+        elif [ "$PROGRAMME_NAME" = "composer" ]; then
+          echo -e " \E[96m|   \E[37m👉 \E[95msudo rm -rf /usr/bin/composer\E[0m"
+        elif [ "$PROGRAMME_NAME" = "symfony" ]; then
+          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt remove "$PROGRAMME_NAME"-cli -y\E[0m"
+          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt remove php8.*-xml\E[0m"
+          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt remove libnss3-tools\E[0m"
+          echo -e " \E[96m|   \E[37m👉 \E[95mcd ./test_install\E[0m"         
+          echo -e " \E[96m|   \E[37m👉 \E[95mrm -rf ./symfony\E[0m"
+          echo -e " \E[96m|   \E[37m👉 \E[95mcd ..\E[0m"
+        elif [ "$PROGRAMME_NAME" = "python3" ]; then
+          echo -e " \E[36m|   \E[37m Suppression uniquement de "$PROGRAMME_NAME".10\E[0m"
+          echo -e " \E[36m|   \E[37m 👉 \E[95msudo ppa-purge ppa:deadsnakes/ppa -y\E[0m"
+          echo -e " \E[36m|   \E[37m 👉 \E[95msudo apt-get remove python3.10 -y\E[0m"
+        elif [ "$PROGRAMME_NAME" = "angular" ]; then
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo npm uninstall -g @angular/cli\E[0m"
         
-        elif [ $PROGRAMME_NAME = "vue" ]; then
+        elif [ "$PROGRAMME_NAME" = "vue" ]; then
           echo -e " \E[96m| /!\ Vue ne dispose pas d'exécutable, donc en supprimant le sous-répertoire \"vue3\" du répertoire \"test_install\",\E[0m"
           echo -e " \E[96m| /!\ je pourrais simuler une supression de Vue3.\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[95mcd ./test_install\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[95mrm -rf ./vue\E[0m"
-          echo -e " \E[36m| \E[0m   ⇨ \E[95mcd ..\E[0m"
-        elif [ $PROGRAMME_NAME = "typescript" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo npm install -g typescript -y\E[0m"
-        elif [ $PROGRAMME_NAME = "flutter" ]; then
-          echo -e " \E[96m| \E[0m ⇨ \E[95msudo snap install flutter --classic\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mcd ./test_install\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mrm -rf ./vue\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mcd ../\E[0m"
+
+        elif [ "$PROGRAMME_NAME" = "react" ]; then
+          echo -e " \E[96m| /!\ React ne dispose pas d'exécutable, donc en supprimant le sous-répertoire \"react\" du répertoire \"test_install\",\E[0m"
+          echo -e " \E[96m| /!\ je pourrais simuler une supression de React.\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mcd ./test_install\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mrm -rf ./react\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[95mcd ../E[0m"
+
+        elif [ "$PROGRAMME_NAME" = "flutter" ]; then
+          echo -e " \E[96m|   \E[37m 👉 \E[95msudo snap uninstall flutter --classic\E[0m"
+
+        elif [ "$PROGRAMME_NAME" = "typescript" ]; then
+          echo -e " \E[96m|   \E[37m 👉 \E[95msudo npm uninstall -g typescript -y\E[0m"
         
-        elif [ $PROGRAMME_NAME = "typescript" ]; then
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo npm uninstall -g typescript -y\E[0m"
-
         # APPLICATIONS
-        elif [  $PROGRAMME_NAME = "code" -o $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "blender" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" -o $PROGRAMME_NAME = "spectacle" ]; then
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo snap remove $PROGRAMME_NAME\E[0m"
+        elif [ "$PROGRAMME_NAME" = "code" -o "$PROGRAMME_NAME" = "mysql-workbench-community" -o "$PROGRAMME_NAME" = "chromium" -o "$PROGRAMME_NAME" = "brave" -o "$PROGRAMME_NAME" = "opera" -o "$PROGRAMME_NAME" = "figma-linux"  -o "$PROGRAMME_NAME" = "krita" -o "$PROGRAMME_NAME" = "postman" -o "$PROGRAMME_NAME" = "discord" -o "$PROGRAMME_NAME" = "spotify" -o "$PROGRAMME_NAME" = "thunderbird" -o "$PROGRAMME_NAME" = "obs-studio" -o "$PROGRAMME_NAME" = "vlc" -o "$PROGRAMME_NAME" = "blender" -o "$PROGRAMME_NAME" = "okular" -o "$PROGRAMME_NAME" = "gimp" -o "$PROGRAMME_NAME" = "spectacle" ]; then
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo snap remove "$PROGRAMME_NAME"\E[0m"
 
-        elif [ $PROGRAMME_NAME = "firefox" ]; then
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get remove firefox\E[0m"
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo snap remove firefox\E[0m"
+        elif [ "$PROGRAMME_NAME" = "firefox" ]; then
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get remove firefox\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo snap remove firefox\E[0m"
 
-        elif [ $PROGRAMME_NAME = "android" ]; then
-          echo -e " \E[96m|   \E[37m⇨ \E[95mrm -rf android-studio-2021.1.1.22-linux.tar.gz\E[0m"
-          echo -e " \E[96m|   \E[37m⇨ \E[95mrm -rf ~/android-studio\E[0m"
-          echo -e " \E[96m|   \E[37m⇨ \E[95msed '/# Alias Android-Studio/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
-          echo -e " \E[96m|   \E[37m⇨ \E[95msed '/alias studio=\"~\/android-studio\/bin\/studio.sh\"/d' ~/.bashrc_tmp > ~/.bashrc\E[0m"
-          echo -e " \E[96m|   \E[37m⇨ \E[95msource ~/.bashrc\E[0m"
+        elif [ "$PROGRAMME_NAME" = "android" ]; then
+          echo -e " \E[96m|   \E[37m  👉 \E[95mrm -rf ~/android-studio\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msed '/# Alias Android-Studio/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msed '/alias studio=\"~\/android-studio\/bin\/studio.sh\"/d' ~/.bashrc_tmp > ~/.bashrc\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msource ~/.bashrc\E[0m"
           
-        elif [ $PROGRAMME_NAME = "kylin-video" ]; then
-          echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt remove kylin-video -y\E[0m"
+        elif [ "$PROGRAMME_NAME" = "kylin-video" ]; then
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt remove kylin-video -y\E[0m"
         
         fi
-        echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get autoclean -y\E[0m"
-        echo -e " \E[96m|   \E[37m⇨ \E[95msudo apt-get autoremove -y\E[0m"
-        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
+
+        echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get autoclean -y\E[0m"
+        echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get autoremove -y\E[0m"
+        echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
         space
 
-        if [ $PROGRAMME_NAME = "python3" ]; then
-          echo -e " \E[34mSouhaitez-vous que je désinstalle \"\E[36m$PROGRAMME_NAME.10\E[34m\" via les commandes ci-dessus pour vous !?\E[0m"
+        if [ "$PROGRAMME_NAME" = "python3" ]; then
+          echo -e " \E[34mSouhaitez-vous que je désinstalle \"\E[36m"$PROGRAMME_NAME".10\E[34m\" via les commandes ci-dessus pour vous !?\E[0m"
         else
-          echo -e " \E[34mSouhaitez-vous que je désinstalle \"\E[36m$PROGRAMME_NAME\E[34m\" via les commandes ci-dessus pour vous !?\E[0m"
+          echo -e " \E[34mSouhaitez-vous que je désinstalle \"\E[36m"$PROGRAMME_NAME"\E[34m\" via les commandes ci-dessus pour vous !?\E[0m"
         fi
 
         select option in "Oui" "Non et retourner à la page d'accueil" "Non et allez à la page des applications"
@@ -1368,57 +1400,47 @@ fct_info_programme()          # Description : Afficher les informations du progr
           case $option in
             "Oui")
 
-              if [ $PROGRAMME_NAME = "mysql-version" ]; then
+              if [ "$PROGRAMME_NAME" = "mysql-version" ]; then
                 RESULT=$(fct_which_name mysql)
-              elif [ $PROGRAMME_NAME = "typescript" ]; then
+              elif [ "$PROGRAMME_NAME" = "typescript" ]; then
                 RESULT=$(fct_which_name tsc)
               else
-                RESULT=$(fct_which_name $PROGRAMME_NAME)
+                RESULT=$(fct_which_name "$PROGRAMME_NAME")
               fi
               
-              echo "Veuillez patienter, la désinstallation de $PROGRAMME_NAME va démarrer dans une seconde... (1s)"
+              echo "Veuillez patienter, la désinstallation de "$PROGRAMME_NAME" va démarrer dans une seconde... (1s)"
               loading
               sleep 1
 
-              if [ $PROGRAMME_NAME = "curl" ]; then
+              if [ "$PROGRAMME_NAME" = "curl" ]; then
                 sudo apt-get update
-                sudo apt-get remove $PROGRAMME_NAME
+                sudo apt-get remove "$PROGRAMME_NAME"
               
-              elif [ $PROGRAMME_NAME = "git" ]; then
+              elif [ "$PROGRAMME_NAME" = "git" ]; then
                 sudo apt-get update
-                sudo apt-get remove $PROGRAMME_NAME
+                sudo apt-get remove "$PROGRAMME_NAME"
 
-              elif [ $PROGRAMME_NAME = "docker" ]; then
+              elif [ "$PROGRAMME_NAME" = "docker" ]; then
                 systemctl stop docker
-                sudo apt-get remove docker docker-engine docker.io containerd # runc
+                sudo apt-get remove docker docker-engine docker.io containerd
                 sudo apt-get update
-                # sudo apt-get remove \
-                    # apt-transport-https \
-                    # ca-certificates \
-                    # curl \
-                    # gnupg-agent \
-                    # software-properties-common
-
-                # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key remove -
-
-                # sudo add-apt-repository     "deb [arch=amd64] https://download.docker.com/linux/ubuntu     $(lsb_release -cs)     stable"
                 sudo apt-get remove docker-ce docker-ce-cli containerd.io
               
-              elif [ $PROGRAMME_NAME = "node" ]; then
+              elif [ "$PROGRAMME_NAME" = "node" ]; then
                 sudo apt-get remove -y nodejs
               
-              elif [ $PROGRAMME_NAME = "php" ]; then
+              elif [ "$PROGRAMME_NAME" = "php" ]; then
                 sudo add-apt-repository ppa:ondrej/php -y
                 sudo apt remove php8.0 -y
 
-              elif [ $PROGRAMME_NAME = "mysql" ]; then
+              elif [ "$PROGRAMME_NAME" = "mysql" ]; then
                 sudo apt-get remove mysql-server -y
               
-              elif [ $PROGRAMME_NAME = "composer" ]; then
+              elif [ "$PROGRAMME_NAME" = "composer" ]; then
                 sudo rm -rf /usr/bin/composer
 
-              elif [ $PROGRAMME_NAME = "symfony" ]; then
-                sudo apt remove $PROGRAMME_NAME-cli -y
+              elif [ "$PROGRAMME_NAME" = "symfony" ]; then
+                sudo apt remove "$PROGRAMME_NAME"-cli -y
                 sudo apt remove php8.1.*-xml -y
                 sudo apt remove libnss3-tools -y
 
@@ -1436,59 +1458,71 @@ fct_info_programme()          # Description : Afficher les informations du progr
                   echo -e "\E[91m\t❌ 📁 Répertoire \"test_install\" inexistant, rien à supprimer.\E[0m"
                 fi
 
-                fct_back_to "home"
-
-              elif [ $PROGRAMME_NAME = "angular" ]; then
+              elif [ "$PROGRAMME_NAME" = "angular" ]; then
                 sudo npm remove -g @angular/cli
-                fct_back_to "home"
-              elif [ $PROGRAMME_NAME = "vue" ]; then
+
+              elif [ "$PROGRAMME_NAME" = "vue" ]; then
                 cd ./test_install
 
                 if [ -d ./vue ]; then
                   rm -rf ./vue
                   echo -e "\E[32m\t✅ 📁 Sous-répertoire \"vue\" supprimé avec succès!\E[0m"
-                  cd ..
+                  cd ../
                 else
                   echo -e "\E[91m\t❌ 📁 Sous-répertoire \"vue\" inexistant, rien à supprimé.\E[0m"
-                  cd ..
+                  cd ../
+                fi
+
+              elif [ "$PROGRAMME_NAME" = "react" ]; then
+                cd ./test_install
+
+                if [ -d ./react ]; then
+                  rm -rf ./react
+                  echo -e "\E[32m\t✅ 📁 Sous-répertoire \"react\" supprimé avec succès!\E[0m"
+                  cd ../
+                else
+                  echo -e "\E[91m\t❌ 📁 Sous-répertoire \"react\" inexistant, rien à supprimé.\E[0m"
+                  cd ../
                 fi
               
-              elif [ $PROGRAMME_NAME = "typescript" ]; then
+              elif [ "$PROGRAMME_NAME" = "typescript" ]; then
                 sudo npm remove -g typescript -y
-                fct_back_to "home"
 
-              elif [ $PROGRAMME_NAME = "python3" ]; then
+              elif [ "$PROGRAMME_NAME" = "python3" ]; then
                 sudo ppa-purge ppa:deadsnakes/ppa -y
                 sudo apt-get remove python3.10
 
               # APPLICATIONS
-              elif [  $PROGRAMME_NAME = "code" -o $PROGRAMME_NAME = "mysql-workbench-community" -o $PROGRAMME_NAME = "chromium" -o $PROGRAMME_NAME = "brave" -o $PROGRAMME_NAME = "opera" -o $PROGRAMME_NAME = "figma-linux"  -o $PROGRAMME_NAME = "krita" -o $PROGRAMME_NAME = "postman" -o $PROGRAMME_NAME = "discord" -o $PROGRAMME_NAME = "spotify" -o $PROGRAMME_NAME = "thunderbird" -o $PROGRAMME_NAME = "obs-studio" -o $PROGRAMME_NAME = "vlc" -o $PROGRAMME_NAME = "blender" -o $PROGRAMME_NAME = "okular" -o $PROGRAMME_NAME = "gimp" -o $PROGRAMME_NAME = "spectacle" ]; then
-                sudo snap remove $PROGRAMME_NAME
+              elif [  "$PROGRAMME_NAME" = "code" -o "$PROGRAMME_NAME" = "mysql-workbench-community" -o "$PROGRAMME_NAME" = "chromium" -o "$PROGRAMME_NAME" = "brave" -o "$PROGRAMME_NAME" = "opera" -o "$PROGRAMME_NAME" = "figma-linux"  -o "$PROGRAMME_NAME" = "krita" -o "$PROGRAMME_NAME" = "postman" -o "$PROGRAMME_NAME" = "discord" -o "$PROGRAMME_NAME" = "spotify" -o "$PROGRAMME_NAME" = "thunderbird" -o "$PROGRAMME_NAME" = "obs-studio" -o "$PROGRAMME_NAME" = "vlc" -o "$PROGRAMME_NAME" = "blender" -o "$PROGRAMME_NAME" = "okular" -o "$PROGRAMME_NAME" = "gimp" -o "$PROGRAMME_NAME" = "spectacle" ]; then
+                sudo snap remove "$PROGRAMME_NAME"
 
-              elif [ $PROGRAMME_NAME = "firefox" ]; then
-                sudo apt-get remove $PROGRAMME_NAME
-                sudo snap remove $PROGRAMME_NAME
+              elif [ "$PROGRAMME_NAME" = "firefox" ]; then
+                sudo apt-get remove "$PROGRAMME_NAME"
+                sudo snap remove "$PROGRAMME_NAME"
 
-              elif [ $PROGRAMME_NAME = "kylin-video" ]; then
-                sudo apt remove $PROGRAMME_NAME -y
+              elif [ "$PROGRAMME_NAME" = "kylin-video" ]; then
+                sudo apt remove "$PROGRAMME_NAME" -y
 
-              elif [ $PROGRAMME_NAME = "android" ]; then
-                rm -rf android-studio-2021.1.1.22-linux.tar.gz
+              elif [ "$PROGRAMME_NAME" = "android" ]; then
                 rm -rf ~/android-studio
                 sed '/# Alias Android-Studio/d' ~/.bashrc > ~/.bashrc_tmp
                 sed '/alias studio="~\/android-studio\/bin\/studio.sh"/d' ~/.bashrc_tmp > ~/.bashrc
                 source ~/.bashrc
-                fct_back_to "app"
 
               fi
 
-              echo -e " \E[32m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
-              echo -e " \E[33m\t\t✅ $PROGRAMME_NAME a bien été désinstallé de votre système avec succès!\E[0m"
-              echo -e " \E[32m+ ------------------------------------------------------------------------------------------------------------------------------------------------------------ +\E[0m"
+              echo -e " \E[32m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
+              echo -e " \E[33m\t\t✅ "$PROGRAMME_NAME" a bien été désinstallé de votre système avec succès!\E[0m"
+              echo -e " \E[32m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
               space
               read -p "Pressez une touche pour continuer..."
               clear
-              fct_show_home_menu
+
+              if [ "$PROGRAMME_NAME" = "code" -o "$PROGRAMME_NAME" = "mysql-workbench-community" -o "$PROGRAMME_NAME" = "chromium" -o "$PROGRAMME_NAME" = "firefox" -o "$PROGRAMME_NAME" = "brave" -o "$PROGRAMME_NAME" = "opera" -o "$PROGRAMME_NAME" = "figma-linux"  -o "$PROGRAMME_NAME" = "krita" -o "$PROGRAMME_NAME" = "discord" -o "$PROGRAMME_NAME" = "spotify" -o "$PROGRAMME_NAME" = "thunderbird" -o "$PROGRAMME_NAME" = "kylin-video" -o "$PROGRAMME_NAME" = "obs-studio" -o "$PROGRAMME_NAME" = "blender" -o "$PROGRAMME_NAME" = "vlc" -o "$PROGRAMME_NAME" = "okular" -o "$PROGRAMME_NAME" = "gimp" -o "$PROGRAMME_NAME" = "android" -o "$PROGRAMME_NAME" = "spectacle" ]; then
+                fct_show_app_menu
+              else
+                fct_show_home_menu
+              fi
               break 
             ;;
             "Non et retourner à la page d'accueil")
@@ -1522,6 +1556,12 @@ fct_info_programme()          # Description : Afficher les informations du progr
   done
 }
 
+fct_info_program_version()    # Description ; Affiche la version du programme au niveau du menu
+
+{
+  echo -e "                                                                                            \033[1m\033[2mVersion du programme : \E[92m1.0.0\033[0m"
+}
+
 fct_show_home_menu()          # Description : Affichage du menu principal
 {
 
@@ -1530,22 +1570,21 @@ fct_show_home_menu()          # Description : Affichage du menu principal
   clear
 
   fct_show_logo "accueil"
-
   echo -e "
-                                                                                              \033[1m\033[2mVersion du programme : 0.9.0\033[0m
+  $(fct_info_program_version)
     + ---------------- + ---------------------------------------------------------- + ------------------------------------- +
     |  \E[36mCHOIX POSSIBLE\E[0m  |  \E[34mDESCRIPTION\E[0m                                               |  \E[34mVERSION ACTUEL\E[0m     
     + ---------------- + ---------------------------------------------------------- + ------------------------------------- +
     | \E[95m01\E[0m. \E[36mcURL         \E[0m|  \E[34mINDISPENSABLE pour un système unix\E[0m                        |  $(fct_check_version curl)
     | \E[95m02\E[0m. \E[36mNode         \E[0m|  \E[34mRuntime JavaScript. Backend côté Javascript\E[0m               |  $(fct_check_version node)
     | \E[95m03\E[0m. \E[36mGit          \E[0m|  \E[34mGérer ces projets sans crainte d'une erreur majeur.\E[0m       |  $(fct_check_version git)
-    | \E[95m04\E[0m. \E[36mDocker\E[92m*      \E[0m|  \E[34mCréer des images de ces projets.\E[0m                          |  $(fct_check_version docker)
+    | \E[95m04\E[0m. \E[36mDocker       \E[0m|  \E[34mCréer des images de ces projets.\E[0m                          |  $(fct_check_version docker)
     | \E[95m05\E[0m. \E[36mPHP          \E[0m|  \E[34mReprésente plus de 50% des sites web dans le monde\E[0m        |  $(fct_check_version php)
     | \E[95m06\E[0m. \E[36mMySQL        \E[0m|  \E[34mPermet de créer et de gérer des bases de données.\E[0m         |  $(fct_check_version mysql)
     | \E[95m07\E[0m. \E[36mComposer     \E[0m|  \E[34mGestionnaire de dépendances pour PHP, Symfony, Laravel\E[0m    |  $(fct_check_version composer)
     | \E[95m08\E[0m. \E[36mSymfony      \E[0m|  \E[34mFramework PHP Français très réputé.\E[0m                       |  $(fct_check_version symfony)
-    | \E[95m09\E[0m. \E[36mVue\E[92m*         \E[0m|  \E[34mFramework Javascript (Très facile d'accès)\E[0m                |  $(fct_check_version vue)
-    | \E[95m10\E[0m. \E[36mReact\E[37m*       \E[0m|  \E[34mFramework Javascript (Acces assez moyen)\E[0m                  |  $(fct_check_version react)
+    | \E[95m09\E[0m. \E[36mVue          \E[0m|  \E[34mFramework Javascript (Très facile d'accès)\E[0m                |  $(fct_check_version vue)
+    | \E[95m10\E[0m. \E[36mReact        \E[0m|  \E[34mFramework Javascript (Acces assez moyen)\E[0m                  |  $(fct_check_version react)
     | \E[95m11\E[0m. \E[36mAngular      \E[0m|  \E[34mFramework Javascript (Accès très dur)\E[0m                     |  $(fct_check_version angular)
     | \E[95m12\E[0m. \E[36mTypeScript   \E[0m|  \E[34mTyper son code JavaScript.\E[0m                                |  $(fct_check_version typescript)
     | \E[95m13\E[0m. \E[36mPython\E[91m*      \E[0m|  \E[34mLangage surpuissant et simple d'accès.\E[0m                    |  $(fct_check_version python3)
@@ -1554,11 +1593,10 @@ fct_show_home_menu()          # Description : Affichage du menu principal
     | \E[33m15\E[0m. \E[37mApplications \E[0m|  \E[37m\E[3mdes programmes utiles à installer très vite... ou à désinstaller si vous ne les appréciez pas.\E[0m
     | \E[33m16\E[0m. \E[37mQuitter\E[0m
     + ---------------- + ---------------------------------------------------------- + ------------------------------------- +"
-  echo -e "\E[92m     🚧 *: [BETA]  Docker, Fonctionne mais il supprimait cURL, NodeJS, Flutter et snapd!. A TESTER ENCORE \E[0m"
-  echo -e "\E[92m     🚧 *: [BETA]  Flutter fonctionnne mais au premier lancement un bug existe sur l'affichage de la version. \E[0m"
-  echo -e "\E[91m     🚧 *: [ALPHA] Python3, La suppression ne se fait pas (la 3.10).\E[0m"
-  echo -e "\E[92m     🚧 *: [BETA]  Vue3, est fonctionnelle. Lors de l'installation la version impacte Symfony.\E[0m"
-  echo -e "\E[37m     🚧 *: React, à faire.\E[0m"
+  echo -e "\E[91m     🚧 *: [ALPHA] Python3 | La suppression ne se fait pas (la 3.10).\E[0m"
+  echo -e "\E[92m     🚧 *: [BETA]  Flutter | Fonctionnne mais au premier lancement un bug existe sur l'affichage de la version. \E[0m"
+  echo -e "\E[92m     🚧 *: [BETA]  Flutter | La désinstallation n'a pas l'air fonctionnnelle.. \E[0m"
+  space
   echo -e "\E[95m     ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
   space
 
@@ -1570,209 +1608,224 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         clear
         fct_show_logo "curl"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mcurl\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mcURL est un client HTTP libre et open source.\E[0m"
-        echo -e "   ⇨ \E[37mIl est utilisé pour télécharger des fichiers sur internet.\E[0m"
-        echo -e "   ⇨ \E[37mLa ressource est désignée à l'aide d'une URL et doit être d'un type supporté par le logiciel.\E[0m"
+        echo -e " \E[34mDescription de \E[36m\033[1mcurl\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mcURL est un client HTTP libre et open source.\E[0m"
+        echo -e "   👉 \E[37mIl est utilisé pour télécharger des fichiers sur internet.\E[0m"
+        echo -e "   👉 \E[37mLa ressource est désignée à l'aide d'une URL et doit être d'un type supporté par le logiciel.\E[0m"
         space
 
         fct_show_version "curl"
         fct_info_programme "curl"
 
       ;;
+
       Applications)
         clear
         fct_show_app_menu
-      ;;     
+      ;; 
+
       Node)
         clear
         fct_show_logo "node"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mnode\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mNode.js est une plateforme logicielle libre en JavaScript,\E[0m"
-        echo -e "   ⇨ \E[37morientée vers les applications réseau évènementielles hautement concurrentes qui doivent pouvoir monter en charge.\E[0m"
-        echo -e "   ⇨ \E[37mElle utilise la machine virtuelle V8, la librairie libuv pour sa boucle d'évènements,\E[0m"
-        echo -e "   ⇨ \E[37met implémente sous licence MIT les spécifications CommonJS.\E[0m"
+        echo -e " \E[34mDescription de \E[36m\033[1mnode\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mNode.js est une plateforme logicielle libre en JavaScript,\E[0m"
+        echo -e "   👉 \E[37morientée vers les applications réseau évènementielles hautement concurrentes qui doivent pouvoir monter en charge.\E[0m"
+        echo -e "   👉 \E[37mElle utilise la machine virtuelle V8, la librairie libuv pour sa boucle d'évènements,\E[0m"
+        echo -e "   👉 \E[37met implémente sous licence MIT les spécifications CommonJS.\E[0m"
         space
 
         echo -e " \E[34mDescription de \E[36m\E[1mnpm\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mnpm est le gestionnaire de paquets par défaut pour l'environnement d'exécution JavaScript Node.js\E[0m"
-        echo -e "   ⇨ \E[37mde Node.js. npm se compose d'un client en ligne de commande, également appelé npm,\E[0m"
-        echo -e "   ⇨ \E[37met d'une base de données en ligne de paquets publics et privés payants, appelée le registre npm.\E[0m"
+        echo -e "   👉 \E[37mnpm est le gestionnaire de paquets par défaut pour l'environnement d'exécution JavaScript Node.js\E[0m"
+        echo -e "   👉 \E[37mde Node.js. npm se compose d'un client en ligne de commande, également appelé npm,\E[0m"
+        echo -e "   👉 \E[37met d'une base de données en ligne de paquets publics et privés payants, appelée le registre npm.\E[0m"
         space
 
         fct_show_version "node"
         fct_info_programme "node"
       ;;
+
       Git)
         clear
         fct_show_logo "git"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mgit\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mGit est un logiciel de gestion de versions décentralisé.\E[0m"
-        echo -e "   ⇨ \E[37mC'est un logiciel libre créé par Linus Torvalds, auteur du noyau Linux,\E[0m"
-        echo -e "   ⇨ \E[37met distribué selon les termes de la licence publique générale GNU version 2.\E[0m"
-        echo -e "   ⇨ \E[37mLe principal contributeur actuel de git et depuis plus de 16 ans est Junio C Hamano.\E[0m"
+        echo -e " \E[34mDescription de \E[36m\033[1mgit\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mGit est un logiciel de gestion de versions décentralisé.\E[0m"
+        echo -e "   👉 \E[37mC'est un logiciel libre créé par Linus Torvalds, auteur du noyau Linux,\E[0m"
+        echo -e "   👉 \E[37met distribué selon les termes de la licence publique générale GNU version 2.\E[0m"
+        echo -e "   👉 \E[37mLe principal contributeur actuel de git et depuis plus de 16 ans est Junio C Hamano.\E[0m"
         space
 
         fct_show_version "git"
         fct_info_programme "git"
       ;;
+
       Docker)
         clear
         fct_show_logo "docker"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mdocker\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mDocker est une plateforme permettant de lancer certaines applications dans des conteneurs logiciels.\E[0m"
-        echo -e "   ⇨ \E[37mSelon la firme de recherche sur l'industrie 451 Research,\E[0m"
-        echo -e "   ⇨ \E[37m« Docker est un outil qui peut empaqueter une application et ses dépendances dans un conteneur isolé,\E[0m"
-        echo -e "   ⇨ \E[37mqui pourra être exécuté sur n'importe quel serveur »\E[0m"
+        echo -e " \E[34mDescription de \E[36m\033[1mdocker\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mDocker est une plateforme permettant de lancer certaines applications dans des conteneurs logiciels.\E[0m"
+        echo -e "   👉 \E[37mSelon la firme de recherche sur l'industrie 451 Research,\E[0m"
+        echo -e "   👉 \E[37m« Docker est un outil qui peut empaqueter une application et ses dépendances dans un conteneur isolé,\E[0m"
+        echo -e "   👉 \E[37mqui pourra être exécuté sur n'importe quel serveur »\E[0m"
         space
 
         fct_show_version "docker"
         fct_info_programme "docker"
-      ;;    
+      ;; 
+
       PHP)
         clear
         fct_show_logo "php"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mphp\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mPHP: Hypertext Preprocessor, plus connu sous son sigle PHP, est un langage de programmation libre,\E[0m"
-        echo -e "   ⇨ \E[37mprincipalement utilisé pour produire des pages Web dynamiques via un serveur HTTP,\E[0m"
-        echo -e "   ⇨ \E[37mmais pouvant également fonctionner comme n'importe quel langage interprété de façon locale.\E[0m"
-        echo -e "   ⇨ \E[37mPHP est un langage impératif orienté objet. \E[0m"
+        echo -e " \E[34mDescription de \E[36m\033[1mphp\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mPHP: Hypertext Preprocessor, plus connu sous son sigle PHP, est un langage de programmation libre,\E[0m"
+        echo -e "   👉 \E[37mprincipalement utilisé pour produire des pages Web dynamiques via un serveur HTTP,\E[0m"
+        echo -e "   👉 \E[37mmais pouvant également fonctionner comme n'importe quel langage interprété de façon locale.\E[0m"
+        echo -e "   👉 \E[37mPHP est un langage impératif orienté objet. \E[0m"
         space
 
         fct_show_version "php"
         fct_info_programme "php"
       ;;
+
       MySQL)
         clear
         fct_show_logo "mysql"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mmysql\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mMySQL est un système de gestion de bases de données relationnelles.\E[0m"
-        echo -e "   ⇨ \E[37mIl est distribué sous une double licence GPL et propriétaire.\E[0m"
+        echo -e " \E[34mDescription de \E[36m\033[1mmysql\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mMySQL est un système de gestion de bases de données relationnelles.\E[0m"
+        echo -e "   👉 \E[37mIl est distribué sous une double licence GPL et propriétaire.\E[0m"
         space
 
         fct_show_version "mysql"
         fct_info_programme "mysql"
       ;;
+
       Composer)
         clear
         fct_show_logo "composer"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mcomposer\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mComposer est un logiciel gestionnaire de dépendances libre écrit en PHP.\E[0m"
-        echo -e "   ⇨ \E[37mIl permet à ses utilisateurs de déclarer et d'installer les bibliothèques dont le projet principal a besoin.\E[0m"
-        echo -e "   ⇨ \E[37mLe développement a débuté en avril 2011 et a donné lieu à une première version sortie le 1ᵉʳ mars 2012.\E[0m"
+        echo -e " \E[34mDescription de \E[36m\033[1mcomposer\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mComposer est un logiciel gestionnaire de dépendances libre écrit en PHP.\E[0m"
+        echo -e "   👉 \E[37mIl permet à ses utilisateurs de déclarer et d'installer les bibliothèques dont le projet principal a besoin.\E[0m"
+        echo -e "   👉 \E[37mLe développement a débuté en avril 2011 et a donné lieu à une première version sortie le 1ᵉʳ mars 2012.\E[0m"
         space
   
         fct_show_version "composer"
         fct_info_programme "composer"
       ;;
+
       Symfony)
         clear
         fct_show_logo "symfony"
   
-        echo -e " \E[34mDescription de \E[36m\E[1msymfony\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mSymfony est un ensemble de composants PHP ainsi qu'un framework MVC libre écrit en PHP.\E[0m"
-        echo -e "   ⇨ \E[37mIl fournit des fonctionnalités modulables et adaptables qui permettent\E[0m"
-        echo -e "   ⇨ \E[37mde faciliter et d’accélérer le développement d'un site web.\E[0m"
+        echo -e " \E[34mDescription de \E[36m\033[1msymfony\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mSymfony est un ensemble de composants PHP ainsi qu'un framework MVC libre écrit en PHP.\E[0m"
+        echo -e "   👉 \E[37mIl fournit des fonctionnalités modulables et adaptables qui permettent\E[0m"
+        echo -e "   👉 \E[37mde faciliter et d’accélérer le développement d'un site web.\E[0m"
         space
  
         fct_show_version "symfony"
         fct_info_programme "symfony"
       ;;
+
       Vue)
         clear
         fct_show_logo "vue"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mvue\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mVue.js, est un framework JavaScript open-source utilisé pour construire des interfaces utilisateur\E[0m"
-        echo -e "   ⇨ \E[37met des applications web monopages. Vue a été créé par Evan You\E[0m"
-        echo -e "   ⇨ \E[37met est maintenu par lui et le reste des membres actifs de l'équipe principale travaillant\E[0m"
-        echo -e "   ⇨ \E[37msur le projet et son écosystème.\E[0m"
+        echo -e " \E[34mDescription de \E[36m\033[1mvue\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mVue.js, est un framework JavaScript open-source utilisé pour construire des interfaces utilisateur\E[0m"
+        echo -e "   👉 \E[37met des applications web monopages. Vue a été créé par Evan You\E[0m"
+        echo -e "   👉 \E[37met est maintenu par lui et le reste des membres actifs de l'équipe principale travaillant\E[0m"
+        echo -e "   👉 \E[37msur le projet et son écosystème.\E[0m"
         space
 
         fct_show_version "vue"
         fct_info_programme "vue"
       ;;
+
       React)
         clear
         fct_show_logo "react"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mreact\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mReact est une bibliothèque JavaScript libre développée par Facebook depuis 2013.\E[0m"
-        echo -e "   ⇨ \E[37mLe but principal de cette bibliothèque est de faciliter la création d'application web monopage,\E[0m"
-        echo -e "   ⇨ \E[37mvia la création de composants dépendant d'un état et générant une page HTML à chaque changement d'état.\E[0m"
+        echo -e " \E[34mDescription de \E[36m\033[1mreact\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mReact est une bibliothèque JavaScript libre développée par Facebook depuis 2013.\E[0m"
+        echo -e "   👉 \E[37mLe but principal de cette bibliothèque est de faciliter la création d'application web monopage,\E[0m"
+        echo -e "   👉 \E[37mvia la création de composants dépendant d'un état et générant une page HTML à chaque changement d'état.\E[0m"
         space
   
         fct_show_version "react"
         fct_info_programme "react"
       ;;
+
       Angular)
         clear
         fct_show_logo "angular"
   
-        echo -e " \E[34mDescription d'\E[36m\E[1mangular\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mAngular est un framework côté client, open source, basé sur TypeScript,\E[0m"
-        echo -e "   ⇨ \E[37met co-dirigé par l'équipe du projet « Angular » à Google et par une communauté de particuliers et de sociétés.\E[0m"
-        echo -e "   ⇨ \E[37mAngular est une réécriture complète d'AngularJS, cadriciel construit par la même équipe.\E[0m"
+        echo -e " \E[34mDescription d'\E[36m\033[1mangular\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mAngular est un framework côté client, open source, basé sur TypeScript,\E[0m"
+        echo -e "   👉 \E[37met co-dirigé par l'équipe du projet « Angular » à Google et par une communauté de particuliers et de sociétés.\E[0m"
+        echo -e "   👉 \E[37mAngular est une réécriture complète d'AngularJS, cadriciel construit par la même équipe.\E[0m"
         space
   
         fct_show_version "angular"
         fct_info_programme "angular"
       ;;
+
       TypeScript)
         clear
         fct_show_logo "typescript"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mtypescript\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mTypeScript est un langage de programmation libre et open source développé par Microsoft\E[0m"
-        echo -e "   ⇨ \E[37mqui a pour but d'améliorer et de sécuriser la production de code JavaScript.\E[0m"
-        echo -e "   ⇨ \E[37mIl s'agit d'un sur-ensemble syntaxique strict de JavaScript.\E[0m"
+        echo -e " \E[34mDescription de \E[36m\033[1mtypescript\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mTypeScript est un langage de programmation libre et open source développé par Microsoft\E[0m"
+        echo -e "   👉 \E[37mqui a pour but d'améliorer et de sécuriser la production de code JavaScript.\E[0m"
+        echo -e "   👉 \E[37mIl s'agit d'un sur-ensemble syntaxique strict de JavaScript.\E[0m"
         space
 
         fct_show_version "typescript"
         fct_info_programme "typescript"
-      ;;   
+      ;; 
+
       Python3)
         clear
         fct_show_logo "python"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mpython3\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mPython est un langage de programmation interprété, multi-paradigme et multiplateformes.\E[0m"
-        echo -e "   ⇨ \E[37mIl favorise la programmation impérative structurée, fonctionnelle et orientée objet.\E[0m"
+        echo -e " \E[34mDescription de \E[36m\033[1mpython3\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mPython est un langage de programmation interprété, multi-paradigme et multiplateformes.\E[0m"
+        echo -e "   👉 \E[37mIl favorise la programmation impérative structurée, fonctionnelle et orientée objet.\E[0m"
         space
 
         fct_show_version "python3"
         fct_info_programme "python3"
       ;;
+
       Flutter)
         clear
         fct_show_logo "flutter"
   
-        echo -e " \E[34mDescription de \E[36m\E[1mflutter\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mFlutter est un kit de développement logiciel d'interface utilisateur open-source créé par Google.\E[0m"
-        echo -e "   ⇨ \E[37mIl est utilisé pour développer des applications pour :\E[0m"
+        echo -e " \E[34mDescription de \E[36m\033[1mflutter\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mFlutter est un kit de développement logiciel d'interface utilisateur open-source créé par Google.\E[0m"
+        echo -e "   👉 \E[37mIl est utilisé pour développer des applications pour :\E[0m"
         echo -e "      - \E[37mAndroid, iOS, Linux, Mac, Windows, Google Fuchsia et le web à partir d'une seule base de code.\E[0m"
         space
 
-        echo -e " \E[34mDescription de \E[36m\E[1mDart\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mDart est un langage de programmation optimisé pour les applications sur plusieurs plateformes.\E[0m"
-        echo -e "   ⇨ \E[37mIl est développé par Google et est utilisé pour créer des applications mobiles, de bureau, de serveur et web.\E[0m"
-        echo -e "   ⇨ \E[37mDart est un langage orienté objet, basé sur la classe, récupérateur de mémoire avec une syntaxe de type C.\E[0m"
+        echo -e " \E[34mDescription de \E[36m\033[1mDart\033[0m\E[34m :\E[0m"
+        echo -e "   👉 \E[37mDart est un langage de programmation optimisé pour les applications sur plusieurs plateformes.\E[0m"
+        echo -e "   👉 \E[37mIl est développé par Google et est utilisé pour créer des applications mobiles, de bureau, de serveur et web.\E[0m"
+        echo -e "   👉 \E[37mDart est un langage orienté objet, basé sur la classe, récupérateur de mémoire avec une syntaxe de type C.\E[0m"
         space
   
         fct_show_version "flutter"
         fct_info_programme "flutter"
       ;;
+
       Quitter)
         space
-        echo -e "\E[37m  ⇨  Vous pouvez saisir dans votre terminal la commande\E[0m \E[36mclear\E[0m \E[37mpour nettoyer celui-ci.\E[0m" 
-        echo -e "\E[37m  ⇨  Je vous remercie chaleureusement d'avoir essayé ce script.\E[0m" 
-        echo -e "\E[37m  ⇨  Amicalement\E[0m \E[36mZyrass\E[0m" 
+        echo -e "\E[37m  👉  Vous pouvez saisir dans votre terminal la commande \E[96mclear \E[37mpour nettoyer celui-ci.\E[0m" 
+        echo -e "\E[37m  👉  Je vous remercie chaleureusement d'avoir essayé ce script.\E[0m" 
+        echo -e "\E[37m  👉  Amicalement \E[96mZyrass\E[0m" 
         space
         exit
       ;;
@@ -1786,38 +1839,38 @@ fct_show_app_menu() {
 
   # TABLEAU DES PROGRAMMES
   echo -e "
-                                                                                              \033[1m\033[2mVersion du programme : 0.9.0\033[0m
-    + -------------------- + ------------------------------------------ + ---------------------------------- +
-    |  \E[36mCHOIX POSSIBLE\E[0m      |  \E[34mDESCRIPTION\E[0m                               | \E[34mVERSION ACTUEL\E[0m     
-    + -------------------- + ------------------------------------------ + ---------------------------------- +
-    | \E[95m01\E[0m. \E[36mVS.Code\E[0m          |  \E[34mLe plus utilisé aujourd'hui\E[0m               | \E[32m$(fct_which_name code)\E[0m
-    | \E[95m02\E[0m. \E[36mMySQL Workbench\E[0m  |  \E[34mManipule une base de données open source\E[0m  | \E[32m$(fct_which_name mysql-workbench-community)\E[0m
-    | \E[95m03\E[0m. \E[36mChromium\E[0m         |  \E[34mNavigateur web\E[0m                            | \E[32m$(fct_which_name chromium)\E[0m
-    | \E[95m04\E[0m. \E[36mFirefox\E[0m          |  \E[34mNavigateur web\E[0m                            | \E[32m$(fct_which_name firefox)\E[0m
-    | \E[95m05\E[0m. \E[36mBrave\E[0m            |  \E[34mNavigateur web\E[0m                            | \E[32m$(fct_which_name brave)\E[0m
-    | \E[95m06\E[0m. \E[36mOpera\E[0m            |  \E[34mNavigateur web\E[0m                            | \E[32m$(fct_which_name opera)\E[0m
-    | \E[95m07\E[0m. \E[36mPostman\E[0m          |  \E[34mGérer ces API en toute tranquillité\E[0m       | \E[32m$(fct_which_name postman)\E[0m
-    | \E[95m08\E[0m. \E[36mFigma\E[0m            |  \E[34mConcevez vos mockups avec classe\E[0m          | \E[32m$(fct_which_name figma-linux)\E[0m
-    | \E[95m09\E[0m. \E[36mKrita\E[0m            |  \E[34mLe Photoshop open source\E[0m                  | \E[32m$(fct_which_name krita)\E[0m
-    | \E[95m10\E[0m. \E[36mDiscord\E[0m          |  \E[34mTchaté avec vos amis et collègue\E[0m          | \E[32m$(fct_which_name discord)\E[0m
-    | \E[95m11\E[0m. \E[36mSpotify\E[0m          |  \E[34mÉcouter votre musique préféré\E[0m             | \E[32m$(fct_which_name spotify)\E[0m
-    | \E[95m12\E[0m. \E[36mThunderbird\E[0m      |  \E[34mGérer ces mail avec classe\E[0m                | \E[32m$(fct_which_name thunderbird)\E[0m
-    | \E[95m13\E[0m. \E[36mKylin-Video\E[0m      |  \E[34mUn lecteur vidéo sympatiques\E[0m              | \E[32m$(fct_which_name kylin-video)\E[0m
-    | \E[95m14\E[0m. \E[36mOBS-Studio\E[0m       |  \E[34mCréér ses propres vidéos\E[0m                  | \E[32m$(fct_which_name obs-studio)\E[0m
-    | \E[95m15\E[0m. \E[36mBlender\E[0m          |  \E[34mModéliser des objets en 3D\E[0m                | \E[32m$(fct_which_name blender)\E[0m
-    | \E[95m16\E[0m. \E[36mVLC\E[0m              |  \E[34mLecteur Vidéo\E[0m                             | \E[32m$(fct_which_name vlc)\E[0m
-    | \E[95m17\E[0m. \E[36mOkular\E[0m           |  \E[34mLecteur PDF et bien plus encore\E[0m           | \E[32m$(fct_which_name okular)\E[0m
-    | \E[95m18\E[0m. \E[36mGIMP\E[0m             |  \E[34mLogiciel de dessin\E[0m                        | \E[32m$(fct_which_name gimp)\E[0m
-    | \E[95m19\E[0m. \E[36mAndroid-Studio\E[91m*\E[0m\E[0m  |  \E[34mÉditeur d'application mobile\E[0m              | \E[32m$(fct_check_version android)\E[0m
-    | \E[95m20\E[0m. \E[36mSpectacle\E[0m        |  \E[34mPermet de capturer son écran facilement\E[0m   | \E[32m$(fct_which_name spectacle)\E[0m
-    + -------------------- + ------------------------------------------ + ---------------------------------- +
+  $(fct_info_program_version)
+    + -------------------- + ---------------------------------------------------------- + --------------------------------- +
+    |  \E[36mCHOIX POSSIBLE\E[0m      |  \E[34mDESCRIPTION\E[0m                                               |  \E[34mVERSION ACTUEL\E[0m     
+    + -------------------- + ---------------------------------------------------------- + --------------------------------- +
+    | \E[95m01\E[0m. \E[36mVS.Code\E[0m          |  \E[34mLe plus utilisé aujourd'hui\E[0m                               | \E[32m$(fct_check_version code)\E[0m
+    | \E[95m02\E[0m. \E[36mMySQL Workbench\E[0m  |  \E[34mManipule une base de données open source\E[0m                  | \E[32m$(fct_check_version mysql-workbench-community)\E[0m
+    | \E[95m03\E[0m. \E[36mChromium\E[0m         |  \E[34mNavigateur web\E[0m                                            | \E[32m$(fct_check_version chromium)\E[0m
+    | \E[95m04\E[0m. \E[36mFirefox\E[0m          |  \E[34mNavigateur web\E[0m                                            | \E[32m$(fct_check_version firefox)\E[0m
+    | \E[95m05\E[0m. \E[36mBrave\E[0m            |  \E[34mNavigateur web\E[0m                                            | \E[32m$(fct_check_version brave)\E[0m
+    | \E[95m06\E[0m. \E[36mOpera\E[0m            |  \E[34mNavigateur web\E[0m                                            | \E[32m$(fct_check_version opera)\E[0m
+    | \E[95m07\E[0m. \E[36mPostman\E[0m          |  \E[34mGérer ces API en toute tranquillité\E[0m                       | \E[32m$(fct_check_version postman)\E[0m
+    | \E[95m08\E[0m. \E[36mFigma\E[0m            |  \E[34mConcevez vos mockups avec classe\E[0m                          | \E[32m$(fct_check_version figma-linux)\E[0m
+    | \E[95m09\E[0m. \E[36mKrita\E[0m            |  \E[34mLe Photoshop open source\E[0m                                  | \E[32m$(fct_check_version krita)\E[0m
+    | \E[95m10\E[0m. \E[36mDiscord\E[0m          |  \E[34mTchaté avec vos amis et collègue\E[0m                          | \E[32m$(fct_check_version discord)\E[0m
+    | \E[95m11\E[0m. \E[36mSpotify\E[0m          |  \E[34mÉcouter votre musique préféré\E[0m                             | \E[32m$(fct_check_version spotify)\E[0m
+    | \E[95m12\E[0m. \E[36mThunderbird\E[0m      |  \E[34mGérer ces mail avec classe\E[0m                                | \E[32m$(fct_check_version thunderbird)\E[0m
+    | \E[95m13\E[0m. \E[36mKylin-Video\E[0m      |  \E[34mUn lecteur vidéo sympatiques\E[0m                              | \E[32m$(fct_check_version kylin-video)\E[0m
+    | \E[95m14\E[0m. \E[36mOBS-Studio\E[0m       |  \E[34mCréér ses propres vidéos\E[0m                                  | \E[32m$(fct_check_version obs-studio)\E[0m
+    | \E[95m15\E[0m. \E[36mBlender\E[0m          |  \E[34mModéliser des objets en 3D\E[0m                                | \E[32m$(fct_check_version blender)\E[0m
+    | \E[95m16\E[0m. \E[36mVLC\E[0m              |  \E[34mLecteur Vidéo\E[0m                                             | \E[32m$(fct_check_version vlc)\E[0m
+    | \E[95m17\E[0m. \E[36mOkular\E[0m           |  \E[34mLecteur PDF et bien plus encore\E[0m                           | \E[32m$(fct_check_version okular)\E[0m
+    | \E[95m18\E[0m. \E[36mGIMP\E[0m             |  \E[34mLogiciel de dessin\E[0m                                        | \E[32m$(fct_check_version gimp)\E[0m
+    | \E[95m19\E[0m. \E[36mAndroid-Studio\E[0m   |  \E[34mÉditeur d'application mobile\E[0m                              | \E[32m$(fct_check_version android)\E[0m
+    | \E[95m20\E[0m. \E[36mSpectacle\E[0m        |  \E[34mPermet de capturer son écran facilement\E[0m                   | \E[32m$(fct_check_version spectacle)\E[0m
+    + -------------------- + ---------------------------------------------------------- + ---------------------------------- +
     | \E[33m21\E[0m. Retour
     | \E[33m22\E[0m. Quitter
-    + -------------------- + ------------------------------------------ + ---------------------------------- +"
-  echo -e "\E[95m       ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
-  echo -e "\E[91m       ❌ *: Toutes les applications ou programme précédé d'un Astérix ne sont pas totalement finalisées.\E[0m"
+    + -------------------- + ---------------------------------------------------------- + ---------------------------------- +"
   space
+  echo -e "\E[95m       ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
 
+  space
   PS3="
   Quel est votre choix : "
 
@@ -1829,286 +1882,305 @@ fct_show_app_menu() {
         fct_show_logo "code"
   
         echo -e " \E[34mDescription de \E[36m\E[1mcode\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mVisual Studio Code est un éditeur de code extensible développé par Microsoft pour Windows, Linux et macOS.\E[0m"
-        echo -e "   ⇨ \E[37mLes fonctionnalités incluent la prise en charge du débogage, la mise en évidence de la syntaxe,\E[0m"
-        echo -e "   ⇨ \E[37mla complétion intelligente du code, les snippets, la refactorisation du code et Git intégré.\E[0m"
+        echo -e "   👉 \E[37mVisual Studio Code est un éditeur de code extensible développé par Microsoft pour Windows, Linux et macOS.\E[0m"
+        echo -e "   👉 \E[37mLes fonctionnalités incluent la prise en charge du débogage, la mise en évidence de la syntaxe,\E[0m"
+        echo -e "   👉 \E[37mla complétion intelligente du code, les snippets, la refactorisation du code et Git intégré.\E[0m"
         space
   
         fct_show_version "code"
         fct_info_programme "code"
       ;;
+
       MySQL-Workbench)
         clear
         fct_show_logo "mysql-workbench-community"
   
         echo -e " \E[34mDescription de \E[36m\E[1mmysql-workbench-community\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mMySQL Community Edition est la version librement téléchargeable de la base de données open source la plus populaire au monde.\E[0m"
-        echo -e "   ⇨ \E[37mElle est disponible sous la licence GPL et bénéficie du soutien d'une vaste\E[0m"
-        echo -e "   ⇨ \E[37met active communauté de développeurs open source.\E[0m"
+        echo -e "   👉 \E[37mMySQL Community Edition est la version librement téléchargeable de la base de données open source\E[0m"
+        echo -e "   👉 \E[37mla plus populaire au monde.\E[0m"
+        echo -e "   👉 \E[37mElle est disponible sous la licence GPL et bénéficie du soutien d'une vaste\E[0m"
+        echo -e "   👉 \E[37met active communauté de développeurs open source.\E[0m"
         space
     
         fct_show_version "mysql-workbench-community"
         fct_info_programme "mysql-workbench-community"
       ;;
+
       Chromium)
         clear
         fct_show_logo "chromium"
   
         echo -e " \E[34mDescription de \E[36m\E[1mchromium\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mChromium est un navigateur web libre développé par l’organisation Chromium Project créée par Google en 2008.\E[0m"
-        echo -e "   ⇨ \E[37mChromium sert de base à plusieurs autres navigateurs,\E[0m"
-        echo -e "   ⇨ \E[37mdont certains open-source ou certains propriétaires.\E[0m"
-        echo -e "   ⇨ \E[37mLe moteur de rendu de Chromium s'appelle Blink.\E[0m"
+        echo -e "   👉 \E[37mChromium est un navigateur web libre développé par l’organisation Chromium Project créée par Google en 2008.\E[0m"
+        echo -e "   👉 \E[37mChromium sert de base à plusieurs autres navigateurs,\E[0m"
+        echo -e "   👉 \E[37mdont certains open-source ou certains propriétaires.\E[0m"
+        echo -e "   👉 \E[37mLe moteur de rendu de Chromium s'appelle Blink.\E[0m"
         space
                    
         fct_show_version "chromium"
         fct_info_programme "chromium"
-        ;;
+      ;;
+
       Firefox)
         clear
         fct_show_logo "firefox"
   
         echo -e " \E[34mDescription de \E[36m\E[1mfirefox\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mMozilla Firefox est un navigateur web libre et gratuit disponible pour PC et mobiles,\E[0m"
-        echo -e "   ⇨ \E[37mdéveloppé et distribué par la Mozilla Foundation depuis 2003, avec l'aide de milliers de bénévoles.\E[0m"
-        echo -e "   ⇨ \E[37mL'entreprise Mozilla Corporation est créée en 2005 pour se charger du développement.\E[0m"
+        echo -e "   👉 \E[37mMozilla Firefox est un navigateur web libre et gratuit disponible pour PC et mobiles,\E[0m"
+        echo -e "   👉 \E[37mdéveloppé et distribué par la Mozilla Foundation depuis 2003, avec l'aide de milliers de bénévoles.\E[0m"
+        echo -e "   👉 \E[37mL'entreprise Mozilla Corporation est créée en 2005 pour se charger du développement.\E[0m"
         space
                 
         fct_show_version "firefox"
         fct_info_programme "firefox"
-        ;;
+      ;;
+
       Brave)
         clear
         fct_show_logo "brave"
   
         echo -e " \E[34mDescription de \E[36m\E[1mbrave\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mBrave est un navigateur web open source gratuit disponible sur Windows, macOS et Linux ainsi que sur iOS et Android.\E[0m"
-        echo -e "   ⇨ \E[37mIl a pour objectif de protéger la vie privée de ses utilisateurs en bloquant par défaut les pisteurs\E[0m"
-        echo -e "   ⇨ \E[37met en permettant la navigation via le réseau Tor.\E[0m"
+        echo -e "   👉 \E[37mBrave est un navigateur web open source gratuit disponible sur Windows, macOS et Linux ainsi que sur iOS et Android.\E[0m"
+        echo -e "   👉 \E[37mIl a pour objectif de protéger la vie privée de ses utilisateurs en bloquant par défaut les pisteurs\E[0m"
+        echo -e "   👉 \E[37met en permettant la navigation via le réseau Tor.\E[0m"
         space
               
         fct_show_version "brave"
         fct_info_programme "brave"
-        ;;
+      ;;
+
       Opera)
         clear
         fct_show_logo "opera"
   
         echo -e " \E[34mDescription d'\E[36m\E[1mopera\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mOpera est un navigateur web gratuit développé par la société norvégienne Opera Software depuis 1995.\E[0m"
-        echo -e "   ⇨ \E[37mLe navigateur est disponible sur PC et mobiles.\E[0m"
-        echo -e "   ⇨ \E[37mOpera totalise environ 1,9 % de parts de marché des navigateurs web, et environ 2,3 % sur les mobiles en mars 2021.\E[0m"
+        echo -e "   👉 \E[37mOpera est un navigateur web gratuit développé par la société norvégienne Opera Software depuis 1995.\E[0m"
+        echo -e "   👉 \E[37mLe navigateur est disponible sur PC et mobiles.\E[0m"
+        echo -e "   👉 \E[37mOpera totalise environ 1,9 % de parts de marché des navigateurs web, et environ 2,3 % sur les mobiles en mars 2021.\E[0m"
         space
             
         fct_show_version "opera"
         fct_info_programme "opera"
-        ;;
+      ;;
+
       Postman)
         clear
         fct_show_logo "postman"
   
         echo -e " \E[34mDescription de \E[36m\E[1mpostman\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mPostman est une application permettant de tester des API,\E[0m"
-        echo -e "   ⇨ \E[37mcréée en 2012 par Abhinav Asthana, Ankit Sobti et Abhijit Kane à Bangalore\E[0m"
-        echo -e "   ⇨ \E[37mpour répondre à une problématique de test d'API partageable.\E[0m"
+        echo -e "   👉 \E[37mPostman est une application permettant de tester des API,\E[0m"
+        echo -e "   👉 \E[37mcréée en 2012 par Abhinav Asthana, Ankit Sobti et Abhijit Kane à Bangalore\E[0m"
+        echo -e "   👉 \E[37mpour répondre à une problématique de test d'API partageable.\E[0m"
         space
           
         fct_show_version "postman"
         fct_info_programme "postman"
-        ;;      
+      ;;   
+
       Figma-Linux)
         clear
         fct_show_logo "figma-linux"
   
         echo -e " \E[34mDescription de \E[36m\E[1mfigma\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mFigma est ou outil de design collaboratif qui permet aux UX/UI designers de prototyper les interfaces graphiques.\E[0m"
-        echo -e "   ⇨ \E[37mIl aide notamment à concevoir sites web, applications et autres interfaces utilisateur.\E[0m"
+        echo -e "   👉 \E[37mFigma est ou outil de design collaboratif qui permet aux UX/UI designers de prototyper les interfaces graphiques.\E[0m"
+        echo -e "   👉 \E[37mIl aide notamment à concevoir sites web, applications et autres interfaces utilisateur.\E[0m"
         space
          
         fct_show_version "figma-linux"
         fct_info_programme "figma-linux"
-        ;;    
+      ;; 
+
       Krita)
         clear
         fct_show_logo "krita"
   
         echo -e " \E[34mDescription de \E[36m\E[1mkrita\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mKrita est un outil de peinture numérique GRATUIT et Open Source conçu pour les artistes concepteurs, illustrateurs, artistes en texture\E[0m"
-        echo -e "   ⇨ \E[37met matte painting ainsi que pour le domaine VFX (Effets Visuels).\E[0m"
-        echo -e "   ⇨ \E[37mKrita est en développement depuis plus de dix ans et connaît tout récemment une explosion de croissance.\E[0m"
-        echo -e "   ⇨ \E[37mIl offre de nombreuses caractéristiques communes et innovantes pour aider de la même façon les amateurs comme les professionnels.\E[0m"
-        echo -e "   ⇨ \E[37mDécouvrez quelques fonctionnalités intéressantes plus bas.\E[0m"
+        echo -e "   👉 \E[37mKrita est un outil de peinture numérique GRATUIT et Open Source conçu pour les artistes concepteurs,\E[0m"
+        echo -e "   👉 \E[37millustrateurs, artistes en texture et matte painting ainsi que pour le domaine VFX (Effets Visuels).\E[0m"
+        echo -e "   👉 \E[37mKrita est en développement depuis plus de dix ans et connaît tout récemment une explosion de croissance.\E[0m"
+        echo -e "   👉 \E[37mIl offre de nombreuses caractéristiques communes et innovantes pour aider de la même façon les amateurs\E[0m"
+        echo -e "   👉 \E[37mcomme les professionnels. Découvrez quelques fonctionnalités intéressantes plus bas.\E[0m"
         space
         
         fct_show_version "krita"
         fct_info_programme "krita"
-        ;;
+      ;;
+
       Discord)
         clear
         fct_show_logo "discord"
   
         echo -e " \E[34mDescription de \E[36m\E[1mdiscord\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mDiscord est un logiciel propriétaire gratuit de VoIP et de messagerie instantanée.\E[0m"
-        echo -e "   ⇨ \E[37mIl fonctionne sur les systèmes d’exploitation Windows, macOS, Linux, Android, iOS ainsi que sur les navigateurs web.\E[0m"
-        echo -e "   ⇨ \E[37mLa plateforme comptabilise le 21 juillet 2019 plus de 250 millions d'utilisateurs.\E[0m"
+        echo -e "   👉 \E[37mDiscord est un logiciel propriétaire gratuit de VoIP et de messagerie instantanée.\E[0m"
+        echo -e "   👉 \E[37mIl fonctionne sur les systèmes d’exploitation Windows, macOS, Linux, Android, iOS ainsi que sur les navigateurs web.\E[0m"
+        echo -e "   👉 \E[37mLa plateforme comptabilise le 21 juillet 2019 plus de 250 millions d'utilisateurs.\E[0m"
         space
       
         fct_show_version "discord"
         fct_info_programme "discord"
-        ;;
+      ;;
+
       Spotify)
         clear
         fct_show_logo "spotify"
   
         echo -e " \E[34mDescription de \E[36m\E[1mspotify\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mSpotify est un service suédois de streaming musical sous la forme d'un logiciel propriétaire et d'un site web.\E[0m"
-        echo -e "   ⇨ \E[37mCette plateforme de distribution numérique permet une écoute quasi instantanée de fichiers musicaux.\E[0m"
+        echo -e "   👉 \E[37mSpotify est un service suédois de streaming musical sous la forme d'un logiciel propriétaire et d'un site web.\E[0m"
+        echo -e "   👉 \E[37mCette plateforme de distribution numérique permet une écoute quasi instantanée de fichiers musicaux.\E[0m"
         space
     
         fct_show_version "spotify"
         fct_info_programme "spotify"
-        ;;
+      ;;
+
       Thunderbird)
         clear
         fct_show_logo "thunderbird"
   
         echo -e " \E[34mDescription de \E[36m\E[1mthunderbird\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mMozilla Thunderbird est un client de messagerie, libre,\E[0m"
-        echo -e "   ⇨ \E[37mdistribué gratuitement par la fondation Mozilla et issu du projet Mozilla.\E[0m"
+        echo -e "   👉 \E[37mMozilla Thunderbird est un client de messagerie, libre,\E[0m"
+        echo -e "   👉 \E[37mdistribué gratuitement par la fondation Mozilla et issu du projet Mozilla.\E[0m"
         space
    
         fct_show_version "thunderbird"
         fct_info_programme "thunderbird"
-        ;;
+      ;;
+      
       Kylin-Video)
         clear
         fct_show_logo "kylin-video"
   
         echo -e " \E[34mDescription de \E[36m\E[1mkylin-video\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mKylin Video is an open source video player based on SMPlayer and developed using Qt5.\E[0m"
-        echo -e "   ⇨ \E[37mIt supports playback of most video formats, with a fresh interface style and simple user operations.\E[0m"
+        echo -e "   👉 \E[37mKylin Video is an open source video player based on SMPlayer and developed using Qt5.\E[0m"
+        echo -e "   👉 \E[37mIt supports playback of most video formats, with a fresh interface style and simple user operations.\E[0m"
         space
   
         fct_show_version "kylin-video"
         fct_info_programme "kylin-video"
       ;;
+
       OBS-Studio)
         clear
         fct_show_logo "obs-studio"
   
         echo -e " \E[34mDescription d'\E[36m\E[1mobs-studio\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mOBS Studio, abrégé en OBS, est un logiciel libre et open source de capture d'écran\E[0m"
-        echo -e "   ⇨ \E[37met de streaming pour Microsoft Windows, MacOS et Linux.\E[0m"
-        echo -e "   ⇨ \E[37mIl remplace Open Broadcaster Software et devient ainsi multiplateforme.\E[0m"
+        echo -e "   👉 \E[37mOBS Studio, abrégé en OBS, est un logiciel libre et open source de capture d'écran\E[0m"
+        echo -e "   👉 \E[37met de streaming pour Microsoft Windows, MacOS et Linux.\E[0m"
+        echo -e "   👉 \E[37mIl remplace Open Broadcaster Software et devient ainsi multiplateforme.\E[0m"
         space
      
         fct_show_version "obs-studio"
         fct_info_programme "obs-studio"
-        ;;
+      ;;
+
       Blender)
         clear
         fct_show_logo "blender"
   
         echo -e " \E[34mDescription de \E[36m\E[1mblender\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mBlender est un logiciel libre de modélisation, d’animation par ordinateur et de rendu en 3D, créé en 1998.\E[0m"
-        echo -e "   ⇨ \E[37mIl est actuellement développé par la Fondation Blender.\E[0m"
-        echo -e "   ⇨ \E[37mDepuis 2019 le logiciel Blender est de plus en plus reconnu par les entreprises du secteur de l'animation 3D,\E[0m"
-        echo -e "   ⇨ \E[37mcomme Epic Games, Ubisoft et NVIDIA.\E[0m"
+        echo -e "   👉 \E[37mBlender est un logiciel libre de modélisation, d’animation par ordinateur et de rendu en 3D, créé en 1998.\E[0m"
+        echo -e "   👉 \E[37mIl est actuellement développé par la Fondation Blender.\E[0m"
+        echo -e "   👉 \E[37mDepuis 2019 le logiciel Blender est de plus en plus reconnu par les entreprises du secteur de l'animation 3D,\E[0m"
+        echo -e "   👉 \E[37mcomme Epic Games, Ubisoft et NVIDIA.\E[0m"
         space
                      
         fct_show_version "blender"
         fct_info_programme "blender"
-        ;;
+      ;;
+
       VLC)
         clear
         fct_show_logo "vlc"
   
         echo -e " \E[34mDescription de \E[36m\E[1mvlc\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mVLC media player est un lecteur multimédia, libre et gratuit issu du projet VideoLAN.\E[0m"
-        echo -e "   ⇨ \E[37mCe logiciel multiplateforme, créé et maintenu en France, fonctionne entre autres sous Windows, GNU/Linux, BSD, macOS, iOS, Android,\E[0m"
-        echo -e "   ⇨ \E[37msoit en tout près de 20 plates-formes. Il est distribué sous GPL et disponible dans 69 langues.\E[0m"
+        echo -e "   👉 \E[37mVLC media player est un lecteur multimédia, libre et gratuit issu du projet VideoLAN.\E[0m"
+        echo -e "   👉 \E[37mCe logiciel multiplateforme, créé et maintenu en France, fonctionne entre autres sous Windows, GNU/Linux, BSD, macOS, iOS, Android,\E[0m"
+        echo -e "   👉 \E[37msoit en tout près de 20 plates-formes. Il est distribué sous GPL et disponible dans 69 langues.\E[0m"
         space
                   
         fct_show_version "vlc"
         fct_info_programme "vlc"
-        ;;
+      ;;
+
       Okular)
         clear
         fct_show_logo "okular"
   
         echo -e " \E[34mDescription d'\E[36m\E[1mokular\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mOkular est la visionneuse de documents de KDE4.\E[0m"
-        echo -e "   ⇨ \E[37mIl est basé sur KPDF et remplace KPDF, KGhostView, KFax, KFaxview, KDVI dans KDE4.\E[0m"
-        echo -e "   ⇨ \E[37mCette fonctionnalité peut être facilement incorporée à d’autres applications.\E[0m"
-        echo -e "   ⇨ \E[37mOkular a démarré lors du Google Summer of Code en 2005 ; Piotr Szymanski est l’étudiant qui a été retenu.\E[0m"
+        echo -e "   👉 \E[37mOkular est la visionneuse de documents de KDE4.\E[0m"
+        echo -e "   👉 \E[37mIl est basé sur KPDF et remplace KPDF, KGhostView, KFax, KFaxview, KDVI dans KDE4.\E[0m"
+        echo -e "   👉 \E[37mCette fonctionnalité peut être facilement incorporée à d’autres applications.\E[0m"
+        echo -e "   👉 \E[37mOkular a démarré lors du Google Summer of Code en 2005 ; Piotr Szymanski est l’étudiant qui a été retenu.\E[0m"
         space
                 
         fct_show_version "okular"
         fct_info_programme "okular"
-        ;;
+      ;;
+
       GIMP)
         clear
         fct_show_logo "gimp"
   
         echo -e " \E[34mDescription de \E[36m\E[1mgimp\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mGIMP, ou anciennement « The GIMP », est un outil d'édition et de retouche d'image,\E[0m"
-        echo -e "   ⇨ \E[37mdiffusé sous la licence GPLv3 comme un logiciel gratuit et libre.\E[0m"
-        echo -e "   ⇨ \E[37mIl en existe des versions pour la plupart des systèmes d'exploitation dont GNU/Linux, macOS et Microsoft Windows.\E[0m"
+        echo -e "   👉 \E[37mGIMP, ou anciennement « The GIMP », est un outil d'édition et de retouche d'image,\E[0m"
+        echo -e "   👉 \E[37mdiffusé sous la licence GPLv3 comme un logiciel gratuit et libre.\E[0m"
+        echo -e "   👉 \E[37mIl en existe des versions pour la plupart des systèmes d'exploitation dont GNU/Linux, macOS et Microsoft Windows.\E[0m"
         space
              
         fct_show_version "gimp"
         fct_info_programme "gimp"
-        ;;
+      ;;
 
       Android)
         clear
         fct_show_logo "android"
   
         echo -e " \E[34mDescription d'\E[36m\E[1mandroid\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mAndroid est un système d'exploitation mobile fondé sur le noyau Linux\E[0m"
-        echo -e "   ⇨ \E[37met développé par des informaticiens sponsorisés par Google.\E[0m"
+        echo -e "   👉 \E[37mAndroid est un système d'exploitation mobile fondé sur le noyau Linux\E[0m"
+        echo -e "   👉 \E[37met développé par des informaticiens sponsorisés par Google.\E[0m"
         space
              
         fct_show_version "android"
         fct_info_programme "android"
-        ;;
+      ;;
 
       Spectacle)
         clear
         fct_show_logo "spectacle"
   
         echo -e " \E[34mDescription de \E[36m\E[1mspectacle\E[0m\E[0m :\E[0m"
-        echo -e "   ⇨ \E[37mSpectacle est une application simple permettant la réalisation de captures d'écran.\E[0m"
-        echo -e "   ⇨ \E[37mL'application permet la capture d'images du bureau complet, d'un unique moniteur,\E[0m"
-        echo -e "   ⇨ \E[37mde la fenêtre se trouvant sous le pointeur,ou du région rectangulaire de l'écran.\E[0m"
-        echo -e "   ⇨ \E[37mLes images peuvent être imprimées, envoyées vers d'autres applications pour y être manipulées\E[0m"
-        echo -e "   ⇨ \E[37mou rapidement enregistrées telles-quelles.\E[0m"
+        echo -e "   👉 \E[37mSpectacle est une application simple permettant la réalisation de captures d'écran.\E[0m"
+        echo -e "   👉 \E[37mL'application permet la capture d'images du bureau complet, d'un unique moniteur,\E[0m"
+        echo -e "   👉 \E[37mde la fenêtre se trouvant sous le pointeur,ou du région rectangulaire de l'écran.\E[0m"
+        echo -e "   👉 \E[37mLes images peuvent être imprimées, envoyées vers d'autres applications pour y être manipulées\E[0m"
+        echo -e "   👉 \E[37mou rapidement enregistrées telles-quelles.\E[0m"
         space         
              
         fct_show_version "spectacle"
         fct_info_programme "spectacle"
-        ;;
+      ;;
 
       Menu_Principal)
         clear
         fct_show_home_menu
-        ;;
+      ;;
+
       Quitter)
         space
-        echo -e "\E[37m  ⇨  Vous pouvez saisir dans votre terminal la commande\E[0m \E[36mclear\E[0m \E[37mpour nettoyer celui-ci.\E[0m" 
-        echo -e "\E[37m  ⇨  Ou bien, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[37mpour stopper l'exécution du script à tout moment.\E[0m" 
+        echo -e "\E[37m  👉  Vous pouvez saisir dans votre terminal la commande\E[0m \E[36mclear\E[0m \E[37mpour nettoyer celui-ci.\E[0m" 
+        echo -e "\E[37m  👉  Ou bien, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[37mpour stopper l'exécution du script à tout moment.\E[0m" 
         space
-        echo -e "\E[37m  ⇨  Je vous remercie d'avoir essayé ce script.\E[0m" 
-        echo -e "\E[37m  ⇨  Amicalement\E[0m \E[36mZyrass\E[0m" 
+        echo -e "\E[37m  👉  Je vous remercie d'avoir essayé ce script.\E[0m" 
+        echo -e "\E[37m  👉  Amicalement\E[0m \E[36mZyrass\E[0m" 
         space
         exit
-        ;;
+      ;;
     esac
   done
 }
 
 # PROGRAMME
-
+clear
 space
 echo -e "\t\E[36mPour une meilleure expérience utilisateur,\E[0m"
 echo -e "\t\E[36mveuillez lancer le script en mode plein écran.\E[0m"
