@@ -45,10 +45,10 @@ L'utilisation est très simple.
 
 - [X] Explication sur l'ancienne syntaxe qui est dépréciée aujourd'hui.
 - [X] Création du répertoire lors de l'installation d'un nouveau projet Vue3
-- [ ] Mise en place de la partie suppression.
+- [X] Mise en place de la partie suppression.
 - [x] Permettre d'afficher la version utilisée.
-- [ ] Afficher les commandes utilisées pour l'installation et la suppression.
-- [ ] Tester les commandes en installant et en supprimant le tout.
+- [X] Afficher les commandes utilisées pour l'installation et la suppression.
+- [X] Tester les commandes en installant et en supprimant le tout.
 
 4. Ajout d'un 3ème menu pour justement ajouter des fonctionnalités supplémentaires pour Linux.
 
@@ -61,6 +61,12 @@ L'utilisation est très simple.
 
 ## III - Changelog
 
+- **16/03/2022**
+
+  - [X] Mise en place de la suppression de Vue. (Simulation d'une supression fonctionnelle)
+  - [X] Supression du message: **🚧 *: Vue3, à faire.**
+  - [X] Ajout d'un message informatif sur l'utilisation de Bash plutôt que de ZSH.
+
 - **15/03/2022**
 
   - [X] Ajout du fonctionnement partiel pour Vue3.
@@ -69,7 +75,7 @@ L'utilisation est très simple.
   - [x] Ajout de la detection de bash ou de ZSH
   - [x] Correction orthographique du fichier README.MD.
   - [x] Ajout des textes manquant pour la suppression de Docker.
-  - [ ] Ajout et début d'une correction [**BETA**] pour la supression de Docker.
+  - [X] Ajout et début d'une correction [**BETA**] pour la supression de Docker.
   - [x] Modification des messages informatifs pour la suppression de Symfony.
   - [x] Mise en couleur du logo Symfony (fond noir, texte vert)
   - [x] Ajout du fonctionnement pour une installation de Python 3.10

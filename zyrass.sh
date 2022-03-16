@@ -1320,7 +1320,15 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[96m|   \E[37m⇨ \E[95msudo npm uninstall -g @angular/cli\E[0m"
         
         elif [ $PROGRAMME_NAME = "vue" ]; then
-          echo "A EDITER"
+          echo -e " \E[96m| /!\ Vue ne dispose pas d'exécutable, donc en supprimant le sous-répertoire \"vue3\" du répertoire \"test_install\",\E[0m"
+          echo -e " \E[96m| /!\ je pourrais simuler une supression de Vue3.\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[95mcd ./test_install\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[95mrm -rf ./vue\E[0m"
+          echo -e " \E[36m| \E[0m   ⇨ \E[95mcd ..\E[0m"
+        elif [ $PROGRAMME_NAME = "typescript" ]; then
+          echo -e " \E[96m| \E[0m ⇨ \E[95msudo npm install -g typescript -y\E[0m"
+        elif [ $PROGRAMME_NAME = "flutter" ]; then
+          echo -e " \E[96m| \E[0m ⇨ \E[95msudo snap install flutter --classic\E[0m"
         
         elif [ $PROGRAMME_NAME = "typescript" ]; then
           echo -e " \E[96m|   \E[37m⇨ \E[95msudo npm uninstall -g typescript -y\E[0m"
@@ -1434,7 +1442,16 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 sudo npm remove -g @angular/cli
                 fct_back_to "home"
               elif [ $PROGRAMME_NAME = "vue" ]; then
-                echo "A EDITER"
+                cd ./test_install
+
+                if [ -d ./vue ]; then
+                  rm -rf ./vue
+                  echo -e "\E[32m\t✅ 📁 Sous-répertoire \"vue\" supprimé avec succès!\E[0m"
+                  cd ..
+                else
+                  echo -e "\E[91m\t❌ 📁 Sous-répertoire \"vue\" inexistant, rien à supprimé.\E[0m"
+                  cd ..
+                fi
               
               elif [ $PROGRAMME_NAME = "typescript" ]; then
                 sudo npm remove -g typescript -y
@@ -1540,9 +1557,8 @@ fct_show_home_menu()          # Description : Affichage du menu principal
   echo -e "\E[92m     🚧 *: [BETA]  Docker, Fonctionne mais il supprimait cURL, NodeJS, Flutter et snapd!. A TESTER ENCORE \E[0m"
   echo -e "\E[92m     🚧 *: [BETA]  Flutter fonctionnne mais au premier lancement un bug existe sur l'affichage de la version. \E[0m"
   echo -e "\E[91m     🚧 *: [ALPHA] Python3, La suppression ne se fait pas (la 3.10).\E[0m"
-  echo -e "\E[92m     🚧 *: [BETA]  Vue3, La suppression n'a pas été réalisé. La version s'affiche avec un bug sur Symfony.\E[0m"
+  echo -e "\E[92m     🚧 *: [BETA]  Vue3, est fonctionnelle. Lors de l'installation la version impacte Symfony.\E[0m"
   echo -e "\E[37m     🚧 *: React, à faire.\E[0m"
-  echo -e "\E[37m     🚧 *: Vue3, à faire.\E[0m"
   echo -e "\E[95m     ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
   space
 
@@ -2096,6 +2112,11 @@ fct_show_app_menu() {
 space
 echo -e "\t\E[36mPour une meilleure expérience utilisateur,\E[0m"
 echo -e "\t\E[36mveuillez lancer le script en mode plein écran.\E[0m"
+space
+echo -e "\t\E[93mVeuillez noter que ce script s'exécute correctement avec Bash.\E[0m"
+echo -e "\t\E[93mN'ayant pas de Mac, j'ai eu écho que celui-ci fonctionnait très mal sur ce dernier.\E[0m"
+echo -e "\t\E[93mEn effet, si vous êtes sur \E[95mDARWIN\E[93m, alors c'est \E[36mZSH\E[93m qui sera utilisé.\E[0m"
+echo -e "\t\E[93mSur \E[95mGNU\Linux\E[93m, alors c'est \E[36mBASH\E[93m qui le sera et lui est 100% fonctionnel.\E[0m"
 space
 read -p "     Veuillez appuyer sur n'importe qu'elle touche pour continuer."
 clear
