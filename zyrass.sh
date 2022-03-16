@@ -1054,7 +1054,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[36m| /!\ Aujourd'hui nous devons saisir une commmande qui permet de créer un nouveau projet directement. La voici: \E[0m"
           echo -e " \E[36m| \E[0m    👉 \E[95mnpm init vue@latest\E[0m"
           echo -e " \E[36m| /!\ Plusieurs questions seront proposées en voici la liste: \E[0m"
-          echo -e " \E[36m| \E[0m    👉 \E[33m1: Le nom de l'application... 👉 \E[92m\033[1mtest_install_vue3\033[0m\E[91m est obligatoirement pour le bon déroulement du script.\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[33m1: Le nom de l'application... 👉 \E[92m\033[1mtest_install_vue3\033[0m\E[91m est obligatoire pour le bon déroulement du script.\E[0m"
           echo -e " \E[36m| \E[0m    👉 \E[33m2: Utilisation de TypeScript\E[0m"
           echo -e " \E[36m| \E[0m    👉 \E[33m3: Utilisation du JSX\E[0m"
           echo -e " \E[36m| \E[0m    👉 \E[33m4: Utilisation du Routing\E[0m"
@@ -1075,7 +1075,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[36m| /!\ Les étapes qui suivent sont à réaliser par vous-même, là où vous le souhaitez.\E[0m"
           echo -e " \E[36m| /!\ Aujourd'hui nous devons saisir une commmande qui permet de créer un nouveau projet directement. La voici: \E[0m"
           echo -e " \E[36m| \E[0m    👉 \E[95mnpx create-react-app nom_de_votre_app\E[0m"
-          echo -e " \E[36m| \E[0m    👉 \E[33mLe nom de l'application... \E[92m\033[1mtest_install_react\033[0m\E[91m est obligatoirement pour le bon déroulement du script.\E[0m"
+          echo -e " \E[36m| \E[0m    👉 \E[33mLe nom de l'application... \E[92m\033[1mtest_install_react\033[0m\E[91m est obligatoire pour le bon déroulement du script.\E[0m"
           echo -e " \E[36m| /!\ Déplacement dans le projet \E[0m"
           echo -e " \E[36m| \E[0m    👉 \E[95m7: cd test_install_react\E[0m"
         elif [ "$PROGRAMME_NAME" = "typescript" ]; then
