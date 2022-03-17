@@ -40,7 +40,6 @@ L'utilisation est très simple.
 
 2. Ajout probablement de quelques technologies ou programmes supplémentaire.
 
-- [ ] Laravel
 - [ ] Nginx
 - [ ] C# pour Linux (V5.0 qui ne bug pas)
 - [ ] Unity Hub
@@ -112,6 +111,24 @@ L'utilisation est très simple.
 ![Quitter](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/14.png?raw=true)
 
 ## IV - Changelog
+
+- **17/03/2022**
+
+  - [X] Mise à jour du README avec l'ajout de la partie Laravel
+  - [X] Modification de la version
+  - [x] Ajout de la technoologie Laravel.
+    - [x] Création du Logo
+    - [x] Ajout des messages sur la présentation de la technologie
+    - [x] Mise à jour du menu principal en incluant Laravel
+    - [x] Mise en place de l'affichage de la version
+    - [x] Mise en place de la vérification si Laravel est installé ou non
+    - [x] Mise en place de l'installation de Laravel
+      - [x] Installation du pré-requis **php-curl**
+      - [x] Création du répertoire "**laravel**"
+      - [x] Création du projet "**test_install_laravel**"
+    - [x] Mise en place de la suppression de Laravel
+      - [x] Suppression du pré-requis **php-curl**
+      - [x] Suppression du répertoire parent "**laravel**"
 
 - **16/03/2022**
 

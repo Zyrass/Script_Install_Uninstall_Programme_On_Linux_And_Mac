@@ -333,6 +333,21 @@ fct_show_logo()               # Description : Affiche le logo
       space
     ;;
 
+    laravel)
+      echo -e "\033[1m\E[91;40m
+                                                                                
+         _        _______  _______  _______           _______  _                
+        ( \      (  ___  )(  ____ )(  ___  )|\     /|(  ____ \( \               
+        | (      | (   ) || (    )|| (   ) || )   ( || (    \/| (               
+        | |      | (___) || (____)|| (___) || |   | || (__    | |               
+        | |      |  ___  ||     __)|  ___  |( (   ) )|  __)   | |               
+        | |      | (   ) || (\ (   | (   ) | \ \_/ / | (      | |               
+        | (____/\| )   ( || ) \ \__| )   ( |  \   /  | (____/\| (____/\\         
+        (_______/|/     \||/   \__/|/     \|   \_/   (_______/(_______/         
+                                                                                \033[0m\E[0m by \E[95mZyrass\E[0m"
+      space
+    ;;
+
     vue)
       echo -e "\033[1m\E[36m
                            _______ 
@@ -707,6 +722,8 @@ fct_which_name()              # Description : Vérifier que le programme est ins
       echo -e "\E[32mInstallé\E[0m"
     elif [ -d ./test_install/react/test_install_react ]; then
       echo -e "\E[32mInstallé\E[0m"
+    elif [ -d ./test_install/laravel/test_install_laravel ]; then
+        echo -e "\E[32mInstallé\E[0m"
     else
       echo -e "\E[37mPas installé.\E[0m"
     fi
@@ -754,17 +771,15 @@ fct_check_version()           # Description : Vérifier la version d'un programm
     elif [ "$PROGRAMME_NAME" = "composer" ]; then
       version_composer=$(composer -V | head -n 1 | cut -d " " -f 3)
       echo -e "\E[33m$version_composer\E[0m"
+   
     elif [ "$PROGRAMME_NAME" = "symfony" ]; then
-
       if [ -d ./test_install/symfony/test_install_symfony ]; then
         version_symfony=$(grep -Ei https://github.com/symfony/cache/tree/v ./test_install/symfony/test_install_symfony/composer.lock | head -n 1 | cut -d "\"" -f 4 | cut -d "v" -f 2)
         version_symfony_cli=$(symfony -V | grep -Ei version | cut -d " " -f 4 | cut -d "v" -f 2)
         echo -e "\E[36mSymfony CLI: \E[33m$version_symfony_cli \E[36mSymfony: \E[33m$version_symfony\E[0m"
       else
         echo -e "\E[95mRelancer le programme pour voir les versions\E[0m"
-      fi    
-
-
+      fi
 
     elif [ "$PROGRAMME_NAME" = "angular" ]; then
       version_angular=$(ng --version | grep -Ei cli: | cut -d " " -f 3)
@@ -773,10 +788,12 @@ fct_check_version()           # Description : Vérifier la version d'un programm
     elif [ "$PROGRAMME_NAME" = "typescript" ]; then
       version_typescript=$(tsc -v | cut -d " " -f 2)
       echo -e "\E[33m$version_typescript\E[0m"
+
     elif [ "$PROGRAMME_NAME" = "python3" ]; then
       version_python38=$(python3 -V | cut -d " " -f 2)
       version_python310=$(python3.10 -V | cut -d " " -f 2)
       echo -e "\E[36mPython3: \E[33m$version_python38 \E[36mPython3.10: \E[33m$version_python310\E[0m"
+
     elif [ "$PROGRAMME_NAME" = "flutter" ]; then
       version_dart=$(dart --version | cut -d " " -f 4)
       version_flutter=$(flutter --version | head -n 1 | cut -d " " -f 2)
@@ -801,6 +818,13 @@ fct_check_version()           # Description : Vérifier la version d'un programm
       else
         version_react="$(grep -Ei "\"react\"" ./test_install/react/test_install_react/package.json | cut -d "^" -f 2 | cut -d "\"" -f 1)"
         echo -e "\E[33m$version_react\E[0m"
+      fi
+    elif [ "$PROGRAMME_NAME" = "laravel" ]; then
+      if [ -d ./test_install/laravel/test_install_laravel ]; then
+        version_laravel=$(grep -Ei "\"v9" ./test_install/laravel/test_install_laravel/composer.lock | cut -d "v" -f 3 | cut -d "\"" -f 1)
+        echo -e "\E[33m$version_laravel\E[0m"
+      else
+        echo -e "\E[37mPas installé\E[0m"
       fi
     elif [ "$PROGRAMME_NAME" = "android" ]; then
       if [ ! -d ~/android-studio ]; then
@@ -902,7 +926,7 @@ fct_show_version()            # Description : Affiche la version d'un programme 
                               # Arg 1       : Nom de la technologie ou programme
 {
   PROGRAMME_NAME=$1
-  if [ "$PROGRAMME_NAME" = "curl" -o "$PROGRAMME_NAME" = "node" -o "$PROGRAMME_NAME" = "git" -o  "$PROGRAMME_NAME" = "docker" -o "$PROGRAMME_NAME" = "php" -o "$PROGRAMME_NAME" = "mysql" -o "$PROGRAMME_NAME" = "composer" -o "$PROGRAMME_NAME" = "symfony" -o "$PROGRAMME_NAME" = "vue" -o "$PROGRAMME_NAME" = "react" -o "$PROGRAMME_NAME" = "angular" -o "$PROGRAMME_NAME" = "typescript" -o "$PROGRAMME_NAME" = "python3" -o "$PROGRAMME_NAME" = "flutter" ]; then
+  if [ "$PROGRAMME_NAME" = "curl" -o "$PROGRAMME_NAME" = "node" -o "$PROGRAMME_NAME" = "git" -o  "$PROGRAMME_NAME" = "docker" -o "$PROGRAMME_NAME" = "php" -o "$PROGRAMME_NAME" = "mysql" -o "$PROGRAMME_NAME" = "composer" -o "$PROGRAMME_NAME" = "symfony" -o "$PROGRAMME_NAME" = "laravel" -o "$PROGRAMME_NAME" = "vue" -o "$PROGRAMME_NAME" = "react" -o "$PROGRAMME_NAME" = "angular" -o "$PROGRAMME_NAME" = "typescript" -o "$PROGRAMME_NAME" = "python3" -o "$PROGRAMME_NAME" = "flutter" ]; then
 
   # -o "$PROGRAMME_NAME" = "mysql-workbench-community" -o "$PROGRAMME_NAME" = "chromium" -o "$PROGRAMME_NAME" = "firefox" -o "$PROGRAMME_NAME" = "brave" -o "$PROGRAMME_NAME" = "opera" -o "$PROGRAMME_NAME" = "figma-linux"  -o "$PROGRAMME_NAME" = "krita" -o "$PROGRAMME_NAME" = "postman" -o "$PROGRAMME_NAME" = "discord" -o "$PROGRAMME_NAME" = "spotify" -o "$PROGRAMME_NAME" = "thunderbird" -o "$PROGRAMME_NAME" = "obs-studio" -o "$PROGRAMME_NAME" = "vlc" -o "$PROGRAMME_NAME" = "okular" -o "$PROGRAMME_NAME" = "gimp" -o "$PROGRAMME_NAME" = "spectacle"
     echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
@@ -1041,7 +1065,28 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[96m| \E[0m    👉 \E[95mcd ./test_install_symfony\E[0m"
           echo -e " \E[96m| \E[0m    👉 \E[95mcd ../../\E[0m"
 
-
+        elif [ $PROGRAMME_NAME = "laravel" ]; then
+          echo -e " \E[96m|\E[0m \E[37m Quatre prérequis indispensable qui doit être installé sur votre ordinateur: \E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mcURL\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mphp-curl\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mphp8.*\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mcomposer\E[0m"
+          echo -e " \E[96m| \E[0m \E[93m\E[1m /!\ Première possibilité que je n'installerai pas ici, c'est d'installer l'installeur de laravel.\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mcomposer global require laravel/installer\E[0m"
+          echo -e " \E[96m| \E[0m \E[93m\E[1m /!\ Il suffirait ainsi de faire simplement: \E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mlaravel new votre-projet-ici\E[0m"
+          echo -e " \E[96m| \E[0m \E[93m\E[1m /!\ Installation de php-curl via la commande: \E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt-get install php-curl\E[0m"
+          echo -e " \E[96m| \E[0m \E[93m\E[1m /!\ Seconde possibilité qui sera utilisé ici,\E[0m"
+          echo -e " \E[96m| \E[0m \E[37m afin de connaître la version de laravel utilisée, je vais installer un projet de test à cette emplacement :\E[0m"
+          echo -e " \E[96m| \E[0m \E[92m ./test_install/laravel/test_install_laravel\E[37m. Voici les commandes qu'on aurait dû saisir :\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mcd ./test_install\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mmkdir ./laravel \E[37m// Un test d'existance est effectué au préalable.\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mcd ./laravel\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mcomposer create-project laravel/laravel test_install_laravel\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mcd ./test_install_laravel\E[0m"
+          echo -e " \E[96m| \E[0m \E[93m\E[1m /!\ Je ne lancerai pas le projet mais il vous restera à saisir: \E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mphp artisan serve\E[0m"
         
         elif [ "$PROGRAMME_NAME" = "angular" ]; then
           echo -e " \E[96m| \E[0m 👉 \E[95msudo npm install -g @angular/cli\E[0m"
@@ -1190,21 +1235,32 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 symfony server:ca:install
 
                 cd ./test_install
-
-                if [ ! -d ./symfony ]; then
-                  
+                if [ ! -d ./symfony ]; then                  
                   mkdir ./symfony
-                  echo -e "\E[32m\t📁 Répertoire \"symfony\" créé avec succès!\E[0m"
+                  echo -e "\E[32m\t📁 Sous-répertoire \"symfony\" créé avec succès!\E[0m"
                   cd ./symfony
-
-                  space
-                  
+                  space                  
                   symfony new test_install_symfony
-                  echo -e "\E[32m\t✅ Création de l'application Symfony avec succès\E[0m"
+                  echo -e "\E[32m\t✅ Création d'une application Symfony créé avec succès\E[0m"
                   cd ./test_install_symfony
-
                 else
                   echo -e "\E[91m\t❌ 📁 Sous-répertoire \"symfony\" déjà existant.\E[0m"
+                fi
+                cd ../../../
+
+              elif [ "$PROGRAMME_NAME" = "laravel" ]; then
+                sudo apt-get install php-curl
+                cd ./test_install
+                if [ ! -d ./laravel ]; then                  
+                  mkdir ./laravel
+                  echo -e "\E[32m\t📁 Sous-répertoire \"laravel\" créé avec succès!\E[0m"
+                  cd ./laravel
+                  space                  
+                  composer create-project laravel/laravel test_install_laravel
+                  echo -e "\E[32m\t✅ Création d'une application Laravel créé avec succès\E[0m"
+                  cd ./test_install_laravel
+                else
+                  echo -e "\E[91m\t❌ 📁 Sous-répertoire \"laravel\" déjà existant.\E[0m"
                 fi
                 cd ../../../
               
@@ -1314,34 +1370,39 @@ fct_info_programme()          # Description : Afficher les informations du progr
 
         echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get update -y\E[0m"
         if [ "$PROGRAMME_NAME" = "curl" ]; then
-          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get remove "$PROGRAMME_NAME" -y\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get remove "$PROGRAMME_NAME" -y\E[0m"
         elif [ "$PROGRAMME_NAME" = "git" ]; then
-          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get remove "$PROGRAMME_NAME" -y\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get remove "$PROGRAMME_NAME" -y\E[0m"
         elif [ "$PROGRAMME_NAME" = "docker" ]; then
-          echo -e " \E[96m|   \E[37m👉 \E[95msystemctl stop "$PROGRAMME_NAME" \E[0m"
-          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get remove docker docker-engine docker.io containerd\E[0m"
-          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get update\E[0m"
-          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get remove docker-ce docker-ce-cli containerd.io\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msystemctl stop "$PROGRAMME_NAME" \E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get remove docker docker-engine docker.io containerd\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get update\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get remove docker-ce docker-ce-cli containerd.io\E[0m"
         elif [ "$PROGRAMME_NAME" = "node" ]; then
-          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get remove -y nodejs\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get remove -y nodejs\E[0m"
         elif [ "$PROGRAMME_NAME" = "php" ]; then
-          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get purge '"$PROGRAMME_NAME"*' -y\E[0m"
-          echo -e " \E[96m|   \E[37m👉 \E[95msudo add-apt-repository --remove ppa:ondrej/php\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get purge '"$PROGRAMME_NAME"*' -y\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo add-apt-repository --remove ppa:ondrej/php\E[0m"
         elif [ "$PROGRAMME_NAME" = "mysql" ]; then
-          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt-get remove "$PROGRAMME_NAME" -y\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get remove "$PROGRAMME_NAME" -y\E[0m"
         elif [ "$PROGRAMME_NAME" = "composer" ]; then
-          echo -e " \E[96m|   \E[37m👉 \E[95msudo rm -rf /usr/bin/composer\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo rm -rf /usr/bin/composer\E[0m"
         elif [ "$PROGRAMME_NAME" = "symfony" ]; then
-          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt remove "$PROGRAMME_NAME"-cli -y\E[0m"
-          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt remove php8.*-xml\E[0m"
-          echo -e " \E[96m|   \E[37m👉 \E[95msudo apt remove libnss3-tools\E[0m"
-          echo -e " \E[96m|   \E[37m👉 \E[95mcd ./test_install\E[0m"         
-          echo -e " \E[96m|   \E[37m👉 \E[95mrm -rf ./symfony\E[0m"
-          echo -e " \E[96m|   \E[37m👉 \E[95mcd ..\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt remove "$PROGRAMME_NAME"-cli -y\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt remove php8.*-xml\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt remove libnss3-tools\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95mcd ./test_install\E[0m"         
+          echo -e " \E[96m|   \E[37m  👉 \E[95mrm -rf ./symfony\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95mcd ../\E[0m"
+        elif [ "$PROGRAMME_NAME" = "laravel" ]; then
+          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get remove php-curl -y\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95mcd ./test_install\E[0m"         
+          echo -e " \E[96m|   \E[37m  👉 \E[95mrm -rf ./laravel\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95mcd ../\E[0m"
         elif [ "$PROGRAMME_NAME" = "python3" ]; then
           echo -e " \E[36m|   \E[37m Suppression uniquement de "$PROGRAMME_NAME".10\E[0m"
-          echo -e " \E[36m|   \E[37m 👉 \E[95msudo ppa-purge ppa:deadsnakes/ppa -y\E[0m"
-          echo -e " \E[36m|   \E[37m 👉 \E[95msudo apt-get remove python3.10 -y\E[0m"
+          echo -e " \E[36m|   \E[37m  👉 \E[95msudo ppa-purge ppa:deadsnakes/ppa -y\E[0m"
+          echo -e " \E[36m|   \E[37m  👉 \E[95msudo apt-get remove python3.10 -y\E[0m"
         elif [ "$PROGRAMME_NAME" = "angular" ]; then
           echo -e " \E[96m|   \E[37m  👉 \E[95msudo npm uninstall -g @angular/cli\E[0m"
         
@@ -1448,11 +1509,28 @@ fct_info_programme()          # Description : Afficher les informations du progr
                   cd ./test_install
                   if [ -d ./symfony ]; then                    
                     rm -rf ./symfony
-                    echo -e "\E[32m\t✅  📁 Répertoire \"symfony\" supprimé avec succès!\E[0m"
+                    echo -e "\E[32m\t✅  📁 Sous-répertoire \"symfony\" supprimé avec succès!\E[0m"
                     cd ..
                     space
                   else
                     echo -e "\E[91m\t❌ 📁 Sous-répertoire \"symfony\" inexistant, rien à supprimer.\E[0m"
+                  fi
+                else
+                  echo -e "\E[91m\t❌ 📁 Répertoire \"test_install\" inexistant, rien à supprimer.\E[0m"
+                fi
+
+              elif [ "$PROGRAMME_NAME" = "laravel" ]; then
+                sudo apt-get remove php-curl -y
+                
+                if [ -d ./test_install ]; then                  
+                  cd ./test_install
+                  if [ -d ./laravel ]; then                    
+                    rm -rf ./laravel
+                    echo -e "\E[32m\t✅  📁 Sous-répertoire \"laravel\" supprimé avec succès!\E[0m"
+                    cd ..
+                    space
+                  else
+                    echo -e "\E[91m\t❌ 📁 Sous-répertoire \"laravel\" inexistant, rien à supprimer.\E[0m"
                   fi
                 else
                   echo -e "\E[91m\t❌ 📁 Répertoire \"test_install\" inexistant, rien à supprimer.\E[0m"
@@ -1559,7 +1637,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
 fct_info_program_version()    # Description ; Affiche la version du programme au niveau du menu
 
 {
-  echo -e "                                                                                            \033[1m\033[2mVersion du programme : \E[92m1.0.0\033[0m"
+  echo -e "                                                                                            \033[1m\033[2mVersion du programme : \E[92m1.1.0\033[0m"
 }
 
 fct_show_home_menu()          # Description : Affichage du menu principal
@@ -1583,15 +1661,16 @@ fct_show_home_menu()          # Description : Affichage du menu principal
     | \E[95m06\E[0m. \E[36mMySQL        \E[0m|  \E[34mPermet de créer et de gérer des bases de données.\E[0m         |  $(fct_check_version mysql)
     | \E[95m07\E[0m. \E[36mComposer     \E[0m|  \E[34mGestionnaire de dépendances pour PHP, Symfony, Laravel\E[0m    |  $(fct_check_version composer)
     | \E[95m08\E[0m. \E[36mSymfony      \E[0m|  \E[34mFramework PHP Français très réputé.\E[0m                       |  $(fct_check_version symfony)
-    | \E[95m09\E[0m. \E[36mVue          \E[0m|  \E[34mFramework Javascript (Très facile d'accès)\E[0m                |  $(fct_check_version vue)
-    | \E[95m10\E[0m. \E[36mReact        \E[0m|  \E[34mFramework Javascript (Acces assez moyen)\E[0m                  |  $(fct_check_version react)
-    | \E[95m11\E[0m. \E[36mAngular      \E[0m|  \E[34mFramework Javascript (Accès très dur)\E[0m                     |  $(fct_check_version angular)
-    | \E[95m12\E[0m. \E[36mTypeScript   \E[0m|  \E[34mTyper son code JavaScript.\E[0m                                |  $(fct_check_version typescript)
-    | \E[95m13\E[0m. \E[36mPython\E[91m*      \E[0m|  \E[34mLangage surpuissant et simple d'accès.\E[0m                    |  $(fct_check_version python3)
-    | \E[95m14\E[0m. \E[36mFlutter\E[92m*     \E[0m|  \E[34mConcevoir des apps mobile \E[0m                                |  $(fct_check_version flutter)
+    | \E[95m09\E[0m. \E[36mLaravel      \E[0m|  \E[34mFramework PHP International très réputé.\E[0m                  |  $(fct_check_version laravel)
+    | \E[95m10\E[0m. \E[36mVue          \E[0m|  \E[34mFramework Javascript (Très facile d'accès)\E[0m                |  $(fct_check_version vue)
+    | \E[95m11\E[0m. \E[36mReact        \E[0m|  \E[34mFramework Javascript (Acces assez moyen)\E[0m                  |  $(fct_check_version react)
+    | \E[95m12\E[0m. \E[36mAngular      \E[0m|  \E[34mFramework Javascript (Accès très dur)\E[0m                     |  $(fct_check_version angular)
+    | \E[95m13\E[0m. \E[36mTypeScript   \E[0m|  \E[34mTyper son code JavaScript.\E[0m                                |  $(fct_check_version typescript)
+    | \E[95m14\E[0m. \E[36mPython\E[91m*      \E[0m|  \E[34mLangage surpuissant et simple d'accès.\E[0m                    |  $(fct_check_version python3)
+    | \E[95m15\E[0m. \E[36mFlutter\E[92m*     \E[0m|  \E[34mConcevoir des apps mobile \E[0m                                |  $(fct_check_version flutter)
     + ---------------- + ---------------------------------------------------------- + ------------------------------------- +
-    | \E[33m15\E[0m. \E[37mApplications \E[0m|  \E[37m\E[3mdes programmes utiles à installer très vite... ou à désinstaller si vous ne les appréciez pas.\E[0m
-    | \E[33m16\E[0m. \E[37mQuitter\E[0m
+    | \E[33m16\E[0m. \E[37mApplications \E[0m|  \E[37m\E[3mdes programmes utiles à installer très vite... ou à désinstaller si vous ne les appréciez pas.\E[0m
+    | \E[33m17\E[0m. \E[37mQuitter\E[0m
     + ---------------- + ---------------------------------------------------------- + ------------------------------------- +"
   echo -e "\E[91m     🚧 *: [ALPHA] Python3 | La suppression ne se fait pas (la 3.10).\E[0m"
   echo -e "\E[92m     🚧 *: [BETA]  Flutter | Fonctionnne mais au premier lancement un bug existe sur l'affichage de la version. \E[0m"
@@ -1600,7 +1679,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
   echo -e "\E[95m     ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
   space
 
-  select option in cURL Node Git Docker PHP MySQL Composer Symfony Vue React Angular TypeScript Python3 Flutter Applications Quitter
+  select option in cURL Node Git Docker PHP MySQL Composer Symfony Laravel Vue React Angular TypeScript Python3 Flutter Applications Quitter
   do
     case $option in
       cURL)
@@ -1729,6 +1808,20 @@ fct_show_home_menu()          # Description : Affichage du menu principal
  
         fct_show_version "symfony"
         fct_info_programme "symfony"
+      ;;
+
+      Laravel)
+        clear
+        fct_show_logo "laravel"
+
+        echo -e " \E[34mDescription de \E[36m\E[1mlaravel\E[0m\E[0m :\E[0m"
+        echo -e " 👉 \E[37mLaravel est un framework web open-source écrit en PHP respectant le principe modèle-vue-contrôleur.\E[0m"
+        echo -e " 👉 \E[37mIl est entièrement développé en programmation orientée objet. (POO)\E[0m"
+        echo -e " 👉 \E[37mLaravel est distribué sous licence MIT, avec ses sources hébergées sur GitHub.\E[0m"        
+        space
+
+        fct_show_version "laravel"
+        fct_info_programme "laravel"
       ;;
 
       Vue)
