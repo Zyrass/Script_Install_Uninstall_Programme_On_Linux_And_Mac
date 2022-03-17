@@ -114,8 +114,14 @@ L'utilisation est très simple.
 
 - **17/03/2022**
 
-  - [X] Mise à jour du README avec l'ajout de la partie Laravel
-  - [X] Modification de la version
+  - [x] Correction de la suppression pour flutter qui ne se faisait pas.
+  - [x] Fix partiel pour l'affichage de la version de Flutter.
+    - [ ] Bug découvert via un flutter doctor. (CHROME_EXECUTABLE Absent).
+    - [ ] Bug découvert via le statut d'installation d'un programme même si celui-ci n'est pas installé.
+  - [x] Passage à la version 1.1.1
+
+  - [x] Mise à jour du README avec l'ajout de la partie Laravel
+  - [x] Modification de la version
   - [x] Ajout de la technoologie Laravel.
     - [x] Création du Logo
     - [x] Ajout des messages sur la présentation de la technologie

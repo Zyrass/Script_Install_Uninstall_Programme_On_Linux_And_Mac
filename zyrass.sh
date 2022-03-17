@@ -1127,6 +1127,8 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[96m| \E[0m    👉 \E[95msudo npm install -g typescript -y\E[0m"
         elif [ "$PROGRAMME_NAME" = "flutter" ]; then
           echo -e " \E[96m| \E[0m    👉 \E[95msudo snap install flutter --classic\E[0m"
+          echo -e " \E[96m| \E[0m \E[93m\E[1m /!\ Initialisation de Flutter tout en vérifiant son bon fonctionnement via la commande:\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95mflutter doctor\E[0m"
 
         # APPLICATIONS
         elif [ "$PROGRAMME_NAME" = "code" -o "$PROGRAMME_NAME" = "blender"  ]; then
@@ -1310,7 +1312,11 @@ fct_info_programme()          # Description : Afficher les informations du progr
 
               elif [ "$PROGRAMME_NAME" = "flutter" ]; then
                 sudo snap install flutter --classic
-                
+                echo "" | tee -a ~/.bashrc
+                echo '# Pour flutter doctor' | tee -a ~/.bashrc
+                echo 'CHROME_EXECUTABLE=/snap/bin/chromium' | tee -a ~/.bashrc
+                echo 'export CHROME_EXECUTABLE' | tee -a ~/.bashrc
+                flutter doctor
 
               # APPLICATIONS
               elif [ "$PROGRAMME_NAME" = "code" -o "$PROGRAMME_NAME" = "blender"  ]; then
@@ -1420,11 +1426,15 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[36m| \E[0m    👉 \E[95mrm -rf ./react\E[0m"
           echo -e " \E[36m| \E[0m    👉 \E[95mcd ../E[0m"
 
-        elif [ "$PROGRAMME_NAME" = "flutter" ]; then
-          echo -e " \E[96m|   \E[37m 👉 \E[95msudo snap uninstall flutter --classic\E[0m"
-
         elif [ "$PROGRAMME_NAME" = "typescript" ]; then
-          echo -e " \E[96m|   \E[37m 👉 \E[95msudo npm uninstall -g typescript -y\E[0m"
+          echo -e " \E[96m| \E[0m    👉 \E[95msudo npm uninstall -g typescript -y\E[0m"
+
+        elif [ "$PROGRAMME_NAME" = "flutter" ]; then
+          echo -e " \E[96m|   \E[0m  👉 \E[95msudo snap remove flutter\E[0m"
+          echo -e " \E[96m|   \E[0m  👉 \E[95msed '^# Pour flutter doctor/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
+          echo -e " \E[96m|   \E[0m  👉 \E[95msed '^CHROME_EXECUTABLE=/snap/bin/chromium/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
+          echo -e " \E[96m|   \E[0m  👉 \E[95msed '^export CHROME_EXECUTABLE/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
+          echo -e " \E[96m|   \E[0m  👉 \E[95msource ~/.bashrc\E[0m"
         
         # APPLICATIONS
         elif [ "$PROGRAMME_NAME" = "code" -o "$PROGRAMME_NAME" = "mysql-workbench-community" -o "$PROGRAMME_NAME" = "chromium" -o "$PROGRAMME_NAME" = "brave" -o "$PROGRAMME_NAME" = "opera" -o "$PROGRAMME_NAME" = "figma-linux"  -o "$PROGRAMME_NAME" = "krita" -o "$PROGRAMME_NAME" = "postman" -o "$PROGRAMME_NAME" = "discord" -o "$PROGRAMME_NAME" = "spotify" -o "$PROGRAMME_NAME" = "thunderbird" -o "$PROGRAMME_NAME" = "obs-studio" -o "$PROGRAMME_NAME" = "vlc" -o "$PROGRAMME_NAME" = "blender" -o "$PROGRAMME_NAME" = "okular" -o "$PROGRAMME_NAME" = "gimp" -o "$PROGRAMME_NAME" = "spectacle" ]; then
@@ -1437,7 +1447,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
         elif [ "$PROGRAMME_NAME" = "android" ]; then
           echo -e " \E[96m|   \E[37m  👉 \E[95mrm -rf ~/android-studio\E[0m"
           echo -e " \E[96m|   \E[37m  👉 \E[95msed '/# Alias Android-Studio/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
-          echo -e " \E[96m|   \E[37m  👉 \E[95msed '/alias studio=\"~\/android-studio\/bin\/studio.sh\"/d' ~/.bashrc_tmp > ~/.bashrc\E[0m"
+          echo -e " \E[96m|   \E[37m  👉 \E[95msed '/alias studio=\"~\/android-studio\/bin\/studio.sh\"/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
           echo -e " \E[96m|   \E[37m  👉 \E[95msource ~/.bashrc\E[0m"
           
         elif [ "$PROGRAMME_NAME" = "kylin-video" ]; then
@@ -1570,6 +1580,17 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 sudo ppa-purge ppa:deadsnakes/ppa -y
                 sudo apt-get remove python3.10
 
+              elif [ "$PROGRAMME_NAME" = "flutter" ]; then
+                sudo snap remove flutter
+                sed '/# Pour flutter doctor/d' ~/.bashrc_tmp > ~/.bashrc
+                sed '/CHROME_EXECUTABLE=\/snap\/bin\/chromium/d' ~/.bashrc_tmp > ~/.bashrc
+                sed '/export CHROME_EXECUTABLE/d' ~/.bashrc_tmp > ~/.bashrc
+                
+                echo "# Alias Android-Studio" | tee -a ~/.bashrc
+                echo 'alias studio="~/android-studio/bin/studio.sh"' | tee -a ~/.bashrc
+                
+                source ~/.bashrc
+
               # APPLICATIONS
               elif [  "$PROGRAMME_NAME" = "code" -o "$PROGRAMME_NAME" = "mysql-workbench-community" -o "$PROGRAMME_NAME" = "chromium" -o "$PROGRAMME_NAME" = "brave" -o "$PROGRAMME_NAME" = "opera" -o "$PROGRAMME_NAME" = "figma-linux"  -o "$PROGRAMME_NAME" = "krita" -o "$PROGRAMME_NAME" = "postman" -o "$PROGRAMME_NAME" = "discord" -o "$PROGRAMME_NAME" = "spotify" -o "$PROGRAMME_NAME" = "thunderbird" -o "$PROGRAMME_NAME" = "obs-studio" -o "$PROGRAMME_NAME" = "vlc" -o "$PROGRAMME_NAME" = "blender" -o "$PROGRAMME_NAME" = "okular" -o "$PROGRAMME_NAME" = "gimp" -o "$PROGRAMME_NAME" = "spectacle" ]; then
                 sudo snap remove "$PROGRAMME_NAME"
@@ -1583,8 +1604,12 @@ fct_info_programme()          # Description : Afficher les informations du progr
 
               elif [ "$PROGRAMME_NAME" = "android" ]; then
                 rm -rf ~/android-studio
-                sed '/# Alias Android-Studio/d' ~/.bashrc > ~/.bashrc_tmp
+                sed '/# Alias Android-Studio/d' ~/.bashrc_tmp > ~/.bashrc
                 sed '/alias studio="~\/android-studio\/bin\/studio.sh"/d' ~/.bashrc_tmp > ~/.bashrc
+
+                echo '# Pour flutter doctor' | tee -a ~/.bashrc
+                echo 'CHROME_EXECUTABLE=/snap/bin/chromium' | tee -a ~/.bashrc
+                echo 'export CHROME_EXECUTABLE' | tee -a ~/.bashrc
                 source ~/.bashrc
 
               fi
@@ -1673,8 +1698,8 @@ fct_show_home_menu()          # Description : Affichage du menu principal
     | \E[33m17\E[0m. \E[37mQuitter\E[0m
     + ---------------- + ---------------------------------------------------------- + ------------------------------------- +"
   echo -e "\E[91m     🚧 *: [ALPHA] Python3 | La suppression ne se fait pas (la 3.10).\E[0m"
-  echo -e "\E[92m     🚧 *: [BETA]  Flutter | Fonctionnne mais au premier lancement un bug existe sur l'affichage de la version. \E[0m"
-  echo -e "\E[92m     🚧 *: [BETA]  Flutter | La désinstallation n'a pas l'air fonctionnnelle.. \E[0m"
+  echo -e "\E[92m     🚧 *: [BETA]  Flutter | Fonctionnne, à tester au premier lancement si le bug d'affichage de la version existe toujours. \E[0m"
+  echo -e "\E[91m     🚧 *: [BETA]  Flutter | Bug CHROME_EXECUTABLE. Pour contournerle problème relancer le projet via un autre terminal.\E[0m"
   space
   echo -e "\E[95m     ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
   space
