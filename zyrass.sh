@@ -1662,7 +1662,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
 fct_info_program_version()    # Description ; Affiche la version du programme au niveau du menu
 
 {
-  echo -e "                                                                                            \033[1m\033[2mVersion du programme : \E[92m1.1.0\033[0m"
+  echo -e "                                                                                            \033[1m\033[2mVersion du programme : \E[92m1.1.2\033[0m"
 }
 
 fct_show_home_menu()          # Description : Affichage du menu principal
