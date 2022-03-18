@@ -112,6 +112,15 @@ L'utilisation est très simple.
 
 ## IV - Changelog
 
+- **18/03/2022**
+
+  - [x] Refactorisation complète du script
+    - [x] Ajout d'un grand nombre de commentaire afin de se rendre compte directement si le bout de code est bien fonctionnel.
+    - [x] Renommage des fonctions pour une meilleure compréhension.
+    - [x] Retouche d'un grand nombre de texte.
+    - [x] Les icônes ont toutes été changées afin de coller au mieux à son contexte.
+    - [x] Correction de la suppression de PHP qui n'était plus fonctionnel. (Je supprimais la 8.0 au lieu de la 8.1)
+
 - **17/03/2022**
 
   - [x] Correction de la suppression pour flutter qui ne se faisait pas.
