@@ -1,35 +1,40 @@
-# Script Shell par Zyrass
+# Bash-L Store
 
-Ici il est question de créer un script shell pour une réinstallation de plusieurs programmes pour une quelconque distribution Linux.
+Si vous êtes étudiant et que vous n'avez jamais utilisé une quelconque distribution Linux,
+vous pouvez utiliser **Bash-L Store** pour vous faciliter son approche.
 
-Tout ce que j'ai faits c'est grâce à 90% des cours suivis sur **https://dyma.fr**.
-
----
-
-## 0 - Sommaire
-
-1. Comment utiliser le script !?
-2. À venir
-3. Exemple du rendu actuel
-4. Changelog
+> Il a été conçu pour simplifier la réinstallation d'une quelconque distribution Ubuntu.
+> Et tout particulièrement pour la prochaine qui arrive fin avril 2022.
 
 ---
 
-## I - Comment utiliser le script ! ?
+## Préambule
+
+Je m'appelle **Alain GUILLON** alias **Zyrass**, développeur junior avec d'assez bonnes bases.
+J'ai créé **Bash-L Store** en suivant une plateforme reconnue : **https://dyma.fr**.
+
+## Sommaire
+
+- ➊ &nbsp;&nbsp;&nbsp;&nbsp; **Comment utiliser le script !?**
+- ➋ &nbsp;&nbsp;&nbsp;&nbsp; **À venir**
+- ➌ &nbsp;&nbsp;&nbsp;&nbsp; **Exemple du rendu actuel**
+- ➍ &nbsp;&nbsp;&nbsp;&nbsp; **Changelog**
+
+---
+
+## ➊ - Comment utiliser le script ! ?
 
 L'utilisation est très simple.
 
-1. Vous devez récupérer le dépôt distant disponible sur cette même page.
-2. Dans un second temps, rendez-vous dans le répertoire fraichement récupérer.
-3. Ouvrer un terminal à cet endroit.
-4. Saisissez la commande suivante : **_`./zyrass.sh`_**
-   1. **Si à cet instant vous n'avez pas les droits, utilisez cette commande :**
-      1. **_`chmod +x zyrass.sh`_**
-5. Suivez les étapes qui vous sont affichées à l'écran.
+- 👉 Vous devez récupérer le dépôt distant disponible sur cette même page.
+- 👉 Dans un second temps, rendez-vous dans le répertoire fraichement récupérer.
+- 👉 Ouvrer un terminal à cet endroit. ( _Vous pouvez utiliser le raccourci Ctrl + Alt + T_ )
+- 👉 Saisissez la commande suivante : **_`./zyrass.sh`_**
+- 👉 Enfin, il ne vous reste qu'à suivre les étapes qui vous seront affichées à l'écran.
 
 ---
 
-## II - À venir
+## ➋ - À venir
 
 1. Ajout d'un 3ème menu pour justement ajouter des fonctionnalités supplémentaires pour Linux.
 
@@ -49,72 +54,57 @@ L'utilisation est très simple.
 
 ---
 
-## III - Exemple du rendu actuel
+## ➌ - Exemple du rendu de Bash-L Store
 
 > Quelques petites modifications peuvent avoir lieu. (Couleur, texte etc..)<br>
-> En revanche on s'approche énormément du rendu final (90% ~)
+> En revanche on s'approche énormément du rendu final (80% ~)
 
-### Démarrage
+### Clin d'oeil à la plateform: Dyma
 
-![Démarrage](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/1.png?raw=true)
+![Clin d'oeil à la plateform: Dyma](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/1.png?raw=true)
 
-### GNU/Linus détecté
+### Détection Ubuntu
 
-![GNU/Linus détecté](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/2.png?raw=true)
+![Détection Ubuntu](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/2.png?raw=true)
 
-### Menu Principal
+### Présentation de Bash-L Store (page 1/2)
 
-![Home Menu](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/3.png?raw=true)
+![Présentation de Bash-L Store](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/3.png?raw=true)
 
-### Exemple avec le programme Vue
+### Menu des Technologies
 
-![Exemple Vue](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/4.png?raw=true)
+![Menu des Technologies](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/4.png?raw=true)
 
-### Installation de Vue
+### Menu des Applications
 
-![Installation de Vue](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/5.png?raw=true)
+![Menu des Applications](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/5.png?raw=true)
 
-### Installation en cours
+### Symfony
 
-![Installation en cours](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/6.png?raw=true)
+![Symfony](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/6.png?raw=true)
 
-### Installation terminée
+### Suppression de Symfony
 
-![Installation terminée](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/7.png?raw=true)
+![Suppression de Symfony](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/7.png?raw=true)
 
-### Version affiché au niveau du menu principal
+### Remerciements
 
-![Version affiché au niveau du menu principal](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/8.png?raw=true)
+![Remerciements](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/8.png?raw=true)
 
-### Retour sur Vue avec le status installé
+## ➍ - Changelog
 
-![Retour sur Vue avec le status installé](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/9.png?raw=true)
+- **19/03/2022**
 
-### Suppression de Vue
-
-![Suppression de Vue](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/10.png?raw=true)
-
-### Suppression terminée
-
-![Suppression terminée](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/11.png?raw=true)
-
-### Version plus du tout affiché au niveau du menu principal
-
-![Version plus du tout affiché au niveau du menu principal](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/12.png?raw=true)
-
-### Menu des applications
-
-![Menu des applications](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/13.png?raw=true)
-
-### Quitter le programme
-
-![Quitter](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/14.png?raw=true)
-
-## IV - Changelog
+  - [x] Passage en version 2.0.0
+  - [x] Modification du nom en **Bash-L Store**.
+  - [x] Correction orthographique.
+  - [x] Modification d'une très grosse partie du script pour l'adapter à **Bash-L Store**.
+  - [x] Ajout de plusieurs logos.
+  - [x] Ajout d'une page de remerciements.
 
 - **18/03/2022**
 
-  - [x] Refactorisation complète du script
+  - [x] Re-factorisation complète du script
     - [x] Ajout d'un grand nombre de commentaire afin de se rendre compte directement si le bout de code est bien fonctionnel.
     - [x] Renommage des fonctions pour une meilleure compréhension.
     - [x] Retouche d'un grand nombre de texte.
@@ -125,8 +115,8 @@ L'utilisation est très simple.
 
   - [x] Correction de la suppression pour flutter qui ne se faisait pas.
   - [x] Fix partiel pour l'affichage de la version de Flutter.
-    - [ ] Bug découvert via un flutter doctor. (CHROME_EXECUTABLE Absent).
-    - [ ] Bug découvert via le statut d'installation d'un programme même si celui-ci n'est pas installé.
+    - [x] Bug découvert via un flutter doctor. (CHROME_EXECUTABLE Absent).
+    - [x] Bug découvert via le statut d'installation d'un programme même si celui-ci n'est pas installé.
   - [x] Passage à la version 1.1.1
 
   - [x] Mise à jour du README avec l'ajout de la partie Laravel
