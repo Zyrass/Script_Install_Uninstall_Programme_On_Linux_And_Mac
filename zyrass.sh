@@ -153,7 +153,7 @@ fct_show_logo()                 # Description : Affiche les logos
         |  ___  || |      | |      | |   | ||  __)      | |   | |               
         | (   ) || |      | |      | |   | || (         | |   | |               
         | )   ( || (____/\| (____/\| (___) || (____/\___) (___| (____/\\         
-        |/     \|(_______/(_______/(_______)(_______/\_______/(_______/"
+        |/     \|(_______/(_______/(_______)(_______/\_______/(_______/\033[0m\E[0m"
       space
       space
     ;;
@@ -183,7 +183,7 @@ fct_show_logo()                 # Description : Affiche les logos
         |  ___  ||  _____)|  _____)(_____  )
         | (   ) || (      | (            ) |
         | )   ( || )      | )      /\____) |
-        |/     \||/       |/       \_______)"
+        |/     \||/       |/       \_______)\033[0m\E[0m"
       space
       space
     ;;
@@ -802,47 +802,47 @@ space()                         # Description : Création d'un simple space pour
 loading()                       # Description : Animation du chargement
 {
   space
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t                       (\E[36m0%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t \t(\E[36m0%\E[0m)\r'
   sleep 0.01
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m#\E[0m                      (\E[36m5%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m=>\E[0m...................] \t(\E[36m5%\E[0m)\r'
   sleep 0.02
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m##\E[0m                     (\E[36m10%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m==>\E[0m..................] \t(\E[36m10%\E[0m)\r'
   sleep 0.03
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m###\E[0m                    (\E[36m15%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m===>\E[0m.................] \t(\E[36m15%\E[0m)\r'
   sleep 0.04
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m####\E[0m                   (\E[36m20%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m====>\E[0m................] \t(\E[36m20%\E[0m)\r'
   sleep 0.05
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m#####\E[0m                  (\E[36m25%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m=====>\E[0m...............] \t(\E[36m25%\E[0m)\r'
   sleep 0.06
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m######\E[0m                 (\E[36m30%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m======>\E[0m..............] \t(\E[36m30%\E[0m)\r'
   sleep 0.07
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m#######\E[0m                (\E[36m95%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m=======>\E[0m.............] \t(\E[36m95%\E[0m)\r'
   sleep 0.08
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m########\E[0m               (\E[36m40%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m========>\E[0m............] \t(\E[36m40%\E[0m)\r'
   sleep 0.09
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m#########\E[0m              (\E[36m45%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m=========>\E[0m...........] \t(\E[36m45%\E[0m)\r'
   sleep 0.10
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m##########\E[0m             (\E[36m50%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m==========>\E[0m..........] \t(\E[36m50%\E[0m)\r'
   sleep 0.11
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m###########\E[0m            (\E[36m55%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m===========>\E[0m.........] \t(\E[36m55%\E[0m)\r'
   sleep 0.12
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m############\E[0m           (\E[36m60%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m============>\E[0m........] \t(\E[36m60%\E[0m)\r'
   sleep 0.13
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m#############\E[0m          (\E[36m65%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m=============>\E[0m.......] \t(\E[36m65%\E[0m)\r'
   sleep 0.14
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m##############\E[0m         (\E[36m70%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m==============>\E[0m......] \t(\E[36m70%\E[0m)\r'
   sleep 0.15
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m###############\E[0m        (\E[36m75%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m===============>\E[0m.....] \t(\E[36m75%\E[0m)\r'
   sleep 0.16
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m################\E[0m       (\E[36m80%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m================>\E[0m....] \t(\E[36m80%\E[0m)\r'
   sleep 0.17
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m#################\E[0m      (\E[36m85%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m=================>\E[0m...] \t(\E[36m85%\E[0m)\r'
   sleep 0.18
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m##################\E[0m     (\E[36m90%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m==================>\E[0m..] \t(\E[36m90%\E[0m)\r'
   sleep 0.19
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m###################\E[0m    (\E[36m95%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m===================>\E[0m.] \t(\E[36m95%\E[0m)\r'
   sleep 0.20
-  echo -ne ' ⏳ \E[37mChargement\E[0m :\t\E[32m####################\E[0m   (\E[36m100%\E[0m)\r'
+  echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m====================>\E[0m] \t(\E[36m100%\E[0m)\r'
   space
 }
 fct_check_exist_install()       # Description : Permet d'afficher le message si l'installation à réussi ou bien si 
@@ -914,14 +914,16 @@ fct_check_status()              # Description : Vérifier que le programme est i
     RESULT=$(which "$PROGRAM_NAME")
   fi
 
-  if [ $? -ne 0 ]; then
+  if [ $? -eq 1 ]; then
     echo -e "\E[37mNON.\E[0m"
   else
     echo -e "\E[92mOUI.\E[0m"
   fi
 }
 
-fct_check_status_program()
+fct_check_status_program()              # Description : Permet de vérifier le statut du programme
+                                        # Arg 1       : Statut du programme (ok, update, bug, error)
+                                        # Arg 2       : Nom de la technologies
 {
   STATUS=$1
   NAME=$2
@@ -946,13 +948,13 @@ fct_check_status_program()
   esac
 }
 
-fct_show_statut_version()       # Description : Affiche la version d'un programme quelconque
+fct_show_status_version()       # Description : Affiche la version d'un programme quelconque
                                 # Arg 1       : Nom de la technologie ou programme
 {
   PROGRAM_NAME=$1
   echo -e " \E[90m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
   if [ "$PROGRAM_NAME" = "flutter" ]; then
-    echo -e " \E[90m|  \E[33mFlutter et Dart sont-ils installés sur cet ordinateur: \E[32m$(fct_check_status flutter)\E[92ms\E[0m"
+    echo -e " \E[90m|  \E[33mFlutter et Dart sont-ils installés sur cet ordinateur: \E[32m$(fct_check_status "$PROGRAM_NAME")\E[0m"
   else
     echo -e " \E[90m|  \E[33m"$PROGRAM_NAME" est-il installé sur cet ordinateur : \E[32m$(fct_check_status "$PROGRAM_NAME")\E[0m"
   fi
@@ -961,7 +963,7 @@ fct_show_statut_version()       # Description : Affiche la version d'un programm
     fct_check_status_program ok
   elif [ "$PROGRAM_NAME" = "react" ]; then
     fct_check_status_program update
-  elif [ "$PROGRAM_NAME" = "flutter" -o "$PROGRAM_NAME" = "vue"  ]; then
+  elif [ "$PROGRAM_NAME" = "flutter" -o "$PROGRAM_NAME" = "vue" ]; then
     if [ "$PROGRAM_NAME" = "vue"  ]; then
       fct_check_status_program bug VUE
     elif [ "$PROGRAM_NAME" = "flutter"  ]; then
@@ -1138,7 +1140,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[36m|\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
-        elif [ "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "angular" -o "$PROGRAM_NAME" = "typescript" ]; then
+        elif [ "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "angular" -o "$PROGRAM_NAME" = "typescript" -o "$PROGRAM_NAME" = "flutter" ]; then
           echo -e " \E[36m|\E[0m"
           echo -e " \E[36m|   \E[97m📋 Pour installer \033[1m\E[34m"$PROGRAM_NAME"\033[0m\E[97m, nous aurions dû saisir :\E[0m"
           echo -e " \E[36m|\E[0m"
@@ -1190,6 +1192,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ❌
         elif [ "$PROGRAM_NAME" = "flutter" ]; then
           echo -e " \E[96m|\E[0m \E[37m Pour installer "$PROGRAM_NAME" et dart, nous aurions dû saisir :\E[0m"
+        
         else
           echo -e " \E[36m|\E[0m \E[37m Pour installer "$PROGRAM_NAME", nous aurions dû saisir :\E[0m"
         fi
@@ -1373,10 +1376,19 @@ fct_info_programme()          # Description : Afficher les informations du progr
         elif [ "$PROGRAM_NAME" = "flutter" ]; then
           echo -e " \E[36m|      💲 \E[92msudo snap install flutter --classic\E[0m"
           echo -e " \E[36m|\E[0m"
+          echo -e " \E[36m|      💲 \E[92mecho \"\" | tee -a ~/.bashrc\E[0m"
+          echo -e " \E[36m|      💲 \E[92mecho '# Pour flutter doctor' | tee -a ~/.bashrc\E[0m"
+          echo -e " \E[36m|      💲 \E[92mecho 'CHROME_EXECUTABLE=/snap/bin/chromium' | tee -a ~/.bashrc\E[0m"
+          echo -e " \E[36m|      💲 \E[92mecho 'export CHROME_EXECUTABLE' | tee -a ~/.bashrc\E[0m"
+          echo -e " \E[36m|\E[0m"
           echo -e " \E[36m|   📋 \E[97m\033[1mInitialisation de Flutter tout en vérifiant son bon fonctionnement via la commande:\E[0m"
           echo -e " \E[36m|\E[0m"
           echo -e " \E[36m|      💲 \E[92mflutter doctor\E[0m"
           echo -e " \E[36m|\E[0m"
+          echo -e " \E[36m|   📋 \E[91m\033[1mUn problème CHROME_EXECUTABLE va être détecté avec flutter doctor.\E[0m"
+          echo -e " \E[36m|   📋 \E[91m\033[1mSi vous lancer un nouveau terminal à la fin de l'installation, vous pourrez relancer la commande\E[0m"
+          echo -e " \E[36m|   📋 \E[91m\033[1m\"flutter doctor\" pour constater qu'il n'y a plus d'erreur. (Si bien entendu android est installé)\E[0m"
+          echo -e " \E[36m|\E[0m" 
 
         # APPLICATIONS
 
@@ -1429,7 +1441,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               elif [ "$PROGRAM_NAME" = "typescript" ]; then
                 RESULT=$(fct_check_status tsc)
-              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               else
                 RESULT=$(fct_check_status "$PROGRAM_NAME")
               fi
@@ -1481,8 +1493,8 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 sudo add-apt-repository ppa:ondrej/php -y
                 sudo apt-get install php8.1 -y
                 sudo apt-get install php8.1-mbstring -y
-
-              # STATUT FONCTIONNEMENT VÉRIFIÉ : 👾
+        
+              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               elif [ "$PROGRAM_NAME" = "mysql" ]; then
                 sudo apt-get install mysql-server -y
 
@@ -1552,7 +1564,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
               elif [ "$PROGRAM_NAME" = "angular" ]; then
                 sudo npm install -g @angular/cli
 
-              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               elif [ "$PROGRAM_NAME" = "vue" ]; then
                 cd ./test_install
                 if [ ! -d ./vue ]; then
@@ -1606,26 +1618,23 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 echo 'export CHROME_EXECUTABLE' | tee -a ~/.bashrc
                 flutter doctor
 
+              # ===============================================================================================================================
+              #   INSTALLATION - PARTIE APPLICATIONS
+              # ===============================================================================================================================
 
-
-
-
-              # APPLICATIONS
-
-
-              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "blender"  ]; then
                 sudo snap install  "$PROGRAM_NAME" --classic
                 
-              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               elif [  "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
                 sudo snap install "$PROGRAM_NAME"
 
-              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               elif [ "$PROGRAM_NAME" = "kylin-video" ]; then
-                sudo apt install kylin-video -y
+                sudo apt-get install kylin-video -y
                 
-              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               elif [ "$PROGRAM_NAME" = "android" ]; then
                 wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.1.1.22/android-studio-2021.1.1.22-linux.tar.gz
                 tar -xvf android-studio-2021.1.1.22-linux.tar.gz
@@ -1633,8 +1642,9 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 rm -rf android-studio-2021.1.1.22-linux.tar.gz
                 sudo mv android-studio ~/android-studio
                 sudo chown -R $USER:$USER ~/android-studio
+                echo "" | tee -a ~/.bashrc
                 echo "# Alias Android-Studio" | tee -a ~/.bashrc
-                echo 'alias studio="~/android-studio/bin/studio.sh"' | tee -a ~/.bashrc
+                echo "alias studio=\"~/android-studio/bin/studio.sh\"" | tee -a ~/.bashrc
                 source ~/.bashrc
               fi
 
@@ -1645,7 +1655,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
               echo -e " \E[92m+ ------------------------------------------------------------------------------------------------ +\E[0m"
               space
 
-              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               if [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "android" -o "$PROGRAM_NAME" = "spectacle" ]; then
                 fct_back_to "app"
               else
@@ -1779,42 +1789,41 @@ fct_info_programme()          # Description : Afficher les informations du progr
         elif [ "$PROGRAM_NAME" = "typescript" ]; then
           echo -e " \E[36m|      💲 \E[92msudo npm uninstall -g typescript -y\E[0m"
 
-        # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+        # STATUT FONCTIONNEMENT VÉRIFIÉ : 👾
         elif [ "$PROGRAM_NAME" = "flutter" ]; then
-          echo -e " \E[96m|   \E[0m  👉 \E[95msudo snap remove flutter\E[0m"
-          echo -e " \E[96m|   \E[0m  👉 \E[95msed '^# Pour flutter doctor/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
-          echo -e " \E[96m|   \E[0m  👉 \E[95msed '^CHROME_EXECUTABLE=/snap/bin/chromium/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
-          echo -e " \E[96m|   \E[0m  👉 \E[95msed '^export CHROME_EXECUTABLE/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
-          echo -e " \E[96m|   \E[0m  👉 \E[95msource ~/.bashrc\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo snap remove flutter\E[0m"
+          echo -e " \E[36m|      💲 \E[92msed '# Pour flutter doctor/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
+          echo -e " \E[36m|      💲 \E[92msed 'CHROME_EXECUTABLE=/snap/bin/chromium/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
+          echo -e " \E[36m|      💲 \E[92msed 'export CHROME_EXECUTABLE/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
+          echo -e " \E[36m|      💲 \E[92msource ~/.bashrc\E[0m"
         
         # if [ "$PROGRAM_NAME" = "python3" ]; then
         #   echo -e " \E[36m|  \E[33mDésinstallations de "$PROGRAM_NAME".10\E[0m"
         # fi
 
+        # ===============================================================================================================================
+        #   SUPPRESSION - PARTIE APPLICATIONS
+        # ===============================================================================================================================
 
-
-        # APPLICATIONS
-
-
-        # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+        # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
         elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
-          echo -e " \E[96m|   \E[37m  👉 \E[95msudo snap remove "$PROGRAM_NAME"\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo snap remove "$PROGRAM_NAME"\E[0m"
 
-        # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+        # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
         elif [ "$PROGRAM_NAME" = "firefox" ]; then
-          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt-get remove firefox\E[0m"
-          echo -e " \E[96m|   \E[37m  👉 \E[95msudo snap remove firefox\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo apt-get remove firefox\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo snap remove firefox\E[0m"
 
-        # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+        # STATUT FONCTIONNEMENT VÉRIFIÉ : 👾
         elif [ "$PROGRAM_NAME" = "android" ]; then
-          echo -e " \E[96m|   \E[37m  👉 \E[95mrm -rf ~/android-studio\E[0m"
-          echo -e " \E[96m|   \E[37m  👉 \E[95msed '/# Alias Android-Studio/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
-          echo -e " \E[96m|   \E[37m  👉 \E[95msed '/alias studio=\"~\/android-studio\/bin\/studio.sh\"/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
-          echo -e " \E[96m|   \E[37m  👉 \E[95msource ~/.bashrc\E[0m"
+          echo -e " \E[36m|      💲 \E[92mrm -rf ~/android-studio\E[0m"
+          echo -e " \E[36m|      💲 \E[92msed '/# Alias Android-Studio/d' ~/.bashrc > ~/.bashrc_tm\E[0m"
+          echo -e " \E[36m|      💲 \E[92msed '/alias studio=\"~\/android-studio\/bin\/studio.sh\"/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
+          echo -e " \E[36m|      💲 \E[92msource ~/.bashrc\E[0m"
         
-        # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+        # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
         elif [ "$PROGRAM_NAME" = "kylin-video" ]; then
-          echo -e " \E[96m|   \E[37m  👉 \E[95msudo apt remove kylin-video -y\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo apt-get remove kylin-video -y\E[0m"
         
         fi
 
@@ -1859,6 +1868,10 @@ fct_info_programme()          # Description : Afficher les informations du progr
               loading
               sleep 1
               space
+
+              # ===============================================================================================================================
+              #   SUPPRESSION - PARTIE TEHNOLOGIES
+              # ===============================================================================================================================
 
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               if [ "$PROGRAM_NAME" = "curl" ]; then
@@ -1986,21 +1999,21 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 sudo ppa-purge ppa:deadsnakes/ppa -y
                 sudo apt-get remove python3.10
 
-              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+              # STATUT FONCTIONNEMENT VÉRIFIÉ : 👾
               elif [ "$PROGRAM_NAME" = "flutter" ]; then
                 sudo snap remove flutter
-                sed '/# Pour flutter doctor/d' ~/.bashrc_tmp > ~/.bashrc
-                sed '/CHROME_EXECUTABLE=\/snap\/bin\/chromium/d' ~/.bashrc_tmp > ~/.bashrc
-                sed '/export CHROME_EXECUTABLE/d' ~/.bashrc_tmp > ~/.bashrc
+                sed "/# Pour flutter doctor/d" ~/.bashrc_tmp > ~/.bashrc
+                sed "/CHROME_EXECUTABLE=/snap/bin/chromium/d" ~/.bashrc_tmp > ~/.bashrc
+                sed "/export CHROME_EXECUTABLE/d" ~/.bashrc_tmp > ~/.bashrc
                 
+                echo "" | tee -a ~/.bashrc
                 echo "# Alias Android-Studio" | tee -a ~/.bashrc
-                echo 'alias studio="~/android-studio/bin/studio.sh"' | tee -a ~/.bashrc
-                
+                echo "alias studio=\"~/android-studio/bin/studio.sh\"" | tee -a ~/.bashrc
                 source ~/.bashrc
 
-
-              # APPLICATIONS
-
+              # ===============================================================================================================================
+              #   SUPPRESSION - PARTIE APPLICATIONS
+              # ===============================================================================================================================
 
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
               elif [  "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
@@ -2013,14 +2026,15 @@ fct_info_programme()          # Description : Afficher les informations du progr
 
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
               elif [ "$PROGRAM_NAME" = "kylin-video" ]; then
-                sudo apt remove "$PROGRAM_NAME" -y
+                sudo apt-get remove "$PROGRAM_NAME" -y
 
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
               elif [ "$PROGRAM_NAME" = "android" ]; then
                 rm -rf ~/android-studio
                 sed '/# Alias Android-Studio/d' ~/.bashrc_tmp > ~/.bashrc
                 sed '/alias studio="~\/android-studio\/bin\/studio.sh"/d' ~/.bashrc_tmp > ~/.bashrc
-
+                
+                echo "" | tee -a ~/.bashrc
                 echo '# Pour flutter doctor' | tee -a ~/.bashrc
                 echo 'CHROME_EXECUTABLE=/snap/bin/chromium' | tee -a ~/.bashrc
                 echo 'export CHROME_EXECUTABLE' | tee -a ~/.bashrc
@@ -2135,7 +2149,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37mLa ressource est désignée à l'aide d'une URL et doit être d'un type supporté par le logiciel.\E[0m"
         space
 
-        fct_show_statut_version "curl"
+        fct_show_status_version "curl"
         fct_info_programme "curl"
       ;;
 
@@ -2163,7 +2177,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37met d'une base de données en ligne de paquets publics et privés payants, appelée le registre npm.\E[0m"
         space
 
-        fct_show_statut_version "node"
+        fct_show_status_version "node"
         fct_info_programme "node"
       ;;
 
@@ -2179,7 +2193,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37mLe principal contributeur actuel de git et depuis plus de 16 ans est Junio C Hamano.\E[0m"
         space
 
-        fct_show_statut_version "git"
+        fct_show_status_version "git"
         fct_info_programme "git"
       ;;
 
@@ -2195,7 +2209,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37mqui pourra être exécuté sur n'importe quel serveur »\E[0m"
         space
 
-        fct_show_statut_version "docker"
+        fct_show_status_version "docker"
         fct_info_programme "docker"
       ;; 
 
@@ -2211,7 +2225,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37mPHP est un langage impératif orienté objet. \E[0m"
         space
 
-        fct_show_statut_version "php"
+        fct_show_status_version "php"
         fct_info_programme "php"
       ;;
 
@@ -2225,7 +2239,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37mIl est distribué sous une double licence GPL et propriétaire.\E[0m"
         space
 
-        fct_show_statut_version "mysql"
+        fct_show_status_version "mysql"
         fct_info_programme "mysql"
       ;;
 
@@ -2240,7 +2254,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37mLe développement a débuté en avril 2011 et a donné lieu à une première version sortie le 1ᵉʳ mars 2012.\E[0m"
         space
   
-        fct_show_statut_version "composer"
+        fct_show_status_version "composer"
         fct_info_programme "composer"
       ;;
 
@@ -2255,7 +2269,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37mde faciliter et d’accélérer le développement d'un site web.\E[0m"
         space
  
-        fct_show_statut_version "symfony"
+        fct_show_status_version "symfony"
         fct_info_programme "symfony"
       ;;
 
@@ -2270,7 +2284,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37mLaravel est distribué sous licence MIT, avec ses sources hébergées sur GitHub.\E[0m"        
         space
 
-        fct_show_statut_version "laravel"
+        fct_show_status_version "laravel"
         fct_info_programme "laravel"
       ;;
 
@@ -2286,7 +2300,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37msur le projet et son écosystème.\E[0m"
         space
 
-        fct_show_statut_version "vue"
+        fct_show_status_version "vue"
         fct_info_programme "vue"
       ;;
 
@@ -2301,7 +2315,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37mvia la création de composants dépendant d'un état et générant une page HTML à chaque changement d'état.\E[0m"
         space
   
-        fct_show_statut_version "react"
+        fct_show_status_version "react"
         fct_info_programme "react"
       ;;
 
@@ -2316,7 +2330,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37mAngular est une réécriture complète d'AngularJS, cadriciel construit par la même équipe.\E[0m"
         space
   
-        fct_show_statut_version "angular"
+        fct_show_status_version "angular"
         fct_info_programme "angular"
       ;;
 
@@ -2331,7 +2345,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37mIl s'agit d'un sur-ensemble syntaxique strict de JavaScript.\E[0m"
         space
 
-        fct_show_statut_version "typescript"
+        fct_show_status_version "typescript"
         fct_info_programme "typescript"
       ;; 
 
@@ -2345,7 +2359,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37mIl favorise la programmation impérative structurée, fonctionnelle et orientée objet.\E[0m"
         space
 
-        fct_show_statut_version "python3"
+        fct_show_status_version "python3"
         fct_info_programme "python3"
       ;;
 
@@ -2368,7 +2382,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
         echo -e "   📖 \E[37mDart est un langage orienté objet, basé sur la classe, récupérateur de mémoire avec une syntaxe de type C.\E[0m"
         space
   
-        fct_show_statut_version "flutter"
+        fct_show_status_version "flutter"
         fct_info_programme "flutter"
       ;;
 
@@ -2390,41 +2404,41 @@ fct_show_home_menu()          # Description : Affichage du menu principal
 fct_show_app_menu() {
 
   fct_show_logo "applications"
-
+  
   # TABLEAU DES PROGRAMMES
-  echo -e "
+    echo -e "
   $(fct_show_script_version)
-    + -------------------- + ---------------------------------------------------------- + --------------------------------- +
-    |  \E[36mCHOIX POSSIBLE\E[0m      |  \E[34mDESCRIPTION\E[0m                                               |  \E[34mVERSION ACTUEL\E[0m     
-    + -------------------- + ---------------------------------------------------------- + --------------------------------- +
-    | \E[95m01\E[0m. \E[36mVS.Code\E[0m          |  \E[34mLe plus utilisé aujourd'hui\E[0m                               | \E[32m$(fct_check_version code)\E[0m
-    | \E[95m02\E[0m. \E[36mMySQL Workbench\E[0m  |  \E[34mManipule une base de données open source\E[0m                  | \E[32m$(fct_check_version mysql-workbench-community)\E[0m
-    | \E[95m03\E[0m. \E[36mChromium\E[0m         |  \E[34mNavigateur web\E[0m                                            | \E[32m$(fct_check_version chromium)\E[0m
-    | \E[95m04\E[0m. \E[36mFirefox\E[0m          |  \E[34mNavigateur web\E[0m                                            | \E[32m$(fct_check_version firefox)\E[0m
-    | \E[95m05\E[0m. \E[36mBrave\E[0m            |  \E[34mNavigateur web\E[0m                                            | \E[32m$(fct_check_version brave)\E[0m
-    | \E[95m06\E[0m. \E[36mOpera\E[0m            |  \E[34mNavigateur web\E[0m                                            | \E[32m$(fct_check_version opera)\E[0m
-    | \E[95m07\E[0m. \E[36mPostman\E[0m          |  \E[34mGérer ces API en toute tranquillité\E[0m                       | \E[32m$(fct_check_version postman)\E[0m
-    | \E[95m08\E[0m. \E[36mFigma\E[0m            |  \E[34mConcevez vos mockups avec classe\E[0m                          | \E[32m$(fct_check_version figma-linux)\E[0m
-    | \E[95m09\E[0m. \E[36mKrita\E[0m            |  \E[34mLe Photoshop open source\E[0m                                  | \E[32m$(fct_check_version krita)\E[0m
-    | \E[95m10\E[0m. \E[36mDiscord\E[0m          |  \E[34mTchaté avec vos amis et collègue\E[0m                          | \E[32m$(fct_check_version discord)\E[0m
-    | \E[95m11\E[0m. \E[36mSpotify\E[0m          |  \E[34mÉcouter votre musique préféré\E[0m                             | \E[32m$(fct_check_version spotify)\E[0m
-    | \E[95m12\E[0m. \E[36mThunderbird\E[0m      |  \E[34mGérer ces mail avec classe\E[0m                                | \E[32m$(fct_check_version thunderbird)\E[0m
-    | \E[95m13\E[0m. \E[36mKylin-Video\E[0m      |  \E[34mUn lecteur vidéo sympatiques\E[0m                              | \E[32m$(fct_check_version kylin-video)\E[0m
-    | \E[95m14\E[0m. \E[36mOBS-Studio\E[0m       |  \E[34mCréér ses propres vidéos\E[0m                                  | \E[32m$(fct_check_version obs-studio)\E[0m
-    | \E[95m15\E[0m. \E[36mBlender\E[0m          |  \E[34mModéliser des objets en 3D\E[0m                                | \E[32m$(fct_check_version blender)\E[0m
-    | \E[95m16\E[0m. \E[36mVLC\E[0m              |  \E[34mLecteur Vidéo\E[0m                                             | \E[32m$(fct_check_version vlc)\E[0m
-    | \E[95m17\E[0m. \E[36mOkular\E[0m           |  \E[34mLecteur PDF et bien plus encore\E[0m                           | \E[32m$(fct_check_version okular)\E[0m
-    | \E[95m18\E[0m. \E[36mGIMP\E[0m             |  \E[34mLogiciel de dessin\E[0m                                        | \E[32m$(fct_check_version gimp)\E[0m
-    | \E[95m19\E[0m. \E[36mAndroid-Studio\E[0m   |  \E[34mÉditeur d'application mobile\E[0m                              | \E[32m$(fct_check_version android)\E[0m
-    | \E[95m20\E[0m. \E[36mSpectacle\E[0m        |  \E[34mPermet de capturer son écran facilement\E[0m                   | \E[32m$(fct_check_version spectacle)\E[0m
-    + -------------------- + ---------------------------------------------------------- + ---------------------------------- +
-    | \E[33m21\E[0m. Retour
-    | \E[33m22\E[0m. Quitter
-    + -------------------- + ---------------------------------------------------------- + ---------------------------------- +"
+  + -------------------- + ------------------------------------------------- + -------- + -------------------------------- +
+  |  \E[92mAPPLICATIONS\E[0m        |  \E[34mCOURTE DESCRIPTION\E[0m                                |  GENRES  |  \E[33mVERSION ACTUEL\E[0m     
+  + -------------------- + ------------------------------------------------- + -------- + -------------------------------- +
+  | \E[95m01\E[0m. \E[92mVS.Code          \E[0m|  \E[34mUn IDE Incontournable                              \E[0m|    💻    |  $(fct_check_version code)
+  | \E[95m02\E[0m. \E[92mMySQL Workbench  \E[0m|  \E[34mManipule une base de données open source           \E[0m|    🗃     |  $(fct_check_version mysql-workbench-community)
+  | \E[95m03\E[0m. \E[92mChromium         \E[0m|  \E[34mNavigateur web                                     \E[0m|    🌍    |  $(fct_check_version chromium)
+  | \E[95m04\E[0m. \E[92mFirefox          \E[0m|  \E[34mNavigateur web                                     \E[0m|    🌍    |  $(fct_check_version firefox)
+  | \E[95m05\E[0m. \E[92mBrave            \E[0m|  \E[34mNavigateur web                                     \E[0m|    🌍    |  $(fct_check_version brave)
+  | \E[95m06\E[0m. \E[92mOpera            \E[0m|  \E[34mNavigateur web                                     \E[0m|    🌍    |  $(fct_check_version opera)
+  | \E[95m07\E[0m. \E[92mPostman          \E[0m|  \E[34mGérer des APIs en toute tranquillité               \E[0m|    🔣    |  $(fct_check_version postman)
+  | \E[95m08\E[0m. \E[92mFigma            \E[0m|  \E[34mConcevez vos mockups avec classe                   \E[0m|    🖼     |  $(fct_check_version figma)
+  | \E[95m09\E[0m. \E[92mKrita            \E[0m|  \E[34mLe Photoshop open source                           \E[0m|    🎨    |  $(fct_check_version krita)
+  | \E[95m10\E[0m. \E[92mDiscord          \E[0m|  \E[34mTchaté avec vos amis et collègue                   \E[0m|    💬    |  $(fct_check_version discord)
+  | \E[95m11\E[0m. \E[92mSpotify          \E[0m|  \E[34mÉcouter votre musique préféré                      \E[0m|    🎵    |  $(fct_check_version spotify)
+  | \E[95m12\E[0m. \E[92mThunderbird      \E[0m|  \E[34mGérer ces mail avec classe                         \E[0m|    📩    |  $(fct_check_version thunderbird)
+  | \E[95m13\E[0m. \E[92mKylin-Video      \E[0m|  \E[34mUn lecteur vidéo sympatiques                       \E[0m|    🎞     |  $(fct_check_version kylin-video)
+  | \E[95m14\E[0m. \E[92mOBS-Studio       \E[0m|  \E[34mCréér ses propres vidéos                           \E[0m|    🎥    |  $(fct_check_version obs-studio)
+  | \E[95m15\E[0m. \E[92mBlender          \E[0m|  \E[34mModéliser des objets en 3D                         \E[0m|    🗡     |  $(fct_check_version blender)
+  | \E[95m16\E[0m. \E[92mVLC              \E[0m|  \E[34mLecteur Vidéo                                      \E[0m|    🎞     |  $(fct_check_version vlc)
+  | \E[95m17\E[0m. \E[92mOkular           \E[0m|  \E[34mLecteur PDF et bien plus encore                    \E[0m|    🖥     |  $(fct_check_version okular)
+  | \E[95m18\E[0m. \E[92mGIMP             \E[0m|  \E[34mLogiciel de dessin                                 \E[0m|    🎨    |  $(fct_check_version gimp)
+  | \E[95m19\E[0m. \E[92mAndroid-Studio   \E[0m|  \E[34mÉditeur d'application mobile                       \E[0m|    📱    |  $(fct_check_version android)
+  | \E[95m20\E[0m. \E[92mSpectacle        \E[0m|  \E[34mPermet de capturer son écran facilement            \E[0m|    📷    |  $(fct_check_version spectacle)
+  + -------------------- + ------------------------------------------------- + -------- + -------------------------------- +
+  | \E[33m21\E[0m. \E[37mTechnologies     \E[0m|  \E[37m\E[3mdes utilitaires à technologies pour concevoir tout un tas d'applications web ou mobile.\E[0m
+  | \E[33m22\E[0m. \E[37mQuitter\E[0m
+  + ----------------------------------------------------------------------------------------------------------------------- +"
   space
-  echo -e "\E[95m       ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[95mpour stopper l'exécution du script.\E[0m"
+  echo -e "\E[90m    ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[90mpour stopper l'exécution du script.\E[0m"
+  space
 
-  space
   PS3="
   Quel est votre choix : "
 
@@ -2442,7 +2456,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mla complétion intelligente du code, les snippets, la refactorisation du code et Git intégré.\E[0m"
         space
   
-        fct_show_statut_version "code"
+        fct_show_status_version "code"
         fct_info_programme "code"
       ;;
 
@@ -2458,7 +2472,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37met active communauté de développeurs open source.\E[0m"
         space
     
-        fct_show_statut_version "mysql-workbench-community"
+        fct_show_status_version "mysql-workbench-community"
         fct_info_programme "mysql-workbench-community"
       ;;
 
@@ -2474,7 +2488,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mLe moteur de rendu de Chromium s'appelle Blink.\E[0m"
         space
                    
-        fct_show_statut_version "chromium"
+        fct_show_status_version "chromium"
         fct_info_programme "chromium"
       ;;
 
@@ -2489,7 +2503,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mL'entreprise Mozilla Corporation est créée en 2005 pour se charger du développement.\E[0m"
         space
                 
-        fct_show_statut_version "firefox"
+        fct_show_status_version "firefox"
         fct_info_programme "firefox"
       ;;
 
@@ -2504,7 +2518,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37met en permettant la navigation via le réseau Tor.\E[0m"
         space
               
-        fct_show_statut_version "brave"
+        fct_show_status_version "brave"
         fct_info_programme "brave"
       ;;
 
@@ -2519,7 +2533,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mOpera totalise environ 1,9 % de parts de marché des navigateurs web, et environ 2,3 % sur les mobiles en mars 2021.\E[0m"
         space
             
-        fct_show_statut_version "opera"
+        fct_show_status_version "opera"
         fct_info_programme "opera"
       ;;
 
@@ -2534,7 +2548,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mpour répondre à une problématique de test d'API partageable.\E[0m"
         space
           
-        fct_show_statut_version "postman"
+        fct_show_status_version "postman"
         fct_info_programme "postman"
       ;;   
 
@@ -2548,7 +2562,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mIl aide notamment à concevoir sites web, applications et autres interfaces utilisateur.\E[0m"
         space
          
-        fct_show_statut_version "figma-linux"
+        fct_show_status_version "figma-linux"
         fct_info_programme "figma-linux"
       ;; 
 
@@ -2565,7 +2579,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mcomme les professionnels. Découvrez quelques fonctionnalités intéressantes plus bas.\E[0m"
         space
         
-        fct_show_statut_version "krita"
+        fct_show_status_version "krita"
         fct_info_programme "krita"
       ;;
 
@@ -2580,7 +2594,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mLa plateforme comptabilise le 21 juillet 2019 plus de 250 millions d'utilisateurs.\E[0m"
         space
       
-        fct_show_statut_version "discord"
+        fct_show_status_version "discord"
         fct_info_programme "discord"
       ;;
 
@@ -2594,7 +2608,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mCette plateforme de distribution numérique permet une écoute quasi instantanée de fichiers musicaux.\E[0m"
         space
     
-        fct_show_statut_version "spotify"
+        fct_show_status_version "spotify"
         fct_info_programme "spotify"
       ;;
 
@@ -2608,7 +2622,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mdistribué gratuitement par la fondation Mozilla et issu du projet Mozilla.\E[0m"
         space
    
-        fct_show_statut_version "thunderbird"
+        fct_show_status_version "thunderbird"
         fct_info_programme "thunderbird"
       ;;
       
@@ -2622,7 +2636,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mIt supports playback of most video formats, with a fresh interface style and simple user operations.\E[0m"
         space
   
-        fct_show_statut_version "kylin-video"
+        fct_show_status_version "kylin-video"
         fct_info_programme "kylin-video"
       ;;
 
@@ -2637,7 +2651,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mIl remplace Open Broadcaster Software et devient ainsi multiplateforme.\E[0m"
         space
      
-        fct_show_statut_version "obs-studio"
+        fct_show_status_version "obs-studio"
         fct_info_programme "obs-studio"
       ;;
 
@@ -2653,7 +2667,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mcomme Epic Games, Ubisoft et NVIDIA.\E[0m"
         space
                      
-        fct_show_statut_version "blender"
+        fct_show_status_version "blender"
         fct_info_programme "blender"
       ;;
 
@@ -2668,7 +2682,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37msoit en tout près de 20 plates-formes. Il est distribué sous GPL et disponible dans 69 langues.\E[0m"
         space
                   
-        fct_show_statut_version "vlc"
+        fct_show_status_version "vlc"
         fct_info_programme "vlc"
       ;;
 
@@ -2684,7 +2698,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mOkular a démarré lors du Google Summer of Code en 2005 ; Piotr Szymanski est l’étudiant qui a été retenu.\E[0m"
         space
                 
-        fct_show_statut_version "okular"
+        fct_show_status_version "okular"
         fct_info_programme "okular"
       ;;
 
@@ -2699,7 +2713,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mIl en existe des versions pour la plupart des systèmes d'exploitation dont GNU/Linux, macOS et Microsoft Windows.\E[0m"
         space
              
-        fct_show_statut_version "gimp"
+        fct_show_status_version "gimp"
         fct_info_programme "gimp"
       ;;
 
@@ -2713,7 +2727,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37met développé par des informaticiens sponsorisés par Google.\E[0m"
         space
              
-        fct_show_statut_version "android"
+        fct_show_status_version "android"
         fct_info_programme "android"
       ;;
 
@@ -2730,7 +2744,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mou rapidement enregistrées telles-quelles.\E[0m"
         space         
              
-        fct_show_statut_version "spectacle"
+        fct_show_status_version "spectacle"
         fct_info_programme "spectacle"
       ;;
 
