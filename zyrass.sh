@@ -143,17 +143,47 @@ fct_show_logo()                 # Description : Affiche les logos
       clear
     ;;
 
-    accueil)
+    techno)
       echo -e "\033[1m\E[96m
-                                                                                
-         _______  _______  _______           _______ _________ _                
-        (  ___  )(  ____ \(  ____ \|\     /|(  ____ \\\\__   __/ ( \               
-        | (   ) || (    \/| (    \/| )   ( || (    \/   ) (   | (               
-        | (___) || |      | |      | |   | || (__       | |   | |               
-        |  ___  || |      | |      | |   | ||  __)      | |   | |               
-        | (   ) || |      | |      | |   | || (         | |   | |               
-        | )   ( || (____/\| (____/\| (___) || (____/\___) (___| (____/\\         
-        |/     \|(_______/(_______/(_______)(_______/\_______/(_______/\033[0m\E[0m"
+
+        ________ _______  _______           _        _______  _        _______  _______  ________ _______  _______ 
+        \__  __/(  ____ \(  ____ \|\     /|( (    /|(  ___  )( \      (  ___  )(  ____ \\ \\__  __/(  ____ \(  ____ \\
+          ) (   | (    \/| (    \/| )   ( ||  \  ( || (   ) || (      | (   ) || (    \/   ) (   | (    \/| (    \/
+          | |   | (__    | |      | (___) ||   \ | || |   | || |      | |   | || |         | |   | (__    | (_____ 
+          | |   |  __)   | |      |  ___  || (\ \) || |   | || |      | |   | || | ____    | |   |  __)   (_____  )
+          | |   | (      | |      | (   ) || | \   || |   | || |      | |   | || | \_  )   | |   | (            ) |
+          | |   | (____/\| (____/\| )   ( || )  \  || (___) || (____/\| (___) || (___) |___) (___| (____/\/\____) |
+          )_(   (_______/(_______/|/     \||/    )_)(_______)(_______/(_______)(_______)\_______/(_______/\_______)\033[0m\E[0m"
+      space
+      space
+    ;;
+
+    bls)
+      echo -e "\033[1m\E[96m
+
+         ______   _______  _______                  _          _______  _________ _______  _______  _______ 
+        (  ___ \ (  ___  )(  ____ \|\     /|       ( \        (  ____ \\ \\__   __/(  ___  )(  ____ )(  ____ \\
+        | (   ) )| (   ) || (    \/| )   ( |       | (        | (    \/    ) (   | (   ) || (    )|| (    \/
+        | (__/ / | (___) || (_____ | (___) | _____ | |        | (_____     | |   | |   | || (____)|| (__    
+        |  __ (  |  ___  |(_____  )|  ___  |(_____)| |        (_____  )    | |   | |   | ||     __)|  __)   
+        | (  \ \ | (   ) |      ) || (   ) |       | |              ) |    | |   | |   | || (\ (   | (      
+        | )___) )| )   ( |/\____) || )   ( |       | (____/\  /\____) |    | |   | (___) || ) \ \__| (____/\\
+        |/ \___/ |/     \|\_______)|/     \|       (_______/  \_______)    )_(   (_______)|/   \__/(_______/\033[0m\E[0m"
+      space
+      space
+    ;;
+
+    merci)
+      echo -e "\033[1m\E[91m
+
+         _______  _______  _______  _______ _________
+        (       )(  ____ \(  ____ )(  ____ \\\\__   __/
+        | () () || (    \/| (    )|| (    \/   ) (   
+        | || || || (__    | (____)|| |         | |   
+        | |(_)| ||  __)   |     __)| |         | |   
+        | |   | || (      | (\ (   | |         | |   
+        | )   ( || (____/\| ) \ \__| (____/\___) (___
+        |/     \|(_______/|/   \__/(_______/\_______/\033[0m\E[0m"
       space
       space
     ;;
@@ -417,6 +447,7 @@ fct_show_logo()                 # Description : Affiche les logos
 
     flutter)
       echo -e "\033[1m\E[34m
+
          _______  _                __________________ _______  _______ 
         (  ____ \( \      |\     /|\__   __/\__   __/(  ____ \(  ____ )
         | (    \/| (      | )   ( |   ) (      ) (   | (    \/| (    )|
@@ -430,7 +461,8 @@ fct_show_logo()                 # Description : Affiche les logos
     ;;
 
     postman)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[31m 
+    
          _______  _______  _______ _________ _______  _______  _       
         (  ____ )(  ___  )(  ____ \\\\__   __/(       )(  ___  )( (    /|
         | (    )|| (   ) || (    \/   ) (   | () () || (   ) ||  \  ( |
@@ -438,12 +470,13 @@ fct_show_logo()                 # Description : Affiche les logos
         |  _____)| |   | |(_____  )   | |   | |(_)| ||  ___  || (\ \) |
         | (      | |   | |      ) |   | |   | |   | || (   ) || | \   |
         | )      | (___) |/\____) |   | |   | )   ( || )   ( || )  \  |
-        |/       (_______)\_______)   )_(   |/     \||/     \||/    )_)\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        |/       (_______)\_______)   )_(   |/     \||/     \||/    )_)"
       space
     ;;
 
     code)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[34m  
+
          _______  _______  ______   _______ 
         (  ____ \(  ___  )(  __  \ (  ____ \\
         | (    \/| (   ) || (  \  )| (    \/
@@ -451,12 +484,13 @@ fct_show_logo()                 # Description : Affiche les logos
         | |      | |   | || |   | ||  __)   
         | |      | |   | || |   ) || (      
         | (____/\| (___) || (__/  )| (____/\\
-        (_______/(_______)(______/ (_______/\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        (_______/(_______)(______/ (_______/"
       space
     ;;
 
     discord)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[95m  
+
          ______  _________ _______  _______  _______  _______  ______  
         (  __  \ \__   __/(  ____ \(  ____ \(  ___  )(  ____ )(  __  \ 
         | (  \  )   ) (   | (    \/| (    \/| (   ) || (    )|| (  \  )
@@ -464,12 +498,13 @@ fct_show_logo()                 # Description : Affiche les logos
         | |   | |   | |   (_____  )| |      | |   | ||     __)| |   | |
         | |   ) |   | |         ) || |      | |   | || (\ (   | |   ) |
         | (__/  )___) (___/\____) || (____/\| (___) || ) \ \__| (__/  )
-        (______/ \_______/\_______)(_______/(_______)|/   \__/(______/\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        (______/ \_______/\_______)(_______/(_______)|/   \__/(______/"
       space
     ;;
 
     figma-linux)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[37m   
+
          _______ _________ _______  _______  _______ 
         (  ____ \\\\__   __/(  ____ \(       )(  ___  )
         | (    \/   ) (   | (    \/| () () || (   ) |
@@ -477,12 +512,13 @@ fct_show_logo()                 # Description : Affiche les logos
         |  __)      | |   | | ____ | |(_)| ||  ___  |
         | (         | |   | | \_  )| |   | || (   ) |
         | )      ___) (___| (___) || )   ( || )   ( |
-        |/       \_______/(_______)|/     \||/     \|\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        |/       \_______/(_______)|/     \||/     \|"
       space
     ;;
 
     krita)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[92m  
+
          _        _______ __________________ _______ 
         | \    /\(  ____ )\__   __/\__   __/(  ___  )
         |  \  / /| (    )|   ) (      ) (   | (   ) |
@@ -490,12 +526,13 @@ fct_show_logo()                 # Description : Affiche les logos
         |   _ (  |     __)   | |      | |   |  ___  |
         |  ( \ \ | (\ (      | |      | |   | (   ) |
         |  /  \ \| ) \ \_____) (___   | |   | )   ( |
-        |_/    \/|/   \__/\_______/   )_(   |/     \|\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        |_/    \/|/   \__/\_______/   )_(   |/     \|"
       space
     ;;
 
     spotify)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[92m
+
          _______  _______  _______ __________________ _______          
         (  ____ \(  ____ )(  ___  )\__   __/\__   __/(  ____ \|\     /|
         | (    \/| (    )|| (   ) |   ) (      ) (   | (    \/( \   / )
@@ -503,12 +540,13 @@ fct_show_logo()                 # Description : Affiche les logos
         (_____  )|  _____)| |   | |   | |      | |   |  __)     \   /  
               ) || (      | |   | |   | |      | |   | (         ) (   
         /\____) || )      | (___) |   | |   ___) (___| )         | |   
-        \_______)|/       (_______)   )_(   \_______/|/          \_/\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        \_______)|/       (_______)   )_(   \_______/|/          \_/"
       space
     ;;
 
     thunderbird)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[34m
+
          _______  _______ _________ _       
         (       )(  ___  )\__   __/( \      
         | () () || (   ) |   ) (   | (      
@@ -516,12 +554,13 @@ fct_show_logo()                 # Description : Affiche les logos
         | |(_)| ||  ___  |   | |   | |      
         | |   | || (   ) |   | |   | |      
         | )   ( || )   ( |___) (___| (____/\\
-        |/     \||/     \|\_______/(_______/\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        |/     \||/     \|\_______/(_______/"
       space
     ;;
 
     kylin-video)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[94m  
+
          _                 _       _________ _       
         | \    /\|\     /|( \      \__   __/( (    /|
         |  \  / /( \   / )| (         ) (   |  \  ( |
@@ -529,12 +568,13 @@ fct_show_logo()                 # Description : Affiche les logos
         |   _ (    \   /  | |         | |   | (\ \) |
         |  ( \ \    ) (   | |         | |   | | \   |
         |  /  \ \   | |   | (____/\___) (___| )  \  |
-        |_/    \/   \_/   (_______/\_______/|/    )_)\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        |_/    \/   \_/   (_______/\_______/|/    )_)"
       space
     ;;
 
     obs-studio)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[97m 
+
          _______  ______   _______ 
         (  ___  )(  ___ \ (  ____ \\
         | (   ) || (   ) )| (    \/
@@ -542,12 +582,13 @@ fct_show_logo()                 # Description : Affiche les logos
         | |   | ||  __ (  (_____  )
         | |   | || (  \ \       ) |
         | (___) || )___) )/\____) |
-        (_______)|/ \___/ \_______)\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        (_______)|/ \___/ \_______)"
       space
     ;;
 
     blender)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[91m  
+
          ______   _        _______  _        ______   _______  _______ 
         (  ___ \ ( \      (  ____ \( (    /|(  __  \ (  ____ \(  ____ )
         | (   ) )| (      | (    \/|  \  ( || (  \  )| (    \/| (    )|
@@ -555,12 +596,13 @@ fct_show_logo()                 # Description : Affiche les logos
         |  __ (  | |      |  __)   | (\ \) || |   | ||  __)   |     __)
         | (  \ \ | |      | (      | | \   || |   ) || (      | (\ (   
         | )___) )| (____/\| (____/\| )  \  || (__/  )| (____/\| ) \ \__
-        |/ \___/ (_______/(_______/|/    )_)(______/ (_______/|/   \__/\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        |/ \___/ (_______/(_______/|/    )_)(______/ (_______/|/   \__/"
       space
     ;;
 
     chromium)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[96m 
+
          _______           _______  _______  _______ _________          _______ 
         (  ____ \|\     /|(  ____ )(  ___  )(       )\__   __/|\     /|(       )
         | (    \/| )   ( || (    )|| (   ) || () () |   ) (   | )   ( || () () |
@@ -568,12 +610,13 @@ fct_show_logo()                 # Description : Affiche les logos
         | |      |  ___  ||     __)| |   | || |(_)| |   | |   | |   | || |(_)| |
         | |      | (   ) || (\ (   | |   | || |   | |   | |   | |   | || |   | |
         | (____/\| )   ( || ) \ \__| (___) || )   ( |___) (___| (___) || )   ( |
-        (_______/|/     \||/   \__/(_______)|/     \|\_______/(_______)|/     \|\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        (_______/|/     \||/   \__/(_______)|/     \|\_______/(_______)|/     \|"
       space
     ;;
 
     firefox)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[91m
+
          _______ _________ _______  _______  _______  _______          
         (  ____ \\\\__   __/(  ____ )(  ____ \(  ____ \(  ___  )|\     /|
         | (    \/   ) (   | (    )|| (    \/| (    \/| (   ) |( \   / )
@@ -581,12 +624,13 @@ fct_show_logo()                 # Description : Affiche les logos
         |  __)      | |   |     __)|  __)   |  __)   | |   | |  ) _ (  
         | (         | |   | (\ (   | (      | (      | |   | | / ( ) \ 
         | )      ___) (___| ) \ \__| (____/\| )      | (___) |( /   \ )
-        |/       \_______/|/   \__/(_______/|/       (_______)|/     \|\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        |/       \_______/|/   \__/(_______/|/       (_______)|/     \|"
       space
     ;;
 
     brave)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[31m
+
          ______   _______  _______           _______ 
         (  ___ \ (  ____ )(  ___  )|\     /|(  ____ \\
         | (   ) )| (    )|| (   ) || )   ( || (    \/
@@ -594,12 +638,13 @@ fct_show_logo()                 # Description : Affiche les logos
         |  __ (  |     __)|  ___  |( (   ) )|  __)   
         | (  \ \ | (\ (   | (   ) | \ \_/ / | (      
         | )___) )| ) \ \__| )   ( |  \   /  | (____/\\
-        |/ \___/ |/   \__/|/     \|   \_/   (_______/\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        |/ \___/ |/   \__/|/     \|   \_/   (_______/"
       space
     ;;
 
     opera)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[31m 
+
          _______  _______  _______  _______  _______ 
         (  ___  )(  ____ )(  ____ \(  ____ )(  ___  )
         | (   ) || (    )|| (    \/| (    )|| (   ) |
@@ -607,12 +652,13 @@ fct_show_logo()                 # Description : Affiche les logos
         | |   | ||  _____)|  __)   |     __)|  ___  |
         | |   | || (      | (      | (\ (   | (   ) |
         | (___) || )      | (____/\| ) \ \__| )   ( |
-        (_______)|/       (_______/|/   \__/|/     \|\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        (_______)|/       (_______/|/   \__/|/     \|"
       space
     ;;
 
     vlc)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[33m 
+
                   _        _______ 
         |\     /|( \      (  ____ \\
         | )   ( || (      | (    \/
@@ -620,12 +666,13 @@ fct_show_logo()                 # Description : Affiche les logos
         ( (   ) )| |      | |      
          \ \_/ / | |      | |      
           \   /  | (____/\| (____/\\
-           \_/   (_______/(_______/\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+           \_/   (_______/(_______/"
       space
     ;;
 
     okular)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[90m 
+
          _______  _                 _        _______  _______ 
         (  ___  )| \    /\|\     /|( \      (  ___  )(  ____ )
         | (   ) ||  \  / /| )   ( || (      | (   ) || (    )|
@@ -633,12 +680,13 @@ fct_show_logo()                 # Description : Affiche les logos
         | |   | ||   _ (  | |   | || |      |  ___  ||     __)
         | |   | ||  ( \ \ | |   | || |      | (   ) || (\ (   
         | (___) ||  /  \ \| (___) || (____/\| )   ( || ) \ \__
-        (_______)|_/    \/(_______)(_______/|/     \||/   \__/\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        (_______)|_/    \/(_______)(_______/|/     \||/   \__/"
       space
     ;;
 
     gimp)
-      echo -e "\033[1m\E[36m       
+      echo -e "\033[1m\E[34m 
+
          _______ _________ _______  _______ 
         (  ____ \\\\__   __/(       )(  ____ )
         | (    \/   ) (   | () () || (    )|
@@ -646,12 +694,13 @@ fct_show_logo()                 # Description : Affiche les logos
         | | ____    | |   | |(_)| ||  _____)
         | | \_  )   | |   | |   | || (      
         | (___) |___) (___| )   ( || )      
-        (_______)\_______/|/     \||/  \033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        (_______)\_______/|/     \||/  "
       space
     ;;
 
     mysql-workbench-community)
-      echo -e "\033[1m\E[36m
+      echo -e "\033[1m\E[97m
+
                   _______  _______  _        ______   _______  _        _______          
         |\     /|(  ___  )(  ____ )| \    /\(  ___ \ (  ____ \( (    /|(  ____ \|\     /|
         | )   ( || (   ) || (    )||  \  / /| (   ) )| (    \/|  \  ( || (    \/| )   ( |
@@ -659,12 +708,13 @@ fct_show_logo()                 # Description : Affiche les logos
         | |( )| || |   | ||     __)|   _ (  |  __ (  |  __)   | (\ \) || |      |  ___  |
         | || || || |   | || (\ (   |  ( \ \ | (  \ \ | (      | | \   || |      | (   ) |
         | () () || (___) || ) \ \__|  /  \ \| )___) )| (____/\| )  \  || (____/\| )   ( |
-        (_______)(_______)|/   \__/|_/    \/|/ \___/ (_______/|/    )_)(_______/|/     \|\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        (_______)(_______)|/   \__/|_/    \/|/ \___/ (_______/|/    )_)(_______/|/     \|"
       space
     ;;
 
     android)
-      echo -e "\033[1m\E[36m
+      echo -e "\033[1m\E[32m
+
          _______  _        ______   _______  _______ _________ ______  
         (  ___  )( (    /|(  __  \ (  ____ )(  ___  )\__   __/(  __  \ 
         | (   ) ||  \  ( || (  \  )| (    )|| (   ) |   ) (   | (  \  )
@@ -672,12 +722,13 @@ fct_show_logo()                 # Description : Affiche les logos
         |  ___  || (\ \) || |   | ||     __)| |   | |   | |   | |   | |
         | (   ) || | \   || |   ) || (\ (   | |   | |   | |   | |   ) |
         | )   ( || )  \  || (__/  )| ) \ \__| (___) |___) (___| (__/  )
-        |/     \||/    )_)(______/ |/   \__/(_______)\_______/(______/ \033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        |/     \||/    )_)(______/ |/   \__/(_______)\_______/(______/ "
       space
     ;;
 
     spectacle)
-      echo -e "\033[1m\E[36m
+      echo -e "\033[1m\E[90m
+
          _______  _______  _______  _______ _________ _______  _______  _        _______ 
         (  ____ \(  ____ )(  ____ \(  ____ \\\\__   __/(  ___  )(  ____ \( \      (  ____ \\
         | (    \/| (    )|| (    \/| (    \/   ) (   | (   ) || (    \/| (      | (    \/
@@ -685,7 +736,7 @@ fct_show_logo()                 # Description : Affiche les logos
         (_____  )|  _____)|  __)   | |         | |   |  ___  || |      | |      |  __)   
               ) || (      | (      | |         | |   | (   ) || |      | |      | (      
         /\____) || )      | (____/\| (____/\   | |   | )   ( || (____/\| (____/\| (____/\\
-        \_______)|/       (_______/(_______/   )_(   |/     \|(_______/(_______/(_______/\033[0m\E[0m by \E[92mAlain GUILLON \E[97m( \E[35mZyrass\E[97m )\E[0m"
+        \_______)|/       (_______/(_______/   )_(   |/     \|(_______/(_______/(_______/"
       space
     ;;
 
@@ -739,35 +790,53 @@ fct_message_presentation()      # Description : Affiche la présentation du scri
   read -p "    Pressez une touche pour poursuivre..."
   clear
 
-  space
+  fct_show_logo "bls"
   echo -e "     \E[37mBonjour, \033[1m\E[32m$USER\E[0m"
-  echo -e "     \E[37mCe script est avant tout un projet personnel,\E[0m"
-  echo -e "     \E[37mje compte le proposer à \E[36mErwan \E[37met \E[36mQuentin\E[37m, deux développeurs chevronné afin de voir\E[0m"
-  echo -e "     \E[37ms'ils seraient intéressés pour le diffuser à leur communauté (\E[33mDyma\E[37m).\E[0m"
+  echo -e "     \E[37mCe script était au départ un projet personnel qui au fil du temps, est devenu \E[36mBash-L Store\E[37m.\E[0m"
   space
   echo -e "     \E[37mJe m'appelle \E[32mAlain Guillon\E[37m, développeur dit \"\033[1m\E[96mJunior\033[0m\" \E[37mavec tout de même quelques bases très solide.\E[0m"
-  echo -e "     \E[37mVia ce script, je ne cherche aucunement à monnayer celui-ci.\E[0m"
-  echo -e "     \E[37mSi je peux apporter un complément ou bien faciliter l'installation de tel ou tel programme sur Linux,\E[0m"
-  echo -e "     \E[37mj'en serais pleinement satisfait.\E[0m"
-  echo -e "     \E[37m(\033[3m\E[36mSur Mac, ça ne fonctionne pas pour le moment\033[0m\E[37m)\E[0m"
-  space 
-  echo -e "     \E[37mSuite à l'accords d'\E[96mErwan\E[37m, je vais diffuser celui-ci sur la plateforme \E[95m\033[1mLinkedin\033[0m\E[0m"
-  echo -e "     \E[37mafin de permettre à un nombre conséquent d'étudiants de ne plus avoir à craindre \E[0m"
-  echo -e "     \E[37md'installer ou de supprimer un quelconque programme sur Linux.\E[0m"
+  echo -e "     \E[37m\E[36mBash-L Store\E[37m, n'a pas pour objectif de monnayer celui-ci.\E[0m"
   space
-  echo -e "     \E[33mJe vous propose via ce script ceci :\E[0m"
-  echo -e "         \E[33m1. vous y trouverez des programmes que j'utilise.\E[0m"
+  echo -e "     \E[37mMa philosophie est simple.\E[0m"
+  echo -e "       \E[92mSi je peux apporter une facilitée pour l'installation de tel ou tel programme sur Linux,\E[0m"
+  echo -e "       \E[92mj'en serais pleinement satisfait.\E[0m"
+  echo -e "       \E[92mje sais que beaucoup ont la crainte de sauter le pas et donc \E[36mBash-L Store\E[92m est là pour les accompagners.\E[0m"
+
+  space
+  echo -e "     \E[37mje compte proposer à \E[36mErwan \E[37met \E[36mQuentin\E[37m, deux développeurs chevronné afin de voir\E[0m"
+  echo -e "     \E[37ms'ils seraient intéressés pour le diffuser à leur communauté (\E[33mDyma\E[37m).\E[0m"
+  echo -e "     \E[37mMais également si j'ai leur accords pour une diffusion massive sur la toile.\E[0m"
+  space 
+  echo -e "     \E[97mSuite à l'accords d'\E[96mErwan\E[97m, j'ai diffusé celui-ci sur la plateforme \E[95m\033[1mLinkedin\033[0m\E[0m"
+  echo -e "     \E[97mafin de permettre à un nombre conséquent d'étudiants de ne plus avoir à craindre \E[0m"
+  echo -e "     \E[97md'installer ou de supprimer un quelconque programme sur Linux.\E[0m"
+  space
+
+  echo -e "     \E[90m                                                                                                             Page 1/2\E[0m"
+  space
+  read -p "   Appuyer sur une touche pour lire la suite ..."
+  clear
+
+  fct_show_logo "bls"
+
+  echo -e "     \E[95mSuper cool, mais alors, que propose \E[36mBash-L Store\E[95m ! ?\E[0m"
+  space
+  echo -e "     \E[33mVous y trouverez ceci :\E[0m"
+  echo -e "         \E[33m1. Des technologies enseignées sur Dyma et plus encore...\E[0m"
+  echo -e "         \E[33m2. Des applications réputés, tel que \E[32mblender\E[33m, \E[32mdiscord\E[33m, \E[32mcode\E[33m, \E[32mmysql-workbench-community\E[33m etc...\E[0m"
   echo -e "             \E[37m- (Uniquement des programmes disponibles avec \E[36msnap \E[37mou \E[36mapt\E[37m)\E[0m" 
-  echo -e "         \E[33m2. Des tâches automatisées pour installer, désinstaller des programmes ou technologie :P\E[0m"
+  echo -e "         \E[33m3. Chacunes des tâches sont automatisées pour installer les dernières versions,\E[0m"
+  echo -e "         \E[33m   mais aussi de pouvoir les désinstaller quand vous le souhaiter.\E[0m"
   
   space
   echo -e " \E[37m ---------------------------------------------------------------------------------------------------------------------- \E["
   space
 
-  echo -e "\t\E[34m👉 Si vous le souhaitez, je peux vous parrainer sur la plateforme de Dyma.fr ❗ \E[91mAucune obligation\E[0m"
-  echo -e "\t👉 \E[34mVous serez libre de tester leur plateforme pendant 7 jours gratuitement.\E[0m"
-  echo -e "\t👉 \E[34mSi ça vous intéresse, \E[33mil vous suffira de maintenir CTRL \E[34met de \E[33mcliquer sur le lien ci-dessous \E[37m:\E[0m"
-  echo -e "\t👉 \033[3m\E[92mhttps://dyma.fr/r/5d52bd274e7aec730eb90fde\033[0m\E[0m"
+  echo -e "\t\E[34m💬 Si vous le souhaitez, je peux vous parrainer sur la plateforme de Dyma.fr ❗ \E[91mAucune obligation\E[0m"
+  echo -e "\t💬 \E[34mVous serez libre de tester leur plateforme pendant 7 jours gratuitement.\E[0m"
+  echo -e "\t💬 \E[34mSi ça vous intéresse, \E[93mil vous suffira de maintenir CTRL \E[34met \E[93mde cliquer sur le lien ci-dessous \E[37m:\E[0m"
+  space
+  echo -e "\t\t\t\t🔗 \033[3m\E[92mhttps://dyma.fr/r/5d52bd274e7aec730eb90fde\033[0m\E[0m"
   
   space
   echo -e " \E[37m ---------------------------------------------------------------------------------------------------------------------- \E["
@@ -782,9 +851,10 @@ fct_message_presentation()      # Description : Affiche la présentation du scri
   else
     echo -e "\E[91m\t❌ 📁 Le répertoire \"test_install\" existe déjà aucune création n'est nécessaire.\E[0m"
   fi
-  
   space
-  read -p "   Appuyer sur une touche pour continuer ..."
+  echo -e "     \E[90m                                                                                                             Page 2/2\E[0m"
+  space
+  read -p "   Appuyer sur une touche pour accéder au menu des technologies ..."
   clear
 }
 
@@ -889,7 +959,7 @@ fct_back_to ()                  # Description : Selon le programme ou technologi
 }
 fct_show_script_version()       # Description ; Affiche la version du programme au niveau du menu
 {
-  echo -e "                                                                                            \033[1m\033[2mVersion du programme : \E[92m1.1.2\033[0m"
+  echo -e "                                                                                       \033[1m\033[2mVersion de \"\E[95mBash-L Store\E[97m\" : \E[92m2.0.0\033[0m"
 }
 
 # ===============================================================================================================================
@@ -902,22 +972,53 @@ fct_check_status()              # Description : Vérifier que le programme est i
 
   if [ "$PROGRAM_NAME" = "angular" ]; then
     RESULT=$(which ng)
-  elif [ -d ./test_install/laravel/test_install_laravel ]; then
-    RESULT="$(echo \"OK\")"
-  elif [ -d ./test_install/vue/test_install_vue3 ]; then
-    RESULT="$(echo \"OK\")"
-  elif [ -d ./test_install/react/test_install_react ]; then
-    RESULT="$(echo \"OK\")"
   elif [ "$PROGRAM_NAME" = "typescript" ]; then
     RESULT=$(which tsc)
+  
+  elif [ "$PROGRAM_NAME" = "symfony" -o "$PROGRAM_NAME" = "laravel" -o "$PROGRAM_NAME" = "vue" -o "$PROGRAM_NAME" = "react" ]; then
+
+    if [ "$PROGRAM_NAME" = "symfony" ]; then
+      if [ -d ./test_install/symfony/test_install_symfony ]; then
+        RESULT="$(echo \"OK\")"
+      else
+        unset RESULT
+        set -o nounset
+      fi
+    
+    elif [ "$PROGRAM_NAME" = "laravel" ]; then
+      if [ -d ./test_install/laravel/test_install_laravel ]; then
+        RESULT="$(echo \"OK\")"
+      else
+        unset RESULT
+        set -o nounset
+      fi
+
+    elif [ "$PROGRAM_NAME" = "vue" ]; then
+      if [ -d ./test_install/vue/test_install_vue3 ]; then
+        RESULT="$(echo \"OK\")"
+      else
+        unset RESULT
+        set -o nounset
+      fi
+
+    elif [ "$PROGRAM_NAME" = "react" ]; then
+      if [ -d ./test_install/react/test_install_react ]; then
+        RESULT="$(echo \"OK\")"
+      else
+        unset RESULT
+        set -o nounset
+      fi
+    
+    fi
+
   else
     RESULT=$(which "$PROGRAM_NAME")
   fi
 
-  if [ $? -eq 1 ]; then
-    echo -e "\E[37mNON.\E[0m"
-  else
+  if [ $? -eq 0 ]; then
     echo -e "\E[92mOUI.\E[0m"
+  else
+    echo -e "\E[37mNON.\E[0m"
   fi
 }
 
@@ -929,7 +1030,7 @@ fct_check_status_program()              # Description : Permet de vérifier le s
   NAME=$2
   case $STATUS in
     "ok")
-      echo -e " \E[90m|  \E[92m✅ Installation et suppression son 100% fonctionnel.\E[0m"
+      echo -e " \E[90m|  \E[92m✅ Installation et suppression sont 100% fonctionnel.\E[0m"
     ;;
     "update")
       echo -e " \E[90m|  \E[92m🚧 Une mise à jour arrive prochainement.\E[0m"
@@ -959,16 +1060,18 @@ fct_show_status_version()       # Description : Affiche la version d'un programm
     echo -e " \E[90m|  \E[33m"$PROGRAM_NAME" est-il installé sur cet ordinateur : \E[32m$(fct_check_status "$PROGRAM_NAME")\E[0m"
   fi
   echo -e " \E[90m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
-  if [ "$PROGRAM_NAME" = "curl" -o "$PROGRAM_NAME" = "node" -o "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "symfony" -o "$PROGRAM_NAME" = "laravel" ]; then
+  if [ "$PROGRAM_NAME" = "curl" -o "$PROGRAM_NAME" = "node" -o "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "symfony" -o "$PROGRAM_NAME" = "laravel" -o "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "android" -o "$PROGRAM_NAME" = "spectacle" ]; then
     fct_check_status_program ok
   elif [ "$PROGRAM_NAME" = "react" ]; then
     fct_check_status_program update
-  elif [ "$PROGRAM_NAME" = "flutter" -o "$PROGRAM_NAME" = "vue" ]; then
-    if [ "$PROGRAM_NAME" = "vue"  ]; then
-      fct_check_status_program bug VUE
-    elif [ "$PROGRAM_NAME" = "flutter"  ]; then
+  elif [ "$PROGRAM_NAME" = "flutter" -o "$PROGRAM_NAME" = "vue"  ]; then
+
+    if [ "$PROGRAM_NAME" = "flutter" ]; then
       fct_check_status_program bug FLUTTER
+    elif [ "$PROGRAM_NAME" = "vue"  ]; then
+      fct_check_status_program bug VUE
     fi
+    
   elif [ "$PROGRAM_NAME" = "python" ]; then
     fct_check_status_program ko
   fi
@@ -997,7 +1100,9 @@ fct_check_version()             # Description : Vérifier la version d'un progra
 
   if [ "$?" -eq 0 ]; then
     
-    # TECHNOLOGIES
+    # ===============================================================================================================================
+    #   TECHNOLOGIES
+    # ===============================================================================================================================
     if [ "$PROGRAM_NAME" = "curl" ]; then
       version_curl=$(curl --version | head -n 1 | cut -d " " -f 2 | cut -d " " -f 1)
       echo -e "\E[33m$version_curl\E[0m"
@@ -1048,42 +1153,47 @@ fct_check_version()             # Description : Vérifier la version d'un progra
       version_flutter=$(flutter --version | head -n 1 | cut -d " " -f 2)
       echo -e "\E[36mFlutter: \E[33m$version_flutter \E[36mDart: \E[33m$version_dart\E[0m"
     
-    # APPLICATIONS
-    elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
+    # ===============================================================================================================================
+    #   APPLICATIONS
+    # ===============================================================================================================================
+    elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
       echo -e "\E[32mInstallé\E[0m"
     fi
 
   else
-    if [ "$PROGRAM_NAME" = "vue" ]; then
-      if [ ! -d ./test_install/vue/test_install_vue3 ]; then
-        echo -e "\E[37mPas installé\E[0m"
-      else
-        version_vue=$(grep -Ei "\"vue\"" ./test_install/vue/test_install_vue3/package.json | cut -d "^" -f 2 | cut -d "\"" -f 1)
-        echo -e "\E[33m$version_vue\E[0m"
-      fi
-    elif [ "$PROGRAM_NAME" = "react" ]; then
-      if [ ! -d ./test_install/react/test_install_react ]; then
-        echo -e "\E[37mPas installé\E[0m"
-      else
-        version_react="$(grep -Ei "\"react\"" ./test_install/react/test_install_react/package.json | cut -d "^" -f 2 | cut -d "\"" -f 1)"
-        echo -e "\E[33m$version_react\E[0m"
-      fi
-    elif [ "$PROGRAM_NAME" = "laravel" ]; then
-      if [ -d ./test_install/laravel/test_install_laravel ]; then
-        version_laravel=$(grep -Ei "\"v9" ./test_install/laravel/test_install_laravel/composer.lock | cut -d "v" -f 3 | cut -d "\"" -f 1)
-        echo -e "\E[33m$version_laravel\E[0m"
-      else
-        echo -e "\E[37mPas installé\E[0m"
-      fi
-    elif [ "$PROGRAM_NAME" = "android" ]; then
-      if [ ! -d ~/android-studio ]; then
-        echo -e "\E[37mPas installé\E[0m"
-      else
-        echo -e "\E[32mInstallé\E[0m"  
-      fi
-    fi
 
-    if [ "$PROGRAM_NAME" != "vue" -a "$PROGRAM_NAME" != "react" -a "$PROGRAM_NAME" != "laravel" -a "$PROGRAM_NAME" != "android" ]; then
+    if [ "$PROGRAM_NAME" = "vue" -o "$PROGRAM_NAME" = "react" -o "$PROGRAM_NAME" = "laravel" -o "$PROGRAM_NAME" = "android" ]; then
+
+      if [ "$PROGRAM_NAME" = "vue" ]; then
+        if [ ! -d ./test_install/vue/test_install_vue3 ]; then
+          echo -e "\E[37mPas installé\E[0m"
+        else
+          version_vue=$(grep -Ei "\"vue\"" ./test_install/vue/test_install_vue3/package.json | cut -d "^" -f 2 | cut -d "\"" -f 1)
+          echo -e "\E[33m$version_vue\E[0m"
+        fi
+      elif [ "$PROGRAM_NAME" = "react" ]; then
+        if [ ! -d ./test_install/react/test_install_react ]; then
+          echo -e "\E[37mPas installé\E[0m"
+        else
+          version_react="$(grep -Ei "\"react\"" ./test_install/react/test_install_react/package.json | cut -d "^" -f 2 | cut -d "\"" -f 1)"
+          echo -e "\E[33m$version_react\E[0m"
+        fi
+      elif [ "$PROGRAM_NAME" = "laravel" ]; then
+        if [ -d ./test_install/laravel/test_install_laravel ]; then
+          version_laravel=$(grep -Ei "\"v9" ./test_install/laravel/test_install_laravel/composer.lock | cut -d "v" -f 3 | cut -d "\"" -f 1)
+          echo -e "\E[33m$version_laravel\E[0m"
+        else
+          echo -e "\E[37mPas installé\E[0m"
+        fi
+      elif [ "$PROGRAM_NAME" = "android" ]; then
+        if [ ! -d ~/android-studio ]; then
+          echo -e "\E[37mPas installé\E[0m"
+        else
+          echo -e "\E[32mInstallé\E[0m"  
+        fi
+      fi
+    
+    else
       echo -e "\E[37mPas installé\E[0m"
     fi
   fi
@@ -1099,7 +1209,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
   PROGRAM_NAME=$1
 
   # Choix des actions à effectuer
-  select option in "Installer "$PROGRAM_NAME" sur cet ordinateur" "Supprimer "$PROGRAM_NAME" de cet ordinateur" "allez à la page des applications" "allez à la page d'accueil"
+  select option in "Installer "$PROGRAM_NAME" sur cet ordinateur" "Supprimer "$PROGRAM_NAME" de cet ordinateur" "allez à la page des applications" "allez à la page des technologies"
   do
     case $option in
       
@@ -1140,7 +1250,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[36m|\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
-        elif [ "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "angular" -o "$PROGRAM_NAME" = "typescript" -o "$PROGRAM_NAME" = "flutter" ]; then
+        elif [ "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "angular" -o "$PROGRAM_NAME" = "typescript" -o "$PROGRAM_NAME" = "flutter" -o "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "android" -o "$PROGRAM_NAME" = "spectacle" ]; then
           echo -e " \E[36m|\E[0m"
           echo -e " \E[36m|   \E[97m📋 Pour installer \033[1m\E[34m"$PROGRAM_NAME"\033[0m\E[97m, nous aurions dû saisir :\E[0m"
           echo -e " \E[36m|\E[0m"
@@ -1363,9 +1473,6 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[36m| /!\ Les étapes qui suivent sont à réaliser par vous-même, là où vous le souhaitez.\E[0m"
           echo -e " \E[36m| /!\ Aujourd'hui nous devons saisir une commmande qui permet de créer un nouveau projet directement. La voici: \E[0m"
           echo -e " \E[36m| \E[0m    👉 \E[95mnpx create-react-app nom_de_votre_app\E[0m"
-          echo -e " \E[36m| \E[0m    👉 \E[33mLe nom de l'application... \E[92m\033[1mtest_install_react\033[0m\E[91m est obligatoire pour le bon déroulement du script.\E[0m"
-          echo -e " \E[36m| /!\ Déplacement dans le projet \E[0m"
-          echo -e " \E[36m| \E[0m    👉 \E[95m7: cd test_install_react\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
         elif [ "$PROGRAM_NAME" = "typescript" ]; then
@@ -1376,11 +1483,16 @@ fct_info_programme()          # Description : Afficher les informations du progr
         elif [ "$PROGRAM_NAME" = "flutter" ]; then
           echo -e " \E[36m|      💲 \E[92msudo snap install flutter --classic\E[0m"
           echo -e " \E[36m|\E[0m"
-          echo -e " \E[36m|      💲 \E[92mecho \"\" | tee -a ~/.bashrc\E[0m"
-          echo -e " \E[36m|      💲 \E[92mecho '# Pour flutter doctor' | tee -a ~/.bashrc\E[0m"
-          echo -e " \E[36m|      💲 \E[92mecho 'CHROME_EXECUTABLE=/snap/bin/chromium' | tee -a ~/.bashrc\E[0m"
-          echo -e " \E[36m|      💲 \E[92mecho 'export CHROME_EXECUTABLE' | tee -a ~/.bashrc\E[0m"
-          echo -e " \E[36m|\E[0m"
+
+          CHECK_CONTENT_BASHRC="$(grep -Ei "# Pour flutter doctor" ~/.bashrc)"
+          if [ $? -ne 0 ]; then
+            echo -e " \E[36m|      💲 \E[92mecho \"\" | tee -a ~/.bashrc\E[0m"
+            echo -e " \E[36m|      💲 \E[92mecho \"# Pour flutter doctor\" | tee -a ~/.bashrc\E[0m"
+            echo -e " \E[36m|      💲 \E[92mecho 'CHROME_EXECUTABLE=/snap/bin/chromium' | tee -a ~/.bashrc\E[0m"
+            echo -e " \E[36m|      💲 \E[92mexport CHROME_EXECUTABLE\E[0m"
+            echo -e " \E[36m|\E[0m"
+          fi
+
           echo -e " \E[36m|   📋 \E[97m\033[1mInitialisation de Flutter tout en vérifiant son bon fonctionnement via la commande:\E[0m"
           echo -e " \E[36m|\E[0m"
           echo -e " \E[36m|      💲 \E[92mflutter doctor\E[0m"
@@ -1394,27 +1506,34 @@ fct_info_programme()          # Description : Afficher les informations du progr
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
         elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "blender"  ]; then
-          echo -e " \E[96m| \E[0m    👉 \E[95msudo snap install  "$PROGRAM_NAME" --classic\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo snap install "$PROGRAM_NAME" --classic\E[0m"
+          echo -e " \E[36m|\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
-        elif [  "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
-          echo -e " \E[96m| \E[0m    👉 \E[95msudo snap install "$PROGRAM_NAME"\E[0m"
+        elif [ "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
+          echo -e " \E[36m|      💲 \E[92msudo snap install "$PROGRAM_NAME"\E[0m"
+          echo -e " \E[36m|\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
         elif [ "$PROGRAM_NAME" = "android" ]; then
-          echo -e " \E[96m|   \E[37m  👉 \E[95mwget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.1.1.22/android-studio-2021.1.1.22-linux.tar.gz\E[0m"
-          echo -e " \E[96m|   \E[37m  👉 \E[95mtar -xvf android-studio-2021.1.1.22-linux.tar.gz\E[0m"
-          echo -e " \E[96m|   \E[37m  👉 \E[95mchmod u+x android-studio-2021.1.1.22-linux.tar.gz\E[0m"
-          echo -e " \E[96m|   \E[37m  👉 \E[95mrm -rf android-studio-2021.1.1.22-linux.tar.gz\E[0m"
-          echo -e " \E[96m|   \E[37m  👉 \E[95msudo mv android-studio ~/android-studio\E[0m"
-          echo -e " \E[96m|   \E[37m  👉 \E[95msudo chown -R $USER:$USER ~/android-studio\E[0m"
-          echo -e " \E[96m|   \E[37m  👉 \E[95mecho \"# Alias Android-Studio\" | tee -a ~/.bashrc\E[0m"
-          echo -e " \E[96m|   \E[37m  👉 \E[95mecho 'alias studio=\"~/android-studio/bin/studio.sh\"' | tee -a ~/.bashrc\E[0m"
-          echo -e " \E[96m|   \E[37m  👉 \E[95msource ~/.bashrc\E[0m"
+          echo -e " \E[36m|      💲 \E[92mwget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.1.1.22/android-studio-2021.1.1.22-linux.tar.gz\E[0m"
+          echo -e " \E[36m|      💲 \E[92mtar -xvf android-studio-2021.1.1.22-linux.tar.gz\E[0m"
+          echo -e " \E[36m|      💲 \E[92mchmod u+x android-studio-2021.1.1.22-linux.tar.gz\E[0m"
+          echo -e " \E[36m|      💲 \E[92mrm -rf android-studio-2021.1.1.22-linux.tar.gz\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo mv android-studio ~/android-studio\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo chown -R $USER:$USER ~/android-studio\E[0m"
+          CHECK_CONTENT_BASHRC="$(grep -Ei "# Alias Android-Studio" ~/.bashrc)"
+          if [ $? -ne 0 ]; then
+            echo -e " \E[36m|      💲 \E[92mecho \"# Alias Android-Studio\" | tee -a ~/.bashrc\E[0m"
+            echo -e " \E[36m|      💲 \E[92mecho 'alias studio=\"~/android-studio/bin/studio.sh\"' | tee -a ~/.bashrc\E[0m"
+            echo -e " \E[36m|      💲 \E[92msource ~/.bashrc\E[0m"
+          fi
+          echo -e " \E[36m|\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
         elif [ "$PROGRAM_NAME" = "kylin-video" ]; then
-          echo -e " \E[96m| \E[0m    👉 \E[95msudo apt kylin-video -y\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo apt kylin-video -y\E[0m"
+          echo -e " \E[36m|\E[0m"
 
         fi
 
@@ -1612,10 +1731,15 @@ fct_info_programme()          # Description : Afficher les informations du progr
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
               elif [ "$PROGRAM_NAME" = "flutter" ]; then
                 sudo snap install flutter --classic
-                echo "" | tee -a ~/.bashrc
-                echo '# Pour flutter doctor' | tee -a ~/.bashrc
-                echo 'CHROME_EXECUTABLE=/snap/bin/chromium' | tee -a ~/.bashrc
-                echo 'export CHROME_EXECUTABLE' | tee -a ~/.bashrc
+
+                CHECK_CONTENT_BASHRC="$(grep -Ei "# Pour flutter doctor" ~/.bashrc)"
+                if [ $? -ne 0 ]; then
+                  echo "" | tee -a ~/.bashrc
+                  echo '# Pour flutter doctor' | tee -a ~/.bashrc
+                  echo 'CHROME_EXECUTABLE=/snap/bin/chromium' | tee -a ~/.bashrc
+                  echo 'export CHROME_EXECUTABLE' | tee -a ~/.bashrc
+                fi
+
                 flutter doctor
 
               # ===============================================================================================================================
@@ -1642,10 +1766,15 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 rm -rf android-studio-2021.1.1.22-linux.tar.gz
                 sudo mv android-studio ~/android-studio
                 sudo chown -R $USER:$USER ~/android-studio
-                echo "" | tee -a ~/.bashrc
-                echo "# Alias Android-Studio" | tee -a ~/.bashrc
-                echo "alias studio=\"~/android-studio/bin/studio.sh\"" | tee -a ~/.bashrc
-                source ~/.bashrc
+
+                CHECK_CONTENT_BASHRC="$(grep -Ei "# Alias Android-Studio" ~/.bashrc)"
+                if [ $? -ne 0 ]; then
+                  echo "" | tee -a ~/.bashrc
+                  echo "# Alias Android-Studio" | tee -a ~/.bashrc
+                  echo "alias studio=\"~/android-studio/bin/studio.sh\"" | tee -a ~/.bashrc
+                  source ~/.bashrc
+                fi
+                
               fi
 
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
@@ -1792,10 +1921,15 @@ fct_info_programme()          # Description : Afficher les informations du progr
         # STATUT FONCTIONNEMENT VÉRIFIÉ : 👾
         elif [ "$PROGRAM_NAME" = "flutter" ]; then
           echo -e " \E[36m|      💲 \E[92msudo snap remove flutter\E[0m"
-          echo -e " \E[36m|      💲 \E[92msed '# Pour flutter doctor/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
-          echo -e " \E[36m|      💲 \E[92msed 'CHROME_EXECUTABLE=/snap/bin/chromium/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
-          echo -e " \E[36m|      💲 \E[92msed 'export CHROME_EXECUTABLE/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
-          echo -e " \E[36m|      💲 \E[92msource ~/.bashrc\E[0m"
+
+          CHECK_CONTENT_BASHRC="$(grep -Ei "# Pour flutter doctor" ~/.bashrc)"
+          if [ $? -eq 0 ]; then
+            echo -e " \E[36m|      💲 \E[92msed '# Pour flutter doctor/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
+            echo -e " \E[36m|      💲 \E[92msed 'CHROME_EXECUTABLE=/snap/bin/chromium/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
+            echo -e " \E[36m|      💲 \E[92msed 'export CHROME_EXECUTABLE/d' ~/.bashrc > ~/.bashrc_tmp\E[0m"
+            echo -e " \E[36m|      💲 \E[92msource ~/.bashrc\E[0m"
+          fi
+
         
         # if [ "$PROGRAM_NAME" = "python3" ]; then
         #   echo -e " \E[36m|  \E[33mDésinstallations de "$PROGRAM_NAME".10\E[0m"
@@ -1806,7 +1940,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
         # ===============================================================================================================================
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
-        elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
+        elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
           echo -e " \E[36m|      💲 \E[92msudo snap remove "$PROGRAM_NAME"\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
@@ -1824,7 +1958,6 @@ fct_info_programme()          # Description : Afficher les informations du progr
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
         elif [ "$PROGRAM_NAME" = "kylin-video" ]; then
           echo -e " \E[36m|      💲 \E[92msudo apt-get remove kylin-video -y\E[0m"
-        
         fi
 
         echo -e " \E[36m|      💲 \E[92msudo apt-get autoclean -y\E[0m"
@@ -2002,24 +2135,33 @@ fct_info_programme()          # Description : Afficher les informations du progr
               # STATUT FONCTIONNEMENT VÉRIFIÉ : 👾
               elif [ "$PROGRAM_NAME" = "flutter" ]; then
                 sudo snap remove flutter
-                sed "/# Pour flutter doctor/d" ~/.bashrc_tmp > ~/.bashrc
-                sed "/CHROME_EXECUTABLE=/snap/bin/chromium/d" ~/.bashrc_tmp > ~/.bashrc
-                sed "/export CHROME_EXECUTABLE/d" ~/.bashrc_tmp > ~/.bashrc
+
+                CHECK_CONTENT_BASHRC="$(grep -Ei "# Pour flutter doctor" ~/.bashrc)"
+                if [ $? -eq 0 ]; then
+                  sed "/# Pour flutter doctor/d" ~/.bashrc_tmp > ~/.bashrc
+                  sed "/CHROME_EXECUTABLE=/snap/bin/chromium/d" ~/.bashrc_tmp > ~/.bashrc
+                  sed "/export CHROME_EXECUTABLE/d" ~/.bashrc_tmp > ~/.bashrc
+                  
+                  CHECK_CONTENT_BASHRC_2="$(grep -Ei "# Alias Android-Studio" ~/.bashrc)"
+                  if [ $? -ne 0 ]; then
+                    echo "" | tee -a ~/.bashrc
+                    echo "# Alias Android-Studio" | tee -a ~/.bashrc
+                    echo "alias studio=\"~/android-studio/bin/studio.sh\"" | tee -a ~/.bashrc
+                    source ~/.bashrc
+                  fi
+                fi
+
                 
-                echo "" | tee -a ~/.bashrc
-                echo "# Alias Android-Studio" | tee -a ~/.bashrc
-                echo "alias studio=\"~/android-studio/bin/studio.sh\"" | tee -a ~/.bashrc
-                source ~/.bashrc
 
               # ===============================================================================================================================
               #   SUPPRESSION - PARTIE APPLICATIONS
               # ===============================================================================================================================
 
-              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+              # STATUT FONCTIONNEMENT VÉRIFIÉ : 👾 avec FIGMA-LINUX
               elif [  "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
                 sudo snap remove "$PROGRAM_NAME"
 
-              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
+              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               elif [ "$PROGRAM_NAME" = "firefox" ]; then
                 sudo apt-get remove "$PROGRAM_NAME"
                 sudo snap remove "$PROGRAM_NAME"
@@ -2031,14 +2173,21 @@ fct_info_programme()          # Description : Afficher les informations du progr
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
               elif [ "$PROGRAM_NAME" = "android" ]; then
                 rm -rf ~/android-studio
-                sed '/# Alias Android-Studio/d' ~/.bashrc_tmp > ~/.bashrc
-                sed '/alias studio="~\/android-studio\/bin\/studio.sh"/d' ~/.bashrc_tmp > ~/.bashrc
-                
-                echo "" | tee -a ~/.bashrc
-                echo '# Pour flutter doctor' | tee -a ~/.bashrc
-                echo 'CHROME_EXECUTABLE=/snap/bin/chromium' | tee -a ~/.bashrc
-                echo 'export CHROME_EXECUTABLE' | tee -a ~/.bashrc
-                source ~/.bashrc
+
+                CHECK_CONTENT_BASHRC="$(grep -Ei "# Alias Android-Studio" ~/.bashrc)"
+                if [ $? -eq 0 ]; then
+                  sed '/# Alias Android-Studio/d' ~/.bashrc_tmp > ~/.bashrc
+                  sed '/alias studio="~\/android-studio\/bin\/studio.sh"/d' ~/.bashrc_tmp > ~/.bashrc
+                  
+                  CHECK_CONTENT_BASHRC_2="$(grep -Ei "# Pour flutter doctor" ~/.bashrc)"
+                  if [ $? -ne 0 ]; then
+                    echo "" | tee -a ~/.bashrc
+                    echo '# Pour flutter doctor' | tee -a ~/.bashrc
+                    echo 'CHROME_EXECUTABLE=/snap/bin/chromium' | tee -a ~/.bashrc
+                    echo 'export CHROME_EXECUTABLE' | tee -a ~/.bashrc
+                    source ~/.bashrc
+                  fi       
+                fi               
 
               fi
 
@@ -2084,7 +2233,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
         break
       ;;
 
-      "allez à la page d'accueil")
+      "allez à la page des technologies")
         clear
         fct_show_home_menu
         break
@@ -2103,7 +2252,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
   loading
   clear
 
-  fct_show_logo "accueil"
+  fct_show_logo "techno"
   echo -e "
   $(fct_show_script_version)
   + ----------------- + ----------------------------------------------------- + -------- + -------------------------------- +
@@ -2131,7 +2280,7 @@ fct_show_home_menu()          # Description : Affichage du menu principal
   echo -e "\E[97m    🔧 : Programme indispensable pour tout système UNIX. Il sert à envoyer des données dans les réseaux d’ordinateurs.\E[0m"
   echo -e "\E[97m    🖥  : Il s'agit d'une technologie utilisé par un bon nombre de développeur dans le monde.\E[0m"
   space
-  echo -e "\E[90m    ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[90mpour stopper l'exécution du script.\E[0m"
+  echo -e "\E[90m    ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[90mpour stopper l'exécution de Bash-L Store.\E[0m"
   space
 
   select option in cURL Node Git Docker PHP MySQL Composer Symfony Laravel Vue React Angular TypeScript Python3 Flutter Applications Quitter
@@ -2387,12 +2536,50 @@ fct_show_home_menu()          # Description : Affichage du menu principal
       ;;
 
       Quitter)
+
+        clear
         space
-        echo -e "\E[37m  💬  Vous pouvez saisir dans votre terminal la commande \E[96mclear \E[37mpour nettoyer celui-ci.\E[0m" 
-        echo -e "\E[37m  💬  Je vous remercie chaleureusement d'avoir essayé ce script.\E[0m" 
-        echo -e "\E[37m  💬  Amicalement \E[96mZyrass\E[0m" 
+
+        fct_show_logo "merci"
+
+        echo -e "   💬  \033[1m\E[32m$USER\E[0m\E[37m,"
         space
+        echo -e "   💬  \E[37mje tiens avant que vous partiez, remercier toutes les personnes qui m'ont soutenu.\E[0m"
+        echo -e "   💬  \E[37mpour mener à bien ce programme.\E[0m"
+        space
+        echo -e "\E[91m 👍 ----------------------------------------------------------------------------------------------------------------- 👍 \E[0m"
+        space
+        echo -e "   💬  \E[37mMerci à tous mes proches pour m'avoir soutenu\E[0m"
+        echo -e "       \E[37m...Même quand je râlais du manque de temps que j'avais pour apprendre une technologie.\E[0m"
+        space
+        echo -e "   💬  \E[37mMerci à cette fabuleuse plateforme qu'est Dyma pour leurs formations de qualités.\E[0m"
+        echo -e "         \E[37m⭐ - Erwan, merci pour nos nombreuses discussions et aide technique que tu m'apportes courramment.\E[0m"
+        echo -e "         \E[37m⭐ - Quentin. merci pour toutes les vidéos que je bouffe quotidiennement.\E[0m"
+        echo -e "         \E[37m     J'apprends tellement grâce à celles-ci, ainsi donc je t'encourage vivement à continuer !\E[0m"
+        space
+        echo -e "   💬  \E[37mMerci à ma petite communautée sur discord pour leurs nombreux avis.\E[0m"
+        echo -e "         \E[37m⭐ - Olivier Geiser, merci pour toutes tes remontés positives comme négatives.\E[0m"
+        echo -e "         \E[37m⭐ - Tara-Velsy, merci pour tes idées de contenu qui font la force aujourd'hui de \E[36mBash-L Store\E[37m.\E[0m"
+        echo -e "         \E[37m⭐ - Moomo, merci pour le partage que tu fais sur Linkedin et donner donc plus de sens à ce projet.\E[0m"
+        space
+        echo -e "   💬  \E[37mMerci à toutes les personnes qui on tenté l'aventure Dyma et cliquant sur mon lien de parrainage.\E[0m"
+        space
+        echo -e "   💬  \E[37mEt bien entendue, merci \033[1m\E[32m$USER\E[0m\E[37m d'avoir pris le temps d'essayer \E[36mBash-L Store\E[37m.\E[0m"
+        space
+        echo -e "\E[91m 👍 ---------------------------------------------------------------------------------------------------------------- 👍 \E[0m"
+        space
+        echo -e "  \E[92m  💬  Vous pouvez dès à présent saisir dans votre terminal la commande \E[93mclear \E[92mpour nettoyer celui-ci.\E[0m" 
+        echo -e "  \E[92m  💬  Je vous remercie chaleureusement d'avoir essayé \E[37m\E[36mBash-L Store\E[37m.\E[0m" 
+        echo -e "  \E[91m  💬  J'espère que vos préjugés concernant Linux se sont envolés... 👌\E[0m" 
+        space
+        echo -e "  \E[92m  💬  Amicalement \E[95mAlain GUILLON\E[0m \E[92m auteur de \E[37m\E[36mBash-L Store\E[37m.\E[0m" 
+        space
+
+        space
+        read -p "   Appuyer sur une touche pour quitter Bash-L Store."
+        clear
         exit
+
       ;;
     esac
   done
@@ -2409,34 +2596,34 @@ fct_show_app_menu() {
     echo -e "
   $(fct_show_script_version)
   + -------------------- + ------------------------------------------------- + -------- + -------------------------------- +
-  |  \E[92mAPPLICATIONS\E[0m        |  \E[34mCOURTE DESCRIPTION\E[0m                                |  GENRES  |  \E[33mVERSION ACTUEL\E[0m     
+  |  \E[92mAPPLICATIONS\E[0m        |  \E[34mCOURTE DESCRIPTION\E[0m                               |  GENRES  |  \E[33mVERSION ACTUEL\E[0m     
   + -------------------- + ------------------------------------------------- + -------- + -------------------------------- +
-  | \E[95m01\E[0m. \E[92mVS.Code          \E[0m|  \E[34mUn IDE Incontournable                              \E[0m|    💻    |  $(fct_check_version code)
-  | \E[95m02\E[0m. \E[92mMySQL Workbench  \E[0m|  \E[34mManipule une base de données open source           \E[0m|    🗃     |  $(fct_check_version mysql-workbench-community)
-  | \E[95m03\E[0m. \E[92mChromium         \E[0m|  \E[34mNavigateur web                                     \E[0m|    🌍    |  $(fct_check_version chromium)
-  | \E[95m04\E[0m. \E[92mFirefox          \E[0m|  \E[34mNavigateur web                                     \E[0m|    🌍    |  $(fct_check_version firefox)
-  | \E[95m05\E[0m. \E[92mBrave            \E[0m|  \E[34mNavigateur web                                     \E[0m|    🌍    |  $(fct_check_version brave)
-  | \E[95m06\E[0m. \E[92mOpera            \E[0m|  \E[34mNavigateur web                                     \E[0m|    🌍    |  $(fct_check_version opera)
-  | \E[95m07\E[0m. \E[92mPostman          \E[0m|  \E[34mGérer des APIs en toute tranquillité               \E[0m|    🔣    |  $(fct_check_version postman)
-  | \E[95m08\E[0m. \E[92mFigma            \E[0m|  \E[34mConcevez vos mockups avec classe                   \E[0m|    🖼     |  $(fct_check_version figma)
-  | \E[95m09\E[0m. \E[92mKrita            \E[0m|  \E[34mLe Photoshop open source                           \E[0m|    🎨    |  $(fct_check_version krita)
-  | \E[95m10\E[0m. \E[92mDiscord          \E[0m|  \E[34mTchaté avec vos amis et collègue                   \E[0m|    💬    |  $(fct_check_version discord)
-  | \E[95m11\E[0m. \E[92mSpotify          \E[0m|  \E[34mÉcouter votre musique préféré                      \E[0m|    🎵    |  $(fct_check_version spotify)
-  | \E[95m12\E[0m. \E[92mThunderbird      \E[0m|  \E[34mGérer ces mail avec classe                         \E[0m|    📩    |  $(fct_check_version thunderbird)
-  | \E[95m13\E[0m. \E[92mKylin-Video      \E[0m|  \E[34mUn lecteur vidéo sympatiques                       \E[0m|    🎞     |  $(fct_check_version kylin-video)
-  | \E[95m14\E[0m. \E[92mOBS-Studio       \E[0m|  \E[34mCréér ses propres vidéos                           \E[0m|    🎥    |  $(fct_check_version obs-studio)
-  | \E[95m15\E[0m. \E[92mBlender          \E[0m|  \E[34mModéliser des objets en 3D                         \E[0m|    🗡     |  $(fct_check_version blender)
-  | \E[95m16\E[0m. \E[92mVLC              \E[0m|  \E[34mLecteur Vidéo                                      \E[0m|    🎞     |  $(fct_check_version vlc)
-  | \E[95m17\E[0m. \E[92mOkular           \E[0m|  \E[34mLecteur PDF et bien plus encore                    \E[0m|    🖥     |  $(fct_check_version okular)
-  | \E[95m18\E[0m. \E[92mGIMP             \E[0m|  \E[34mLogiciel de dessin                                 \E[0m|    🎨    |  $(fct_check_version gimp)
-  | \E[95m19\E[0m. \E[92mAndroid-Studio   \E[0m|  \E[34mÉditeur d'application mobile                       \E[0m|    📱    |  $(fct_check_version android)
-  | \E[95m20\E[0m. \E[92mSpectacle        \E[0m|  \E[34mPermet de capturer son écran facilement            \E[0m|    📷    |  $(fct_check_version spectacle)
+  | \E[95m01\E[0m. \E[92mVS.Code          \E[0m|  \E[34mUn IDE Incontournable                            \E[0m|    💻    |  $(fct_check_version code)
+  | \E[95m02\E[0m. \E[92mMySQL Workbench  \E[0m|  \E[34mManipule une base de données open source         \E[0m|    🗃     |  $(fct_check_version mysql-workbench-community)
+  | \E[95m03\E[0m. \E[92mChromium         \E[0m|  \E[34mNavigateur web                                   \E[0m|    🌍    |  $(fct_check_version chromium)
+  | \E[95m04\E[0m. \E[92mFirefox          \E[0m|  \E[34mNavigateur web                                   \E[0m|    🌍    |  $(fct_check_version firefox)
+  | \E[95m05\E[0m. \E[92mBrave            \E[0m|  \E[34mNavigateur web                                   \E[0m|    🌍    |  $(fct_check_version brave)
+  | \E[95m06\E[0m. \E[92mOpera            \E[0m|  \E[34mNavigateur web                                   \E[0m|    🌍    |  $(fct_check_version opera)
+  | \E[95m07\E[0m. \E[92mPostman          \E[0m|  \E[34mGérer des APIs en toute tranquillité             \E[0m|    🔣    |  $(fct_check_version postman)
+  | \E[95m08\E[0m. \E[92mFigma-Linux      \E[0m|  \E[34mConcevez vos mockups avec classe                 \E[0m|    🖼     |  $(fct_check_version figma-linux)
+  | \E[95m09\E[0m. \E[92mKrita            \E[0m|  \E[34mLe Photoshop open source                         \E[0m|    🎨    |  $(fct_check_version krita)
+  | \E[95m10\E[0m. \E[92mDiscord          \E[0m|  \E[34mTchaté avec vos amis et collègue                 \E[0m|    💬    |  $(fct_check_version discord)
+  | \E[95m11\E[0m. \E[92mSpotify          \E[0m|  \E[34mÉcouter votre musique préféré                    \E[0m|    🎵    |  $(fct_check_version spotify)
+  | \E[95m12\E[0m. \E[92mThunderbird      \E[0m|  \E[34mGérer ces mail avec classe                       \E[0m|    📩    |  $(fct_check_version thunderbird)
+  | \E[95m13\E[0m. \E[92mKylin-Video      \E[0m|  \E[34mUn lecteur vidéo sympatiques                     \E[0m|    🎞     |  $(fct_check_version kylin-video)
+  | \E[95m14\E[0m. \E[92mOBS-Studio       \E[0m|  \E[34mCréér ses propres vidéos                         \E[0m|    🎥    |  $(fct_check_version obs-studio)
+  | \E[95m15\E[0m. \E[92mBlender          \E[0m|  \E[34mModéliser des objets en 3D                       \E[0m|    🗡     |  $(fct_check_version blender)
+  | \E[95m16\E[0m. \E[92mVLC              \E[0m|  \E[34mLecteur Vidéo                                    \E[0m|    🎞     |  $(fct_check_version vlc)
+  | \E[95m17\E[0m. \E[92mOkular           \E[0m|  \E[34mLecteur PDF et bien plus encore                  \E[0m|    🖥     |  $(fct_check_version okular)
+  | \E[95m18\E[0m. \E[92mGIMP             \E[0m|  \E[34mLogiciel de dessin                               \E[0m|    🎨    |  $(fct_check_version gimp)
+  | \E[95m19\E[0m. \E[92mAndroid-Studio   \E[0m|  \E[34mÉditeur d'application mobile                     \E[0m|    📱    |  $(fct_check_version android)
+  | \E[95m20\E[0m. \E[92mSpectacle        \E[0m|  \E[34mPermet de capturer son écran facilement          \E[0m|    📷    |  $(fct_check_version spectacle)
   + -------------------- + ------------------------------------------------- + -------- + -------------------------------- +
   | \E[33m21\E[0m. \E[37mTechnologies     \E[0m|  \E[37m\E[3mdes utilitaires à technologies pour concevoir tout un tas d'applications web ou mobile.\E[0m
   | \E[33m22\E[0m. \E[37mQuitter\E[0m
   + ----------------------------------------------------------------------------------------------------------------------- +"
   space
-  echo -e "\E[90m    ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[90mpour stopper l'exécution du script.\E[0m"
+  echo -e "\E[90m    ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[90mpour stopper l'exécution de Bash-L Store.\E[0m"
   space
 
   PS3="
