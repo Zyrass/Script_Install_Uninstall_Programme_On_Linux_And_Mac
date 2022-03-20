@@ -35,7 +35,7 @@ L'utilisation est très simple.
 - 👉 Vous devez récupérer le dépôt distant disponible sur cette même page.
 - 👉 Dans un second temps, rendez-vous dans le répertoire fraichement récupérer.
 - 👉 Ouvrer un terminal à cet endroit. ( _Vous pouvez utiliser le raccourci Ctrl + Alt + T_ )
-- 👉 Saisissez la commande suivante : **_`./zyrass.sh`_**
+- 👉 Saisissez la commande suivante : **_`./Bash-L_Store.sh`_**
 - 👉 Enfin, il ne vous reste qu'à suivre les étapes qui vous seront affichées à l'écran.
 
 ---
