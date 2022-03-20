@@ -1054,7 +1054,7 @@ fct_check_status()              # Description : Vérifier que le programme est i
         if [ $? -eq 0 ]; then
           echo -e "\E[92mOUI.\E[0m"
         else
-          echo -e "\E[91mNON.\E[0m"
+          echo -e "\E[37mNON.\E[0m"
         fi
         
       else
@@ -1128,11 +1128,13 @@ fct_show_status_version()       # Description : Affiche la version d'un programm
   echo -e " \E[90m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
   if [ "$PROGRAM_NAME" = "flutter" ]; then
     echo -e " \E[90m|  \E[33mFlutter et Dart sont-ils installés sur cet ordinateur: \E[32m$(fct_check_status "$PROGRAM_NAME")\E[0m"
+  elif [ "$PROGRAM_NAME" = "python3" ]; then
+    echo -e " \E[90m|  \E[33m"$PROGRAM_NAME".10 est-il installé sur cet ordinateur : \E[32m$(fct_check_status "$PROGRAM_NAME")\E[0m"
   else
     echo -e " \E[90m|  \E[33m"$PROGRAM_NAME" est-il installé sur cet ordinateur : \E[32m$(fct_check_status "$PROGRAM_NAME")\E[0m"
   fi
   echo -e " \E[90m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
-  if [ "$PROGRAM_NAME" = "curl" -o "$PROGRAM_NAME" = "node" -o "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "symfony" -o "$PROGRAM_NAME" = "laravel" -o "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "android" -o "$PROGRAM_NAME" = "spectacle" -o "$PROGRAM_NAME" = "react" -o "$PROGRAM_NAME" = "vue" -o "$PROGRAM_NAME" = "angular" -o "$PROGRAM_NAME" = "typescript" -o "$PROGRAM_NAME" = "flutter" ]; then
+  if [ "$PROGRAM_NAME" = "curl" -o "$PROGRAM_NAME" = "node" -o "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "symfony" -o "$PROGRAM_NAME" = "laravel" -o "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "android" -o "$PROGRAM_NAME" = "spectacle" -o "$PROGRAM_NAME" = "react" -o "$PROGRAM_NAME" = "vue" -o "$PROGRAM_NAME" = "angular" -o "$PROGRAM_NAME" = "typescript" -o "$PROGRAM_NAME" = "flutter" -o "$PROGRAM_NAME" = "python3" ]; then
     fct_check_status_program ok
   # elif [ "$PROGRAM_NAME" = "react" ]; then
   #   fct_check_status_program update
@@ -1146,11 +1148,11 @@ fct_show_status_version()       # Description : Affiche la version d'un programm
   #     fct_check_status_program bug REACT
   #   fi
   
-  elif [ "$PROGRAM_NAME" = "python3" ]; then
+  # elif [ "$PROGRAM_NAME" = "python3" ]; then
     
-    if [ "$PROGRAM_NAME" = "python3" ]; then
-      fct_check_status_program ko
-    fi
+  #   if [ "$PROGRAM_NAME" = "python3" ]; then
+  #     fct_check_status_program ko
+  #   fi
 
   fi
 
@@ -1209,7 +1211,7 @@ fct_check_version()             # Description : Vérifier la version d'un progra
       if [ -d ./test_install/symfony/test_install_symfony ]; then
         version_symfony=$(grep -Ei https://github.com/symfony/cache/tree/v ./test_install/symfony/test_install_symfony/composer.lock | head -n 1 | cut -d "\"" -f 4 | cut -d "v" -f 2)
         version_symfony_cli=$(symfony -V | grep -Ei version | cut -d " " -f 4 | cut -d "v" -f 2)
-        echo -e "\E[36mSymfony CLI: \E[33m$version_symfony_cli \E[36mSymfony: \E[33m$version_symfony\E[0m"
+        echo -e "\E[36mCLI: \E[33m$version_symfony_cli \E[36mSymfony: \E[33m$version_symfony\E[0m"
       else
         echo -e "\E[91mSupprimer le répertoire ./symfony\E[0m"
       fi
@@ -1224,13 +1226,13 @@ fct_check_version()             # Description : Vérifier la version d'un progra
 
     elif [ "$PROGRAM_NAME" = "python3" ]; then
       version_python38=$(python3 -V | cut -d " " -f 2)
-      version_python310=$(python3.10 -V | cut -d " " -f 2)
 
-      RESULT=$(which python3.10)
+      INFO_PYTHON310=$(which python3.10)
       if [ "$?" -eq 0 ]; then
+        version_python310=$(python3.10 -V | cut -d " " -f 2)
         echo -e "\E[33m$version_python38 \E[36mET \E[33m$version_python310\E[0m"
       else
-        echo -e "\E[36mPython3:\E[0m \E[33m$version_python38\E[0m"
+        echo -e "\E[33m$version_python38\E[0m"
       fi
 
     elif [ "$PROGRAM_NAME" = "flutter" ]; then
@@ -1779,7 +1781,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
               elif [ "$PROGRAM_NAME" = "python3" ]; then
                 sudo add-apt-repository ppa:deadsnakes/ppa -y
-                sudo apt-get install python3.10
+                sudo apt-get install python3.10 -y
               
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               elif [ "$PROGRAM_NAME" = "angular" ]; then
@@ -1998,8 +2000,8 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[36m|   \E[91m\033[1m✋ Suppression uniquement de "$PROGRAM_NAME".10\033[0m\E[0m"
           echo -e " \E[36m|\E[0m"
           echo -e " \E[36m|   \E[37m \E[0m"
-          echo -e " \E[36m|      💲 \E[92msudo ppa-purge ppa:deadsnakes/ppa -y\E[0m"
-          echo -e " \E[36m|      💲 \E[92msudo apt-get remove python3.10 -y\E[0m"
+          # echo -e " \E[36m|      💲 \E[92msudo ppa-purge ppa:deadsnakes/ppa -y\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo apt-get purge --auto-remove python3.10 -y\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
         elif [ "$PROGRAM_NAME" = "angular" ]; then
@@ -2227,8 +2229,8 @@ fct_info_programme()          # Description : Afficher les informations du progr
 
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
               elif [ "$PROGRAM_NAME" = "python3" ]; then
-                sudo ppa-purge ppa:deadsnakes/ppa -y
-                sudo apt-get remove python3.10
+                # sudo ppa-purge ppa:deadsnakes/ppa -y
+                sudo apt-get purge --auto-remove python3.10 -y
 
               # STATUT FONCTIONNEMENT VÉRIFIÉ : 👾
               elif [ "$PROGRAM_NAME" = "flutter" ]; then

@@ -1,3 +1,9 @@
+### Remerciements
+
+![Logo](https://github.com/Zyrass/Bash-L_Store/blob/master/images/logo.png?raw=true)
+
+---
+
 # Bash-L Store
 
 Si vous êtes étudiant et que vous n'avez jamais utilisé une quelconque distribution Linux,
@@ -61,35 +67,35 @@ L'utilisation est très simple.
 
 ### Clin d'oeil à la plateform: Dyma
 
-![Clin d'oeil à la plateform: Dyma](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/1.png?raw=true)
+![Clin d'oeil à la plateform: Dyma](https://github.com/Zyrass/Bash-L_Store/blob/master/images/1.png?raw=true)
 
 ### Détection Ubuntu
 
-![Détection Ubuntu](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/2.png?raw=true)
+![Détection Ubuntu](https://github.com/Zyrass/Bash-L_Store/blob/master/images/2.png?raw=true)
 
 ### Présentation de Bash-L Store (page 1/2)
 
-![Présentation de Bash-L Store](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/3.png?raw=true)
+![Présentation de Bash-L Store](https://github.com/Zyrass/Bash-L_Store/blob/master/images/3.png?raw=true)
 
 ### Menu des Technologies
 
-![Menu des Technologies](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/4.png?raw=true)
+![Menu des Technologies](https://github.com/Zyrass/Bash-L_Store/blob/master/images/4.png?raw=true)
 
 ### Menu des Applications
 
-![Menu des Applications](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/5.png?raw=true)
+![Menu des Applications](https://github.com/Zyrass/Bash-L_Store/blob/master/images/5.png?raw=true)
 
 ### Symfony
 
-![Symfony](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/6.png?raw=true)
+![Symfony](https://github.com/Zyrass/Bash-L_Store/blob/master/images/6.png?raw=true)
 
 ### Suppression de Symfony
 
-![Suppression de Symfony](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/7.png?raw=true)
+![Suppression de Symfony](https://github.com/Zyrass/Bash-L_Store/blob/master/images/7.png?raw=true)
 
 ### Remerciements
 
-![Remerciements](https://github.com/Zyrass/Script_Install_Uninstall_Programme_On_Linux_And_Mac/blob/master/images/8.png?raw=true)
+![Remerciements](https://github.com/Zyrass/Bash-L_Store/blob/master/images/8.png?raw=true)
 
 ## ➍ - Changelog
 
