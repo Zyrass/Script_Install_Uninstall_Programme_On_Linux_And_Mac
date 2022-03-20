@@ -32,8 +32,8 @@ L'utilisation est très simple.
 
 - 👉 Vous devez récupérer le dépôt distant disponible sur cette même page.
 - 👉 Ouvrer un terminal à cet endroit. ( _Vous pouvez utiliser le raccourci Ctrl + Alt + T_ )
-- 👉 Rendez-vous dans le répertoire fraichement récupérer.
-- 👉 Saisissez la commande suivante : **_`./Bash-L_Store.sh`_**
+- 👉 Rendez-vous dans le répertoire fraichement récupérer. ( _Vous pouvez utiliser la commande cd pour changer de répertoire_ )
+- 👉 Dans le répertoire, saisissez la commande suivante : **_`./bls.sh`_**
 - 👉 Enfin, il ne vous reste qu'à suivre les étapes qui vous seront affichées à l'écran.
 
 ---
@@ -55,6 +55,14 @@ L'utilisation est très simple.
 - [ ] Atom ! ?
 - [ ] Sublime Text ! ?
 - [ ] Google Chrome qui ne dipose pas d'APT ou de SNAP.
+
+3. Création d'un site vitrine permettant de mettre en avant **Bash-L Store**.
+
+- [ ] Choix des technologies
+- [ ] Création de la page d'accueil
+- [ ] Création de la page sur la documentation de Bash-L Store
+- [ ] Création de la page sur différents tutoriels
+- [ ] Création de la page contact.
 
 ---
 
@@ -96,6 +104,13 @@ L'utilisation est très simple.
 ![Remerciements](https://github.com/Zyrass/Bash-L_Store/blob/master/images/8.png?raw=true)
 
 ## ➍ - Changelog
+
+- **20/03/2022**
+
+  - [x] Création d'une nouvelle branche **hotfix**
+  - [x] Changement du nom du script **Bash-L_Store.sh** en **bls.sh**, plus simple et moins complexe à saisir.
+  - [x] Correction des quelques erreurs de syntaxe vue par-ci par là.
+  - [x] Modification du README.md pour l'adapter aux changements.
 
 - **19/03/2022**
 

@@ -176,14 +176,14 @@ fct_show_logo()                 # Description : Affiche les logos
     merci)
       echo -e "\033[1m\E[91m
 
-         _______  _______  _______  _______ _________
-        (       )(  ____ \(  ____ )(  ____ \\\\__   __/
-        | () () || (    \/| (    )|| (    \/   ) (   
-        | || || || (__    | (____)|| |         | |   
-        | |(_)| ||  __)   |     __)| |         | |   
-        | |   | || (      | (\ (   | |         | |   
-        | )   ( || (____/\| ) \ \__| (____/\___) (___
-        |/     \|(_______/|/   \__/(_______/\_______/\033[0m\E[0m"
+         _______  _______  _______  _______  _________
+        (       )(  ____ \(  ____ )(  ____ \\ \\__   __/
+        | () () || (    \/| (    )|| (    \/    ) (   
+        | || || || (__    | (____)|| |          | |   
+        | |(_)| ||  __)   |     __)| |          | |   
+        | |   | || (      | (\ (   | |          | |   
+        | )   ( || (____/\| ) \ \__| (____/\ ___) (___
+        |/     \|(_______/|/   \__/(_______/ \_______/\033[0m\E[0m"
       space
       space
     ;;
@@ -373,7 +373,7 @@ fct_show_logo()                 # Description : Affiche les logos
       echo -e "\033[1m\E[36m
 
          _______  _______  _______  _______ _________
-        (  ____ )(  ____ \(  ___  )(  ____ \\\__   __/
+        (  ____ )(  ____ \(  ___  )(  ____ \\\\__   __/
         | (    )|| (    \/| (   ) || (    \/   ) (   
         | (____)|| (__    | (___) || |         | |   
         |     __)|  __)   |  ___  || |         | |   
@@ -753,12 +753,16 @@ fct_message_intro()             # Description : Affiche un conseil rapide pour u
   echo -e "\t\E[36mPour une meilleure expérience utilisateur,\E[0m"
   echo -e "\t\E[36mveuillez lancer le script en mode plein écran.\E[0m"
   space
-  echo -e "\t\E[93mVeuillez noter que ce script s'exécute correctement avec Bash.\E[0m"
-  echo -e "\t\E[93mN'ayant pas de Mac, j'ai eu écho que celui-ci fonctionnait très mal sur ce dernier.\E[0m"
-  echo -e "\t\E[93mEn effet, si vous êtes sur \E[95mDARWIN\E[93m, alors c'est \E[36mZSH\E[93m qui sera utilisé.\E[0m"
-  echo -e "\t\E[93mSur \E[95mGNU\Linux\E[93m, alors c'est \E[36mBASH\E[93m qui le sera et lui est 100% fonctionnelles.\E[0m"
+  echo -e "\t\E[92mVeuillez noter que ce script s'exécute correctement avec Bash.\E[0m"
+  echo -e "\t\E[91mN'ayant pas de Mac, j'ai eu écho que celui-ci fonctionnait\E[0m"
+  echo -e "\t\E[91mtrès mal sur ce dernier.\E[0m"
   space
-  read -p "     Veuillez appuyer sur n'importe qu'elle touche pour continuer."
+  echo -e "\t\E[93mEn effet, si vous êtes sur \E[95mDARWIN\E[93m, alors c'est \E[36mZSH\E[93m qui sera utilisé.\E[0m"
+  echo -e "\t\E[93mSur \E[95mGNU\Linux\E[93m, alors c'est \E[36mBASH\E[93m qui le sera\E[0m"
+  echo -e "\t\E[93met lui est 100% fonctionnelles.\E[0m"
+  space
+  space
+  read -p "        Veuillez appuyer sur n'importe qu'elle touche pour continuer."
   clear
 }
 fct_message_presentation()      # Description : Affiche la présentation du script.
@@ -1011,7 +1015,7 @@ fct_back_to ()                  # Description : Selon le programme ou technologi
 }
 fct_show_script_version()       # Description ; Affiche la version du programme au niveau du menu
 {
-  echo -e "  \E[97;44m#StandWith\E[90;43mUkraine\E[0m                                                                   \033[1m\033[2mVersion de \"\E[95mBash-L Store\E[97m\" : \E[92m2.0.1\033[0m"
+  echo -e "  \E[97;44m#StandWith\E[90;43mUkraine\E[0m                                                                   \033[1m\033[2mVersion de \"\E[95mBash-L Store\E[97m\" : \E[92m2.0.2\033[0m"
 }
 
 # ===============================================================================================================================
