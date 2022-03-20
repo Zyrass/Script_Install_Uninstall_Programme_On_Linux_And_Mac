@@ -1,5 +1,5 @@
 ![Logo](https://github.com/Zyrass/Bash-L_Store/blob/master/images/logo.png?raw=true)
-
+<center>v2.0.2</center>
 ---
 
 # Bash-L Store
