@@ -105,6 +105,12 @@ L'utilisation est très simple.
 
 ## ➍ - Changelog
 
+- **21/03/2022**
+
+  - [x] Mise à jour de tous les textes pour **python3.10**
+  - [x] Ajout d'un message pour le passage en plein écran avec la touche **F11**
+  - [x] Ajout d'un message pour fermer le terminal via la commande **CTRL + Shift + W**.
+
 - **20/03/2022**
 
   - [x] Création d'une nouvelle branche **hotfix**
