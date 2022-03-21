@@ -752,6 +752,7 @@ fct_message_intro()             # Description : Affiche un conseil rapide pour u
   space
   echo -e "\t\E[36mPour une meilleure expérience utilisateur,\E[0m"
   echo -e "\t\E[36mveuillez lancer le script en mode plein écran.\E[0m"
+  echo -e "\t\E[36mPour celà, vous pouvez appuyer sur la touche F11 de votre clavier.\E[0m"
   space
   echo -e "\t\E[92mVeuillez noter que ce script s'exécute correctement avec Bash.\E[0m"
   echo -e "\t\E[91mN'ayant pas de Mac, j'ai eu écho que celui-ci fonctionnait\E[0m"
@@ -958,7 +959,8 @@ fct_show_exit_program()         # Description : Affiche la page des remerciement
   space
   echo -e "\E[91m 👍 ---------------------------------------------------------------------------------------------------------------- 👍 \E[0m"
   space
-  echo -e "  \E[92m  💬  Vous pouvez dès à présent saisir dans votre terminal la commande \E[93mclear \E[92mpour nettoyer celui-ci.\E[0m" 
+  echo -e "  \E[92m  💬  Vous pouvez dès à présent saisir dans votre terminal la commande \E[93mclear \E[92mpour nettoyer celui-ci.\E[0m"
+  echo -e "  \E[92m  💬  Une fois vide, vous pourrez saisir \E[93mCTRL + SHIFT (↑) + w\E[92m pour fermer le terminal.\E[0m"
   echo -e "  \E[92m  💬  Je vous remercie chaleureusement d'avoir essayé \E[37m\E[36mBash-L Store\E[37m.\E[0m" 
   echo -e "  \E[91m  💬  J'espère que vos préjugés concernant Linux se sont envolés... 👌\E[0m" 
   space
@@ -1300,11 +1302,23 @@ fct_info_programme()          # Description : Afficher les informations du progr
   PROGRAM_NAME=$1
 
   # Choix des actions à effectuer
-  select option in "Installer "$PROGRAM_NAME" sur cet ordinateur" "Supprimer "$PROGRAM_NAME" de cet ordinateur" "allez à la page des applications" "allez à la page des technologies"
+  if [ "$PROGRAM_NAME" = "python3" ]; then
+    INSTALL="Installer "$PROGRAM_NAME".10 sur cet ordinateur"
+    DELETE="Supprimer "$PROGRAM_NAME".10 de cet ordinateur"
+    APPLICATIONS="allez à la page des applications"
+    TECHNOLOGIES="allez à la page des technologies"
+  elif [ ! "$PROGRAM_NAME" = "python3" ]; then
+    INSTALL="Installer "$PROGRAM_NAME" sur cet ordinateur"
+    DELETE="Supprimer "$PROGRAM_NAME" de cet ordinateur"
+    APPLICATIONS="allez à la page des applications"
+    TECHNOLOGIES="allez à la page des technologies"
+  fi
+  
+  select option in "$INSTALL" "$DELETE" "$APPLICATIONS" "$TECHNOLOGIES"
   do
     case $option in
       
-      "Installer "$PROGRAM_NAME" sur cet ordinateur") 
+      "$INSTALL") 
         
         # ===============================================================================================================================
         #   INSTALLATION - PARTIE TECHNOLOGIE
@@ -1652,6 +1666,9 @@ fct_info_programme()          # Description : Afficher les informations du progr
         if [ "$PROGRAM_NAME" = "docker" ]; then
           echo -e " 💬 \E[34mMe faîtes-vous confiance pour que j'installe pour vous, \"\E[95m"$PROGRAM_NAME"\E[34m\", sans vous montrer les commandes à saisir...\E[0m\E[0m"
           echo ""
+        elif [ "$PROGRAM_NAME" = "docker" ]; then
+          echo -e " 💬 \E[34mSeriez-vous intéressé pour que j'installe pour vous, \"\E[95m"$PROGRAM_NAME".10\E[34m\", via les commandes ci-dessus ?\E[0m"
+          echo ""
         else
           echo -e " 💬 \E[34mSeriez-vous intéressé pour que j'installe pour vous, \"\E[95m"$PROGRAM_NAME"\E[34m\", via les commandes ci-dessus ?\E[0m"
           echo ""
@@ -1919,20 +1936,26 @@ fct_info_programme()          # Description : Afficher les informations du progr
         break
       ;;
 
-      "Supprimer "$PROGRAM_NAME" de cet ordinateur")
+      "$DELETE")
 
         # ===============================================================================================================================
         #   SUPPRESSION - PARTIE TECHNOLOGIE
         # ===============================================================================================================================
         space
         echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
-        echo -e " \E[36m|   \E[91m\033[1mSuppression de "$PROGRAM_NAME"\033[0m\E[0m"
+        if [ "$PROGRAM_NAME" = "python3" ]; then
+          echo -e " \E[36m|   \E[91m\033[1mSuppression de "$PROGRAM_NAME".10\033[0m\E[0m"
+        else
+          echo -e " \E[36m|   \E[91m\033[1mSuppression de "$PROGRAM_NAME"\033[0m\E[0m"
+        fi
         echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
         echo -e " \E[36m|\E[0m"
         if [ "$PROGRAM_NAME" = "vue" ]; then
           echo -e " \E[36m|   📋 \E[97mVue ne dispose pas d'exécutable, donc en supprimant le sous-répertoire \"vue\" créé auparavant,\E[0m"
           echo -e " \E[36m|   📋 \E[97mça pourrais me permettre de simuler une supression de Vue.\E[0m"
           echo -e " \E[36m|   📋 \E[97mAinsi donc, les commandes utilisés sont:\E[0m"
+        elif [ "$PROGRAM_NAME" = "python3" ]; then
+          echo -e " \E[36m|   📋 \E[97mLes commandes utilisés lors de la supression de \033[1m\E[34m"$PROGRAM_NAME".10\033[0m\E[97m sont:\E[0m"
         else
           echo -e " \E[36m|   📋 \E[97mLes commandes utilisés lors de la supression de \033[1m\E[34m"$PROGRAM_NAME"\033[0m\E[97m sont:\E[0m"
         fi
@@ -1998,13 +2021,8 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[36m|      💲 \E[92mrm -rf ./laravel\E[0m"
           echo -e " \E[36m|      💲 \E[92mcd ../\E[0m"
 
-        # STATUT FONCTIONNEMENT VÉRIFIÉ : ❌
+        # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
         elif [ "$PROGRAM_NAME" = "python3" ]; then
-          echo -e " \E[36m|\E[0m"
-          echo -e " \E[36m|   \E[91m\033[1m✋ Suppression uniquement de "$PROGRAM_NAME".10\033[0m\E[0m"
-          echo -e " \E[36m|\E[0m"
-          echo -e " \E[36m|   \E[37m \E[0m"
-          # echo -e " \E[36m|      💲 \E[92msudo ppa-purge ppa:deadsnakes/ppa -y\E[0m"
           echo -e " \E[36m|      💲 \E[92msudo apt-get purge --auto-remove python3.10 -y\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
