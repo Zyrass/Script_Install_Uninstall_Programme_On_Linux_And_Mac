@@ -1017,7 +1017,7 @@ fct_back_to ()                  # Description : Selon le programme ou technologi
 }
 fct_show_script_version()       # Description ; Affiche la version du programme au niveau du menu
 {
-  echo -e "  \E[97;44m#StandWith\E[90;43mUkraine\E[0m                                                                   \033[1m\033[2mVersion de \"\E[95mBash-L Store\E[97m\" : \E[92m2.0.2\033[0m"
+  echo -e "  \E[97;44m#StandWith\E[90;43mUkraine\E[0m                                                                   \033[1m\033[2mVersion de \"\E[95mBash-L Store\E[97m\" : \E[92m2.0.3\033[0m"
 }
 
 # ===============================================================================================================================
