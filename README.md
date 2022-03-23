@@ -105,6 +105,11 @@ L'utilisation est très simple.
 
 ## ➍ - Changelog
 
+- **23/02/2022**:
+
+  - [x] Allègement de l'affichage des parties installation et suppression.
+  - [x] Changement de version. 2.0.3 > 2.1.0
+
 - **21/03/2022**
 
   - [x] Mise à jour de tous les textes pour **python3.10**
