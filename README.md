@@ -1,6 +1,6 @@
 ![Logo](https://github.com/Zyrass/Bash-L_Store/blob/master/images/logo.png?raw=true)
-<center>v2.0.3</center>
----
+
+## <center>v2.0.4</center>
 
 # Bash-L Store
 
@@ -104,6 +104,12 @@ L'utilisation est très simple.
 ![Remerciements](https://github.com/Zyrass/Bash-L_Store/blob/master/images/8.png?raw=true)
 
 ## ➍ - Changelog
+
+- **03/04/2022**
+
+  - [x] Modification de l'installation et suppression d'**OBS-STUDIO**.
+    - [x] Ajout du **PPA** pour **OBS-Studio**.
+    - [x] Ajout d'obs-studio via **APT-GET** au lieu de **SNAP**.
 
 - **21/03/2022**
 

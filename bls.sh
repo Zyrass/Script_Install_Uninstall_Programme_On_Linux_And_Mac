@@ -1017,7 +1017,7 @@ fct_back_to ()                  # Description : Selon le programme ou technologi
 }
 fct_show_script_version()       # Description ; Affiche la version du programme au niveau du menu
 {
-  echo -e "  \E[97;44m#StandWith\E[90;43mUkraine\E[0m                                                                   \033[1m\033[2mVersion de \"\E[95mBash-L Store\E[97m\" : \E[92m2.0.3\033[0m"
+  echo -e "  \E[97;44m#StandWith\E[90;43mUkraine\E[0m                                                                   \033[1m\033[2mVersion de \"\E[95mBash-L Store\E[97m\" : \E[92m2.0.4\033[0m"
 }
 
 # ===============================================================================================================================
@@ -1140,7 +1140,7 @@ fct_show_status_version()       # Description : Affiche la version d'un programm
     echo -e " \E[90m|  \E[33m"$PROGRAM_NAME" est-il installé sur cet ordinateur : \E[32m$(fct_check_status "$PROGRAM_NAME")\E[0m"
   fi
   echo -e " \E[90m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
-  if [ "$PROGRAM_NAME" = "curl" -o "$PROGRAM_NAME" = "node" -o "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "symfony" -o "$PROGRAM_NAME" = "laravel" -o "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "android" -o "$PROGRAM_NAME" = "spectacle" -o "$PROGRAM_NAME" = "react" -o "$PROGRAM_NAME" = "vue" -o "$PROGRAM_NAME" = "angular" -o "$PROGRAM_NAME" = "typescript" -o "$PROGRAM_NAME" = "flutter" -o "$PROGRAM_NAME" = "python3" ]; then
+  if [ "$PROGRAM_NAME" = "curl" -o "$PROGRAM_NAME" = "node" -o "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "symfony" -o "$PROGRAM_NAME" = "laravel" -o "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "obs" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "android" -o "$PROGRAM_NAME" = "spectacle" -o "$PROGRAM_NAME" = "react" -o "$PROGRAM_NAME" = "vue" -o "$PROGRAM_NAME" = "angular" -o "$PROGRAM_NAME" = "typescript" -o "$PROGRAM_NAME" = "flutter" -o "$PROGRAM_NAME" = "python3" ]; then
     fct_check_status_program ok
   # elif [ "$PROGRAM_NAME" = "react" ]; then
   #   fct_check_status_program update
@@ -1249,7 +1249,7 @@ fct_check_version()             # Description : Vérifier la version d'un progra
     # ===============================================================================================================================
     #   APPLICATIONS
     # ===============================================================================================================================
-    elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
+    elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
       echo -e "\E[32mInstallé\E[0m"
     fi
 
@@ -1632,8 +1632,15 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[36m|\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
-        elif [ "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
+        elif [ "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
           echo -e " \E[36m|      💲 \E[92msudo snap install "$PROGRAM_NAME"\E[0m"
+          echo -e " \E[36m|\E[0m"
+
+        # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
+        elif [ "$PROGRAM_NAME" = "obs-studio" ]; then
+          echo -e " \E[36m|      💲 \E[92msudo add-apt-repository ppa:obsproject/obs-studio\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo apt-get update -y\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo apt install obs-studio\E[0m"
           echo -e " \E[36m|\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
@@ -1876,8 +1883,14 @@ fct_info_programme()          # Description : Afficher les informations du progr
                 sudo snap install  "$PROGRAM_NAME" --classic
                 
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
-              elif [  "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
+              elif [  "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
                 sudo snap install "$PROGRAM_NAME"
+
+              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
+              elif [ "$PROGRAM_NAME" = "obs-studio" ]; then
+                sudo add-apt-repository ppa:obsproject/obs-studio
+                sudo apt-get update -y
+                sudo apt-get install obs-studio
 
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               elif [ "$PROGRAM_NAME" = "kylin-video" ]; then
@@ -2062,8 +2075,13 @@ fct_info_programme()          # Description : Afficher les informations du progr
         # ===============================================================================================================================
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
-        elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
+        elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
           echo -e " \E[36m|      💲 \E[92msudo snap remove "$PROGRAM_NAME"\E[0m"
+
+        # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
+        elif [ "$PROGRAM_NAME" = "obs-studio" ]; then
+          echo -e " \E[36m|      💲 \E[92msudo add-apt-repository --remove ppa:obsproject/obs-studio\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo apt-get remove obs-studio\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
         elif [ "$PROGRAM_NAME" = "firefox" ]; then
@@ -2278,8 +2296,13 @@ fct_info_programme()          # Description : Afficher les informations du progr
               # ===============================================================================================================================
 
               # STATUT FONCTIONNEMENT VÉRIFIÉ : 👾 avec FIGMA-LINUX
-              elif [  "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
+              elif [  "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux"  -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
                 sudo snap remove "$PROGRAM_NAME"
+
+              # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
+              elif [ "$PROGRAM_NAME" = "obs-studio" ]; then
+                sudo add-apt-repository --remove ppa:obsproject/obs-studio
+                sudo apt-get remove obs-studio
 
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               elif [ "$PROGRAM_NAME" = "firefox" ]; then
@@ -2690,7 +2713,7 @@ fct_show_app_menu() {
   | \E[95m11\E[0m. \E[92mSpotify          \E[0m|  \E[34mÉcouter votre musique préféré                    \E[0m|    🎵    |  $(fct_check_version spotify)
   | \E[95m12\E[0m. \E[92mThunderbird      \E[0m|  \E[34mGérer ces mail avec classe                       \E[0m|    📩    |  $(fct_check_version thunderbird)
   | \E[95m13\E[0m. \E[92mKylin-Video      \E[0m|  \E[34mUn lecteur vidéo sympatiques                     \E[0m|    🎞     |  $(fct_check_version kylin-video)
-  | \E[95m14\E[0m. \E[92mOBS-Studio       \E[0m|  \E[34mCréér ses propres vidéos                         \E[0m|    🎥    |  $(fct_check_version obs-studio)
+  | \E[95m14\E[0m. \E[92mOBS-Studio       \E[0m|  \E[34mCréér ses propres vidéos                         \E[0m|    🎥    |  $(fct_check_version obs)
   | \E[95m15\E[0m. \E[92mBlender          \E[0m|  \E[34mModéliser des objets en 3D                       \E[0m|    🗡     |  $(fct_check_version blender)
   | \E[95m16\E[0m. \E[92mVLC              \E[0m|  \E[34mLecteur Vidéo                                    \E[0m|    🎞     |  $(fct_check_version vlc)
   | \E[95m17\E[0m. \E[92mOkular           \E[0m|  \E[34mLecteur PDF et bien plus encore                  \E[0m|    🖥     |  $(fct_check_version okular)
@@ -2917,7 +2940,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mIl remplace Open Broadcaster Software et devient ainsi multiplateforme.\E[0m"
         space
      
-        fct_show_status_version "obs-studio"
+        fct_show_status_version "obs"
         fct_info_programme "obs-studio"
       ;;
 
