@@ -2708,7 +2708,6 @@ fct_show_app_menu() {
   # TABLEAU DES PROGRAMMES
     echo -e "
   $(fct_show_script_version)
-<<<<<<< HEAD
   + ------------------- + -------------------------------------------------- + -------- + -------------------------------- +
   |  \E[92mAPPLICATIONS\E[0m       |  \E[34mCOURTE DESCRIPTION\E[0m                                |  GENRES  |  \E[33mVERSIONS ACTUELS\E[0m     
   + ------------------- + -------------------------------------------------- + -------- + -------------------------------- +
@@ -2736,35 +2735,6 @@ fct_show_app_menu() {
   | \E[33m21 \E[37mTechnologies     \E[0m|  \E[37m\E[3mIci, des technologies pour concevoir tout un tas d'applications web ou mobile.\E[0m
   | \E[33m22\E[0m \E[37mQuitter\E[0m
   + ---------------------------------------------------------------------------------------------------------------------- +"
-=======
-  + -------------------- + ------------------------------------------------- + -------- + -------------------------------- +
-  |  \E[92mAPPLICATIONS\E[0m        |  \E[34mCOURTE DESCRIPTION\E[0m                               |  GENRES  |  \E[33mVERSIONS ACTUELS\E[0m     
-  + -------------------- + ------------------------------------------------- + -------- + -------------------------------- +
-  | \E[95m01\E[0m. \E[92mVS.Code          \E[0m|  \E[34mUn IDE Incontournable                            \E[0m|    💻    |  $(fct_check_version code)
-  | \E[95m02\E[0m. \E[92mMySQL Workbench  \E[0m|  \E[34mManipule une base de données open source         \E[0m|    🗃     |  $(fct_check_version mysql-workbench-community)
-  | \E[95m03\E[0m. \E[92mChromium         \E[0m|  \E[34mNavigateur web                                   \E[0m|    🌍    |  $(fct_check_version chromium)
-  | \E[95m04\E[0m. \E[92mFirefox          \E[0m|  \E[34mNavigateur web                                   \E[0m|    🌍    |  $(fct_check_version firefox)
-  | \E[95m05\E[0m. \E[92mBrave            \E[0m|  \E[34mNavigateur web                                   \E[0m|    🌍    |  $(fct_check_version brave)
-  | \E[95m06\E[0m. \E[92mOpera            \E[0m|  \E[34mNavigateur web                                   \E[0m|    🌍    |  $(fct_check_version opera)
-  | \E[95m07\E[0m. \E[92mPostman          \E[0m|  \E[34mGérer des APIs en toute tranquillité             \E[0m|    🔣    |  $(fct_check_version postman)
-  | \E[95m08\E[0m. \E[92mFigma-Linux      \E[0m|  \E[34mConcevez vos mockups avec classe                 \E[0m|    🖼     |  $(fct_check_version figma-linux)
-  | \E[95m09\E[0m. \E[92mKrita            \E[0m|  \E[34mLe Photoshop open source                         \E[0m|    🎨    |  $(fct_check_version krita)
-  | \E[95m10\E[0m. \E[92mDiscord          \E[0m|  \E[34mTchaté avec vos amis et collègue                 \E[0m|    💬    |  $(fct_check_version discord)
-  | \E[95m11\E[0m. \E[92mSpotify          \E[0m|  \E[34mÉcouter votre musique préféré                    \E[0m|    🎵    |  $(fct_check_version spotify)
-  | \E[95m12\E[0m. \E[92mThunderbird      \E[0m|  \E[34mGérer ces mail avec classe                       \E[0m|    📩    |  $(fct_check_version thunderbird)
-  | \E[95m13\E[0m. \E[92mKylin-Video      \E[0m|  \E[34mUn lecteur vidéo sympatiques                     \E[0m|    🎞     |  $(fct_check_version kylin-video)
-  | \E[95m14\E[0m. \E[92mOBS-Studio       \E[0m|  \E[34mCréér ses propres vidéos                         \E[0m|    🎥    |  $(fct_check_version obs)
-  | \E[95m15\E[0m. \E[92mBlender          \E[0m|  \E[34mModéliser des objets en 3D                       \E[0m|    🗡     |  $(fct_check_version blender)
-  | \E[95m16\E[0m. \E[92mVLC              \E[0m|  \E[34mLecteur Vidéo                                    \E[0m|    🎞     |  $(fct_check_version vlc)
-  | \E[95m17\E[0m. \E[92mOkular           \E[0m|  \E[34mLecteur PDF et bien plus encore                  \E[0m|    🖥     |  $(fct_check_version okular)
-  | \E[95m18\E[0m. \E[92mGIMP             \E[0m|  \E[34mLogiciel de dessin                               \E[0m|    🎨    |  $(fct_check_version gimp)
-  | \E[95m19\E[0m. \E[92mAndroid-Studio   \E[0m|  \E[34mÉditeur d'application mobile                     \E[0m|    📱    |  $(fct_check_version android)
-  | \E[95m20\E[0m. \E[92mSpectacle        \E[0m|  \E[34mPermet de capturer son écran facilement          \E[0m|    📷    |  $(fct_check_version spectacle)
-  + -------------------- + ------------------------------------------------- + -------- + -------------------------------- +
-  | \E[33m21\E[0m. \E[37mTechnologies     \E[0m|  \E[37m\E[3mdes utilitaires à technologies pour concevoir tout un tas d'applications web ou mobile.\E[0m
-  | \E[33m22\E[0m. \E[37mQuitter\E[0m
-  + ----------------------------------------------------------------------------------------------------------------------- +"
->>>>>>> hotfix
   space
   echo -e "\E[90m    ❗ À tout moment, vous pouvez taper sur\E[0m \E[36mCTRL + C\E[0m \E[90mpour stopper l'exécution de Bash-L Store.\E[0m"
   space
