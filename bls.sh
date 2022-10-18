@@ -982,14 +982,14 @@ fct_check_exist_install()       # Description : Permet d'afficher le message si 
     "success")
       space
       echo -e " \E[92m+ ------------------------------------------------------------------------------------------------ +\E[0m"
-      echo -e " \E[92m    ✅ "$PROGRAM_NAME" a bien été installé avec succès sur cet ordinateur.\E[0m"
+      echo -e " \E[92m    ✅ $PROGRAM_NAME a bien été installé avec succès sur cet ordinateur.\E[0m"
       echo -e " \E[92m+ ------------------------------------------------------------------------------------------------ +\E[0m"
       space
     ;;
     "error")
       space
       echo -e " \E[91m+ ------------------------------------------------------------------------------------------------ +\E[0m"
-      echo -e " \E[91m|   ❌ Désolé, "$PROGRAM_NAME" a déjà été installé sur cet ordinateur!\E[0m"
+      echo -e " \E[91m|   ❌ Désolé, $PROGRAM_NAME a déjà été installé sur cet ordinateur!\E[0m"
       echo -e " \E[91m+ ------------------------------------------------------------------------------------------------ +\E[0m"
       space
     ;;
@@ -1133,11 +1133,11 @@ fct_show_status_version()       # Description : Affiche la version d'un programm
   PROGRAM_NAME=$1
   echo -e " \E[90m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
   if [ "$PROGRAM_NAME" = "flutter" ]; then
-    echo -e " \E[90m|  \E[33mFlutter et Dart sont-ils installés sur cet ordinateur: \E[32m$(fct_check_status "$PROGRAM_NAME")\E[0m"
+    echo -e " \E[90m|  \E[33mFlutter et Dart sont-ils installés sur cet ordinateur: \E[32m$(fct_check_status $PROGRAM_NAME)\E[0m"
   elif [ "$PROGRAM_NAME" = "python3" ]; then
-    echo -e " \E[90m|  \E[33m"$PROGRAM_NAME".10 est-il installé sur cet ordinateur : \E[32m$(fct_check_status "$PROGRAM_NAME")\E[0m"
+    echo -e " \E[90m|  \E[33m$PROGRAM_NAME.10 est-il installé sur cet ordinateur : \E[32m$(fct_check_status $PROGRAM_NAME)\E[0m"
   else
-    echo -e " \E[90m|  \E[33m"$PROGRAM_NAME" est-il installé sur cet ordinateur : \E[32m$(fct_check_status "$PROGRAM_NAME")\E[0m"
+    echo -e " \E[90m|  \E[33m$PROGRAM_NAME est-il installé sur cet ordinateur : \E[32m$(fct_check_status $PROGRAM_NAME)\E[0m"
   fi
   echo -e " \E[90m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
   if [ "$PROGRAM_NAME" = "curl" -o "$PROGRAM_NAME" = "node" -o "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "symfony" -o "$PROGRAM_NAME" = "laravel" -o "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "obs" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "android" -o "$PROGRAM_NAME" = "spectacle" -o "$PROGRAM_NAME" = "react" -o "$PROGRAM_NAME" = "vue" -o "$PROGRAM_NAME" = "angular" -o "$PROGRAM_NAME" = "typescript" -o "$PROGRAM_NAME" = "flutter" -o "$PROGRAM_NAME" = "python3" ]; then
@@ -1303,13 +1303,13 @@ fct_info_programme()          # Description : Afficher les informations du progr
 
   # Choix des actions à effectuer
   if [ "$PROGRAM_NAME" = "python3" ]; then
-    INSTALL="Installer "$PROGRAM_NAME".10 sur cet ordinateur"
-    DELETE="Supprimer "$PROGRAM_NAME".10 de cet ordinateur"
+    INSTALL="Installer $PROGRAM_NAME.10 sur cet ordinateur"
+    DELETE="Supprimer $PROGRAM_NAME.10 de cet ordinateur"
     APPLICATIONS="allez à la page des applications"
     TECHNOLOGIES="allez à la page des technologies"
   elif [ ! "$PROGRAM_NAME" = "python3" ]; then
-    INSTALL="Installer "$PROGRAM_NAME" sur cet ordinateur"
-    DELETE="Supprimer "$PROGRAM_NAME" de cet ordinateur"
+    INSTALL="Installer $PROGRAM_NAME sur cet ordinateur"
+    DELETE="Supprimer $PROGRAM_NAME de cet ordinateur"
     APPLICATIONS="allez à la page des applications"
     TECHNOLOGIES="allez à la page des technologies"
   fi
@@ -1333,13 +1333,13 @@ fct_info_programme()          # Description : Afficher les informations du progr
         echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"  
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌
         if [ "$PROGRAM_NAME" = "curl" -o "$PROGRAM_NAME" = "node" -o "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "symfony" -o "$PROGRAM_NAME" = "laravel" -o "$PROGRAM_NAME" = "vue" -o "$PROGRAM_NAME" = "react" -o "$PROGRAM_NAME" = "angular" -o "$PROGRAM_NAME" = "typescript" -o "$PROGRAM_NAME" = "python" -o "$PROGRAM_NAME" = "flutter" ]; then
-          echo -e " \E[36m|   \E[33mDéroulement de l'installation de la technologie: \033[1m\E[34m"$PROGRAM_NAME"\033[0m\E[0m"
+          echo -e " \E[36m|   \E[33mDéroulement de l'installation de la technologie: \033[1m\E[34m$PROGRAM_NAME\033[0m\E[0m"
         elif [ "$PROGRAM_NAME" = "python3" ]; then
-          echo -e " \E[36m|   \E[33mDéroulement de l'installation de la technologie: \033[1m\E[34m"$PROGRAM_NAME".10\033[0m.\E[0m"
+          echo -e " \E[36m|   \E[33mDéroulement de l'installation de la technologie: \033[1m\E[34m$PROGRAM_NAME.10\033[0m.\E[0m"
         elif [ "$PROGRAM_NAME" = "flutter" ]; then
-          echo -e " \E[36m|   \E[33mDéroulement de l'installation de la technologie: \033[1m\E[34m"$PROGRAM_NAME"\033[0m \E[37m Á savoir que Dart sera automatiquement installé.\E[0m"
+          echo -e " \E[36m|   \E[33mDéroulement de l'installation de la technologie: \033[1m\E[34m$PROGRAM_NAME\033[0m \E[37m Á savoir que Dart sera automatiquement installé.\E[0m"
         else 
-          echo -e " \E[36m|   \E[33mDéroulement de l'installation du programme: \033[1m"$PROGRAM_NAME"\033[0m\E[0m"
+          echo -e " \E[36m|   \E[33mDéroulement de l'installation du programme: \033[1m$PROGRAM_NAME\033[0m\E[0m"
         fi
         echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
         
@@ -1351,20 +1351,20 @@ fct_info_programme()          # Description : Afficher les informations du progr
         if [ "$PROGRAM_NAME" = "curl" ]; then
           echo -e " \E[36m|\E[0m"
           echo -e " \E[36m|   \E[97m📋 cURL est normalement installé par défaut, mais au cas où on suivra les étapes ci-dessous.\E[0m"
-          echo -e " \E[36m|   \E[97m📋 Pour installer \033[1m\E[34m"$PROGRAM_NAME"\033[0m\E[97m, nous aurions dû saisir :\E[0m"
+          echo -e " \E[36m|   \E[97m📋 Pour installer \033[1m\E[34m$PROGRAM_NAME\033[0m\E[97m, nous aurions dû saisir :\E[0m"
           echo -e " \E[36m|\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
         elif [ "$PROGRAM_NAME" = "node" ]; then
           echo -e " \E[36m|\E[0m"
           echo -e " \E[36m|   \E[97m📋 Il est recommandé de toujours installer une version PAIRE.\E[0m"
-          echo -e " \E[36m|   \E[97m📋 Pour installer \033[1m\E[34m"$PROGRAM_NAME"\033[0m\E[97m et par la même occasion \033[1m\E[34mnpm\033[0m\E[97m, nous aurions dû saisir :\E[0m"
+          echo -e " \E[36m|   \E[97m📋 Pour installer \033[1m\E[34m$PROGRAM_NAME\033[0m\E[97m et par la même occasion \033[1m\E[34mnpm\033[0m\E[97m, nous aurions dû saisir :\E[0m"
           echo -e " \E[36m|\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
         elif [ "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "angular" -o "$PROGRAM_NAME" = "typescript" -o "$PROGRAM_NAME" = "flutter" -o "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "android" -o "$PROGRAM_NAME" = "spectacle" ]; then
           echo -e " \E[36m|\E[0m"
-          echo -e " \E[36m|   \E[97m📋 Pour installer \033[1m\E[34m"$PROGRAM_NAME"\033[0m\E[97m, nous aurions dû saisir :\E[0m"
+          echo -e " \E[36m|   \E[97m📋 Pour installer \033[1m\E[34m$PROGRAM_NAME\033[0m\E[97m, nous aurions dû saisir :\E[0m"
           echo -e " \E[36m|\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
@@ -1381,7 +1381,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
           echo -e " \E[36m|      📌 \E[96mphp 8 minimum\E[0m"
           echo -e " \E[36m|      📌 \E[96mcomposer\E[0m"
           echo -e " \E[36m|\E[0m"
-          echo -e " \E[36m|   \E[97m📖 Enfin, pour installer \033[1m\E[34m"$PROGRAM_NAME" CLI\033[0m\E[97m nous aurions dû saisir :\E[0m"
+          echo -e " \E[36m|   \E[97m📖 Enfin, pour installer \033[1m\E[34m$PROGRAM_NAME CLI\033[0m\E[97m nous aurions dû saisir :\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
         elif [ "$PROGRAM_NAME" = "laravel" ]; then
@@ -1415,10 +1415,10 @@ fct_info_programme()          # Description : Afficher les informations du progr
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
         elif [ "$PROGRAM_NAME" = "flutter" ]; then
-          echo -e " \E[96m|\E[0m \E[37m Pour installer "$PROGRAM_NAME" et dart, nous aurions dû saisir :\E[0m"
+          echo -e " \E[96m|\E[0m \E[37m Pour installer $PROGRAM_NAME et dart, nous aurions dû saisir :\E[0m"
         
         else
-          echo -e " \E[36m|\E[0m \E[37m Pour installer "$PROGRAM_NAME", nous aurions dû saisir :\E[0m"
+          echo -e " \E[36m|\E[0m \E[37m Pour installer $PROGRAM_NAME, nous aurions dû saisir :\E[0m"
         fi
         
         # ===============================================================================================================================
@@ -1428,7 +1428,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
         if [ "$PROGRAM_NAME" = "curl" ]; then
           echo -e " \E[36m|      💲 \E[92msudo apt-get update\E[0m"
-          echo -e " \E[36m|      💲 \E[92msudo apt-get install "$PROGRAM_NAME"\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo apt-get install $PROGRAM_NAME\E[0m"
           echo -e " \E[36m|\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
@@ -1440,7 +1440,7 @@ fct_info_programme()          # Description : Afficher les informations du progr
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
         elif [ "$PROGRAM_NAME" = "git" ]; then
           echo -e " \E[36m|      💲 \E[92msudo apt-get update -y\E[0m"
-          echo -e " \E[36m|      💲 \E[92msudo apt-get install "$PROGRAM_NAME"\E[0m"
+          echo -e " \E[36m|      💲 \E[92msudo apt-get install $PROGRAM_NAME\E[0m"
           echo -e " \E[36m|\E[0m"
 
         # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
@@ -2348,11 +2348,11 @@ fct_info_programme()          # Description : Afficher les informations du progr
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
               space
               echo -e " \E[92m+ ------------------------------------------------------------------------------------------------ +\E[0m"
-              echo -e " \E[92m    ✅ "$PROGRAM_NAME" a bien été désinstallé de cet ordinateur avec succès.\E[0m"
+              echo -e " \E[92m    ✅ $PROGRAM_NAME a bien été désinstallé de cet ordinateur avec succès.\E[0m"
               echo -e " \E[92m+ ------------------------------------------------------------------------------------------------ +\E[0m"
               space
 
-              read -p "Pressez une touche pour continuer..."
+              read -rp "Pressez une touche pour continuer..."
               clear
 
               # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
@@ -2787,7 +2787,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mdont certains open-source ou certains propriétaires.\E[0m"
         echo -e "   📖 \E[37mLe moteur de rendu de Chromium s'appelle Blink.\E[0m"
         space
-                   
+
         fct_show_status_version "chromium"
         fct_info_programme "chromium"
       ;;
@@ -2861,7 +2861,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mFigma est ou outil de design collaboratif qui permet aux UX/UI designers de prototyper les interfaces graphiques.\E[0m"
         echo -e "   📖 \E[37mIl aide notamment à concevoir sites web, applications et autres interfaces utilisateur.\E[0m"
         space
-         
+
         fct_show_status_version "figma-linux"
         fct_info_programme "figma-linux"
       ;; 
@@ -2921,7 +2921,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mMozilla Thunderbird est un client de messagerie, libre,\E[0m"
         echo -e "   📖 \E[37mdistribué gratuitement par la fondation Mozilla et issu du projet Mozilla.\E[0m"
         space
-   
+
         fct_show_status_version "thunderbird"
         fct_info_programme "thunderbird"
       ;;
@@ -2950,7 +2950,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37met de streaming pour Microsoft Windows, MacOS et Linux.\E[0m"
         echo -e "   📖 \E[37mIl remplace Open Broadcaster Software et devient ainsi multiplateforme.\E[0m"
         space
-     
+
         fct_show_status_version "obs"
         fct_info_programme "obs-studio"
       ;;
@@ -2966,7 +2966,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mDepuis 2019 le logiciel Blender est de plus en plus reconnu par les entreprises du secteur de l'animation 3D,\E[0m"
         echo -e "   📖 \E[37mcomme Epic Games, Ubisoft et NVIDIA.\E[0m"
         space
-                     
+
         fct_show_status_version "blender"
         fct_info_programme "blender"
       ;;
@@ -3012,7 +3012,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mdiffusé sous la licence GPLv3 comme un logiciel gratuit et libre.\E[0m"
         echo -e "   📖 \E[37mIl en existe des versions pour la plupart des systèmes d'exploitation dont GNU/Linux, macOS et Microsoft Windows.\E[0m"
         space
-             
+
         fct_show_status_version "gimp"
         fct_info_programme "gimp"
       ;;
@@ -3026,7 +3026,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mAndroid est un système d'exploitation mobile fondé sur le noyau Linux\E[0m"
         echo -e "   📖 \E[37met développé par des informaticiens sponsorisés par Google.\E[0m"
         space
-             
+
         fct_show_status_version "android"
         fct_info_programme "android"
       ;;
@@ -3043,7 +3043,7 @@ fct_show_app_menu() {
         echo -e "   📖 \E[37mLes images peuvent être imprimées, envoyées vers d'autres applications pour y être manipulées\E[0m"
         echo -e "   📖 \E[37mou rapidement enregistrées telles-quelles.\E[0m"
         space         
-             
+
         fct_show_status_version "spectacle"
         fct_info_programme "spectacle"
       ;;
