@@ -1904,7 +1904,7 @@ fct_info_programme() { # Description : Afficher les informations du programme
           # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
           space
           echo -e " \E[92m+ ------------------------------------------------------------------------------------------------ +\E[0m"
-          echo -e " \E[92m    ✅ "$PROGRAM_NAME" a bien été installé sur cet ordinateur avec succès.\E[0m"
+          echo -e " \E[92m    ✅ $PROGRAM_NAME a bien été installé sur cet ordinateur avec succès.\E[0m"
           echo -e " \E[92m+ ------------------------------------------------------------------------------------------------ +\E[0m"
           space
 
@@ -1949,9 +1949,9 @@ fct_info_programme() { # Description : Afficher les informations du programme
       # ===============================================================================================================================
       echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
       if [ "$PROGRAM_NAME" = "python3" ]; then
-        echo -e " \E[36m|   \E[91m\033[1mSuppression de "$PROGRAM_NAME".10\033[0m\E[0m"
+        echo -e " \E[36m|   \E[91m\033[1mSuppression de $PROGRAM_NAME.10\033[0m\E[0m"
       else
-        echo -e " \E[36m|   \E[91m\033[1mSuppression de "$PROGRAM_NAME"\033[0m\E[0m"
+        echo -e " \E[36m|   \E[91m\033[1mSuppression de $PROGRAM_NAME\033[0m\E[0m"
       fi
       echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
       echo -e " \E[36m|\E[0m"
@@ -1960,9 +1960,9 @@ fct_info_programme() { # Description : Afficher les informations du programme
         echo -e " \E[36m|   📋 \E[97mça pourrais me permettre de simuler une supression de Vue.\E[0m"
         echo -e " \E[36m|   � \E[97mAinsi donc, les commandes utilisés sont:\E[0m"
       elif [ "$PROGRAM_NAME" = "python3" ]; then
-        echo -e " \E[36m|   📋 \E[97mLes commandes utilisés lors de la supression de \033[1m\E[34m"$PROGRAM_NAME".10\033[0m\E[97m sont:\E[0m"
+        echo -e " \E[36m|   📋 \E[97mLes commandes utilisés lors de la supression de \033[1m\E[34m$PROGRAM_NAME.10\033[0m\E[97m sont:\E[0m"
       else
-        echo -e " \E[36m|   📋 \E[97mLes commandes utilisés lors de la supression de \033[1m\E[34m"$PROGRAM_NAME"\033[0m\E[97m sont:\E[0m"
+        echo -e " \E[36m|   📋 \E[97mLes commandes utilisés lors de la supression de \033[1m\E[34m$PROGRAM_NAME\033[0m\E[97m sont:\E[0m"
       fi
       echo -e " \E[36m|\E[0m"
 
@@ -1973,7 +1973,7 @@ fct_info_programme() { # Description : Afficher les informations du programme
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
       if [ "$PROGRAM_NAME" = "curl" ]; then
         echo -e " \E[36m|      💲 \E[92msudo apt-get update -y\E[0m"
-        echo -e " \E[36m|      💲 \E[92msudo apt-get remove "$PROGRAM_NAME" -y\E[0m"
+        echo -e " \E[36m|      💲 \E[92msudo apt-get remove $PROGRAM_NAME -y\E[0m"
 
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
       elif [ "$PROGRAM_NAME" = "node" ]; then
@@ -1983,11 +1983,11 @@ fct_info_programme() { # Description : Afficher les informations du programme
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
       elif [ "$PROGRAM_NAME" = "git" ]; then
         echo -e " \E[36m|      💲 \E[92msudo apt-get update -y\E[0m"
-        echo -e " \E[36m|      💲 \E[92msudo apt-get remove "$PROGRAM_NAME" -y\E[0m"
+        echo -e " \E[36m|      💲 \E[92msudo apt-get remove $PROGRAM_NAME -y\E[0m"
 
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
       elif [ "$PROGRAM_NAME" = "docker" ]; then
-        echo -e " \E[36m|      💲 \E[92msystemctl stop "$PROGRAM_NAME"\E[0m"
+        echo -e " \E[36m|      💲 \E[92msystemctl stop $PROGRAM_NAME\E[0m"
         echo -e " \E[36m|      💲 \E[92msudo apt-get remove docker docker-engine docker.io containerd -y\E[0m"
         echo -e " \E[36m|      💲 \E[92msudo apt-get update -y\E[0m"
         echo -e " \E[36m|      💲 \E[92msudo apt-get remove docker-ce docker-ce-cli containerd.io -y\E[0m"
@@ -2011,7 +2011,7 @@ fct_info_programme() { # Description : Afficher les informations du programme
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
       elif [ "$PROGRAM_NAME" = "symfony" ]; then
         echo -e " \E[36m|      💲 \E[92msudo apt-get update -y\E[0m"
-        echo -e " \E[36m|      💲 \E[92msudo apt-get remove "$PROGRAM_NAME"-cli -y\E[0m"
+        echo -e " \E[36m|      💲 \E[92msudo apt-get remove $PROGRAM_NAME-cli -y\E[0m"
         echo -e " \E[36m|      💲 \E[92msudo apt-get remove php8.*-xml\E[0m"
         echo -e " \E[36m|      💲 \E[92msudo apt-get remove libnss3-tools\E[0m"
         echo -e " \E[36m|      💲 \E[92mcd ./test_install\E[0m"
@@ -2068,7 +2068,7 @@ fct_info_programme() { # Description : Afficher les informations du programme
 
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
       elif [ "$PROGRAM_NAME" = "code" ] || [ "$PROGRAM_NAME" = "mysql-workbench-community" ] || [ "$PROGRAM_NAME" = "chromium" ] || [ "$PROGRAM_NAME" = "brave" ] || [ "$PROGRAM_NAME" = "opera" ] || [ "$PROGRAM_NAME" = "figma-linux" ] || [ "$PROGRAM_NAME" = "krita" ] || [ "$PROGRAM_NAME" = "postman" ] || [ "$PROGRAM_NAME" = "discord" ] || [ "$PROGRAM_NAME" = "spotify" ] || [ "$PROGRAM_NAME" = "thunderbird" ] || [ "$PROGRAM_NAME" = "vlc" ] || [ "$PROGRAM_NAME" = "blender" ] || [ "$PROGRAM_NAME" = "okular" ] || [ "$PROGRAM_NAME" = "gimp" ] || [ "$PROGRAM_NAME" = "spectacle" ]; then
-        echo -e " \E[36m|      💲 \E[92msudo snap remove "$PROGRAM_NAME"\E[0m"
+        echo -e " \E[36m|      💲 \E[92msudo snap remove $PROGRAM_NAME\E[0m"
 
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
       elif [ "$PROGRAM_NAME" = "obs-studio" ]; then
@@ -2100,13 +2100,13 @@ fct_info_programme() { # Description : Afficher les informations du programme
 
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
       if [ "$PROGRAM_NAME" = "python3" ]; then
-        echo -e " \E[34mSouhaitez-vous que je désinstalle \"\E[36m"$PROGRAM_NAME".10\E[34m\" via les commandes ci-dessus pour vous !?\E[0m"
+        echo -e " \E[34mSouhaitez-vous que je désinstalle \"\E[36m$PROGRAM_NAME.10\E[34m\" via les commandes ci-dessus pour vous !?\E[0m"
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
       # elif [ "$PROGRAM_NAME" = "docker" ]; then
       #   echo -e " 💬 \E[34mMe faîtes-vous confiance pour que je supprime pour vous, \"\E[95m"$PROGRAM_NAME"\E[34m\", sans vous montrer les commandes à saisir...\E[0m\E[0m"
       #   echo ""
       else
-        echo -e " 💬 \E[34mSeriez-vous intéressé pour que je supprime pour vous, \"\E[95m"$PROGRAM_NAME"\E[34m\", via les commandes ci-dessus ?\E[0m"
+        echo -e " 💬 \E[34mSeriez-vous intéressé pour que je supprime pour vous, \"\E[95m$PROGRAM_NAME\E[34m\", via les commandes ci-dessus ?\E[0m"
         echo ""
       fi
 
@@ -2127,7 +2127,7 @@ fct_info_programme() { # Description : Afficher les informations du programme
 
           # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
           space
-          echo "    ... Veuillez patienter, la supression de "$PROGRAM_NAME" va démarrer dans une seconde... (1s)"
+          echo "    ... Veuillez patienter, la supression de $PROGRAM_NAME va démarrer dans une seconde... (1s)"
           space
           loading
           sleep 1
@@ -3059,10 +3059,10 @@ function parse_yaml {
       vname[indent] = $2;
       for (i in vname) {if (i > indent) {delete vname[i]}}
       if (length($3) > 0) {
-         vn=""; for (i=0; i<indent; i++) {vn=(vn)(vname[i])("_")}
-         printf("%s%s%s=\"%s\"\n", "'$prefix'",vn, $2, $3);
+        vn=""; for (i=0; i<indent; i++) {vn=(vn)(vname[i])("_")}
+        printf("%s%s%s=\"%s\"\n", "'$prefix'",vn, $2, $3);
       }
-   }'
+  }'
 }
 
 eval $(parse_yaml config.yml "CONFIG_")
