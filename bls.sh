@@ -135,7 +135,7 @@ fct_show_logo() { # Description : Affiche les logos
     echo -e "\E[37;40m          💬  J'ai passé plus de \E[92;40m520 heures\E[37;40m sur cette plate-forme.                                                    \E[0m"
     echo -e "\E[95;40m                                                                                                                      \E[0m"
     space
-    read -p "  ... Appuyer sur une touche pour accéder à la présentation du script ..."
+    read -rp "  ... Appuyer sur une touche pour accéder à la présentation du script ..."
     clear
     ;;
 
@@ -761,7 +761,7 @@ fct_message_intro() { # Description : Affiche un conseil rapide pour une meilleu
   echo -e "\t\E[93met lui est 100% fonctionnelles.\E[0m"
   space
   space
-  read -p "        Veuillez appuyer sur n'importe qu'elle touche pour continuer."
+  read -rp "        Veuillez appuyer sur n'importe qu'elle touche pour continuer."
   clear
 }
 fct_message_presentation() { # Description : Affiche la présentation du script.
@@ -789,7 +789,7 @@ fct_message_presentation() { # Description : Affiche la présentation du script.
   echo -e "\t\033[1m\033[3mSachez que ce script sera actualisé chaque fois que nécessaire.\033[0m"
 
   space
-  read -p "    Pressez une touche pour poursuivre..."
+  read -rp "    Pressez une touche pour poursuivre..."
   clear
 
   fct_show_logo "bls"
@@ -816,7 +816,7 @@ fct_message_presentation() { # Description : Affiche la présentation du script.
 
   echo -e "     \E[90m                                                                                                             Page 1/2\E[0m"
   space
-  read -p "   Appuyer sur une touche pour lire la suite ..."
+  read -rp "   Appuyer sur une touche pour lire la suite ..."
   clear
 
   fct_show_logo "bls"
@@ -861,7 +861,7 @@ fct_message_presentation() { # Description : Affiche la présentation du script.
   space
   echo -e "     \E[90m                                                                                                             Page 2/2\E[0m"
   space
-  read -p "   Appuyer sur une touche pour accéder au menu des technologies ..."
+  read -rp "   Appuyer sur une touche pour accéder au menu des technologies ..."
   clear
 }
 
@@ -961,7 +961,7 @@ fct_show_exit_program() { # Description : Affiche la page des remerciements avan
   space
 
   space
-  read -p "   Appuyer sur une touche pour quitter Bash-L Store."
+  read -rp "   Appuyer sur une touche pour quitter Bash-L Store."
   clear
   exit
 }
@@ -993,14 +993,14 @@ fct_back_to() { # Description : Selon le programme ou technologie, on retournera
   "home")
     # fct_check_exist_install "success"
     # space
-    read -p "Appuyer sur une touche pour vous rendre au menu principal..."
+    read -rp "Appuyer sur une touche pour vous rendre au menu principal..."
     clear
     fct_show_home_menu
     ;;
   "app")
     # fct_check_exist_install "success"
     # space
-    read -p "Appuyer sur une touche pour vous rendre au menu des applications..."
+    read -rp "Appuyer sur une touche pour vous rendre au menu des applications..."
     clear
     fct_show_app_menu
     ;;
