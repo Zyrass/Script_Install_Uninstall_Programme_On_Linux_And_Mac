@@ -3022,7 +3022,7 @@ fct_show_app_menu() {
       space
 
       fct_show_status_version "spectacle"
-      fct_info_programme "spectaclep
+      fct_info_programme "spectacle"
       ;;
 
     Quitter)
