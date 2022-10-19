@@ -745,8 +745,6 @@ fct_show_logo() { # Description : Affiche les logos
 fct_message_intro() { # Description : Affiche un conseil rapide pour une meilleure expérience utilisateur.
   clear
 
-  echo $LOGO_dyma
-
   space
   echo -e "\t\E[36mPour une meilleure expérience utilisateur,\E[0m"
   echo -e "\t\E[36mveuillez lancer le script en mode plein écran.\E[0m"
@@ -1094,7 +1092,7 @@ fct_check_status_program() { # Description : Permet de vérifier le statut du pr
   # Arg 1       : Statut du programme (ok, update, bug, error)
   # Arg 2       : Nom de la technologies
   STATUS=$1
-  NAME=$2
+  # NAME=$2
   case $STATUS in
   "ok")
     echo -e " \E[90m|  \E[92m✅ Installation et suppression sont 100% fonctionnelles.\E[0m"
@@ -1128,11 +1126,11 @@ fct_show_status_version() { # Description : Affiche la version d'un programme qu
     echo -e " \E[90m|  \E[33m$PROGRAM_NAME est-il installé sur cet ordinateur : \E[32m$(fct_check_status $PROGRAM_NAME)\E[0m"
   fi
   echo -e " \E[90m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
-  if [ "$PROGRAM_NAME" = "curl" -o "$PROGRAM_NAME" = "node" -o "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "symfony" -o "$PROGRAM_NAME" = "laravel" -o "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "obs" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "android" -o "$PROGRAM_NAME" = "spectacle" -o "$PROGRAM_NAME" = "react" -o "$PROGRAM_NAME" = "vue" -o "$PROGRAM_NAME" = "angular" -o "$PROGRAM_NAME" = "typescript" -o "$PROGRAM_NAME" = "flutter" -o "$PROGRAM_NAME" = "python3" ]; then
+  if [ "$PROGRAM_NAME" = "curl" ] || [ "$PROGRAM_NAME" = "node" ] || [ "$PROGRAM_NAME" = "git" ] || [ "$PROGRAM_NAME" = "docker" ] || [ "$PROGRAM_NAME" = "php" ] || [ "$PROGRAM_NAME" = "mysql" ] || [ "$PROGRAM_NAME" = "composer" ] || [ "$PROGRAM_NAME" = "symfony" ] || [ "$PROGRAM_NAME" = "laravel" ] || [ "$PROGRAM_NAME" = "code" ] || [ "$PROGRAM_NAME" = "mysql-workbench-community" ] || [ "$PROGRAM_NAME" = "chromium" ] || [ "$PROGRAM_NAME" = "firefox" ] || [ "$PROGRAM_NAME" = "brave" ] || [ "$PROGRAM_NAME" = "opera" ] || [ "$PROGRAM_NAME" = "postman" ] || [ "$PROGRAM_NAME" = "krita" ] || [ "$PROGRAM_NAME" = "discord" ] || [ "$PROGRAM_NAME" = "spotify" ] || [ "$PROGRAM_NAME" = "thunderbird" ] || [ "$PROGRAM_NAME" = "kylin-video" ] || [ "$PROGRAM_NAME" = "figma-linux" ] || [ "$PROGRAM_NAME" = "obs" ] || [ "$PROGRAM_NAME" = "blender" ] || [ "$PROGRAM_NAME" = "vlc" ] || [ "$PROGRAM_NAME" = "okular" ] || [ "$PROGRAM_NAME" = "gimp" ] || [ "$PROGRAM_NAME" = "android" ] || [ "$PROGRAM_NAME" = "spectacle" ] || [ "$PROGRAM_NAME" = "react" ] || [ "$PROGRAM_NAME" = "vue" ] || [ "$PROGRAM_NAME" = "angular" ] || [ "$PROGRAM_NAME" = "typescript" ] || [ "$PROGRAM_NAME" = "flutter" ] || [ "$PROGRAM_NAME" = "python3" ]; then
     fct_check_status_program ok
   # elif [ "$PROGRAM_NAME" = "react" ]; then
   #   fct_check_status_program update
-  # elif [ "$PROGRAM_NAME" = "flutter" -o "$PROGRAM_NAME" = "vue" -o "$PROGRAM_NAME" = "react" ]; then
+  # elif [ "$PROGRAM_NAME" = "flutter" ] || [ "$PROGRAM_NAME" = "vue" ] || [ "$PROGRAM_NAME" = "react" ]; then
 
   #   if [ "$PROGRAM_NAME" = "flutter" ]; then
   #     fct_check_status_program bug FLUTTER
@@ -1236,13 +1234,13 @@ fct_check_version() { # Description : Vérifier la version d'un programme
     # ===============================================================================================================================
     #   APPLICATIONS
     # ===============================================================================================================================
-    elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "obs" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
+    elif [ "$PROGRAM_NAME" = "code" ] || [ "$PROGRAM_NAME" = "mysql-workbench-community" ] || [ "$PROGRAM_NAME" = "chromium" ] || [ "$PROGRAM_NAME" = "firefox" ] || [ "$PROGRAM_NAME" = "brave" ] || [ "$PROGRAM_NAME" = "opera" ] || [ "$PROGRAM_NAME" = "figma-linux" ] || [ "$PROGRAM_NAME" = "krita" ] || [ "$PROGRAM_NAME" = "postman" ] || [ "$PROGRAM_NAME" = "discord" ] || [ "$PROGRAM_NAME" = "spotify" ] || [ "$PROGRAM_NAME" = "thunderbird" ] || [ "$PROGRAM_NAME" = "obs" ] || [ "$PROGRAM_NAME" = "kylin-video" ] || [ "$PROGRAM_NAME" = "vlc" ] || [ "$PROGRAM_NAME" = "blender" ] || [ "$PROGRAM_NAME" = "okular" ] || [ "$PROGRAM_NAME" = "gimp" ] || [ "$PROGRAM_NAME" = "spectacle" ]; then
       echo -e "\E[32mInstallé\E[0m"
     fi
 
   else
 
-    if [ "$PROGRAM_NAME" = "vue" -o "$PROGRAM_NAME" = "react" -o "$PROGRAM_NAME" = "laravel" -o "$PROGRAM_NAME" = "android" ]; then
+    if [ "$PROGRAM_NAME" = "vue" ] || [ "$PROGRAM_NAME" = "react" ] || [ "$PROGRAM_NAME" = "laravel" ] || [ "$PROGRAM_NAME" = "android" ]; then
 
       if [ "$PROGRAM_NAME" = "vue" ]; then
         if [ ! -d ./test_install/vue/test_install_vue3 ]; then
@@ -1317,7 +1315,7 @@ fct_info_programme() { # Description : Afficher les informations du programme
       # ===============================================================================================================================
       echo -e " \E[36m+ ------------------------------------------------------------------------------------------------------------------------ +\E[0m"
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌
-      if [ "$PROGRAM_NAME" = "curl" -o "$PROGRAM_NAME" = "node" -o "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "symfony" -o "$PROGRAM_NAME" = "laravel" -o "$PROGRAM_NAME" = "vue" -o "$PROGRAM_NAME" = "react" -o "$PROGRAM_NAME" = "angular" -o "$PROGRAM_NAME" = "typescript" -o "$PROGRAM_NAME" = "python" -o "$PROGRAM_NAME" = "flutter" ]; then
+      if [ "$PROGRAM_NAME" = "curl" ] || [ "$PROGRAM_NAME" = "node" ] || [ "$PROGRAM_NAME" = "git" ] || [ "$PROGRAM_NAME" = "docker" ] || [ "$PROGRAM_NAME" = "php" ] || [ "$PROGRAM_NAME" = "mysql" ] || [ "$PROGRAM_NAME" = "composer" ] || [ "$PROGRAM_NAME" = "symfony" ] || [ "$PROGRAM_NAME" = "laravel" ] || [ "$PROGRAM_NAME" = "vue" ] || [ "$PROGRAM_NAME" = "react" ] || [ "$PROGRAM_NAME" = "angular" ] || [ "$PROGRAM_NAME" = "typescript" ] || [ "$PROGRAM_NAME" = "python" ] || [ "$PROGRAM_NAME" = "flutter" ]; then
         echo -e " \E[36m|   \E[33mDéroulement de l'installation de la technologie: \033[1m\E[34m$PROGRAM_NAME\033[0m\E[0m"
       elif [ "$PROGRAM_NAME" = "python3" ]; then
         echo -e " \E[36m|   \E[33mDéroulement de l'installation de la technologie: \033[1m\E[34m$PROGRAM_NAME.10\033[0m.\E[0m"
@@ -1347,7 +1345,7 @@ fct_info_programme() { # Description : Afficher les informations du programme
         echo -e " \E[36m|\E[0m"
 
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
-      elif [ "$PROGRAM_NAME" = "git" -o "$PROGRAM_NAME" = "docker" -o "$PROGRAM_NAME" = "php" -o "$PROGRAM_NAME" = "mysql" -o "$PROGRAM_NAME" = "composer" -o "$PROGRAM_NAME" = "angular" -o "$PROGRAM_NAME" = "typescript" -o "$PROGRAM_NAME" = "flutter" -o "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "android" -o "$PROGRAM_NAME" = "spectacle" ]; then
+      elif [ "$PROGRAM_NAME" = "git" ] || [ "$PROGRAM_NAME" = "docker" ] || [ "$PROGRAM_NAME" = "php" ] || [ "$PROGRAM_NAME" = "mysql" ] || [ "$PROGRAM_NAME" = "composer" ] || [ "$PROGRAM_NAME" = "angular" ] || [ "$PROGRAM_NAME" = "typescript" ] || [ "$PROGRAM_NAME" = "flutter" ] || [ "$PROGRAM_NAME" = "code" ] || [ "$PROGRAM_NAME" = "mysql-workbench-community" ] || [ "$PROGRAM_NAME" = "chromium" ] || [ "$PROGRAM_NAME" = "firefox" ] || [ "$PROGRAM_NAME" = "brave" ] || [ "$PROGRAM_NAME" = "opera" ] || [ "$PROGRAM_NAME" = "postman" ] || [ "$PROGRAM_NAME" = "figma-linux" ] || [ "$PROGRAM_NAME" = "krita" ] || [ "$PROGRAM_NAME" = "discord" ] || [ "$PROGRAM_NAME" = "spotify" ] || [ "$PROGRAM_NAME" = "thunderbird" ] || [ "$PROGRAM_NAME" = "kylin-video" ] || [ "$PROGRAM_NAME" = "obs-studio" ] || [ "$PROGRAM_NAME" = "blender" ] || [ "$PROGRAM_NAME" = "vlc" ] || [ "$PROGRAM_NAME" = "okular" ] || [ "$PROGRAM_NAME" = "gimp" ] || [ "$PROGRAM_NAME" = "android" ] || [ "$PROGRAM_NAME" = "spectacle" ]; then
         echo -e " \E[36m|\E[0m"
         echo -e " \E[36m|   \E[97m📋 Pour installer \033[1m\E[34m$PROGRAM_NAME\033[0m\E[97m, nous aurions dû saisir :\E[0m"
         echo -e " \E[36m|\E[0m"
@@ -1535,7 +1533,7 @@ fct_info_programme() { # Description : Afficher les informations du programme
         echo -e " \E[36m|      💲 \E[92mmkdir ./vue   \E[90m\033[3m// Un test d'existence est effectué en parallèle.\033[0m\E[0m"
         echo -e " \E[36m|      💲 \E[92mcd ./vue\E[0m"
         echo -e " \E[36m|\E[0m"
-        echo -e " \E[36m|   📋 \E[97mPour installer \033[1m\E[34m"$PROGRAM_NAME"\033[0m\E[97m, nous aurions dû saisir :\E[0m"
+        echo -e " \E[36m|   📋 \E[97mPour installer \033[1m\E[34m$PROGRAM_NAME\033[0m\E[97m, nous aurions dû saisir :\E[0m"
         echo -e " \E[36m|\E[0m"
         echo -e " \E[36m|      💲 \E[92mnpm init vue@latest\E[0m"
         echo -e " \E[36m|\E[0m"
@@ -1572,7 +1570,7 @@ fct_info_programme() { # Description : Afficher les informations du programme
         echo -e " \E[36m|      💲 \E[92mmkdir ./react   \E[90m\033[3m// Un test d'existence est effectué en parallèle.\033[0m\E[0m"
         echo -e " \E[36m|      💲 \E[92mcd ./react\E[0m"
         echo -e " \E[36m|\E[0m"
-        echo -e " \E[36m|   � \E[97mPour installer \033[1m\E[34m"$PROGRAM_NAME"\033[0m\E[97m, nous aurions dû saisir :\E[0m"
+        echo -e " \E[36m|   � \E[97mPour installer \033[1m\E[34m$PROGRAM_NAME\033[0m\E[97m, nous aurions dû saisir :\E[0m"
         echo -e " \E[36m|\E[0m"
         echo -e " \E[36m|      💲 \E[92mnpx create-react-app nom_de_votre_app\E[0m"
         echo -e " \E[36m|\E[0m"
@@ -1616,13 +1614,13 @@ fct_info_programme() { # Description : Afficher les informations du programme
       # APPLICATIONS
 
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
-      elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "blender" ]; then
-        echo -e " \E[36m|      💲 \E[92msudo snap install "$PROGRAM_NAME" --classic\E[0m"
+      elif [ "$PROGRAM_NAME" = "code" ] || [ "$PROGRAM_NAME" = "blender" ]; then
+        echo -e " \E[36m|      💲 \E[92msudo snap install $PROGRAM_NAME --classic\E[0m"
         echo -e " \E[36m|\E[0m"
 
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
-      elif [ "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
-        echo -e " \E[36m|      💲 \E[92msudo snap install "$PROGRAM_NAME"\E[0m"
+      elif [ "$PROGRAM_NAME" = "mysql-workbench-community" ] || [ "$PROGRAM_NAME" = "chromium" ] || [ "$PROGRAM_NAME" = "firefox" ] || [ "$PROGRAM_NAME" = "brave" ] || [ "$PROGRAM_NAME" = "opera" ] || [ "$PROGRAM_NAME" = "figma-linux" ] || [ "$PROGRAM_NAME" = "krita" ] || [ "$PROGRAM_NAME" = "discord" ] || [ "$PROGRAM_NAME" = "spotify" ] || [ "$PROGRAM_NAME" = "thunderbird" ] || [ "$PROGRAM_NAME" = "vlc" ] || [ "$PROGRAM_NAME" = "okular" ] || [ "$PROGRAM_NAME" = "gimp" ] || [ "$PROGRAM_NAME" = "spectacle" ]; then
+        echo -e " \E[36m|      💲 \E[92msudo snap install $PROGRAM_NAME\E[0m"
         echo -e " \E[36m|\E[0m"
 
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
@@ -1660,13 +1658,13 @@ fct_info_programme() { # Description : Afficher les informations du programme
 
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
       if [ "$PROGRAM_NAME" = "docker" ]; then
-        echo -e " 💬 \E[34mMe faîtes-vous confiance pour que j'installe pour vous, \"\E[95m"$PROGRAM_NAME"\E[34m\", sans vous montrer les commandes à saisir...\E[0m\E[0m"
+        echo -e " 💬 \E[34mMe faîtes-vous confiance pour que j'installe pour vous, \"\E[95m$PROGRAM_NAME\E[34m\", sans vous montrer les commandes à saisir...\E[0m\E[0m"
         echo ""
       elif [ "$PROGRAM_NAME" = "docker" ]; then
-        echo -e " 💬 \E[34mSeriez-vous intéressé pour que j'installe pour vous, \"\E[95m"$PROGRAM_NAME".10\E[34m\", via les commandes ci-dessus ?\E[0m"
+        echo -e " 💬 \E[34mSeriez-vous intéressé pour que j'installe pour vous, \"\E[95m$PROGRAM_NAME.10\E[34m\", via les commandes ci-dessus ?\E[0m"
         echo ""
       else
-        echo -e " 💬 \E[34mSeriez-vous intéressé pour que j'installe pour vous, \"\E[95m"$PROGRAM_NAME"\E[34m\", via les commandes ci-dessus ?\E[0m"
+        echo -e " 💬 \E[34mSeriez-vous intéressé pour que j'installe pour vous, \"\E[95m$PROGRAM_NAME\E[34m\", via les commandes ci-dessus ?\E[0m"
         echo ""
       fi
 
@@ -1686,7 +1684,7 @@ fct_info_programme() { # Description : Afficher les informations du programme
           fi
 
           space
-          echo "    ... Veuillez patienter, l'installation de "$PROGRAM_NAME" va démarrer dans une seconde... (1s)"
+          echo "    ... Veuillez patienter, l'installation de $PROGRAM_NAME va démarrer dans une seconde... (1s)"
           space
           loading
           sleep 1
@@ -1867,11 +1865,11 @@ fct_info_programme() { # Description : Afficher les informations du programme
           # ===============================================================================================================================
 
           # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
-          elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "blender" ]; then
+          elif [ "$PROGRAM_NAME" = "code" ] || [ "$PROGRAM_NAME" = "blender" ]; then
             sudo snap install "$PROGRAM_NAME" --classic
 
           # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
-          elif [ "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
+          elif [ "$PROGRAM_NAME" = "mysql-workbench-community" ] || [ "$PROGRAM_NAME" = "chromium" ] || [ "$PROGRAM_NAME" = "firefox" ] || [ "$PROGRAM_NAME" = "brave" ] || [ "$PROGRAM_NAME" = "opera" ] || [ "$PROGRAM_NAME" = "figma-linux" ] || [ "$PROGRAM_NAME" = "krita" ] || [ "$PROGRAM_NAME" = "postman" ] || [ "$PROGRAM_NAME" = "discord" ] || [ "$PROGRAM_NAME" = "spotify" ] || [ "$PROGRAM_NAME" = "thunderbird" ] || [ "$PROGRAM_NAME" = "vlc" ] || [ "$PROGRAM_NAME" = "okular" ] || [ "$PROGRAM_NAME" = "gimp" ] || [ "$PROGRAM_NAME" = "spectacle" ]; then
             sudo snap install "$PROGRAM_NAME"
 
           # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
@@ -1911,7 +1909,7 @@ fct_info_programme() { # Description : Afficher les informations du programme
           space
 
           # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
-          if [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "android" -o "$PROGRAM_NAME" = "spectacle" ]; then
+          if [ "$PROGRAM_NAME" = "code" ] || [ "$PROGRAM_NAME" = "mysql-workbench-community" ] || [ "$PROGRAM_NAME" = "chromium" ] || [ "$PROGRAM_NAME" = "firefox" ] || [ "$PROGRAM_NAME" = "brave" ] || [ "$PROGRAM_NAME" = "opera" ] || [ "$PROGRAM_NAME" = "figma-linux" ] || [ "$PROGRAM_NAME" = "krita" ] || [ "$PROGRAM_NAME" = "discord" ] || [ "$PROGRAM_NAME" = "spotify" ] || [ "$PROGRAM_NAME" = "thunderbird" ] || [ "$PROGRAM_NAME" = "kylin-video" ] || [ "$PROGRAM_NAME" = "obs-studio" ] || [ "$PROGRAM_NAME" = "blender" ] || [ "$PROGRAM_NAME" = "vlc" ] || [ "$PROGRAM_NAME" = "okular" ] || [ "$PROGRAM_NAME" = "gimp" ] || [ "$PROGRAM_NAME" = "android" ] || [ "$PROGRAM_NAME" = "spectacle" ]; then
             fct_back_to "app"
           else
             fct_back_to "home"
@@ -2069,7 +2067,7 @@ fct_info_programme() { # Description : Afficher les informations du programme
       # ===============================================================================================================================
 
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
-      elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
+      elif [ "$PROGRAM_NAME" = "code" ] || [ "$PROGRAM_NAME" = "mysql-workbench-community" ] || [ "$PROGRAM_NAME" = "chromium" ] || [ "$PROGRAM_NAME" = "brave" ] || [ "$PROGRAM_NAME" = "opera" ] || [ "$PROGRAM_NAME" = "figma-linux" ] || [ "$PROGRAM_NAME" = "krita" ] || [ "$PROGRAM_NAME" = "postman" ] || [ "$PROGRAM_NAME" = "discord" ] || [ "$PROGRAM_NAME" = "spotify" ] || [ "$PROGRAM_NAME" = "thunderbird" ] || [ "$PROGRAM_NAME" = "vlc" ] || [ "$PROGRAM_NAME" = "blender" ] || [ "$PROGRAM_NAME" = "okular" ] || [ "$PROGRAM_NAME" = "gimp" ] || [ "$PROGRAM_NAME" = "spectacle" ]; then
         echo -e " \E[36m|      💲 \E[92msudo snap remove "$PROGRAM_NAME"\E[0m"
 
       # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
@@ -2289,7 +2287,7 @@ fct_info_programme() { # Description : Afficher les informations du programme
           # ===============================================================================================================================
 
           # STATUT FONCTIONNEMENT VÉRIFIÉ : 👾 avec FIGMA-LINUX
-          elif [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "postman" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "spectacle" ]; then
+          elif [ "$PROGRAM_NAME" = "code" ] || [ "$PROGRAM_NAME" = "mysql-workbench-community" ] || [ "$PROGRAM_NAME" = "chromium" ] || [ "$PROGRAM_NAME" = "brave" ] || [ "$PROGRAM_NAME" = "opera" ] || [ "$PROGRAM_NAME" = "figma-linux" ] || [ "$PROGRAM_NAME" = "krita" ] || [ "$PROGRAM_NAME" = "postman" ] || [ "$PROGRAM_NAME" = "discord" ] || [ "$PROGRAM_NAME" = "spotify" ] || [ "$PROGRAM_NAME" = "thunderbird" ] || [ "$PROGRAM_NAME" = "vlc" ] || [ "$PROGRAM_NAME" = "blender" ] || [ "$PROGRAM_NAME" = "okular" ] || [ "$PROGRAM_NAME" = "gimp" ] || [ "$PROGRAM_NAME" = "spectacle" ]; then
             sudo snap remove "$PROGRAM_NAME"
 
           # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅
@@ -2338,7 +2336,7 @@ fct_info_programme() { # Description : Afficher les informations du programme
           clear
 
           # STATUT FONCTIONNEMENT VÉRIFIÉ : ✅❌👾
-          if [ "$PROGRAM_NAME" = "code" -o "$PROGRAM_NAME" = "mysql-workbench-community" -o "$PROGRAM_NAME" = "chromium" -o "$PROGRAM_NAME" = "firefox" -o "$PROGRAM_NAME" = "brave" -o "$PROGRAM_NAME" = "opera" -o "$PROGRAM_NAME" = "figma-linux" -o "$PROGRAM_NAME" = "krita" -o "$PROGRAM_NAME" = "discord" -o "$PROGRAM_NAME" = "spotify" -o "$PROGRAM_NAME" = "thunderbird" -o "$PROGRAM_NAME" = "kylin-video" -o "$PROGRAM_NAME" = "obs-studio" -o "$PROGRAM_NAME" = "blender" -o "$PROGRAM_NAME" = "vlc" -o "$PROGRAM_NAME" = "okular" -o "$PROGRAM_NAME" = "gimp" -o "$PROGRAM_NAME" = "android" -o "$PROGRAM_NAME" = "spectacle" ]; then
+          if [ "$PROGRAM_NAME" = "code" ] || [ "$PROGRAM_NAME" = "mysql-workbench-community" ] || [ "$PROGRAM_NAME" = "chromium" ] || [ "$PROGRAM_NAME" = "firefox" ] || [ "$PROGRAM_NAME" = "brave" ] || [ "$PROGRAM_NAME" = "opera" ] || [ "$PROGRAM_NAME" = "figma-linux" ] || [ "$PROGRAM_NAME" = "krita" ] || [ "$PROGRAM_NAME" = "discord" ] || [ "$PROGRAM_NAME" = "spotify" ] || [ "$PROGRAM_NAME" = "thunderbird" ] || [ "$PROGRAM_NAME" = "kylin-video" ] || [ "$PROGRAM_NAME" = "obs-studio" ] || [ "$PROGRAM_NAME" = "blender" ] || [ "$PROGRAM_NAME" = "vlc" ] || [ "$PROGRAM_NAME" = "okular" ] || [ "$PROGRAM_NAME" = "gimp" ] || [ "$PROGRAM_NAME" = "android" ] || [ "$PROGRAM_NAME" = "spectacle" ]; then
             fct_show_app_menu
           else
             fct_show_home_menu
