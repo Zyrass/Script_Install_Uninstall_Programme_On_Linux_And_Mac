@@ -1,6 +1,6 @@
 ![Logo](https://github.com/Zyrass/Bash-L_Store/blob/master/images/logo.png?raw=true)
-<center>v2.1.1</center>
----
+
+## <center>v2.2.0</center>
 
 # Bash-L Store
 
@@ -10,7 +10,7 @@ vous pouvez utiliser **Bash-L Store** pour vous faciliter son approche.
 > Il a été conçu pour simplifier la réinstallation d'une quelconque distribution Ubuntu.
 > Et tout particulièrement pour la prochaine qui arrive fin avril 2022.
 
----
+🚨 Etant en formation pour devenir fullstack je n'ai plus beaucoup de temps pour moi.
 
 ## Préambule
 
@@ -105,12 +105,19 @@ L'utilisation est très simple.
 
 ## ➍ - Changelog
 
+- **18/03/2023**
+
+  - [x] Modification de la structure.
+    - [x] Externalisation des logos.
+    - [x] Reprise de quelques lignes de code.
+    - [x] Changement de version. 2.1.1 > 2.2.0
+
 - **03/04/2022**
 
   - [x] Modification de l'installation et suppression d'**OBS-STUDIO**.
     - [x] Ajout du **PPA** pour **OBS-Studio**.
     - [x] Ajout d'obs-studio via **APT-GET** au lieu de **SNAP**.
-    - [X] Changement de version. 2.1.0 > 2.1.1
+    - [x] Changement de version. 2.1.0 > 2.1.1
 
 - **23/02/2022**:
 
