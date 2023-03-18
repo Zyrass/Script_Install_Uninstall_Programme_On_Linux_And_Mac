@@ -201,7 +201,6 @@ loading() { # Description : Animation du chargement
   echo -ne ' \t\t\t\t⏳ \E[37mChargement\E[0m :\t[\E[32m====================>\E[0m] \t(\E[36m100%\E[0m)\r'
   space
 }
-
 fct_show_exit_program() { # Description : Affiche la page des remerciements avant de quitter.
   clear
   space
@@ -247,7 +246,6 @@ fct_show_exit_program() { # Description : Affiche la page des remerciements avan
   clear
   exit
 }
-
 fct_check_exist_install() { # Description : Permet d'afficher le message si l'installation à réussi ou bien si
   #               elle a déjà été installé.
   # Arg 1       : "success" ou "error"
@@ -371,7 +369,6 @@ fct_check_status() { # Description : Vérifier que le programme est installé ou
 
   fi
 }
-
 fct_check_status_program() { # Description : Permet de vérifier le statut du programme
   # Arg 1       : Statut du programme (ok, update, bug, error)
   # Arg 2       : Nom de la technologies
@@ -397,7 +394,6 @@ fct_check_status_program() { # Description : Permet de vérifier le statut du pr
     ;;
   esac
 }
-
 fct_show_status_version() { # Description : Affiche la version d'un programme quelconque
   # Arg 1       : Nom de la technologie ou programme
   PROGRAM_NAME=$1
