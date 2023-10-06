@@ -1,0 +1,24 @@
+name: CI/CD pour Bash-L Store
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v2
+
+      - name: Exécuter les tests ( facultatif )
+        run: |
+          # Ajoutez ici les commandes pour exécuter des tests unitaires sur votre script Bash
+          # Exemple : bash test.sh
+
+      - name: Déploiement ( facultatif )
+        run: |
+          # Ajoutez ici les commandes pour le déploiement de votre script après un commit réussi
+          # Exemple : bash deploy.sh
